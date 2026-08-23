@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visitor Guide UK — Discover the Best of the UK</title>
+<meta name="description" content="Your practical guide to the best places to visit, things to do, attractions, day trips and travel tips across the United Kingdom.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- ============================= STYLES ============================= -->
+<style>
+  :root{
+    --navy-900:#0B1B33;
+    --navy-800:#122A4A;
+    --navy-700:#1B3A61;
+    --red-600:#B23A32;
+    --red-700:#96302A;
+    --paper:#F5F5F2;
+    --paper-dim:#ECEBE6;
+    --white:#FFFFFF;
+    --ink:#16212E;
+    --slate:#5B6472;
+    --slate-light:#8892A0;
+    --line:#DFDFD9;
+    --line-dark:rgba(255,255,255,.14);
+    --radius-lg:22px;
+    --radius-md:14px;
+    --radius-sm:9px;
+    --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 12px 28px -14px rgba(15,23,42,.18);
+    --shadow-card-hover:0 1px 2px rgba(15,23,42,.05), 0 24px 40px -16px rgba(15,23,42,.28);
+    --container:1240px;
+    --serif:'Newsreader', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+  }
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  ul{list-style:none;}
+  h1,h2,h3,h4{font-family:var(--serif); font-weight:600; color:var(--navy-900); line-height:1.15; letter-spacing:-.01em;}
+  .container{max-width:var(--container); margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:2px solid var(--red-600); outline-offset:3px;}
+
+  /* ---------- eyebrow / signature marks ---------- */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--red-600); font-weight:500; margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:""; width:16px; height:1px; background:var(--red-600);
+  }
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center;}
+  .section-head h2{font-size:clamp(28px,3.6vw,40px); margin-bottom:12px;}
+  .section-head p{color:var(--slate); font-size:16.5px; max-width:560px;}
+  .section-head.center p{margin-left:auto; margin-right:auto;}
+  section{padding:76px 0;}
+  section.tight{padding:56px 0;}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:13px 26px; border-radius:100px; font-weight:600; font-size:14.5px;
+    border:1px solid transparent; transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--red-600); color:#fff;}
+  .btn-primary:hover{background:var(--red-700); box-shadow:0 8px 20px -8px rgba(178,58,50,.6);}
+  .btn-ghost-light{background:rgba(255,255,255,.1); color:#fff; border-color:rgba(255,255,255,.5); backdrop-filter:blur(6px);}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.2);}
+  .btn-outline{background:transparent; color:var(--navy-900); border-color:var(--line);}
+  .btn-outline:hover{border-color:var(--navy-900);}
+  .btn-text{padding:0; border-radius:0; font-size:14px; color:var(--navy-900); gap:6px;}
+  .btn-text svg{transition:transform .15s ease;}
+  .btn-text:hover svg{transform:translateX(3px);}
+  .btn-text u{text-decoration-color:var(--line); text-underline-offset:4px;}
+
+  /* ============================= HEADER ============================= */
+  header.site-header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(245,245,242,.86); backdrop-filter:blur(10px) saturate(1.1);
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  header.site-header.scrolled{border-color:var(--line); box-shadow:0 4px 20px -12px rgba(15,23,42,.25);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; height:78px; gap:24px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:600; font-size:19px; color:var(--navy-900);}
+  .logo .mark{width:34px; height:34px; border-radius:8px; background:var(--navy-900); display:flex; align-items:center; justify-content:center; position:relative; flex:none;}
+  .logo .mark span{color:#fff; font-family:var(--serif); font-size:17px; font-style:italic;}
+  .logo .mark::after{content:""; position:absolute; width:5px; height:5px; border-radius:50%; background:var(--red-600); top:-2px; right:-2px;}
+  .logo small{display:block; font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--slate); font-weight:500; text-transform:uppercase; margin-top:1px;}
+
+  .main-nav{display:flex; align-items:center; gap:32px;}
+  .main-nav a{font-size:14.5px; font-weight:500; color:var(--navy-800); position:relative; padding:6px 0;}
+  .main-nav a::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--red-600); transform:scaleX(0); transform-origin:left; transition:transform .18s ease;}
+  .main-nav a:hover::after{transform:scaleX(1);}
+
+  .header-actions{display:flex; align-items:center; gap:14px;}
+  .icon-btn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; display:flex; align-items:center; justify-content:center; color:var(--navy-800); transition:background .15s ease, border-color .15s ease;}
+  .icon-btn:hover{background:var(--paper-dim); border-color:var(--slate-light);}
+  .hamburger{display:none; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; align-items:center; justify-content:center;}
+
+  /* mobile nav drawer */
+  .mobile-nav{
+    position:fixed; inset:0; background:var(--navy-900); z-index:200;
+    transform:translateX(100%); transition:transform .3s ease;
+    display:flex; flex-direction:column; padding:24px 24px 40px;
+  }
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:40px;}
+  .mobile-nav-top .logo{color:#fff;}
+  .mobile-nav-top .logo .mark{background:#fff;}
+  .mobile-nav-top .logo .mark span{color:var(--navy-900);}
+  .mobile-nav a{display:block; color:#fff; font-family:var(--serif); font-size:26px; padding:14px 0; border-bottom:1px solid var(--line-dark);}
+  .mobile-nav .btn{margin-top:28px; width:100%;}
+  .close-btn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line-dark); color:#fff; display:flex; align-items:center; justify-content:center; background:transparent;}
+
+  /* ============================= HERO ============================= */
+  .hero{position:relative; min-height:640px; display:flex; align-items:flex-end; color:#fff; overflow:hidden;}
+  .hero-bg{position:absolute; inset:0; background:linear-gradient(155deg,#0B1B33,#1B3A61 60%,#274a72); z-index:0;}
+  .hero-bg img{width:100%; height:100%; object-fit:cover; position:absolute; inset:0; opacity:0; transition:opacity .9s ease;}
+  .hero-bg img.loaded{opacity:1;}
+  .hero-bg::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,27,51,.35) 0%, rgba(11,27,51,.35) 40%, rgba(9,20,38,.92) 100%); z-index:1;}
+  .hero-inner{position:relative; z-index:2; width:100%; padding:150px 0 56px;}
+  .hero-eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#E7C7C4; display:flex; align-items:center; gap:10px; margin-bottom:20px;}
+  .hero-eyebrow::before{content:""; width:22px; height:1px; background:#E7C7C4;}
+  .hero h1{color:#fff; font-size:clamp(38px,6vw,64px); max-width:780px; margin-bottom:18px; font-weight:500;}
+  .hero p.lede{max-width:560px; font-size:18px; color:#DCE3EE; margin-bottom:36px;}
+
+  .search-panel{
+    background:#fff; border-radius:var(--radius-md); padding:10px; display:flex; gap:8px;
+    max-width:640px; box-shadow:0 30px 60px -20px rgba(0,0,0,.5); position:relative;
+  }
+  .search-panel input{
+    flex:1; border:none; outline:none; padding:14px 16px; font-size:15.5px; color:var(--ink); font-family:var(--sans); background:transparent;
+  }
+  .search-panel .btn{flex:none;}
+  .search-suggest{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .search-suggest span{font-size:12.5px; color:#B9C2D1; margin-right:2px; padding-top:6px;}
+  .chip{
+    font-size:13px; padding:6px 14px; border-radius:100px; background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.28); color:#fff; transition:background .15s ease;
+  }
+  .chip:hover{background:rgba(255,255,255,.22);}
+  .search-dropdown{
+    position:absolute; top:calc(100% + 10px); left:0; right:0; background:#fff; border-radius:var(--radius-md);
+    box-shadow:0 24px 48px -16px rgba(0,0,0,.35); padding:10px; display:none; z-index:10; max-height:280px; overflow-y:auto;
+  }
+  .search-dropdown.open{display:block;}
+  .search-dropdown a{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:11px 12px; border-radius:8px; color:var(--ink); font-size:14.5px;}
+  .search-dropdown a:hover{background:var(--paper);}
+  .search-dropdown a small{color:var(--slate-light); font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em;}
+  .search-dropdown .empty{padding:14px 12px; color:var(--slate); font-size:14px;}
+
+  /* ============================= PHOTO helper ============================= */
+  .photo{position:relative; overflow:hidden; background:linear-gradient(135deg,#DADCE2,#EDEEF1); isolation:isolate;}
+  .photo::before{
+    content:""; position:absolute; inset:0;
+    background-image:repeating-linear-gradient(45deg, rgba(15,23,42,.035) 0 1px, transparent 1px 14px);
+    z-index:0;
+  }
+  .photo img{width:100%; height:100%; object-fit:cover; position:relative; z-index:1; opacity:0; transition:opacity .6s ease, transform .5s ease;}
+  .photo img.loaded{opacity:1;}
+  .photo .tag{position:absolute; top:14px; left:14px; z-index:2; background:rgba(11,27,51,.75); backdrop-filter:blur(4px); color:#fff; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; padding:5px 10px; border-radius:100px;}
+
+  /* ============================= REGIONS ============================= */
+  .region-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .region-card{border-radius:var(--radius-lg); overflow:hidden; background:var(--navy-900); position:relative; box-shadow:var(--shadow-card); transition:box-shadow .2s ease, transform .2s ease;}
+  .region-card:hover{box-shadow:var(--shadow-card-hover); transform:translateY(-3px);}
+  .region-card .photo{aspect-ratio:3/4; border-radius:0;}
+  .region-card .photo::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,27,51,0) 30%, rgba(11,27,51,.92) 100%); z-index:1;}
+  .region-card-body{position:absolute; left:0; right:0; bottom:0; padding:22px; z-index:2;}
+  .region-card-body .num{font-family:var(--mono); font-size:11px; color:#E7C7C4; letter-spacing:.1em; margin-bottom:8px; display:block;}
+  .region-card-body h3{color:#fff; font-size:22px; margin-bottom:8px;}
+  .region-card-body p{color:#C7D0DE; font-size:13.5px; line-height:1.5; margin-bottom:16px;}
+  .region-card-body .btn-text{color:#fff;}
+  .region-card-body .btn-text u{text-decoration-color:rgba(255,255,255,.4);}
+
+  /* ============================= DESTINATIONS ============================= */
+  .dest-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .dest-card{background:#fff; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-card); transition:box-shadow .2s ease, transform .2s ease; display:flex; flex-direction:column;}
+  .dest-card:hover{box-shadow:var(--shadow-card-hover); transform:translateY(-3px);}
+  .dest-card:hover .photo img{transform:scale(1.05);}
+  .dest-card .photo{aspect-ratio:4/3;}
+  .dest-card-body{padding:18px 18px 20px; display:flex; flex-direction:column; flex:1;}
+  .dest-card-body h3{font-size:19px; margin-bottom:6px;}
+  .dest-card-body p{color:var(--slate); font-size:13.8px; line-height:1.5; margin-bottom:16px; flex:1;}
+
+  /* ============================= CATEGORY (looking for) ============================= */
+  .cat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .cat-card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:26px 22px;
+    display:flex; flex-direction:column; gap:14px; transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+  }
+  .cat-card:hover{border-color:var(--navy-900); box-shadow:var(--shadow-card); transform:translateY(-2px);}
+  .cat-card .icon{width:44px; height:44px; border-radius:10px; background:var(--paper-dim); display:flex; align-items:center; justify-content:center; color:var(--navy-900);}
+  .cat-card:hover .icon{background:var(--navy-900); color:#fff;}
+  .cat-card h3{font-size:16.5px; font-family:var(--sans); font-weight:600; color:var(--navy-900);}
+  .cat-card p{font-size:13.3px; color:var(--slate); line-height:1.5;}
+  .cat-card .go{margin-top:auto; font-size:12.5px; font-family:var(--mono); text-transform:uppercase; letter-spacing:.06em; color:var(--red-600); display:flex; align-items:center; gap:5px;}
+
+  /* ============================= ARTICLES ============================= */
+  .article-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .article-card{background:#fff; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-card); transition:box-shadow .2s ease, transform .2s ease;}
+  .article-card:hover{box-shadow:var(--shadow-card-hover); transform:translateY(-3px);}
+  .article-card .photo{aspect-ratio:16/10;}
+  .article-body{padding:20px 22px 24px;}
+  .article-meta{display:flex; align-items:center; gap:10px; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.07em; color:var(--slate-light); margin-bottom:10px;}
+  .article-meta .dot{width:3px; height:3px; border-radius:50%; background:var(--slate-light);}
+  .article-body h3{font-size:19px; margin-bottom:8px; line-height:1.28;}
+  .article-body p{color:var(--slate); font-size:13.8px; margin-bottom:16px;}
+
+  /* ============================= LONDON FEATURE ============================= */
+  .london-feature{background:var(--navy-900); color:#fff; overflow:hidden;}
+  .london-grid{display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:0;}
+  .london-copy{padding:70px 60px;}
+  .london-copy h2{color:#fff; font-size:clamp(28px,3.4vw,38px); margin-bottom:16px;}
+  .london-copy p{color:#C7D0DE; font-size:16px; max-width:460px; margin-bottom:30px;}
+  .london-btns{display:flex; flex-wrap:wrap; gap:12px;}
+  .london-photo{position:relative; min-height:420px; align-self:stretch;}
+  .london-photo .photo{position:absolute; inset:0; border-radius:0;}
+
+  /* ============================= PLAN YOUR VISIT ============================= */
+  .plan-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden;}
+  .plan-item{background:#fff; padding:26px 22px; display:flex; flex-direction:column; gap:10px; transition:background .15s ease;}
+  .plan-item:hover{background:var(--paper);}
+  .plan-item .icon{color:var(--red-600);}
+  .plan-item h3{font-size:15px; font-family:var(--sans); font-weight:600;}
+  .plan-item p{font-size:12.8px; color:var(--slate); line-height:1.45;}
+
+  /* ============================= NEWSLETTER ============================= */
+  .newsletter{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .newsletter-inner{max-width:620px; margin:0 auto; text-align:center; padding:64px 0;}
+  .newsletter-inner h2{font-size:clamp(26px,3vw,32px); margin-bottom:12px;}
+  .newsletter-inner p{color:var(--slate); font-size:15.5px; margin-bottom:28px;}
+  .newsletter-form{display:flex; gap:10px; background:#fff; padding:8px; border-radius:100px; border:1px solid var(--line); box-shadow:var(--shadow-card);}
+  .newsletter-form input{flex:1; border:none; outline:none; padding:12px 18px; font-size:15px; font-family:var(--sans); background:transparent;}
+  .newsletter-note{font-size:12px; color:var(--slate-light); margin-top:14px;}
+  .newsletter-success{display:none; align-items:center; justify-content:center; gap:8px; font-size:14.5px; color:var(--navy-900); font-weight:600; padding:16px; background:#fff; border-radius:100px; border:1px solid var(--line);}
+  .newsletter-success.show{display:flex;}
+
+  /* ============================= FOOTER ============================= */
+  footer{background:var(--navy-900); color:#C7D0DE; padding:64px 0 28px;}
+  .footer-top{display:grid; grid-template-columns:1.5fr repeat(4,1fr); gap:32px; padding-bottom:48px; border-bottom:1px solid var(--line-dark);}
+  .footer-brand .logo{color:#fff;}
+  .footer-brand .logo .mark{background:#fff;}
+  .footer-brand .logo .mark span{color:var(--navy-900);}
+  .footer-brand p{margin-top:14px; font-size:13.8px; color:#93A1B7; max-width:230px; line-height:1.6;}
+  .footer-col h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:#93A1B7; font-weight:500; margin-bottom:16px;}
+  .footer-col ul li{margin-bottom:11px;}
+  .footer-col a{font-size:14px; color:#DCE3EE; transition:color .15s ease;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12.8px; color:#7F8CA1;}
+  .footer-bottom .flag-note{display:flex; align-items:center; gap:8px;}
+
+  /* ============================= scrollers (mobile) ============================= */
+  .scroller{display:grid; grid-auto-flow:column; grid-auto-columns:78%; gap:16px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:6px; -webkit-overflow-scrolling:touch;}
+  .scroller > *{scroll-snap-align:start;}
+  .scroller::-webkit-scrollbar{display:none;}
+
+  /* ============================= RESPONSIVE ============================= */
+  @media (max-width:1080px){
+    .region-grid{grid-template-columns:repeat(2,1fr);}
+    .dest-grid{grid-template-columns:repeat(2,1fr);}
+    .cat-grid{grid-template-columns:repeat(2,1fr);}
+    .article-grid{grid-template-columns:repeat(2,1fr);}
+    .plan-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:860px){
+    .london-grid{grid-template-columns:1fr;}
+    .london-copy{padding:50px 28px;}
+    .london-photo{min-height:280px;}
+  }
+  @media (max-width:760px){
+    .main-nav, .header-actions .icon-btn:first-child{display:none;}
+    .header-actions .btn{display:none;}
+    .hamburger{display:flex;}
+    section{padding:56px 0;}
+    .hero{min-height:560px;}
+    .hero-inner{padding:120px 0 40px;}
+    .search-panel{flex-direction:column; align-items:stretch;}
+    .search-panel .btn{width:100%;}
+    .region-grid,.dest-grid,.cat-grid,.article-grid{grid-template-columns:1fr; display:grid;}
+    .region-grid.scroll-mobile,.dest-grid.scroll-mobile,.article-grid.scroll-mobile{display:grid; grid-auto-flow:column; grid-auto-columns:82%; grid-template-columns:none; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px;}
+    .region-grid.scroll-mobile > *,.dest-grid.scroll-mobile > *,.article-grid.scroll-mobile > *{scroll-snap-align:start;}
+    .plan-grid{grid-template-columns:1fr 1fr;}
+    .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
+    .footer-brand{grid-column:1 / -1;}
+    .london-copy{padding:44px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================= HEADER ============================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-row">
+    <a href="#top" class="logo">
+      <span class="mark"><span>V</span></span>
+      <span>Visitor Guide UK<small>United Kingdom Travel Guide</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#top">Home</a>
+      <a href="#regions">Places to Visit</a>
+      <a href="#looking-for">Things to Do</a>
+      <a href="#destinations">UK Cities</a>
+      <a href="#plan">Travel Tips</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Search" id="headerSearchBtn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <a href="#regions" class="btn btn-primary">Explore UK</a>
+      <button class="hamburger" id="menuOpenBtn" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top">
+    <a href="#top" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+    <button class="close-btn" id="menuCloseBtn" aria-label="Close menu">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="#top" class="mnav-link">Home</a>
+    <a href="#regions" class="mnav-link">Places to Visit</a>
+    <a href="#looking-for" class="mnav-link">Things to Do</a>
+    <a href="#destinations" class="mnav-link">UK Cities</a>
+    <a href="#plan" class="mnav-link">Travel Tips</a>
+  </nav>
+  <a href="#regions" class="btn btn-primary mnav-link">Explore UK</a>
+</div>
+
+<main id="top">
+
+<!-- ============================= HERO ============================= -->
+<section class="hero">
+  <div class="hero-bg" data-wiki="Tower Bridge" data-eager="true">
+    <img alt="Tower Bridge spanning the River Thames in London" id="heroImg">
+  </div>
+  <div class="container hero-inner">
+    <p class="hero-eyebrow">England · Scotland · Wales · Northern Ireland</p>
+    <h1>Discover the Best of the UK</h1>
+    <p class="lede">Explore the best places to visit, things to do, attractions, day trips and travel tips across the United Kingdom.</p>
+
+    <div class="search-panel">
+      <input type="text" id="heroSearch" placeholder="Search destinations, attractions or things to do…" autocomplete="off" aria-label="Search destinations, attractions or things to do">
+      <button class="btn btn-primary" id="heroSearchGo">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Search
+      </button>
+      <div class="search-dropdown" id="searchDropdown"></div>
+    </div>
+    <div class="search-suggest">
+      <span>Popular:</span>
+      <a href="#destinations" class="chip">London</a>
+      <a href="#destinations" class="chip">Edinburgh</a>
+      <a href="#destinations" class="chip">Manchester</a>
+      <a href="#destinations" class="chip">Liverpool</a>
+      <a href="#destinations" class="chip">Oxford</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= UK REGIONS ============================= -->
+<section id="regions">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Four Nations</p>
+      <h2>Explore the UK</h2>
+      <p>Discover amazing places across all four nations of the United Kingdom.</p>
+    </div>
+    <div class="region-grid scroll-mobile" id="regionGrid"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ============================= POPULAR DESTINATIONS ============================= -->
+<section id="destinations">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">City Guides</p>
+      <h2>Popular UK Destinations</h2>
+      <p>Start exploring some of the UK's most popular cities and destinations.</p>
+    </div>
+    <div class="dest-grid scroll-mobile" id="destGrid"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ============================= WHAT ARE YOU LOOKING FOR ============================= -->
+<section id="looking-for" style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow" style="justify-content:center;">Start Here</p>
+      <h2>What are you looking for?</h2>
+    </div>
+    <div class="cat-grid" id="catGrid"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ============================= FEATURED GUIDES ============================= -->
+<section id="guides">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Visitor Guides</p>
+      <h2>Latest UK Visitor Guides</h2>
+      <p>Practical, up-to-date resources to help you plan — written by people who know the UK well.</p>
+    </div>
+    <div class="article-grid scroll-mobile" id="articleGrid"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ============================= LONDON FEATURE ============================= -->
+<section class="london-feature">
+  <div class="london-grid">
+    <div class="london-copy">
+      <p class="eyebrow" style="color:#E7C7C4;">Capital City</p>
+      <h2>Visiting London? Start Here.</h2>
+      <p>Discover the best things to do, places to visit, attractions, free activities, museums, day trips and practical travel tips for London.</p>
+      <div class="london-btns">
+        <a href="/categories/things-to-do.html" class="btn btn-primary">Things to Do in London</a>
+        <a href="/categories/attractions.html" class="btn btn-ghost-light">London Attractions</a>
+        <a href="/destinations/london.html" class="btn btn-ghost-light">London Travel Guide</a>
+      </div>
+    </div>
+    <div class="london-photo">
+      <div class="photo" data-wiki="London Eye" style="border-radius:0;">
+        <img alt="The London Eye on the South Bank of the River Thames">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= PLAN YOUR VISIT ============================= -->
+<section id="plan">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Practical Information</p>
+      <h2>Plan Your UK Visit</h2>
+      <p>Straightforward, practical information to help your trip run smoothly.</p>
+    </div>
+    <div class="plan-grid" id="planGrid"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ============================= NEWSLETTER ============================= -->
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <p class="eyebrow" style="justify-content:center;">Stay Informed</p>
+      <h2>Get UK Travel Ideas in Your Inbox</h2>
+      <p>Get useful UK travel guides, destination ideas and things to do delivered to your inbox.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" required placeholder="Enter your email address" aria-label="Email address" id="newsletterEmail">
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <div class="newsletter-success" id="newsletterSuccess">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        You're subscribed — welcome aboard.
+      </div>
+      <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+        <p>Your practical guide to exploring the United Kingdom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/regions/england.html">England</a></li>
+          <li><a href="/regions/scotland.html">Scotland</a></li>
+          <li><a href="/regions/wales.html">Wales</a></li>
+          <li><a href="/regions/northern-ireland.html">Northern Ireland</a></li>
+          <li><a href="#destinations">UK Cities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Things to Do</h4>
+        <ul>
+          <li><a href="/categories/attractions.html">Attractions</a></li>
+          <li><a href="/categories/free-things-to-do.html">Free Things to Do</a></li>
+          <li><a href="/categories/family-days-out.html">Family Days Out</a></li>
+          <li><a href="/categories/day-trips.html">Day Trips</a></li>
+          <li><a href="/categories/museums.html">Museums</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Travel</h4>
+        <ul>
+          <li><a href="/travel/travel-tips.html">Travel Tips</a></li>
+          <li><a href="/travel/getting-around.html">Getting Around</a></li>
+          <li><a href="/categories/where-to-stay.html">Where to Stay</a></li>
+          <li><a href="/categories/food-restaurants.html">Food &amp; Restaurants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/legal/about.html">About Us</a></li>
+          <li><a href="/legal/contact.html">Contact</a></li>
+          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/legal/terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="/legal/cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Visitor Guide UK. All rights reserved.</span>
+      <span class="flag-note">An independent UK visitor information guide</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================= SCRIPT ============================= -->
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------- DATA ---------------- */
+  var REGIONS = [
+    {n:"01", name:"England", desc:"Explore cities, historic attractions, countryside, museums and famous landmarks.", wiki:"Cotswolds", href:"/regions/england.html"},
+    {n:"02", name:"Scotland", desc:"Discover Edinburgh, Glasgow, the Highlands, castles and stunning landscapes.", wiki:"Scottish Highlands", href:"/regions/scotland.html"},
+    {n:"03", name:"Wales", desc:"Explore castles, coastal towns, national parks and beautiful Welsh destinations.", wiki:"Snowdonia", href:"/regions/wales.html"},
+    {n:"04", name:"Northern Ireland", desc:"Discover Belfast, the Causeway Coast, historic sites and spectacular scenery.", wiki:"Giant's Causeway", href:"/regions/northern-ireland.html"}
+  ];
+
+  var DESTINATIONS = [
+    {name:"London", desc:"The capital's world-class museums, royal landmarks and West End shows, all close together.", wiki:"Big Ben", href:"/destinations/london.html"},
+    {name:"Edinburgh", desc:"Scotland's historic capital, home to a hilltop castle, the Royal Mile and nearby Highland views.", wiki:"Edinburgh Castle", href:"/destinations/edinburgh.html"},
+    {name:"Manchester", desc:"A confident northern city built on music, football and industrial heritage.", wiki:"Manchester", href:"/destinations/manchester.html"},
+    {name:"Liverpool", desc:"Home of The Beatles and a UNESCO-listed waterfront on the River Mersey.", wiki:"Royal Albert Dock, Liverpool", href:"/destinations/liverpool.html"},
+    {name:"Birmingham", desc:"England's second city, with canals, a buzzing food scene and great shopping.", wiki:"Birmingham", href:"/destinations/birmingham.html"},
+    {name:"York", desc:"Medieval streets, Roman walls and a magnificent Gothic minster.", wiki:"York Minster", href:"/destinations/york.html"},
+    {name:"Bath", desc:"Georgian architecture and ancient Roman baths in a graceful, honey-stone city.", wiki:"Roman Baths (Bath)", href:"/destinations/bath.html"},
+    {name:"Oxford", desc:"Centuries-old university colleges and cobbled lanes in the city of dreaming spires.", wiki:"Radcliffe Camera", href:"/destinations/oxford.html"}
+  ];
+
+  var CATEGORIES = [
+    {name:"Things to Do", desc:"Discover activities and experiences across the UK.", icon:"compass", href:"/categories/things-to-do.html"},
+    {name:"Attractions", desc:"Find famous landmarks, museums, castles and visitor attractions.", icon:"landmark", href:"/categories/attractions.html"},
+    {name:"Free Things to Do", desc:"Discover free attractions and activities.", icon:"gift", href:"/categories/free-things-to-do.html"},
+    {name:"Family Days Out", desc:"Find family-friendly attractions and activities.", icon:"family", href:"/categories/family-days-out.html"},
+    {name:"Day Trips", desc:"Discover the best day trips from major UK cities.", icon:"route", href:"/categories/day-trips.html"},
+    {name:"Where to Stay", desc:"Find useful information about areas and accommodation.", icon:"bed", href:"/categories/where-to-stay.html"},
+    {name:"Food & Restaurants", desc:"Discover local food, restaurants and dining experiences.", icon:"fork", href:"/categories/food-restaurants.html"},
+    {name:"Travel Tips", desc:"Get practical advice for travelling around the UK.", icon:"tip", href:"/categories/travel-tips.html"}
+  ];
+
+  var ARTICLES = [
+    {title:"Best Free Things to Do in London", desc:"Museums, galleries and green spaces you can enjoy without spending a penny.", time:"7 min read", tag:"London", wiki:"Trafalgar Square", href:"/guides/best-free-things-to-do-in-london.html"},
+    {title:"10 Best Places to Visit in Edinburgh", desc:"From the Old Town to Arthur's Seat, the sights worth building a trip around.", time:"8 min read", tag:"Scotland", wiki:"Arthur's Seat", href:"/guides/best-places-to-visit-in-edinburgh.html"},
+    {title:"Best Day Trips from London", desc:"Windsor, Oxford, Bath and beyond — how to plan a smooth day out by train.", time:"6 min read", tag:"Day Trips", wiki:"Windsor Castle", href:"/guides/best-day-trips-from-london.html"},
+    {title:"Things to Do in Manchester", desc:"Music history, football culture and a food scene that keeps growing.", time:"5 min read", tag:"Manchester", wiki:"Manchester Cathedral", href:"/guides/things-to-do-in-manchester.html"},
+    {title:"Best Family Days Out in the UK", desc:"Theme parks, wildlife parks and hands-on museums for all ages.", time:"6 min read", tag:"Family", wiki:"Alton Towers", href:"/guides/best-family-days-out-in-the-uk.html"},
+    {title:"Best Castles to Visit in England", desc:"From Windsor to Warwick, the historic castles that reward a visit.", time:"7 min read", tag:"History", wiki:"Warwick Castle", href:"/guides/best-castles-to-visit-in-england.html"}
+  ];
+
+  var PLAN = [
+    {name:"Getting Around the UK", desc:"Trains, coaches, domestic flights and driving between cities.", icon:"route", href:"/travel/getting-around.html"},
+    {name:"Public Transport", desc:"Oyster cards, contactless and local transport in major cities.", icon:"train", href:"/travel/public-transport.html"},
+    {name:"Best Time to Visit", desc:"What to expect season by season, from festivals to weather.", icon:"calendar", href:"/travel/best-time-to-visit.html"},
+    {name:"UK Weather", desc:"What to pack and how to plan around the British climate.", icon:"cloud", href:"/travel/uk-weather.html"},
+    {name:"Money & Payments", desc:"Currency, card payments and typical costs for visitors.", icon:"card", href:"/travel/money-and-payments.html"},
+    {name:"Family Travel", desc:"Tips for travelling with children across the UK.", icon:"family", href:"/travel/family-travel.html"},
+    {name:"Accessibility", desc:"Accessible transport, attractions and accommodation information.", icon:"access", href:"/travel/accessibility.html"},
+    {name:"Travel Tips", desc:"Practical advice from getting a SIM card to tipping etiquette.", icon:"tip", href:"/travel/travel-tips.html"}
+  ];
+
+  var ICONS = {
+    compass:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><polygon points="14.5 9.5 10.5 10.5 9.5 14.5 13.5 13.5"/></svg>',
+    landmark:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="21" x2="20" y2="21"/><line x1="5" y1="21" x2="5" y2="10"/><line x1="19" y1="21" x2="19" y2="10"/><polygon points="12 3 21 9 3 9"/><line x1="9" y1="13" x2="9" y2="17"/><line x1="15" y1="13" x2="15" y2="17"/></svg>',
+    gift:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><rect x="4" y="12" width="16" height="9" rx="1"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M12 8C12 8 9 8 8 6.5C7 5 8.5 3 10 4C11.5 5 12 8 12 8Z"/><path d="M12 8C12 8 15 8 16 6.5C17 5 15.5 3 14 4C12.5 5 12 8 12 8Z"/></svg>',
+    family:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="7" r="2.6"/><circle cx="17" cy="8" r="2"/><path d="M3 20c0-3 2.2-5 5-5s5 2 5 5"/><path d="M13.5 20c0-2.4 1.6-4 3.5-4s3.5 1.6 3.5 4"/></svg>',
+    route:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M5 8v3a4 4 0 0 0 4 4h6a4 4 0 0 1 4 4" stroke-dasharray="2 3"/></svg>',
+    bed:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18v2"/><path d="M21 18v2"/><path d="M3 12V8a2 2 0 0 1 2-2h4v4"/></svg>',
+    fork:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2 2 0 0 0 2 2v9"/><path d="M5 3v5M9 3v5"/><path d="M17 3c-1.5 0-2.5 1.8-2.5 4.5S15.5 12 17 12v9"/></svg>',
+    tip:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.3 1 2.1v.4h6v-.4c0-.8.3-1.5 1-2.1A6 6 0 0 0 12 3Z"/></svg>',
+    train:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="13" rx="4"/><line x1="5" y1="11" x2="19" y2="11"/><circle cx="8.5" cy="15.5" r=".6" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r=".6" fill="currentColor" stroke="none"/><line x1="8" y1="19" x2="6" y2="22"/><line x1="16" y1="19" x2="18" y2="22"/></svg>',
+    calendar:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/></svg>',
+    cloud:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18H7a4 4 0 1 1 .7-7.9A5.5 5.5 0 0 1 18 12.1 3.5 3.5 0 0 1 17 18Z"/></svg>',
+    card:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><line x1="2.5" y1="10" x2="21.5" y2="10"/><line x1="6" y1="14.5" x2="10" y2="14.5"/></svg>',
+    access:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="4.5" r="1.6" fill="currentColor" stroke="none"/><path d="M6 20c0-4 2.5-6 6-6s6 2 6 6"/><path d="M12 10v4l4 3"/><path d="M8 12h4"/></svg>'
+  };
+
+  /* ---------------- WIKIPEDIA IMAGE FETCH ---------------- */
+  var wikiCache = {};
+  function fetchWikiImage(title, px){
+    if (wikiCache[title]) return wikiCache[title];
+    var p = fetch("https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(title) +
+      "&prop=pageimages&format=json&pithumbsize=" + (px || 1000) + "&origin=*")
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        var pages = data.query && data.query.pages;
+        if (!pages) return null;
+        var page = pages[Object.keys(pages)[0]];
+        return (page && page.thumbnail && page.thumbnail.source) || null;
+      })
+      .catch(function(){ return null; });
+    wikiCache[title] = p;
+    return p;
+  }
+
+  function hydratePhotos(root){
+    var nodes = (root || document).querySelectorAll("[data-wiki]");
+    nodes.forEach(function(node){
+      var title = node.getAttribute("data-wiki");
+      var img = node.querySelector("img");
+      if (!img) return;
+      fetchWikiImage(title, node.hasAttribute("data-eager") ? 1600 : 900).then(function(url){
+        if (!url) return;
+        img.src = url;
+        img.onload = function(){ img.classList.add("loaded"); };
+      });
+    });
+  }
+
+  /* ---------------- RENDER CARDS ---------------- */
+  function el(html){
+    var t = document.createElement("template");
+    t.innerHTML = html.trim();
+    return t.content.firstElementChild;
+  }
+
+  function renderRegions(){
+    var grid = document.getElementById("regionGrid");
+    REGIONS.forEach(function(r){
+      grid.appendChild(el(
+        '<a class="region-card" href="' + r.href + '" data-wiki-outer>' +
+          '<div class="photo" data-wiki="' + r.wiki + '"><img alt="' + r.name + ', United Kingdom"><span class="tag">' + r.name + '</span></div>' +
+          '<div class="region-card-body">' +
+            '<span class="num">' + r.n + ' / Nation</span>' +
+            '<h3>' + r.name + '</h3>' +
+            '<p>' + r.desc + '</p>' +
+            '<span class="btn-text"><u>Explore ' + r.name + '</u> ' +
+              '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>' +
+          '</div>' +
+        '</a>'
+      ));
+    });
+  }
+
+  function renderDestinations(){
+    var grid = document.getElementById("destGrid");
+    DESTINATIONS.forEach(function(d){
+      grid.appendChild(el(
+        '<a class="dest-card" href="' + d.href + '">' +
+          '<div class="photo"><img alt="' + d.name + ', United Kingdom"></div>' +
+          '<div class="dest-card-body">' +
+            '<h3>' + d.name + '</h3>' +
+            '<p>' + d.desc + '</p>' +
+            '<span class="btn-text"><u>Explore Guide</u> ' +
+              '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>' +
+          '</div>' +
+        '</a>'
+      ));
+      grid.lastElementChild.querySelector(".photo").setAttribute("data-wiki", d.wiki);
+    });
+  }
+
+  function renderCategories(){
+    var grid = document.getElementById("catGrid");
+    CATEGORIES.forEach(function(c){
+      grid.appendChild(el(
+        '<a class="cat-card" href="' + c.href + '">' +
+          '<span class="icon">' + ICONS[c.icon] + '</span>' +
+          '<h3>' + c.name + '</h3>' +
+          '<p>' + c.desc + '</p>' +
+          '<span class="go">View ' + c.name + ' →</span>' +
+        '</a>'
+      ));
+    });
+  }
+
+  function renderArticles(){
+    var grid = document.getElementById("articleGrid");
+    ARTICLES.forEach(function(a){
+      grid.appendChild(el(
+        '<a class="article-card" href="' + a.href + '">' +
+          '<div class="photo" data-wiki="' + a.wiki + '"><img alt="' + a.title + '"><span class="tag">' + a.tag + '</span></div>' +
+          '<div class="article-body">' +
+            '<div class="article-meta"><span>' + a.tag + '</span><span class="dot"></span><span>' + a.time + '</span></div>' +
+            '<h3>' + a.title + '</h3>' +
+            '<p>' + a.desc + '</p>' +
+            '<span class="btn-text"><u>Read Guide</u> ' +
+              '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>' +
+          '</div>' +
+        '</a>'
+      ));
+    });
+  }
+
+  function renderPlan(){
+    var grid = document.getElementById("planGrid");
+    PLAN.forEach(function(p){
+      grid.appendChild(el(
+        '<a class="plan-item" href="' + p.href + '">' +
+          '<span class="icon">' + ICONS[p.icon] + '</span>' +
+          '<h3>' + p.name + '</h3>' +
+          '<p>' + p.desc + '</p>' +
+        '</a>'
+      ));
+    });
+  }
+
+  renderRegions();
+  renderDestinations();
+  renderCategories();
+  renderArticles();
+  renderPlan();
+  hydratePhotos(document);
+
+  /* ---------------- HEADER SCROLL STATE ---------------- */
+  var header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", function(){
+    header.classList.toggle("scrolled", window.scrollY > 8);
+  }, {passive:true});
+
+  /* ---------------- MOBILE MENU ---------------- */
+  var mobileNav = document.getElementById("mobileNav");
+  document.getElementById("menuOpenBtn").addEventListener("click", function(){
+    mobileNav.classList.add("open");
+    document.body.style.overflow = "hidden";
+  });
+  document.getElementById("menuCloseBtn").addEventListener("click", closeMenu);
+  mobileNav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMenu); });
+  function closeMenu(){
+    mobileNav.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  /* ---------------- SEARCH ---------------- */
+  var searchIndex = [];
+  REGIONS.forEach(function(r){ searchIndex.push({label:r.name, type:"Region", href:r.href}); });
+  DESTINATIONS.forEach(function(d){ searchIndex.push({label:d.name, type:"City", href:d.href}); });
+  CATEGORIES.forEach(function(c){ searchIndex.push({label:c.name, type:"Category", href:c.href}); });
+  ARTICLES.forEach(function(a){ searchIndex.push({label:a.title, type:"Guide", href:a.href}); });
+
+  var input = document.getElementById("heroSearch");
+  var dropdown = document.getElementById("searchDropdown");
+
+  function renderResults(query){
+    var q = query.trim().toLowerCase();
+    if (!q){ dropdown.classList.remove("open"); dropdown.innerHTML = ""; return; }
+    var results = searchIndex.filter(function(item){ return item.label.toLowerCase().indexOf(q) !== -1; }).slice(0, 7);
+    if (!results.length){
+      dropdown.innerHTML = '<div class="empty">No matches yet — try “London”, “castles” or “day trips”.</div>';
+    } else {
+      dropdown.innerHTML = results.map(function(r){
+        return '<a href="' + r.href + '"><span>' + r.label + '</span><small>' + r.type + '</small></a>';
+      }).join("");
+    }
+    dropdown.classList.add("open");
+  }
+
+  input.addEventListener("input", function(){ renderResults(input.value); });
+  input.addEventListener("focus", function(){ if (input.value) renderResults(input.value); });
+  document.addEventListener("click", function(e){
+    if (!e.target.closest(".search-panel")) dropdown.classList.remove("open");
+  });
+  dropdown.addEventListener("click", function(){ dropdown.classList.remove("open"); });
+  document.getElementById("heroSearchGo").addEventListener("click", function(e){
+    e.preventDefault();
+    var firstResult = dropdown.querySelector("a");
+    if (firstResult){
+      window.location.href = firstResult.getAttribute("href");
+    } else {
+      window.location.hash = "destinations";
+    }
+  });
+  document.getElementById("headerSearchBtn").addEventListener("click", function(){
+    input.focus();
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+
+  /* ---------------- NEWSLETTER ---------------- */
+  var form = document.getElementById("newsletterForm");
+  var success = document.getElementById("newsletterSuccess");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    form.style.display = "none";
+    success.classList.add("show");
+  });
+})();
+</script>
+</body>
+</html>
