@@ -2,47 +2,48 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) with Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+
+  var vgukConsent = null;
+  try { vgukConsent = localStorage.getItem('vguk_cookie_consent'); } catch(e) {}
+  var vgukGranted = (vgukConsent === 'accepted') ? 'granted' : 'denied';
+
+  gtag('consent', 'default', {
+    'ad_storage': vgukGranted,
+    'ad_user_data': vgukGranted,
+    'ad_personalization': vgukGranted,
+    'analytics_storage': vgukGranted
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-NZRW83LDG7');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRW83LDG7"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Northern Ireland Travel Guide — Coast, History & Belfast | Visitor Guide UK</title>
-<meta name="description" content="Plan your trip to Northern Ireland: the Giant's Causeway, Belfast, the Causeway Coastal Route, free things to do and practical travel tips.">
-<meta name="robots" content="index, follow">
+<title>Northern Ireland Travel Guide — Attractions & Things to Do | Visitor Guide UK</title>
+<meta name="description" content="Plan your trip to Northern Ireland: Belfast, the Giant's Causeway, the Causeway Coast and practical travel tips for this compact, scenic corner of the UK.">
 <link rel="canonical" href="https://www.visitorguideuk.com/regions/northern-ireland.html">
-
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="Visitor Guide UK">
-<meta property="og:title" content="Northern Ireland Travel Guide — Coast, History & Belfast">
-<meta property="og:description" content="Plan your trip to Northern Ireland: the Giant's Causeway, Belfast, the Causeway Coastal Route, free things to do and practical travel tips.">
-<meta property="og:url" content="https://www.visitorguideuk.com/regions/northern-ireland.html">
-<meta property="og:image" content="https://www.visitorguideuk.com/images/northern-ireland-og.jpg">
-<meta property="og:locale" content="en_GB">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Northern Ireland Travel Guide — Coast, History & Belfast">
-<meta name="twitter:description" content="Plan your trip to Northern Ireland: the Giant's Causeway, Belfast, the Causeway Coastal Route, free things to do and practical travel tips.">
-<meta name="twitter:image" content="https://www.visitorguideuk.com/images/northern-ireland-og.jpg">
-
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Northern Ireland Travel Guide — Attractions & Things to Do | Visitor Guide UK">
+<meta property="og:description" content="Plan your trip to Northern Ireland: Belfast, the Giant's Causeway, the Causeway Coast and practical travel tips for this compact, scenic corner of the UK.">
+<meta property="og:url" content="https://www.visitorguideuk.com/regions/northern-ireland.html">
+<meta property="og:site_name" content="Visitor Guide UK">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TouristDestination",
-  "name": "Northern Ireland",
-  "description": "Plan your trip to Northern Ireland: the Giant's Causeway, Belfast, the Causeway Coastal Route, free things to do and practical travel tips.",
-  "url": "https://www.visitorguideuk.com/regions/northern-ireland.html",
-  "containedInPlace": { "@type": "Country", "name": "United Kingdom" }
-}
-</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type":"ListItem","position":1,"name":"Home","item":"https://www.visitorguideuk.com/"},
-    {"@type":"ListItem","position":2,"name":"Places to Visit","item":"https://www.visitorguideuk.com/#regions"},
+    {"@type":"ListItem","position":2,"name":"Places to Visit","item":"https://www.visitorguideuk.com/index.html#regions"},
     {"@type":"ListItem","position":3,"name":"Northern Ireland","item":"https://www.visitorguideuk.com/regions/northern-ireland.html"}
   ]
 }
@@ -51,61 +52,43 @@
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How many days do you need in Northern Ireland?",
-      "acceptedAnswer": {"@type":"Answer","text":"Three to five days allows time for Belfast plus a full day driving the Causeway Coastal Route, though the Giant's Causeway alone can be visited as a long day trip from Belfast."}
-    },
-    {
-      "@type": "Question",
-      "name": "Is the Giant's Causeway free to visit?",
-      "acceptedAnswer": {"@type":"Answer","text":"The causeway stones themselves are freely accessible via the coastal path, though the visitor centre, parking and guided exhibition carry a separate charge."}
-    },
-    {
-      "@type": "Question",
-      "name": "What is Northern Ireland known for?",
-      "acceptedAnswer": {"@type":"Answer","text":"Northern Ireland is known for the Giant's Causeway, the Titanic's birthplace in Belfast, dramatic coastal scenery, and locations used in major film and television productions."}
-    }
-  ]
+  "mainEntity": [{"@type":"Question","name":"How many days do you need for Northern Ireland?","acceptedAnswer":{"@type":"Answer","text":"A short trip of two to three days can cover Belfast and a day along the Causeway Coast, though more time allows a more relaxed pace."}},{"@type":"Question","name":"Is the Giant's Causeway worth visiting?","acceptedAnswer":{"@type":"Answer","text":"Yes, it's Northern Ireland's most famous natural landmark and a UNESCO World Heritage Site, known for its unusual interlocking basalt columns."}},{"@type":"Question","name":"Do you need a car to see Northern Ireland?","acceptedAnswer":{"@type":"Answer","text":"A car or organised tour is the most practical way to see the Causeway Coast, though Belfast itself is easy to explore on foot or by public transport."}}]
 }
 </script>
-
 <style>
   :root{
     --navy-900:#0B1B33; --navy-800:#122A4A; --navy-700:#1B3A61;
     --red-600:#B23A32; --red-700:#96302A;
-    --paper:#F5F5F2; --paper-dim:#ECEBE6; --white:#FFFFFF; --ink:#16212E;
-    --slate:#5B6472; --slate-light:#8892A0; --line:#DFDFD9; --line-dark:rgba(255,255,255,.14);
+    --paper:#F5F5F2; --paper-dim:#ECEBE6; --white:#FFFFFF;
+    --ink:#16212E; --slate:#5B6472; --slate-light:#8892A0; --line:#DFDFD9; --line-dark:rgba(255,255,255,.14);
     --radius-lg:22px; --radius-md:14px; --radius-sm:9px;
     --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 12px 28px -14px rgba(15,23,42,.18);
     --shadow-card-hover:0 1px 2px rgba(15,23,42,.05), 0 24px 40px -16px rgba(15,23,42,.28);
-    --container:1240px;
-    --serif:'Newsreader', Georgia, serif; --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --mono:'IBM Plex Mono', monospace;
+    --container:1240px; --serif:'Newsreader', Georgia, serif; --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --mono:'IBM Plex Mono', monospace;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
-  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:.001ms !important; transition-duration:.001ms !important;} }
   body{font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
   img{display:block; max-width:100%;}
   a{color:inherit; text-decoration:none;}
   button{font-family:inherit; cursor:pointer;}
   ul{list-style:none;}
-  h1,h2,h3,h4{font-family:var(--serif); font-weight:600; color:var(--navy-900); line-height:1.15; letter-spacing:-.01em;}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; color:var(--navy-900); line-height:1.15; letter-spacing:-.01em;}
   .container{max-width:var(--container); margin:0 auto; padding:0 24px;}
   :focus-visible{outline:2px solid var(--red-600); outline-offset:3px;}
   .eyebrow{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--red-600); font-weight:500; margin-bottom:14px;}
   .eyebrow::before{content:""; width:16px; height:1px; background:var(--red-600);}
-  .section-head{max-width:640px; margin-bottom:36px;}
-  .section-head h2{font-size:clamp(26px,3.2vw,36px); margin-bottom:12px;}
-  .section-head p{color:var(--slate); font-size:16px; max-width:560px;}
+  .section-head{max-width:680px; margin-bottom:36px;}
+  .section-head h2{font-size:clamp(26px,3.2vw,34px); margin-bottom:12px;}
+  .section-head p{color:var(--slate); font-size:16.5px; max-width:620px;}
   section{padding:64px 0;}
-  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 26px; border-radius:100px; font-weight:600; font-size:14.5px; border:1px solid transparent; transition:transform .15s ease, box-shadow .15s ease, background .15s ease; white-space:nowrap;}
+  section.tight{padding:44px 0;}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 26px; border-radius:100px; font-weight:600; font-size:14.5px; border:1px solid transparent; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;}
   .btn:active{transform:translateY(1px);}
   .btn-primary{background:var(--red-600); color:#fff;}
   .btn-primary:hover{background:var(--red-700); box-shadow:0 8px 20px -8px rgba(178,58,50,.6);}
   .btn-ghost-light{background:rgba(255,255,255,.1); color:#fff; border-color:rgba(255,255,255,.5); backdrop-filter:blur(6px);}
-  .btn-ghost-light:hover{background:rgba(255,255,255,.2);}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.22);}
   header.site-header{position:sticky; top:0; z-index:100; background:rgba(245,245,242,.86); backdrop-filter:blur(10px) saturate(1.1); border-bottom:1px solid transparent; transition:border-color .2s ease, box-shadow .2s ease;}
   header.site-header.scrolled{border-color:var(--line); box-shadow:0 4px 20px -12px rgba(15,23,42,.25);}
   .nav-row{display:flex; align-items:center; justify-content:space-between; height:78px; gap:24px;}
@@ -130,64 +113,63 @@
   .mobile-nav a{display:block; color:#fff; font-family:var(--serif); font-size:26px; padding:14px 0; border-bottom:1px solid var(--line-dark);}
   .mobile-nav .btn{margin-top:28px; width:100%;}
   .close-btn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line-dark); color:#fff; display:flex; align-items:center; justify-content:center; background:transparent;}
-  .breadcrumb{padding:16px 0; font-family:var(--mono); font-size:12px; color:var(--slate); text-transform:uppercase; letter-spacing:.04em;}
-  .breadcrumb a{color:var(--slate);}
-  .breadcrumb a:hover{color:var(--red-600);}
-  .breadcrumb span{margin:0 8px; color:var(--slate-light);}
-  .hero{position:relative; min-height:480px; display:flex; align-items:flex-end; color:#fff; overflow:hidden;}
-  .hero-bg{position:absolute; inset:0; background:linear-gradient(155deg,#0B1B33,#1B3A61 60%,#274a72); z-index:0;}
-  .hero-bg img{width:100%; height:100%; object-fit:cover; position:absolute; inset:0; opacity:0; transition:opacity .9s ease;}
-  .hero-bg img.loaded{opacity:1;}
-  .hero-bg::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,27,51,.35) 0%, rgba(11,27,51,.35) 30%, rgba(9,20,38,.92) 100%); z-index:1;}
-  .hero-inner{position:relative; z-index:2; width:100%; padding:60px 0 48px;}
-  .hero-eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#E7C7C4; display:flex; align-items:center; gap:10px; margin-bottom:16px;}
-  .hero-eyebrow::before{content:""; width:22px; height:1px; background:#E7C7C4;}
-  .hero h1{color:#fff; font-size:clamp(34px,5.4vw,56px); max-width:780px; margin-bottom:14px; font-weight:500;}
-  .hero p.lede{max-width:620px; font-size:17px; color:#DCE3EE; margin-bottom:28px;}
-  .hero-btns{display:flex; flex-wrap:wrap; gap:12px;}
-  .facts-bar{background:#fff; border-bottom:1px solid var(--line);}
-  .facts-row{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
-  .fact{padding:24px 22px; border-left:1px solid var(--line);}
-  .fact:first-child{border-left:none;}
-  .fact .label{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--slate-light); margin-bottom:6px;}
-  .fact .value{font-family:var(--serif); font-size:19px; color:var(--navy-900); font-weight:600;}
-  .intro-text{max-width:760px; font-size:16.5px; color:var(--slate); line-height:1.75; margin-bottom:0;}
-  .intro-text + .intro-text{margin-top:16px;}
   .photo{position:relative; overflow:hidden; background:linear-gradient(135deg,#DADCE2,#EDEEF1); isolation:isolate;}
   .photo::before{content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(15,23,42,.035) 0 1px, transparent 1px 14px); z-index:0;}
   .photo img{width:100%; height:100%; object-fit:cover; position:relative; z-index:1; opacity:0; transition:opacity .6s ease, transform .5s ease;}
   .photo img.loaded{opacity:1;}
-  .photo .tag{position:absolute; top:14px; left:14px; z-index:2; background:rgba(11,27,51,.75); backdrop-filter:blur(4px); color:#fff; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; padding:5px 10px; border-radius:100px;}
-  .photo .credit{position:absolute; bottom:6px; right:8px; z-index:2; font-family:var(--mono); font-size:9px; color:rgba(255,255,255,.75); background:rgba(11,27,51,.5); padding:2px 6px; border-radius:4px; opacity:0; transition:opacity .2s ease;}
-  .photo:hover .credit{opacity:1;}
-  .place-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-  .place-card{background:#fff; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-card); transition:box-shadow .2s ease, transform .2s ease;}
-  .place-card:hover{box-shadow:var(--shadow-card-hover); transform:translateY(-3px);}
-  .place-card:hover .photo img{transform:scale(1.05);}
-  .place-card .photo{aspect-ratio:4/3;}
-  .place-body{padding:18px 20px 20px;}
-  .place-body .kicker{font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--red-600); margin-bottom:6px; display:block;}
-  .place-body h3{font-size:18.5px; margin-bottom:8px;}
-  .place-body p{color:var(--slate); font-size:13.6px; line-height:1.55; margin-bottom:12px;}
-  .list-two-col{display:grid; grid-template-columns:1fr 1fr; gap:16px 32px;}
-  .list-item{display:flex; gap:14px; padding:18px 0; border-bottom:1px solid var(--line);}
-  .list-item .num{font-family:var(--mono); font-size:13px; color:var(--red-600); font-weight:500; flex:none; padding-top:2px;}
-  .list-item h4{font-family:var(--sans); font-size:15.5px; font-weight:600; color:var(--navy-900); margin-bottom:4px;}
-  .list-item p{font-size:13.4px; color:var(--slate); line-height:1.5;}
-  .tips-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden;}
-  .tip-item{background:#fff; padding:24px 20px; display:flex; flex-direction:column; gap:8px;}
-  .tip-item .icon{color:var(--red-600);}
-  .tip-item h3{font-size:14.5px; font-family:var(--sans); font-weight:600;}
-  .tip-item p{font-size:12.6px; color:var(--slate); line-height:1.5;}
-  .faq-item{border-bottom:1px solid var(--line); padding:20px 0;}
-  .faq-item summary{font-family:var(--serif); font-size:17px; font-weight:600; color:var(--navy-900); cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;}
-  .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item summary .plus{font-family:var(--mono); font-size:18px; color:var(--red-600); flex:none; transition:transform .2s ease;}
-  .faq-item[open] summary .plus{transform:rotate(45deg);}
-  .faq-item p{margin-top:12px; font-size:14.8px; color:var(--slate); line-height:1.65; max-width:680px;}
-  .cta-band{background:var(--navy-900); color:#fff; border-radius:var(--radius-lg); padding:48px 44px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;}
-  .cta-band h2{color:#fff; font-size:clamp(22px,2.6vw,30px); margin-bottom:8px;}
-  .cta-band p{color:#C7D0DE; font-size:15px;}
+  .breadcrumb{padding:18px 0 0; font-family:var(--mono); font-size:11.5px; color:var(--slate-light); display:flex; gap:8px; flex-wrap:wrap;}
+  .breadcrumb a{color:var(--slate);}
+  .breadcrumb a:hover{color:var(--red-600);}
+  .breadcrumb span[aria-current]{color:var(--navy-900);}
+  .page-hero{position:relative; min-height:420px; display:flex; align-items:flex-end; color:#fff; overflow:hidden; margin-top:18px; border-radius:var(--radius-lg);}
+  .page-hero-bg{position:absolute; inset:0; background:linear-gradient(155deg,#0B1B33,#1B3A61 60%,#274a72); z-index:0;}
+  .page-hero-bg img{width:100%; height:100%; object-fit:cover; position:absolute; inset:0; opacity:0; transition:opacity .9s ease;}
+  .page-hero-bg img.loaded{opacity:1;}
+  .page-hero-bg::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,27,51,.25) 0%, rgba(11,27,51,.35) 40%, rgba(9,20,38,.92) 100%); z-index:1;}
+  .page-hero-inner{position:relative; z-index:2; padding:64px 44px 40px; width:100%;}
+  .page-hero-eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#E7C7C4; display:flex; align-items:center; gap:10px; margin-bottom:16px;}
+  .page-hero-eyebrow::before{content:""; width:22px; height:1px; background:#E7C7C4;}
+  .page-hero h1{color:#fff; font-size:clamp(34px,5vw,54px); max-width:700px; margin-bottom:14px; font-weight:500;}
+  .page-hero p.lede{max-width:600px; font-size:16.5px; color:#DCE3EE; margin-bottom:26px;}
+  .page-hero-btns{display:flex; flex-wrap:wrap; gap:12px;}
+  .quick-facts{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; margin-top:-40px; position:relative; z-index:3; box-shadow:var(--shadow-card);}
+  .quick-facts .fact{background:#fff; padding:20px 22px;}
+  .quick-facts .fact h4{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--red-600); font-weight:500; margin-bottom:6px;}
+  .quick-facts .fact p{font-size:14.5px; font-weight:600; color:var(--navy-900);}
+  .prose p{color:var(--ink); font-size:16px; line-height:1.75; margin-bottom:16px; max-width:780px;}
+  .article-block{margin-bottom:8px;}
+  .city-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:8px;}
+  .city-card{background:#fff; border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-card); transition:box-shadow .2s ease, transform .2s ease; display:flex; flex-direction:column;}
+  .city-card:hover{box-shadow:var(--shadow-card-hover); transform:translateY(-3px);}
+  .city-card .photo{aspect-ratio:4/3;}
+  .city-card-body{padding:14px 16px 16px;}
+  .city-card-body h3{font-size:15.5px; margin-bottom:4px; font-family:var(--sans); font-weight:600;}
+  .city-card-body p{font-size:12.8px; color:var(--slate); line-height:1.5; margin:0;}
+  .city-card-body span.soon{font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--slate-light);}
+  .attraction-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:8px;}
+  .attraction-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-card); transition:box-shadow .2s ease, transform .2s ease;}
+  .attraction-card:hover{box-shadow:var(--shadow-card-hover); transform:translateY(-3px);}
+  .attraction-card .photo{aspect-ratio:4/3;}
+  .attraction-card-body{padding:16px 18px 18px;}
+  .attraction-card-body h3{font-size:16.5px; margin-bottom:6px; font-family:var(--sans); font-weight:600;}
+  .attraction-card-body p{font-size:13.5px; color:var(--slate); line-height:1.55; margin:0;}
+  .simple-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:8px;}
+  .simple-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:20px 22px;}
+  .simple-card h3{font-size:16px; margin:0 0 6px; font-family:var(--sans); font-weight:600;}
+  .simple-card p{font-size:14px; color:var(--slate); line-height:1.55; margin:0;}
+  .tip-list li{position:relative; padding-left:26px; font-size:15.5px; color:var(--ink); line-height:1.6; margin-bottom:12px; max-width:720px;}
+  .tip-list li::before{content:""; position:absolute; left:0; top:7px; width:8px; height:8px; border-radius:2px; background:var(--red-600);}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item:first-child{border-top:1px solid var(--line);}
+  .faq-q{width:100%; text-align:left; background:none; border:none; padding:20px 4px; display:flex; justify-content:space-between; align-items:center; gap:16px; font-family:var(--serif); font-size:17px; font-weight:600; color:var(--navy-900);}
+  .faq-q svg{flex:none; transition:transform .2s ease; color:var(--red-600);}
+  .faq-item.open .faq-q svg{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{padding:0 4px 20px; color:var(--slate); font-size:15px; line-height:1.65; max-width:700px;}
+  .faq-item.open .faq-a{max-height:240px;}
+  .explore-more{background:var(--navy-900); border-radius:var(--radius-lg); padding:44px; text-align:center; color:#fff;}
+  .explore-more h2{color:#fff; margin-bottom:10px;}
+  .explore-more p{color:#C7D0DE; max-width:520px; margin:0 auto 22px;}
   footer{background:var(--navy-900); color:#C7D0DE; padding:64px 0 28px;}
   .footer-top{display:grid; grid-template-columns:1.5fr repeat(4,1fr); gap:32px; padding-bottom:48px; border-bottom:1px solid var(--line-dark);}
   .footer-brand .logo{color:#fff;}
@@ -199,187 +181,276 @@
   .footer-col a{font-size:14px; color:#DCE3EE;}
   .footer-col a:hover{color:#fff;}
   .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12.8px; color:#7F8CA1;}
-  @media (max-width:1080px){
-    .place-grid{grid-template-columns:repeat(2,1fr);}
-    .tips-grid{grid-template-columns:repeat(2,1fr);}
-    .facts-row{grid-template-columns:repeat(2,1fr);}
-    .fact:nth-child(3){border-left:none;}
+  @media (max-width:1000px){
+    .city-grid{grid-template-columns:repeat(2,1fr);}
+    .attraction-grid{grid-template-columns:repeat(2,1fr);}
+    .quick-facts{grid-template-columns:repeat(2,1fr);}
     .footer-top{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:760px){
     .main-nav, .header-actions .icon-btn{display:none;}
     .header-actions .btn{display:none;}
     .hamburger{display:flex;}
-    section{padding:48px 0;}
-    .hero{min-height:420px;}
-    .place-grid{grid-template-columns:1fr;}
-    .list-two-col{grid-template-columns:1fr;}
-    .tips-grid{grid-template-columns:1fr 1fr;}
-    .facts-row{grid-template-columns:1fr 1fr;}
-    .fact:nth-child(2n+1){border-left:none;}
+    section{padding:44px 0;}
+    .page-hero{min-height:340px;}
+    .page-hero-inner{padding:44px 22px 32px;}
+    .quick-facts{grid-template-columns:1fr 1fr; margin-top:-24px;}
+    .city-grid, .attraction-grid, .simple-grid{grid-template-columns:1fr;}
+    .explore-more{padding:32px 22px;}
     .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
     .footer-brand{grid-column:1 / -1;}
-    .cta-band{padding:36px 24px; flex-direction:column; text-align:center;}
   }
 </style>
+<script src="/cookie-consent.js" defer></script>
 </head>
 <body>
 
 <header class="site-header" id="siteHeader">
   <div class="container nav-row">
-    <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK<small>United Kingdom Travel Guide</small></span></a>
+    <a href="/index.html" class="logo">
+      <span class="mark"><span>V</span></span>
+      <span>Visitor Guide UK<small>United Kingdom Travel Guide</small></span>
+    </a>
     <nav class="main-nav" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/#regions">Places to Visit</a>
-      <a href="/#looking-for">Things to Do</a>
-      <a href="/#destinations">UK Cities</a>
-      <a href="/#plan">Travel Tips</a>
+      <a href="/index.html">Home</a>
+      <a href="/index.html#regions">Places to Visit</a>
+      <a href="/index.html#looking-for">Things to Do</a>
+      <a href="/index.html#destinations">UK Cities</a>
+      <a href="/index.html#plan">Travel Tips</a>
     </nav>
     <div class="header-actions">
-      <button class="icon-btn" aria-label="Search"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
-      <a href="/#destinations" class="btn btn-primary">Explore UK</a>
-      <button class="hamburger" id="menuOpenBtn" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <button class="icon-btn" aria-label="Search" onclick="window.location.href='/index.html#top'">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <a href="/index.html#regions" class="btn btn-primary">Explore UK</a>
+      <button class="hamburger" id="menuOpenBtn" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </div>
 </header>
-
 <div class="mobile-nav" id="mobileNav">
   <div class="mobile-nav-top">
-    <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
-    <button class="close-btn" id="menuCloseBtn" aria-label="Close menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
+    <a href="/index.html" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+    <button class="close-btn" id="menuCloseBtn" aria-label="Close menu">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
   </div>
   <nav aria-label="Mobile">
-    <a href="/" class="mnav-link">Home</a>
-    <a href="/#regions" class="mnav-link">Places to Visit</a>
-    <a href="/#looking-for" class="mnav-link">Things to Do</a>
-    <a href="/#destinations" class="mnav-link">UK Cities</a>
-    <a href="/#plan" class="mnav-link">Travel Tips</a>
+    <a href="/index.html">Home</a>
+    <a href="/index.html#regions">Places to Visit</a>
+    <a href="/index.html#looking-for">Things to Do</a>
+    <a href="/index.html#destinations">UK Cities</a>
+    <a href="/index.html#plan">Travel Tips</a>
   </nav>
-  <a href="/#destinations" class="btn btn-primary mnav-link">Explore UK</a>
+  <a href="/index.html#regions" class="btn btn-primary">Explore UK</a>
 </div>
 
-<main>
+<main id="top">
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/index.html">Home</a><span>/</span>
+    <a href="/index.html#regions">Places to Visit</a><span>/</span>
+    <span aria-current="page">Northern Ireland</span>
+  </nav>
 
-<div class="container breadcrumb"><a href="/">Home</a><span>/</span><a href="/#regions">Places to Visit</a><span>/</span>Northern Ireland</div>
+  <section class="page-hero">
+    <div class="page-hero-bg" data-wiki="Giant's Causeway" data-eager="true">
+      <img alt="The basalt columns of the Giant's Causeway on the north coast of Northern Ireland">
+    </div>
+    <div class="page-hero-inner">
+      <p class="page-hero-eyebrow">United Kingdom</p>
+      <h1>Northern Ireland</h1>
+      <p class="lede">Northern Ireland packs a compact, engaging capital in Belfast alongside one of the UK's most extraordinary natural landmarks on its dramatic north coast.</p>
+      <div class="page-hero-btns">
+        <a href="#cities" class="btn btn-primary">Top Cities &amp; Destinations</a>
+        <a href="#attractions" class="btn btn-ghost-light">Top Attractions</a>
+      </div>
+    </div>
+  </section>
 
-<section class="hero">
-  <div class="hero-bg" data-wiki="Giant's Causeway" data-eager="true"><img alt="The Giant's Causeway rock formations, Northern Ireland"></div>
-  <div class="container hero-inner">
-    <p class="hero-eyebrow">Four Nations · Northern Ireland</p>
-    <h1>Northern Ireland Travel Guide</h1>
-    <p class="lede">Everything you need to plan a trip to Northern Ireland — the Giant's Causeway, Belfast, the Causeway Coastal Route and practical tips for getting around.</p>
-    <div class="hero-btns">
-      <a href="#places" class="btn btn-primary">Top Places to Visit</a>
-      <a href="#free" class="btn btn-ghost-light">Free Things to Do</a>
+  <div class="quick-facts">
+    <div class="fact"><h4>Capital</h4><p>Belfast</p></div>
+    <div class="fact"><h4>Best For</h4><p>History, coastline & compact touring</p></div>
+    <div class="fact"><h4>Getting Around</h4><p>Car or coach tours for the coast, walking within Belfast</p></div>
+    <div class="fact"><h4>Famous For</h4><p>The Giant's Causeway & the Causeway Coast</p></div>
+  </div>
+</div>
+
+<section>
+  <div class="container prose">
+    <div class="article-block">
+      <p class="eyebrow">Overview</p>
+      <h2>Why Visit Northern Ireland?</h2>
+      <p>Northern Ireland is compact enough that many of its best-known sights can be combined into a single well-planned trip. Belfast, the capital, has redeveloped substantially in recent decades, particularly around its shipbuilding heritage, and offers museums, murals and a growing food and cultural scene.</p><p>The wider draw for many visitors is the Causeway Coast, a scenic stretch of the north coast that includes the Giant's Causeway — a UNESCO World Heritage Site since 1986, formed from around 40,000 interlocking basalt columns created by volcanic activity roughly 60 million years ago. The coastline also includes dramatic castle ruins, rope bridges and beaches, making a coastal driving route one of the most popular ways to see the region.</p>
     </div>
   </div>
 </section>
 
-<div class="facts-bar">
-  <div class="container facts-row">
-    <div class="fact"><div class="label">Capital</div><div class="value">Belfast</div></div>
-    <div class="fact"><div class="label">Best For</div><div class="value">Coast & history</div></div>
-    <div class="fact"><div class="label">Suggested Stay</div><div class="value">3–5 days</div></div>
-    <div class="fact"><div class="label">Getting Around</div><div class="value">Car or tour bus</div></div>
-  </div>
-</div>
-
-<section id="overview">
+<section class="tight" id="cities" style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
   <div class="container">
-    <div class="section-head"><p class="eyebrow">Overview</p><h2>Planning a Trip to Northern Ireland</h2></div>
-    <p class="intro-text">Northern Ireland is compact enough that Belfast and the Causeway Coast can both be covered in a short trip, yet varied enough to fill a much longer one. Belfast makes a natural base, with its Titanic heritage and growing food scene, before a day spent driving the Causeway Coastal Route north.</p>
-    <p class="intro-text">That coastal drive passes some of the country's most photographed sights, from the hexagonal basalt columns of the Giant's Causeway to rope bridges and ruined castles perched above the sea, with several stops also familiar to fans of major television and film productions shot in the region.</p>
+    <div class="section-head">
+      <p class="eyebrow">Where to Go</p>
+      <h2>Top Cities &amp; Destinations in Northern Ireland</h2>
+      <p>A starting point for planning where to base yourself or which stops to add to your itinerary.</p>
+    </div>
+    <div class="city-grid">
+          <div class="city-card">
+            <div class="photo" data-wiki="Belfast"><img alt="Belfast"></div>
+            <div class="city-card-body"><h3>Belfast</h3><p>Northern Ireland's capital, known for its Titanic heritage, murals and revitalised waterfront.</p><span class="soon">Guide coming soon</span></div>
+          </div>
+          <div class="city-card">
+            <div class="photo" data-wiki="Causeway Coastal Route"><img alt="Causeway Coast"></div>
+            <div class="city-card-body"><h3>Causeway Coast</h3><p>A scenic coastal route linking Belfast to the Giant's Causeway and beyond.</p><span class="soon">Guide coming soon</span></div>
+          </div>
+          <div class="city-card">
+            <div class="photo" data-wiki="Derry"><img alt="Derry~Londonderry"></div>
+            <div class="city-card-body"><h3>Derry~Londonderry</h3><p>Ireland's only remaining fully walled city, with a rich and complex history.</p><span class="soon">Guide coming soon</span></div>
+          </div>
+          <div class="city-card">
+            <div class="photo" data-wiki="Bushmills"><img alt="Bushmills"></div>
+            <div class="city-card-body"><h3>Bushmills</h3><p>A small town near the Giant's Causeway, home to one of the world's oldest whiskey distilleries.</p><span class="soon">Guide coming soon</span></div>
+          </div></div>
   </div>
 </section>
 
-<section id="places" style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+<section class="tight" id="attractions">
   <div class="container">
-    <div class="section-head"><p class="eyebrow">Must-See</p><h2>Top Places to Visit in Northern Ireland</h2><p>Coastal landmarks and city highlights that most itineraries build around.</p></div>
-    <div class="place-grid" id="placesGrid"></div>
+    <div class="section-head">
+      <p class="eyebrow">Must-See</p>
+      <h2>Top Attractions in Northern Ireland</h2>
+    </div>
+    <div class="attraction-grid">
+          <div class="attraction-card">
+            <div class="photo" data-wiki="Giant's Causeway"><img alt="Giant's Causeway"></div>
+            <div class="attraction-card-body"><h3>Giant's Causeway</h3><p>A UNESCO World Heritage Site of around 40,000 interlocking basalt columns on the north coast.</p></div>
+          </div>
+          <div class="attraction-card">
+            <div class="photo" data-wiki="Titanic Belfast"><img alt="Titanic Belfast"></div>
+            <div class="attraction-card-body"><h3>Titanic Belfast</h3><p>A museum on the site of the former shipyard where the Titanic was built.</p></div>
+          </div>
+          <div class="attraction-card">
+            <div class="photo" data-wiki="Carrick-a-Rede Rope Bridge"><img alt="Carrick-a-Rede Rope Bridge"></div>
+            <div class="attraction-card-body"><h3>Carrick-a-Rede Rope Bridge</h3><p>A rope bridge connecting the mainland to a small island, with dramatic coastal views.</p></div>
+          </div>
+          <div class="attraction-card">
+            <div class="photo" data-wiki="Dark Hedges"><img alt="Dark Hedges"></div>
+            <div class="attraction-card-body"><h3>Dark Hedges</h3><p>An avenue of beech trees near Armoy, one of Northern Ireland's most photographed natural landmarks.</p></div>
+          </div>
+          <div class="attraction-card">
+            <div class="photo" data-wiki="Derry"><img alt="Derry's City Walls"></div>
+            <div class="attraction-card-body"><h3>Derry's City Walls</h3><p>The best-preserved city walls in Ireland, offering a walkable circuit around the historic centre.</p></div>
+          </div>
+          <div class="attraction-card">
+            <div class="photo" data-wiki="Mourne Mountains"><img alt="Mourne Mountains"></div>
+            <div class="attraction-card-body"><h3>Mourne Mountains</h3><p>A mountain range in County Down offering walking trails and scenic views over the Irish Sea.</p></div>
+          </div></div>
   </div>
 </section>
 
-<section id="free">
+<section class="tight" style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
   <div class="container">
-    <div class="section-head"><p class="eyebrow">Budget-Friendly</p><h2>Free Things to Do in Northern Ireland</h2><p>Some of the region's biggest highlights cost nothing to visit.</p></div>
-    <div class="list-two-col" id="freeList"></div>
+    <div class="section-head">
+      <p class="eyebrow">Highlights</p>
+      <h2>Things to Do in Northern Ireland</h2>
+    </div>
+    <div class="simple-grid"><div class="simple-card"><h3>Drive the Causeway Coastal Route</h3><p>A scenic road connecting Belfast to the Giant's Causeway via castles, beaches and villages.</p></div><div class="simple-card"><h3>Visit Titanic Belfast</h3><p>An immersive museum covering the ship's construction in Belfast's former shipyards.</p></div><div class="simple-card"><h3>Cross Carrick-a-Rede Rope Bridge</h3><p>A short but memorable crossing to a small island off the Causeway Coast.</p></div><div class="simple-card"><h3>Explore Belfast's murals</h3><p>Political and historical murals in areas such as the Falls Road and Shankill Road offer insight into the city's history.</p></div></div>
   </div>
 </section>
 
-<section id="tips" style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+<section class="tight">
   <div class="container">
-    <div class="section-head"><p class="eyebrow">Practical</p><h2>Northern Ireland Travel Tips</h2></div>
-    <div class="tips-grid" id="tipsGrid"></div>
+    <div class="section-head">
+      <p class="eyebrow">Practical</p>
+      <h2>Northern Ireland Travel Tips</h2>
+    </div>
+    <ul class="tip-list"><li>A car is the most practical way to see the Causeway Coast in depth, though organised day tours from Belfast are widely available.</li><li>Weather on the north coast can be windy and changeable; a waterproof jacket is worth carrying even in summer.</li><li>The Giant's Causeway stones themselves are free to view, though the visitor centre and parking have an admission charge.</li><li>Belfast's city centre is compact and walkable, with most major sights within a reasonable distance of each other.</li></ul>
   </div>
 </section>
 
-<section id="faq">
-  <div class="container" style="max-width:800px;">
-    <div class="section-head"><p class="eyebrow">FAQ</p><h2>Common Questions About Visiting Northern Ireland</h2></div>
-    <details class="faq-item" open>
-      <summary>How many days do you need in Northern Ireland? <span class="plus">+</span></summary>
-      <p>Three to five days allows time for Belfast plus a full day driving the Causeway Coastal Route, though the Giant's Causeway alone can be visited as a long day trip from Belfast.</p>
-    </details>
-    <details class="faq-item">
-      <summary>Is the Giant's Causeway free to visit? <span class="plus">+</span></summary>
-      <p>The causeway stones themselves are freely accessible via the coastal path, though the visitor centre, parking and guided exhibition carry a separate charge.</p>
-    </details>
-    <details class="faq-item">
-      <summary>What is Northern Ireland known for? <span class="plus">+</span></summary>
-      <p>Northern Ireland is known for the Giant's Causeway, the Titanic's birthplace in Belfast, dramatic coastal scenery, and locations used in major film and television productions.</p>
-    </details>
+<section class="tight" style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>Common Questions About Visiting Northern Ireland</h2>
+    </div>
+    <div>
+          <div class="faq-item">
+            <button class="faq-q">How many days do you need for Northern Ireland?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            <div class="faq-a"><p>A short trip of two to three days can cover Belfast and a day along the Causeway Coast, though more time allows a more relaxed pace.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Is the Giant's Causeway worth visiting?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            <div class="faq-a"><p>Yes, it's Northern Ireland's most famous natural landmark and a UNESCO World Heritage Site, known for its unusual interlocking basalt columns.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Do you need a car to see Northern Ireland?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+            <div class="faq-a"><p>A car or organised tour is the most practical way to see the Causeway Coast, though Belfast itself is easy to explore on foot or by public transport.</p></div>
+          </div></div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="cta-band">
-      <div><h2>Explore the Rest of the UK</h2><p>From England's historic cities to the Scottish Highlands, discover the other nations that make up the United Kingdom.</p></div>
-      <a href="/#regions" class="btn btn-primary">Browse UK Regions</a>
+    <div class="explore-more">
+      <h2>Explore More of the UK</h2>
+      <p>From Scotland's Highlands to Wales's castles, discover the other nations that make up the United Kingdom.</p>
+      <a href="/index.html#regions" class="btn btn-primary">Browse UK Regions</a>
     </div>
   </div>
 </section>
-
 </main>
 
 <footer>
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+        <a href="/index.html" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
         <p>Your practical guide to exploring the United Kingdom.</p>
       </div>
-      <div class="footer-col"><h4>Explore</h4><ul>
-        <li><a href="/regions/england.html">England</a></li>
-        <li><a href="/regions/scotland.html">Scotland</a></li>
-        <li><a href="/regions/wales.html">Wales</a></li>
-        <li><a href="/regions/northern-ireland.html">Northern Ireland</a></li>
-        <li><a href="/#destinations">UK Cities</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Things to Do</h4><ul>
-        <li><a href="/categories/attractions.html">Attractions</a></li>
-        <li><a href="/categories/free-things-to-do.html">Free Things to Do</a></li>
-        <li><a href="/categories/family-days-out.html">Family Days Out</a></li>
-        <li><a href="/categories/day-trips.html">Day Trips</a></li>
-        <li><a href="/categories/museums.html">Museums</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Travel</h4><ul>
-        <li><a href="/travel/travel-tips.html">Travel Tips</a></li>
-        <li><a href="/travel/getting-around.html">Getting Around</a></li>
-        <li><a href="/categories/where-to-stay.html">Where to Stay</a></li>
-        <li><a href="/categories/food-restaurants.html">Food &amp; Restaurants</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>Company</h4><ul>
-        <li><a href="/legal/about.html">About Us</a></li>
-        <li><a href="/legal/contact.html">Contact</a></li>
-        <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/legal/terms.html">Terms &amp; Conditions</a></li>
-        <li><a href="/legal/cookie-policy.html">Cookie Policy</a></li>
-      </ul></div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/regions/england.html">England</a></li>
+          <li><a href="/regions/scotland.html">Scotland</a></li>
+          <li><a href="/regions/wales.html">Wales</a></li>
+          <li><a href="/regions/northern-ireland.html">Northern Ireland</a></li>
+          <li><a href="/index.html#destinations">UK Cities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Things to Do</h4>
+        <ul>
+          <li><a href="/categories/attractions.html">Attractions</a></li>
+          <li><a href="/categories/free-things-to-do.html">Free Things to Do</a></li>
+          <li><a href="/categories/family-days-out.html">Family Days Out</a></li>
+          <li><a href="/categories/day-trips.html">Day Trips</a></li>
+          <li><a href="/categories/museums.html">Museums</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Travel</h4>
+        <ul>
+          <li><a href="/travel/travel-tips.html">Travel Tips</a></li>
+          <li><a href="/travel/getting-around.html">Getting Around</a></li>
+          <li><a href="/categories/where-to-stay.html">Where to Stay</a></li>
+          <li><a href="/categories/food-restaurants.html">Food &amp; Restaurants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/legal/about.html">About Us</a></li>
+          <li><a href="/legal/contact.html">Contact</a></li>
+          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/legal/terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="/legal/cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Visitor Guide UK. All rights reserved.</span>
-      <span>An independent UK visitor information guide · Photos via Wikipedia (CC BY-SA)</span>
+      <span>An independent UK visitor information guide</span>
     </div>
   </div>
 </footer>
@@ -387,117 +458,48 @@
 <script>
 (function(){
   "use strict";
-
-  var PLACES = [
-    {kicker:"Capital", name:"Belfast", desc:"A city reinvented around its Titanic heritage, with a growing food and cultural scene.", wiki:"Belfast"},
-    {kicker:"Icon", name:"Giant's Causeway", desc:"Thousands of interlocking hexagonal basalt columns formed by ancient volcanic activity.", wiki:"Giant's Causeway"},
-    {kicker:"Route", name:"Causeway Coastal Route", desc:"One of the world's great coastal drives, linking cliffs, castles and villages along the north coast.", wiki:"Causeway Coastal Route"},
-    {kicker:"Museum", name:"Titanic Belfast", desc:"An award-winning museum on the site where the Titanic was built and launched.", wiki:"Titanic Belfast"},
-    {kicker:"National Park", name:"Mourne Mountains", desc:"Granite peaks in County Down that inspired the landscape of Narnia's author, C.S. Lewis.", wiki:"Mourne Mountains"},
-    {kicker:"City", name:"Derry~Londonderry", desc:"One of the best-preserved walled cities in Europe, with a complete circuit of 17th-century walls.", wiki:"Derry"}
-  ];
-
-  var FREE = [
-    {name:"Giant's Causeway Stones", desc:"Free access to the rock formations via the coastal path, without visiting the paid centre."},
-    {name:"Titanic Quarter Walk", desc:"The waterfront district around Titanic Belfast is free to explore on foot."},
-    {name:"Ulster Museum, Belfast", desc:"A free national museum covering art, history and natural sciences."},
-    {name:"Belfast City Hall", desc:"Free guided tours of the grand civic building are often available."},
-    {name:"Derry City Walls", desc:"A free walking route around the complete 17th-century walls encircling the old city."},
-    {name:"St George's Market, Belfast", desc:"Browsing the historic Victorian market is free, even without buying anything."}
-  ];
-
-  var TIPS = [
-    {name:"Hire a Car for the Coast Road", desc:"The Causeway Coastal Route is best explored at your own pace by car, though tour buses run from Belfast."},
-    {name:"Book Titanic Belfast Ahead", desc:"Timed tickets help avoid queues, especially during school holidays."},
-    {name:"Pack Wind- and Waterproof Layers", desc:"The north coast can be windy and changeable even in summer months."},
-    {name:"Combine With a Game of Thrones Tour", desc:"Several coastal filming locations are covered by dedicated day tours from Belfast."}
-  ];
-
-  var ICONS = {
-    car:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-6h14l2 6"/><rect x="2" y="13" width="20" height="6" rx="2"/><circle cx="7" cy="19" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="19" r="1.4" fill="currentColor" stroke="none"/></svg>',
-    ticket:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v1a2 2 0 0 0 0 4v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1a2 2 0 0 0 0-4V9Z"/></svg>',
-    cloud:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18H7a4 4 0 1 1 .7-7.9A5.5 5.5 0 0 1 18 12.1 3.5 3.5 0 0 1 17 18Z"/></svg>',
-    film:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="7" y1="5" x2="7" y2="19"/><line x1="17" y1="5" x2="17" y2="19"/><line x1="3" y1="9" x2="7" y2="9"/><line x1="3" y1="14" x2="7" y2="14"/><line x1="17" y1="9" x2="21" y2="9"/><line x1="17" y1="14" x2="21" y2="14"/></svg>'
-  };
-  var TIP_ICON_ORDER = ["car","ticket","cloud","film"];
-
-  function el(html){ var t = document.createElement("template"); t.innerHTML = html.trim(); return t.content.firstElementChild; }
-
-  function renderPlaces(){
-    var grid = document.getElementById("placesGrid");
-    PLACES.forEach(function(p){
-      grid.appendChild(el(
-        '<div class="place-card">' +
-          '<div class="photo" data-wiki="' + p.wiki + '"><img alt="' + p.name + ', Northern Ireland" loading="lazy"><span class="credit">via Wikipedia</span></div>' +
-          '<div class="place-body"><span class="kicker">' + p.kicker + '</span><h3>' + p.name + '</h3><p>' + p.desc + '</p></div>' +
-        '</div>'
-      ));
-    });
+  var wikiCache = {};
+  function fetchWikiImage(title, px){
+    if (wikiCache[title]) return wikiCache[title];
+    var p = fetch("https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(title) +
+      "&prop=pageimages&format=json&pithumbsize=" + (px || 1000) + "&origin=*")
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        var pages = data.query && data.query.pages;
+        if (!pages) return null;
+        var page = pages[Object.keys(pages)[0]];
+        return (page && page.thumbnail && page.thumbnail.source) || null;
+      })
+      .catch(function(){ return null; });
+    wikiCache[title] = p;
+    return p;
   }
-
-  function renderFree(){
-    var list = document.getElementById("freeList");
-    FREE.forEach(function(f, i){
-      list.appendChild(el('<div class="list-item"><span class="num">0' + (i+1) + '</span><div><h4>' + f.name + '</h4><p>' + f.desc + '</p></div></div>'));
+  document.querySelectorAll("[data-wiki]").forEach(function(node){
+    var title = node.getAttribute("data-wiki");
+    var img = node.querySelector("img");
+    if (!img) return;
+    fetchWikiImage(title, node.hasAttribute("data-eager") ? 1600 : 800).then(function(url){
+      if (!url) return;
+      img.src = url;
+      img.onload = function(){ img.classList.add("loaded"); };
     });
-  }
-
-  function renderTips(){
-    var grid = document.getElementById("tipsGrid");
-    TIPS.forEach(function(t, i){
-      grid.appendChild(el('<div class="tip-item"><span class="icon">' + ICONS[TIP_ICON_ORDER[i]] + '</span><h3>' + t.name + '</h3><p>' + t.desc + '</p></div>'));
-    });
-  }
-
-  function hydrateAllPhotos(){
-    var nodes = document.querySelectorAll("[data-wiki]");
-    var titles = []; var titleMap = {};
-    nodes.forEach(function(node){
-      var title = node.getAttribute("data-wiki");
-      if (titles.indexOf(title) === -1) titles.push(title);
-      titleMap[title] = titleMap[title] || [];
-      titleMap[title].push(node);
-    });
-    if (!titles.length) return;
-    var url = "https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(titles.join("|")) + "&prop=pageimages&format=json&pithumbsize=1200&redirects=1&origin=*";
-    fetch(url).then(function(r){ return r.json(); }).then(function(data){
-      var pages = data.query && data.query.pages;
-      if (!pages) return;
-      var canonicalToOriginal = {};
-      titles.forEach(function(t){ canonicalToOriginal[t] = t; });
-      (data.query.normalized || []).forEach(function(n){ canonicalToOriginal[n.to] = canonicalToOriginal[n.from] || n.from; });
-      (data.query.redirects || []).forEach(function(r){ canonicalToOriginal[r.to] = canonicalToOriginal[r.from] || r.from; });
-      Object.keys(pages).forEach(function(key){
-        var page = pages[key];
-        var thumb = page.thumbnail && page.thumbnail.source;
-        if (!thumb) return;
-        var originalTitle = canonicalToOriginal[page.title] || page.title;
-        var targetNodes = titleMap[originalTitle];
-        if (!targetNodes) return;
-        targetNodes.forEach(function(node){
-          var img = node.querySelector("img");
-          if (!img) return;
-          img.src = thumb;
-          img.loading = node.hasAttribute("data-eager") ? "eager" : "lazy";
-          img.onload = function(){ img.classList.add("loaded"); };
-        });
-      });
-    }).catch(function(){});
-  }
-
-  renderPlaces();
-  renderFree();
-  renderTips();
-  hydrateAllPhotos();
-
+  });
   var header = document.getElementById("siteHeader");
   window.addEventListener("scroll", function(){ header.classList.toggle("scrolled", window.scrollY > 8); }, {passive:true});
-
   var mobileNav = document.getElementById("mobileNav");
-  document.getElementById("menuOpenBtn").addEventListener("click", function(){ mobileNav.classList.add("open"); document.body.style.overflow = "hidden"; });
+  document.getElementById("menuOpenBtn").addEventListener("click", function(){
+    mobileNav.classList.add("open"); document.body.style.overflow = "hidden";
+  });
   document.getElementById("menuCloseBtn").addEventListener("click", closeMenu);
   mobileNav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMenu); });
   function closeMenu(){ mobileNav.classList.remove("open"); document.body.style.overflow = ""; }
+  document.querySelectorAll(".faq-item").forEach(function(item){
+    item.querySelector(".faq-q").addEventListener("click", function(){
+      var wasOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(function(o){ o.classList.remove("open"); });
+      if (!wasOpen) item.classList.add("open");
+    });
+  });
 })();
 </script>
 </body>
