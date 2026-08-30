@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) with Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+
+  var vgukConsent = null;
+  try { vgukConsent = localStorage.getItem('vguk_cookie_consent'); } catch(e) {}
+  var vgukGranted = (vgukConsent === 'accepted') ? 'granted' : 'denied';
+
+  gtag('consent', 'default', {
+    'ad_storage': vgukGranted,
+    'ad_user_data': vgukGranted,
+    'ad_personalization': vgukGranted,
+    'analytics_storage': vgukGranted
+  });
+
+  gtag('js', new Date());
+  gtag('config', 'G-NZRW83LDG7');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRW83LDG7"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Visitor Guide UK</title>
+<meta name="description" content="Travel tips, destination guides, and practical advice for exploring the United Kingdom — from the Visitor Guide UK blog.">
+<link rel="canonical" href="https://www.visitorguideuk.com/blog/index.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy-900:#0B1B33; --navy-800:#122A4A; --navy-700:#1B3A61;
+    --red-600:#B23A32; --red-700:#96302A;
+    --paper:#F5F5F2; --paper-dim:#ECEBE6; --white:#FFFFFF; --ink:#16212E;
+    --slate:#5B6472; --slate-light:#8892A0; --line:#DFDFD9; --line-dark:rgba(255,255,255,.14);
+    --radius-lg:22px; --radius-md:14px; --radius-sm:9px;
+    --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 12px 28px -14px rgba(15,23,42,.18);
+    --shadow-card-hover:0 1px 2px rgba(15,23,42,.05), 0 24px 40px -16px rgba(15,23,42,.28);
+    --container:1240px; --serif:'Newsreader', Georgia, serif; --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  img{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  ul{list-style:none;}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; color:var(--navy-900); line-height:1.15; letter-spacing:-.01em;}
+  .container{max-width:var(--container); margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:2px solid var(--red-600); outline-offset:3px;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--red-600); font-weight:500; margin-bottom:14px;}
+  .eyebrow::before{content:""; width:16px; height:1px; background:var(--red-600);}
+  section{padding:56px 0;}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 26px; border-radius:100px; font-weight:600; font-size:14.5px; border:1px solid transparent; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;}
+  .btn-primary{background:var(--red-600); color:#fff;}
+  .btn-primary:hover{background:var(--red-700); box-shadow:0 8px 20px -8px rgba(178,58,50,.6);}
+  .btn-outline{background:#fff; color:var(--navy-900); border-color:var(--line);}
+  .btn-outline:hover{border-color:var(--navy-900);}
+
+  header.site-header{position:sticky; top:0; z-index:100; background:rgba(245,245,242,.86); backdrop-filter:blur(10px) saturate(1.1); border-bottom:1px solid transparent; transition:border-color .2s ease, box-shadow .2s ease;}
+  header.site-header.scrolled{border-color:var(--line); box-shadow:0 4px 20px -12px rgba(15,23,42,.25);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; height:78px; gap:24px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:600; font-size:19px; color:var(--navy-900);}
+  .logo .mark{width:34px; height:34px; border-radius:8px; background:var(--navy-900); display:flex; align-items:center; justify-content:center; position:relative; flex:none;}
+  .logo .mark span{color:#fff; font-family:var(--serif); font-size:17px; font-style:italic;}
+  .logo .mark::after{content:""; position:absolute; width:5px; height:5px; border-radius:50%; background:var(--red-600); top:-2px; right:-2px;}
+  .logo small{display:block; font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--slate); font-weight:500; text-transform:uppercase; margin-top:1px;}
+  .main-nav{display:flex; align-items:center; gap:32px;}
+  .main-nav a{font-size:14.5px; font-weight:500; color:var(--navy-800); position:relative; padding:6px 0;}
+  .main-nav a::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--red-600); transform:scaleX(0); transform-origin:left; transition:transform .18s ease;}
+  .main-nav a:hover::after, .main-nav a.active::after{transform:scaleX(1);}
+  .header-actions{display:flex; align-items:center; gap:14px;}
+  .icon-btn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; display:flex; align-items:center; justify-content:center; color:var(--navy-800);}
+  .hamburger{display:none; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; align-items:center; justify-content:center;}
+  .mobile-nav{position:fixed; inset:0; background:var(--navy-900); z-index:200; transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column; padding:24px 24px 40px;}
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:40px;}
+  .mobile-nav-top .logo{color:#fff;}
+  .mobile-nav-top .logo .mark{background:#fff;}
+  .mobile-nav-top .logo .mark span{color:var(--navy-900);}
+  .mobile-nav a{display:block; color:#fff; font-family:var(--serif); font-size:26px; padding:14px 0; border-bottom:1px solid var(--line-dark);}
+  .mobile-nav .btn{margin-top:28px; width:100%;}
+  .close-btn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line-dark); color:#fff; display:flex; align-items:center; justify-content:center; background:transparent;}
+
+  .breadcrumb{padding:18px 0 0; font-family:var(--mono); font-size:11.5px; color:var(--slate-light); display:flex; gap:8px; flex-wrap:wrap;}
+  .breadcrumb a{color:var(--slate);}
+  .breadcrumb a:hover{color:var(--red-600);}
+  .breadcrumb span[aria-current]{color:var(--navy-900);}
+
+  .page-hero{padding:32px 0 8px; max-width:760px;}
+  .page-hero h1{font-size:clamp(32px,4.8vw,50px); margin-bottom:12px;}
+  .page-hero p{font-size:16.5px; color:var(--slate); line-height:1.7;}
+
+  .search-row{display:flex; gap:10px; margin:28px 0 8px; max-width:520px;}
+  .search-row input{flex:1; border:1px solid var(--line); background:#fff; border-radius:100px; padding:13px 20px; font-size:14.5px; font-family:inherit; outline:none;}
+  .search-row input:focus{border-color:var(--navy-900);}
+
+  .filter-row{display:flex; gap:8px; flex-wrap:wrap; margin:20px 0 8px;}
+  .filter-chip{font-size:13px; padding:8px 16px; border-radius:100px; border:1px solid var(--line); background:#fff; color:var(--navy-800); cursor:pointer; transition:all .15s ease;}
+  .filter-chip.active{background:var(--navy-900); color:#fff; border-color:var(--navy-900);}
+  .filter-chip:hover:not(.active){border-color:var(--navy-900);}
+
+  .post-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:8px;}
+  .post-card{background:#fff; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-card); transition:box-shadow .2s ease, transform .2s ease; display:flex; flex-direction:column;}
+  .post-card:hover{box-shadow:var(--shadow-card-hover); transform:translateY(-3px);}
+  .post-card .photo{position:relative; overflow:hidden; background:linear-gradient(135deg,#DADCE2,#EDEEF1); aspect-ratio:16/10;}
+  .post-card .photo::before{content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(15,23,42,.035) 0 1px, transparent 1px 14px);}
+  .post-card .photo img{width:100%; height:100%; object-fit:cover; position:relative; z-index:1; opacity:0; transition:opacity .5s ease;}
+  .post-card .photo img.loaded{opacity:1;}
+  .post-body{padding:18px 20px 22px; display:flex; flex-direction:column; flex:1;}
+  .post-meta{display:flex; align-items:center; gap:9px; font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--slate-light); margin-bottom:10px;}
+  .post-meta .dot{width:3px; height:3px; border-radius:50%; background:var(--slate-light);}
+  .post-body h3{font-size:18px; margin-bottom:8px; line-height:1.3;}
+  .post-body p{color:var(--slate); font-size:13.6px; line-height:1.55; flex:1; margin-bottom:14px;}
+  .post-body .read-more{font-size:13px; font-weight:600; color:var(--red-600); display:inline-flex; align-items:center; gap:5px;}
+
+  .load-more-row{text-align:center; margin-top:36px;}
+  .empty-state{text-align:center; padding:64px 24px; color:var(--slate);}
+  .empty-state p{font-size:15px; max-width:420px; margin:0 auto;}
+
+  footer{background:var(--navy-900); color:#C7D0DE; padding:64px 0 28px;}
+  .footer-top{display:grid; grid-template-columns:1.5fr repeat(4,1fr); gap:32px; padding-bottom:48px; border-bottom:1px solid var(--line-dark);}
+  .footer-brand .logo{color:#fff;}
+  .footer-brand .logo .mark{background:#fff;}
+  .footer-brand .logo .mark span{color:var(--navy-900);}
+  .footer-brand p{margin-top:14px; font-size:13.8px; color:#93A1B7; max-width:230px; line-height:1.6;}
+  .footer-col h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:#93A1B7; font-weight:500; margin-bottom:16px;}
+  .footer-col ul li{margin-bottom:11px;}
+  .footer-col a{font-size:14px; color:#DCE3EE;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12.8px; color:#7F8CA1;}
+
+  @media (max-width:1000px){
+    .post-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-top{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:760px){
+    .main-nav, .header-actions .icon-btn{display:none;}
+    .header-actions .btn{display:none;}
+    .hamburger{display:flex;}
+    section{padding:40px 0;}
+    .post-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
+    .footer-brand{grid-column:1 / -1;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-row">
+    <a href="/index.html" class="logo">
+      <span class="mark"><span>V</span></span>
+      <span>Visitor Guide UK<small>United Kingdom Travel Guide</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/index.html">Home</a>
+      <a href="/index.html#regions">Places to Visit</a>
+      <a href="/index.html#looking-for">Things to Do</a>
+      <a href="/index.html#destinations">UK Cities</a>
+      <a href="/blog/index.html" class="active">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" aria-label="Search" onclick="window.location.href='/index.html#top'">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <a href="/index.html#regions" class="btn btn-primary">Explore UK</a>
+      <button class="hamburger" id="menuOpenBtn" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top">
+    <a href="/index.html" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+    <button class="close-btn" id="menuCloseBtn" aria-label="Close menu">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+    </button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="/index.html">Home</a>
+    <a href="/index.html#regions">Places to Visit</a>
+    <a href="/index.html#looking-for">Things to Do</a>
+    <a href="/index.html#destinations">UK Cities</a>
+    <a href="/blog/index.html">Blog</a>
+  </nav>
+  <a href="/index.html#regions" class="btn btn-primary">Explore UK</a>
+</div>
+
+<main id="top">
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/index.html">Home</a><span>/</span>
+    <span aria-current="page">Blog</span>
+  </nav>
+
+  <div class="page-hero">
+    <p class="eyebrow">Visitor Guide UK Blog</p>
+    <h1>The Blog</h1>
+    <p>Travel tips, destination deep-dives and practical advice for exploring the United Kingdom, updated regularly.</p>
+  </div>
+
+  <div class="search-row">
+    <input type="text" id="blogSearch" placeholder="Search blog posts…" autocomplete="off">
+  </div>
+
+  <div class="filter-row" id="filterRow"></div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="post-grid" id="postGrid"></div>
+    <div class="empty-state" id="emptyState" style="display:none;">
+      <p>No blog posts match your search yet. Try a different keyword, or check back soon — new posts are added regularly.</p>
+    </div>
+    <div class="load-more-row" id="loadMoreRow" style="display:none;">
+      <button class="btn btn-outline" id="loadMoreBtn">Load More Posts</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/index.html" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+        <p>Your practical guide to exploring the United Kingdom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/regions/england.html">England</a></li>
+          <li><a href="/regions/scotland.html">Scotland</a></li>
+          <li><a href="/regions/wales.html">Wales</a></li>
+          <li><a href="/regions/northern-ireland.html">Northern Ireland</a></li>
+          <li><a href="/index.html#destinations">UK Cities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Things to Do</h4>
+        <ul>
+          <li><a href="/categories/attractions.html">Attractions</a></li>
+          <li><a href="/categories/free-things-to-do.html">Free Things to Do</a></li>
+          <li><a href="/categories/family-days-out.html">Family Days Out</a></li>
+          <li><a href="/categories/day-trips.html">Day Trips</a></li>
+          <li><a href="/categories/museums.html">Museums</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Travel</h4>
+        <ul>
+          <li><a href="/categories/travel-tips.html">Travel Tips</a></li>
+          <li><a href="/travel/getting-around.html">Getting Around</a></li>
+          <li><a href="/categories/where-to-stay.html">Where to Stay</a></li>
+          <li><a href="/categories/food-restaurants.html">Food &amp; Restaurants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/legal/about.html">About Us</a></li>
+          <li><a href="/legal/contact.html">Contact</a></li>
+          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/legal/terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="/legal/cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Visitor Guide UK. All rights reserved.</span>
+      <span>An independent UK visitor information guide</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/cookie-consent.js" defer></script>
+<script>
+(function(){
+  "use strict";
+
+  var PAGE_SIZE = 12;
+  var allPosts = [];
+  var filteredPosts = [];
+  var visibleCount = PAGE_SIZE;
+  var activeCategory = "All";
+
+  var grid = document.getElementById("postGrid");
+  var emptyState = document.getElementById("emptyState");
+  var loadMoreRow = document.getElementById("loadMoreRow");
+  var loadMoreBtn = document.getElementById("loadMoreBtn");
+  var searchInput = document.getElementById("blogSearch");
+  var filterRow = document.getElementById("filterRow");
+
+  function el(html){
+    var t = document.createElement("template");
+    t.innerHTML = html.trim();
+    return t.content.firstElementChild;
+  }
+
+  function renderFilters(){
+    var cats = ["All"];
+    allPosts.forEach(function(p){
+      if (p.category && cats.indexOf(p.category) === -1) cats.push(p.category);
+    });
+    if (cats.length <= 1) { filterRow.style.display = "none"; return; }
+    filterRow.innerHTML = "";
+    cats.forEach(function(cat){
+      var chip = el('<button class="filter-chip' + (cat === activeCategory ? " active" : "") + '">' + cat + '</button>');
+      chip.addEventListener("click", function(){
+        activeCategory = cat;
+        visibleCount = PAGE_SIZE;
+        renderFilters();
+        applyFilters();
+      });
+      filterRow.appendChild(chip);
+    });
+  }
+
+  function applyFilters(){
+    var q = searchInput.value.trim().toLowerCase();
+    filteredPosts = allPosts.filter(function(p){
+      var matchesCategory = activeCategory === "All" || p.category === activeCategory;
+      var matchesSearch = !q || (p.title + " " + (p.excerpt||"") + " " + (p.category||"")).toLowerCase().indexOf(q) !== -1;
+      return matchesCategory && matchesSearch;
+    });
+    render();
+  }
+
+  function render(){
+    grid.innerHTML = "";
+    var toShow = filteredPosts.slice(0, visibleCount);
+
+    if (!toShow.length){
+      emptyState.style.display = "block";
+      loadMoreRow.style.display = "none";
+      return;
+    }
+    emptyState.style.display = "none";
+
+    toShow.forEach(function(post){
+      var card = el(
+        '<a class="post-card" href="' + post.url + '">' +
+          '<div class="photo" data-wiki="' + (post.image || "") + '"><img alt="' + post.title + '"></div>' +
+          '<div class="post-body">' +
+            '<div class="post-meta"><span>' + (post.category || "Guide") + '</span><span class="dot"></span><span>' + (post.date || "") + '</span></div>' +
+            '<h3>' + post.title + '</h3>' +
+            '<p>' + (post.excerpt || "") + '</p>' +
+            '<span class="read-more">Read More →</span>' +
+          '</div>' +
+        '</a>'
+      );
+      grid.appendChild(card);
+    });
+
+    loadMoreRow.style.display = (filteredPosts.length > visibleCount) ? "block" : "none";
+    hydratePhotos();
+  }
+
+  function hydratePhotos(){
+    var wikiCache = {};
+    function fetchWikiImage(title, px){
+      if (!title) return Promise.resolve(null);
+      if (wikiCache[title]) return wikiCache[title];
+      var p = fetch("https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(title) +
+        "&prop=pageimages&format=json&pithumbsize=" + (px || 800) + "&origin=*")
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          var pages = data.query && data.query.pages;
+          if (!pages) return null;
+          var page = pages[Object.keys(pages)[0]];
+          return (page && page.thumbnail && page.thumbnail.source) || null;
+        })
+        .catch(function(){ return null; });
+      wikiCache[title] = p;
+      return p;
+    }
+    document.querySelectorAll("[data-wiki]").forEach(function(node){
+      var title = node.getAttribute("data-wiki");
+      var img = node.querySelector("img");
+      if (!img || !title) return;
+      fetchWikiImage(title).then(function(url){
+        if (!url) return;
+        img.src = url;
+        img.onload = function(){ img.classList.add("loaded"); };
+      });
+    });
+  }
+
+  loadMoreBtn.addEventListener("click", function(){
+    visibleCount += PAGE_SIZE;
+    render();
+  });
+
+  searchInput.addEventListener("input", function(){
+    visibleCount = PAGE_SIZE;
+    applyFilters();
+  });
+
+  fetch("/blog/posts.json")
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      allPosts = (data || []).slice().sort(function(a, b){
+        return new Date(b.dateISO || b.date || 0) - new Date(a.dateISO || a.date || 0);
+      });
+      filteredPosts = allPosts;
+      renderFilters();
+      render();
+    })
+    .catch(function(){
+      emptyState.style.display = "block";
+    });
+
+  var header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", function(){ header.classList.toggle("scrolled", window.scrollY > 8); }, {passive:true});
+  var mobileNav = document.getElementById("mobileNav");
+  document.getElementById("menuOpenBtn").addEventListener("click", function(){
+    mobileNav.classList.add("open"); document.body.style.overflow = "hidden";
+  });
+  document.getElementById("menuCloseBtn").addEventListener("click", closeMenu);
+  mobileNav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMenu); });
+  function closeMenu(){ mobileNav.classList.remove("open"); document.body.style.overflow = ""; }
+})();
+</script>
+</body>
+</html>
