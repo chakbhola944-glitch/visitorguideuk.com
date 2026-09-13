@@ -407,6 +407,7 @@
       <a href="#looking-for">Things to Do</a>
       <a href="#destinations">UK Cities</a>
       <a href="#plan">Travel Tips</a>
+      <a href="/travel/route-planner.html">Routes</a>
       <a href="/blog/index.html">Blog</a>
     </nav>
     <div class="header-actions">
@@ -435,6 +436,7 @@
     <a href="#looking-for" class="mnav-link">Things to Do</a>
     <a href="#destinations" class="mnav-link">UK Cities</a>
     <a href="#plan" class="mnav-link">Travel Tips</a>
+    <a href="/travel/route-planner.html" class="mnav-link">Routes</a>
     <a href="/blog/index.html" class="mnav-link">Blog</a>
   </nav>
   <a href="#regions" class="btn btn-primary mnav-link">Explore UK</a>
@@ -444,7 +446,7 @@
 
 <!-- ============================= HERO ============================= -->
 <section class="hero">
-  <div class="hero-bg" data-wiki="Tower Bridge" data-eager="true">
+  <div class="hero-bg" data-wiki="Tower Bridge" data-eager="true" id="heroBg">
     <img alt="Tower Bridge spanning the River Thames in London" id="heroImg">
   </div>
   <div class="container hero-inner">
@@ -785,7 +787,7 @@
   function fetchWikiImage(title, px){
     if (wikiCache[title]) return wikiCache[title];
     var p = fetch("https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(title) +
-      "&prop=pageimages&format=json&pithumbsize=" + (px || 1000) + "&origin=*")
+      "&prop=pageimages&format=json&pithumbsize=" + (px || 1000) + "&redirects=1&origin=*")
       .then(function(r){ return r.json(); })
       .then(function(data){
         var pages = data.query && data.query.pages;
@@ -810,6 +812,38 @@
         img.onload = function(){ img.classList.add("loaded"); };
       });
     });
+  }
+
+  /* ---------------- ROTATING HERO IMAGE ---------------- */
+  var HERO_ROTATION = [
+    {wiki:"Tower Bridge", alt:"Tower Bridge spanning the River Thames, London"},
+    {wiki:"Edinburgh Castle", alt:"Edinburgh Castle, Scotland"},
+    {wiki:"Roman Baths (Bath, Somerset)", alt:"The Roman Baths, Bath, England"},
+    {wiki:"York Minster", alt:"York Minster, York, England"},
+    {wiki:"Stonehenge", alt:"Stonehenge, Wiltshire, England"},
+    {wiki:"Giant's Causeway", alt:"The Giant's Causeway, Northern Ireland"},
+    {wiki:"Windsor Castle", alt:"Windsor Castle, England"},
+    {wiki:"Snowdonia", alt:"Snowdonia National Park, Wales"}
+  ];
+  function startHeroRotation(){
+    var img = document.getElementById("heroImg");
+    if (!img) return;
+    var current = 0;
+
+    function showNext(){
+      current = (current + 1) % HERO_ROTATION.length;
+      var next = HERO_ROTATION[current];
+      fetchWikiImage(next.wiki, 1600).then(function(url){
+        if (!url) return;
+        img.classList.remove("loaded");
+        setTimeout(function(){
+          img.src = url;
+          img.alt = next.alt;
+          img.onload = function(){ img.classList.add("loaded"); };
+        }, 600);
+      });
+    }
+    setInterval(showNext, 7000);
   }
 
   /* ---------------- RENDER CARDS ---------------- */
@@ -906,6 +940,7 @@
   renderArticles();
   renderPlan();
   hydratePhotos(document);
+  startHeroRotation();
 
   /* ---------------- HEADER SCROLL STATE ---------------- */
   var header = document.getElementById("siteHeader");
