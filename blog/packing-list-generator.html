@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) with Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  var vgukConsent = null;
+  try { vgukConsent = localStorage.getItem('vguk_cookie_consent'); } catch(e) {}
+  var vgukGranted = (vgukConsent === 'accepted') ? 'granted' : 'denied';
+  gtag('consent', 'default', {
+    'ad_storage': vgukGranted, 'ad_user_data': vgukGranted,
+    'ad_personalization': vgukGranted, 'analytics_storage': vgukGranted
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-NZRW83LDG7');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRW83LDG7"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Packing List Generator — Build Your Trip Checklist | Visitor Guide UK</title>
+<meta name="description" content="Generate a personalised UK packing checklist based on your travel month, trip length and activities — city sightseeing, hiking, family trips and more.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.visitorguideuk.com/travel/packing-list-generator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Visitor Guide UK">
+<meta property="og:title" content="UK Packing List Generator — Build Your Trip Checklist">
+<meta property="og:description" content="Generate a personalised UK packing checklist based on your travel month, trip length and activities.">
+<meta property="og:url" content="https://www.visitorguideuk.com/travel/packing-list-generator.html">
+<meta property="og:locale" content="en_GB">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UK Packing List Generator — Build Your Trip Checklist">
+<meta name="twitter:description" content="Generate a personalised UK packing checklist based on your travel month, trip length and activities.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "UK Packing List Generator",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "Any",
+  "description": "Generate a personalised UK packing checklist based on travel month, trip length and activities.",
+  "url": "https://www.visitorguideuk.com/travel/packing-list-generator.html",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.visitorguideuk.com/"},
+    {"@type":"ListItem","position":2,"name":"Packing List Generator","item":"https://www.visitorguideuk.com/travel/packing-list-generator.html"}
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --navy-900:#0B1B33; --navy-800:#122A4A; --navy-700:#1B3A61;
+    --red-600:#B23A32; --red-700:#96302A;
+    --paper:#F5F5F2; --paper-dim:#ECEBE6; --white:#FFFFFF; --ink:#16212E;
+    --slate:#5B6472; --slate-light:#8892A0; --line:#DFDFD9; --line-dark:rgba(255,255,255,.14);
+    --radius-lg:22px; --radius-md:14px; --radius-sm:9px;
+    --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 12px 28px -14px rgba(15,23,42,.18);
+    --container:1240px;
+    --serif:'Newsreader', Georgia, serif; --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  img{display:block; max-width:100%;}
+  a{color:var(--red-600); text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  ul{list-style:none;}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; color:var(--navy-900); line-height:1.2; letter-spacing:-.01em;}
+  .container{max-width:var(--container); margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:2px solid var(--red-600); outline-offset:3px;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--red-600); font-weight:500; margin-bottom:14px;}
+  .eyebrow::before{content:""; width:16px; height:1px; background:var(--red-600);}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 26px; border-radius:100px; font-weight:600; font-size:14.5px; border:1px solid transparent; text-decoration:none; transition:background .15s ease;}
+  .btn-primary{background:var(--red-600); color:#fff;}
+  .btn-primary:hover{background:var(--red-700);}
+
+  header.site-header{position:sticky; top:0; z-index:100; background:rgba(245,245,242,.86); backdrop-filter:blur(10px) saturate(1.1); border-bottom:1px solid transparent; transition:border-color .2s ease, box-shadow .2s ease;}
+  header.site-header.scrolled{border-color:var(--line); box-shadow:0 4px 20px -12px rgba(15,23,42,.25);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; height:78px; gap:24px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:600; font-size:19px; color:var(--navy-900); text-decoration:none;}
+  .logo .mark{width:34px; height:34px; border-radius:8px; background:var(--navy-900); display:flex; align-items:center; justify-content:center; position:relative; flex:none;}
+  .logo .mark span{color:#fff; font-family:var(--serif); font-size:17px; font-style:italic;}
+  .logo .mark::after{content:""; position:absolute; width:5px; height:5px; border-radius:50%; background:var(--red-600); top:-2px; right:-2px;}
+  .logo small{display:block; font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--slate); font-weight:500; text-transform:uppercase; margin-top:1px;}
+  .main-nav{display:flex; align-items:center; gap:32px;}
+  .main-nav a{font-size:14.5px; font-weight:500; color:var(--navy-800); text-decoration:none; position:relative; padding:6px 0;}
+  .main-nav a.active::after, .main-nav a:hover::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--red-600);}
+  .header-actions{display:flex; align-items:center; gap:14px;}
+  .hamburger{display:none; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; align-items:center; justify-content:center;}
+  .mobile-nav{position:fixed; inset:0; background:var(--navy-900); z-index:200; transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column; padding:24px 24px 40px;}
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:40px;}
+  .mobile-nav-top .logo{color:#fff; text-decoration:none;}
+  .mobile-nav-top .logo .mark{background:#fff;}
+  .mobile-nav-top .logo .mark span{color:var(--navy-900);}
+  .mobile-nav a{display:block; color:#fff; font-family:var(--serif); font-size:24px; padding:12px 0; border-bottom:1px solid var(--line-dark); text-decoration:none;}
+  .mobile-nav .btn{margin-top:28px; width:100%;}
+  .close-btn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line-dark); color:#fff; display:flex; align-items:center; justify-content:center; background:transparent;}
+
+  .breadcrumb{padding:16px 0; font-family:var(--mono); font-size:12px; color:var(--slate); text-transform:uppercase; letter-spacing:.04em;}
+  .breadcrumb a{color:var(--slate); text-decoration:none;}
+  .breadcrumb a:hover{color:var(--red-600);}
+  .breadcrumb span{margin:0 8px; color:var(--slate-light);}
+
+  .page-head{padding:8px 0 30px; text-align:center;}
+  .page-head h1{font-size:clamp(28px,4.4vw,42px); max-width:760px; margin:0 auto 12px;}
+  .page-head p{color:var(--slate); font-size:16px; max-width:600px; margin:0 auto;}
+
+  .gen-wrap{max-width:820px; margin:0 auto; background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:36px 40px; box-shadow:var(--shadow-card);}
+  .gen-field{margin-bottom:24px;}
+  .gen-field label{display:block; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--slate); margin-bottom:10px;}
+  .gen-select, .gen-number{width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius-sm); font-family:var(--sans); font-size:15px; color:var(--ink); background:var(--paper);}
+  .gen-chip-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .gen-chip{display:flex; align-items:center; gap:10px; padding:13px 16px; border:1px solid var(--line); border-radius:var(--radius-sm); background:var(--paper); font-size:14px; color:var(--navy-800); cursor:pointer;}
+  .gen-chip input{accent-color:var(--red-600); width:16px; height:16px;}
+  .gen-chip.checked{border-color:var(--red-600); background:var(--paper-dim);}
+  .gen-btn{width:100%; margin-top:6px; padding:15px; border:none; border-radius:100px; background:var(--red-600); color:#fff; font-weight:600; font-size:15px;}
+  .gen-btn:hover{background:var(--red-700);}
+
+  .result-wrap{max-width:820px; margin:32px auto 0; display:none;}
+  .result-wrap.show{display:block;}
+  .result-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:12px;}
+  .result-top h2{font-size:22px;}
+  .print-btn{padding:10px 20px; border-radius:100px; border:1px solid var(--line); background:#fff; font-size:13.5px; font-weight:500; color:var(--navy-800);}
+  .cat-block{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:20px 24px; margin-bottom:16px;}
+  .cat-block h3{font-size:15px; font-family:var(--mono); text-transform:uppercase; letter-spacing:.05em; color:var(--red-600); margin-bottom:14px;}
+  .pack-item{display:flex; align-items:center; gap:10px; padding:8px 0; border-top:1px solid var(--line);}
+  .pack-item:first-child{border-top:none;}
+  .pack-item input{accent-color:var(--red-600); width:16px; height:16px; flex:none;}
+  .pack-item label{font-size:14.5px; color:var(--ink);}
+  .pack-item.checked label{color:var(--slate); text-decoration:line-through;}
+
+  .related{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:56px 0; margin-top:56px;}
+  .related-head{max-width:640px; margin:0 auto 32px; text-align:center;}
+  .related-head h2{font-size:26px; margin-bottom:8px;}
+  .related-head p{color:var(--slate); font-size:15.5px;}
+  .related-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:960px; margin:0 auto;}
+  .related-card{background:#fff; border-radius:var(--radius-md); padding:20px; box-shadow:var(--shadow-card); text-decoration:none;}
+  .related-card h3{font-size:16px; color:var(--navy-900); margin-bottom:6px; font-family:var(--sans); font-weight:600;}
+  .related-card p{font-size:13px; color:var(--slate);}
+
+  footer{background:var(--navy-900); color:#C7D0DE; padding:64px 0 28px;}
+  .footer-top{display:grid; grid-template-columns:1.5fr repeat(4,1fr); gap:32px; padding-bottom:48px; border-bottom:1px solid var(--line-dark);}
+  .footer-brand .logo{color:#fff; text-decoration:none;}
+  .footer-brand .logo .mark{background:#fff;}
+  .footer-brand .logo .mark span{color:var(--navy-900);}
+  .footer-brand p{margin-top:14px; font-size:13.8px; color:#93A1B7; max-width:230px; line-height:1.6;}
+  .footer-col h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:#93A1B7; font-weight:500; margin-bottom:16px;}
+  .footer-col ul li{margin-bottom:11px;}
+  .footer-col a{font-size:14px; color:#DCE3EE; text-decoration:none;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12.8px; color:#7F8CA1;}
+
+  @media print{
+    header, .mobile-nav, .gen-wrap, .related, footer, .print-btn{display:none !important;}
+    body{background:#fff;}
+  }
+  @media (max-width:1080px){ .footer-top{grid-template-columns:1fr 1fr;} .related-grid{grid-template-columns:1fr;} }
+  @media (max-width:760px){
+    .main-nav, .header-actions{display:none;}
+    .hamburger{display:flex;}
+    .gen-wrap{padding:26px 20px;}
+    .gen-chip-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
+    .footer-brand{grid-column:1 / -1;}
+  }
+</style>
+<script src="/cookie-consent.js" defer></script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-row">
+    <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK<small>United Kingdom Travel Guide</small></span></a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/#regions">Places to Visit</a>
+      <a href="/#looking-for">Things to Do</a>
+      <a href="/#destinations">UK Cities</a>
+      <a href="/travel/route-planner.html">Routes</a>
+      <a href="/blog/index.html">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/#destinations" class="btn btn-primary">Explore UK</a>
+    </div>
+    <button class="hamburger" id="menuOpenBtn" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top">
+    <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+    <button class="close-btn" id="menuCloseBtn" aria-label="Close menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="/" class="mnav-link">Home</a>
+    <a href="/#regions" class="mnav-link">Places to Visit</a>
+    <a href="/#looking-for" class="mnav-link">Things to Do</a>
+    <a href="/#destinations" class="mnav-link">UK Cities</a>
+    <a href="/travel/route-planner.html" class="mnav-link">Routes</a>
+    <a href="/blog/index.html" class="mnav-link">Blog</a>
+  </nav>
+  <a href="/#destinations" class="btn btn-primary mnav-link">Explore UK</a>
+</div>
+
+<main>
+
+<div class="container breadcrumb"><a href="/">Home</a><span>/</span>Packing List Generator</div>
+
+<section class="page-head container">
+  <p class="eyebrow" style="justify-content:center;">Interactive</p>
+  <h1>UK Packing List Generator</h1>
+  <p>Answer a few quick questions and get a personalised packing checklist for your UK trip — ready to check off or print.</p>
+</section>
+
+<div class="container">
+  <div class="gen-wrap">
+    <div class="gen-field">
+      <label for="genMonth">Which Month Are You Travelling?</label>
+      <select class="gen-select" id="genMonth">
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4" selected>April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+    </div>
+
+    <div class="gen-field">
+      <label for="genDays">How Many Days Is Your Trip?</label>
+      <input type="number" class="gen-number" id="genDays" min="1" max="30" value="7">
+    </div>
+
+    <div class="gen-field">
+      <label>What Will You Be Doing? (Select All That Apply)</label>
+      <div class="gen-chip-grid" id="genActivities">
+        <label class="gen-chip"><input type="checkbox" value="city" checked> City Sightseeing</label>
+        <label class="gen-chip"><input type="checkbox" value="hiking"> Countryside &amp; Hiking</label>
+        <label class="gen-chip"><input type="checkbox" value="family"> Family Trip With Kids</label>
+        <label class="gen-chip"><input type="checkbox" value="business"> Business / Work Trip</label>
+        <label class="gen-chip"><input type="checkbox" value="christmas"> Christmas Markets / Winter Events</label>
+      </div>
+    </div>
+
+    <button class="gen-btn" id="genRun">Generate My Packing List</button>
+  </div>
+
+  <div class="result-wrap" id="resultWrap">
+    <div class="result-top">
+      <h2 id="resultTitle">Your Packing List</h2>
+      <button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+    </div>
+    <div id="resultCategories"></div>
+  </div>
+</div>
+
+<section class="related">
+  <div class="container">
+    <div class="related-head"><p class="eyebrow" style="justify-content:center;">Keep Planning</p><h2>Related Guides</h2><p>Round out the rest of your UK trip planning.</p></div>
+    <div class="related-grid">
+      <a class="related-card" href="/blog/uk-packing-list.html"><h3>UK Packing List Guide</h3><p>The full seasonal breakdown behind this generator.</p></a>
+      <a class="related-card" href="/blog/uk-payments-guide.html"><h3>How to Pay in the UK</h3><p>Contactless cards, Oyster and tipping explained.</p></a>
+      <a class="related-card" href="/travel/route-planner.html"><h3>UK Route Planner</h3><p>See the road route between major UK cities.</p></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+        <p>Your practical guide to exploring the United Kingdom.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><ul>
+        <li><a href="/regions/england.html">England</a></li>
+        <li><a href="/regions/scotland.html">Scotland</a></li>
+        <li><a href="/regions/wales.html">Wales</a></li>
+        <li><a href="/regions/northern-ireland.html">Northern Ireland</a></li>
+        <li><a href="/#destinations">UK Cities</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Things to Do</h4><ul>
+        <li><a href="/categories/attractions.html">Attractions</a></li>
+        <li><a href="/categories/free-things-to-do.html">Free Things to Do</a></li>
+        <li><a href="/categories/family-days-out.html">Family Days Out</a></li>
+        <li><a href="/categories/day-trips.html">Day Trips</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Travel</h4><ul>
+        <li><a href="/travel/travel-tips.html">Travel Tips</a></li>
+        <li><a href="/travel/getting-around.html">Getting Around</a></li>
+        <li><a href="/travel/route-planner.html">Route Planner</a></li>
+        <li><a href="/travel/packing-list-generator.html">Packing List Generator</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="/legal/about.html">About Us</a></li>
+        <li><a href="/legal/contact.html">Contact</a></li>
+        <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/legal/terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="/legal/cookie-policy.html">Cookie Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Visitor Guide UK. All rights reserved.</span>
+      <span>An independent UK visitor information guide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var SEASON_ITEMS = {
+    winter: { // Dec, Jan, Feb
+      "Weather-Ready Clothing": [
+        "Warm insulated winter coat",
+        "Thermal base layers",
+        "Wool hat, gloves and scarf",
+        "Waterproof, insulated boots",
+        "Compact umbrella"
+      ]
+    },
+    spring: { // Mar, Apr, May
+      "Weather-Ready Clothing": [
+        "Layered clothing (t-shirt + jumper + jacket)",
+        "Light waterproof rain jacket",
+        "Compact umbrella",
+        "Waterproof walking shoes",
+        "One warm jumper for cool evenings"
+      ]
+    },
+    summer: { // Jun, Jul, Aug
+      "Weather-Ready Clothing": [
+        "Light layers (UK summer can still be cool)",
+        "A light rain jacket, just in case",
+        "Comfortable walking shoes",
+        "Sunglasses and a hat",
+        "A light jumper for evenings"
+      ]
+    },
+    autumn: { // Sep, Oct, Nov
+      "Weather-Ready Clothing": [
+        "Waterproof jacket",
+        "Layered clothing",
+        "Scarf",
+        "Sturdy waterproof shoes",
+        "Compact umbrella"
+      ]
+    }
+  };
+
+  var ALWAYS_ITEMS = {
+    "Essentials": [
+      "Passport or ID",
+      "Travel insurance documents",
+      "UK plug adapter (Type G), if coming from abroad",
+      "Phone charger and portable power bank",
+      "Payment card that works for contactless (see our payments guide)",
+      "A small amount of cash",
+      "Any regular medication"
+    ]
+  };
+
+  var ACTIVITY_ITEMS = {
+    city: {
+      "City Sightseeing": [
+        "Comfortable walking shoes",
+        "A day backpack",
+        "Reusable water bottle",
+        "Offline maps or a downloaded transport app"
+      ]
+    },
+    hiking: {
+      "Countryside & Hiking": [
+        "Proper hiking boots",
+        "Waterproof trousers",
+        "A daypack with rain cover",
+        "Offline map of the trail area",
+        "Insect repellent (spring/summer)"
+      ]
+    },
+    family: {
+      "Family & Kids": [
+        "Kids' rain gear",
+        "Travel snacks and entertainment",
+        "Basic first aid kit",
+        "Stroller rain cover, if needed"
+      ]
+    },
+    business: {
+      "Business Trip": [
+        "Formal or smart-casual outfits",
+        "Laptop and charger",
+        "UK plug adapter for devices",
+        "Business cards, if you use them"
+      ]
+    },
+    christmas: {
+      "Christmas Markets & Winter Events": [
+        "Extra thermal layers",
+        "Hand warmers",
+        "Waterproof gloves",
+        "A thermos or reusable warm-drink cup"
+      ]
+    }
+  };
+
+  function getSeason(month){
+    if ([12,1,2].indexOf(month) !== -1) return "winter";
+    if ([3,4,5].indexOf(month) !== -1) return "spring";
+    if ([6,7,8].indexOf(month) !== -1) return "summer";
+    return "autumn";
+  }
+
+  function buildList(){
+    var month = parseInt(document.getElementById("genMonth").value, 10);
+    var days = Math.max(1, parseInt(document.getElementById("genDays").value, 10) || 1);
+    var season = getSeason(month);
+    var activities = Array.prototype.slice.call(document.querySelectorAll('#genActivities input:checked')).map(function(cb){ return cb.value; });
+
+    var categories = {};
+    categories["Essentials"] = ALWAYS_ITEMS["Essentials"].slice();
+
+    var seasonCat = SEASON_ITEMS[season];
+    Object.keys(seasonCat).forEach(function(k){ categories[k] = seasonCat[k].slice(); });
+
+    activities.forEach(function(a){
+      var cat = ACTIVITY_ITEMS[a];
+      if (!cat) return;
+      Object.keys(cat).forEach(function(k){ categories[k] = cat[k].slice(); });
+    });
+
+    // Clothing quantity note based on trip length
+    var clothingNote = days <= 4
+      ? (days + " days' worth of outfits")
+      : "5-6 outfits + laundry/rewear plan for the rest of the " + days + " days";
+    categories["Essentials"].push("Clothing: " + clothingNote);
+
+    return categories;
+  }
+
+  function renderList(categories){
+    var monthName = document.getElementById("genMonth").selectedOptions[0].text;
+    document.getElementById("resultTitle").textContent = "Your " + monthName + " Packing List";
+
+    var html = "";
+    Object.keys(categories).forEach(function(catName){
+      html += '<div class="cat-block"><h3>' + catName + '</h3>';
+      categories[catName].forEach(function(item, i){
+        var id = "item_" + catName.replace(/\s+/g,'') + "_" + i;
+        html += '<div class="pack-item"><input type="checkbox" id="' + id + '"><label for="' + id + '">' + item + '</label></div>';
+      });
+      html += '</div>';
+    });
+    document.getElementById("resultCategories").innerHTML = html;
+    document.getElementById("resultWrap").classList.add("show");
+
+    document.querySelectorAll(".pack-item input").forEach(function(cb){
+      cb.addEventListener("change", function(){
+        cb.closest(".pack-item").classList.toggle("checked", cb.checked);
+      });
+    });
+
+    document.getElementById("resultWrap").scrollIntoView({ behavior:"smooth", block:"start" });
+  }
+
+  document.querySelectorAll("#genActivities input").forEach(function(cb){
+    cb.addEventListener("change", function(){
+      cb.closest(".gen-chip").classList.toggle("checked", cb.checked);
+    });
+    if (cb.checked) cb.closest(".gen-chip").classList.add("checked");
+  });
+
+  document.getElementById("genRun").addEventListener("click", function(){
+    renderList(buildList());
+  });
+
+  var header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", function(){ header.classList.toggle("scrolled", window.scrollY > 8); }, {passive:true});
+  var mobileNav = document.getElementById("mobileNav");
+  document.getElementById("menuOpenBtn").addEventListener("click", function(){ mobileNav.classList.add("open"); document.body.style.overflow = "hidden"; });
+  document.getElementById("menuCloseBtn").addEventListener("click", closeMenu);
+  mobileNav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMenu); });
+  function closeMenu(){ mobileNav.classList.remove("open"); document.body.style.overflow = ""; }
+})();
+</script>
+</body>
+</html>
