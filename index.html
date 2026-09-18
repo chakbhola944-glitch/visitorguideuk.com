@@ -862,18 +862,46 @@
     return p;
   }
 
+  /* Batched version — fetches every [data-wiki] image on the page in a
+     single Wikipedia API request instead of one request per image. */
   function hydratePhotos(root){
     var nodes = (root || document).querySelectorAll("[data-wiki]");
+    var titles = []; var titleMap = {};
     nodes.forEach(function(node){
       var title = node.getAttribute("data-wiki");
-      var img = node.querySelector("img");
-      if (!img) return;
-      fetchWikiImage(title, node.hasAttribute("data-eager") ? 1600 : 900).then(function(url){
-        if (!url) return;
-        img.src = url;
-        img.onload = function(){ img.classList.add("loaded"); };
-      });
+      if (titles.indexOf(title) === -1) titles.push(title);
+      titleMap[title] = titleMap[title] || [];
+      titleMap[title].push(node);
     });
+    if (!titles.length) return;
+
+    var url = "https://en.wikipedia.org/w/api.php?action=query&titles=" +
+      encodeURIComponent(titles.join("|")) +
+      "&prop=pageimages&format=json&pithumbsize=1400&redirects=1&origin=*";
+
+    fetch(url).then(function(r){ return r.json(); }).then(function(data){
+      var pages = data.query && data.query.pages;
+      if (!pages) return;
+      var canonicalToOriginal = {};
+      titles.forEach(function(t){ canonicalToOriginal[t] = t; });
+      (data.query.normalized || []).forEach(function(n){ canonicalToOriginal[n.to] = canonicalToOriginal[n.from] || n.from; });
+      (data.query.redirects || []).forEach(function(r){ canonicalToOriginal[r.to] = canonicalToOriginal[r.from] || r.from; });
+      Object.keys(pages).forEach(function(key){
+        var page = pages[key];
+        var thumb = page.thumbnail && page.thumbnail.source;
+        if (!thumb) return;
+        var originalTitle = canonicalToOriginal[page.title] || page.title;
+        var targetNodes = titleMap[originalTitle];
+        if (!targetNodes) return;
+        targetNodes.forEach(function(node){
+          var img = node.querySelector("img");
+          if (!img) return;
+          img.src = thumb;
+          img.loading = node.hasAttribute("data-eager") ? "eager" : "lazy";
+          img.onload = function(){ img.classList.add("loaded"); };
+        });
+      });
+    }).catch(function(){});
   }
 
   /* ---------------- ROTATING HERO IMAGE ---------------- */
