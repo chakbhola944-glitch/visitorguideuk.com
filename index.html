@@ -423,6 +423,7 @@
       <a href="/travel/packing-list-generator.html">Packing List</a>
       <a href="/travel/bank-holidays.html">Bank Holidays</a>
       <a href="/travel/free-museums-map.html">Free Museums</a>
+      <a href="/travel/uk-time-now.html">Time &amp; Weather</a>
       <a href="/blog/index.html">Blog</a>
     </nav>
     <div class="header-actions">
@@ -455,6 +456,7 @@
     <a href="/travel/packing-list-generator.html" class="mnav-link">Packing List</a>
     <a href="/travel/bank-holidays.html" class="mnav-link">Bank Holidays</a>
     <a href="/travel/free-museums-map.html" class="mnav-link">Free Museums</a>
+    <a href="/travel/uk-time-now.html" class="mnav-link">Time &amp; Weather</a>
     <a href="/blog/index.html" class="mnav-link">Blog</a>
   </nav>
   <a href="#regions" class="btn btn-primary mnav-link">Explore UK</a>
@@ -692,6 +694,20 @@
   </div>
 </section>
 
+<!-- ============================= UK TIME NOW PROMO ============================= -->
+<section id="uk-time-promo">
+  <div class="container">
+    <div style="max-width:820px; margin:0 auto; background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); box-shadow:var(--shadow-card); padding:36px 40px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <div style="max-width:520px;">
+        <p class="eyebrow" style="margin-bottom:10px;">Interactive</p>
+        <h2 style="font-size:22px; margin-bottom:8px;">UK Time Now — Live Clock &amp; Weather</h2>
+        <p style="color:var(--slate); font-size:14.5px;">What time is it in the UK right now, and what's the weather like? Live and updating every second.</p>
+      </div>
+      <a href="/travel/uk-time-now.html" class="btn btn-primary" style="white-space:nowrap;">Check UK Time</a>
+    </div>
+  </div>
+</section>
+
 
 <!-- ============================= NEWSLETTER ============================= -->
 <section class="newsletter">
@@ -752,6 +768,7 @@
           <li><a href="/travel/packing-list-generator.html">Packing List Generator</a></li>
           <li><a href="/travel/bank-holidays.html">Bank Holidays</a></li>
           <li><a href="/travel/free-museums-map.html">Free Museums Map</a></li>
+          <li><a href="/travel/uk-time-now.html">UK Time &amp; Weather</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -862,46 +879,18 @@
     return p;
   }
 
-  /* Batched version — fetches every [data-wiki] image on the page in a
-     single Wikipedia API request instead of one request per image. */
   function hydratePhotos(root){
     var nodes = (root || document).querySelectorAll("[data-wiki]");
-    var titles = []; var titleMap = {};
     nodes.forEach(function(node){
       var title = node.getAttribute("data-wiki");
-      if (titles.indexOf(title) === -1) titles.push(title);
-      titleMap[title] = titleMap[title] || [];
-      titleMap[title].push(node);
-    });
-    if (!titles.length) return;
-
-    var url = "https://en.wikipedia.org/w/api.php?action=query&titles=" +
-      encodeURIComponent(titles.join("|")) +
-      "&prop=pageimages&format=json&pithumbsize=1400&redirects=1&origin=*";
-
-    fetch(url).then(function(r){ return r.json(); }).then(function(data){
-      var pages = data.query && data.query.pages;
-      if (!pages) return;
-      var canonicalToOriginal = {};
-      titles.forEach(function(t){ canonicalToOriginal[t] = t; });
-      (data.query.normalized || []).forEach(function(n){ canonicalToOriginal[n.to] = canonicalToOriginal[n.from] || n.from; });
-      (data.query.redirects || []).forEach(function(r){ canonicalToOriginal[r.to] = canonicalToOriginal[r.from] || r.from; });
-      Object.keys(pages).forEach(function(key){
-        var page = pages[key];
-        var thumb = page.thumbnail && page.thumbnail.source;
-        if (!thumb) return;
-        var originalTitle = canonicalToOriginal[page.title] || page.title;
-        var targetNodes = titleMap[originalTitle];
-        if (!targetNodes) return;
-        targetNodes.forEach(function(node){
-          var img = node.querySelector("img");
-          if (!img) return;
-          img.src = thumb;
-          img.loading = node.hasAttribute("data-eager") ? "eager" : "lazy";
-          img.onload = function(){ img.classList.add("loaded"); };
-        });
+      var img = node.querySelector("img");
+      if (!img) return;
+      fetchWikiImage(title, node.hasAttribute("data-eager") ? 1600 : 900).then(function(url){
+        if (!url) return;
+        img.src = url;
+        img.onload = function(){ img.classList.add("loaded"); };
       });
-    }).catch(function(){});
+    });
   }
 
   /* ---------------- ROTATING HERO IMAGE ---------------- */
