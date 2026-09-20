@@ -4,6 +4,12 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/travel/best-time-to-visit.html",
+      "destination": "/blog/best-time-to-visit-uk.html",
+      "permanent": true
     }
   ]
 }
+
