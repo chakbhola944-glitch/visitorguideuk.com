@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) with Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  var vgukConsent = null;
+  try { vgukConsent = localStorage.getItem('vguk_cookie_consent'); } catch(e) {}
+  var vgukGranted = (vgukConsent === 'accepted') ? 'granted' : 'denied';
+  gtag('consent', 'default', {
+    'ad_storage': vgukGranted, 'ad_user_data': vgukGranted,
+    'ad_personalization': vgukGranted, 'analytics_storage': vgukGranted
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-NZRW83LDG7');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRW83LDG7"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Visa &amp; ETA Eligibility Checker | Visitor Guide UK</title>
+<meta name="description" content="Do you need a UK ETA or a visa to visit? Select your nationality to find out instantly, plus the cost and how to apply.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.visitorguideuk.com/travel/visa-eta-checker.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Visitor Guide UK">
+<meta property="og:title" content="UK Visa & ETA Eligibility Checker">
+<meta property="og:description" content="Do you need a UK ETA or a visa to visit? Select your nationality to find out instantly.">
+<meta property="og:url" content="https://www.visitorguideuk.com/travel/visa-eta-checker.html">
+<meta property="og:locale" content="en_GB">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UK Visa & ETA Eligibility Checker">
+<meta name="twitter:description" content="Do you need a UK ETA or a visa to visit? Select your nationality to find out instantly.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.visitorguideuk.com/"},
+    {"@type":"ListItem","position":2,"name":"Visa & ETA Checker","item":"https://www.visitorguideuk.com/travel/visa-eta-checker.html"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between an ETA and a visa?",
+      "acceptedAnswer": {"@type":"Answer","text":"An ETA (Electronic Travel Authorisation) is a lightweight, low-cost digital permission for short visits, similar to the US ESTA. A visa is a more involved, more expensive application required for nationalities not on the ETA-eligible list, or for longer stays and purposes like work or study."}
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a UK ETA cost?",
+      "acceptedAnswer": {"@type":"Answer","text":"As of 2026, a UK ETA costs £16 and is valid for two years (or until your passport expires, whichever comes first), allowing multiple short visits during that time."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do British or Irish citizens need an ETA?",
+      "acceptedAnswer": {"@type":"Answer","text":"No. British citizens do not need any travel authorisation to enter the UK, and Irish citizens travel freely under the Common Travel Area arrangement between the UK and Ireland."}
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --navy-900:#0B1B33; --navy-800:#122A4A; --navy-700:#1B3A61;
+    --red-600:#B23A32; --red-700:#96302A;
+    --paper:#F5F5F2; --paper-dim:#ECEBE6; --white:#FFFFFF; --ink:#16212E;
+    --slate:#5B6472; --slate-light:#8892A0; --line:#DFDFD9; --line-dark:rgba(255,255,255,.14);
+    --green-700:#1F7A4D; --green-bg:#E7F5EC;
+    --amber-700:#9A6A10; --amber-bg:#FBF1DD;
+    --radius-lg:22px; --radius-md:14px; --radius-sm:9px;
+    --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 12px 28px -14px rgba(15,23,42,.18);
+    --container:1240px;
+    --serif:'Newsreader', Georgia, serif; --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  img{display:block; max-width:100%;}
+  a{color:var(--red-600); text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  ul{list-style:none;}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; color:var(--navy-900); line-height:1.2; letter-spacing:-.01em;}
+  .container{max-width:var(--container); margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:2px solid var(--red-600); outline-offset:3px;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--red-600); font-weight:500; margin-bottom:14px;}
+  .eyebrow::before{content:""; width:16px; height:1px; background:var(--red-600);}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 26px; border-radius:100px; font-weight:600; font-size:14.5px; border:1px solid transparent; text-decoration:none; transition:background .15s ease;}
+  .btn-primary{background:var(--red-600); color:#fff;}
+  .btn-primary:hover{background:var(--red-700);}
+
+  header.site-header{position:sticky; top:0; z-index:100; background:rgba(245,245,242,.86); backdrop-filter:blur(10px) saturate(1.1); border-bottom:1px solid transparent; transition:border-color .2s ease, box-shadow .2s ease;}
+  header.site-header.scrolled{border-color:var(--line); box-shadow:0 4px 20px -12px rgba(15,23,42,.25);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; height:78px; gap:24px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:600; font-size:19px; color:var(--navy-900); text-decoration:none;}
+  .logo .mark{width:34px; height:34px; border-radius:8px; background:var(--navy-900); display:flex; align-items:center; justify-content:center; position:relative; flex:none;}
+  .logo .mark span{color:#fff; font-family:var(--serif); font-size:17px; font-style:italic;}
+  .logo .mark::after{content:""; position:absolute; width:5px; height:5px; border-radius:50%; background:var(--red-600); top:-2px; right:-2px;}
+  .logo small{display:block; font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--slate); font-weight:500; text-transform:uppercase; margin-top:1px;}
+  .main-nav{display:flex; align-items:center; gap:32px;}
+  .main-nav a{font-size:14.5px; font-weight:500; color:var(--navy-800); text-decoration:none; position:relative; padding:6px 0;}
+  .main-nav a.active::after, .main-nav a:hover::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--red-600);}
+  .header-actions{display:flex; align-items:center; gap:14px;}
+  .hamburger{display:none; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; align-items:center; justify-content:center;}
+  .nav-dropdown{position:relative;}
+  .nav-dropdown-btn{display:flex; align-items:center; gap:5px; background:none; border:none; font-family:var(--sans); font-size:14.5px; font-weight:500; color:var(--navy-800); padding:6px 0; cursor:pointer;}
+  .nav-dropdown-menu{position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(-6px); margin-top:14px; background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); box-shadow:var(--shadow-card); padding:8px; min-width:220px; opacity:0; visibility:hidden; transition:opacity .15s ease, transform .15s ease; z-index:150;}
+  .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu{opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);}
+  .nav-dropdown-menu a{display:block; padding:9px 12px; font-size:13.5px; font-weight:500; color:var(--navy-800); text-decoration:none; border-radius:8px;}
+  .nav-dropdown-menu a::after{display:none;}
+  .nav-dropdown-menu a:hover{background:var(--paper-dim);}
+  .mobile-nav{position:fixed; inset:0; background:var(--navy-900); z-index:200; transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column; padding:24px 24px 40px; overflow-y:auto;}
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:40px;}
+  .mobile-nav-top .logo{color:#fff; text-decoration:none;}
+  .mobile-nav-top .logo .mark{background:#fff;}
+  .mobile-nav-top .logo .mark span{color:var(--navy-900);}
+  .mobile-nav a{display:block; color:#fff; font-family:var(--serif); font-size:24px; padding:12px 0; border-bottom:1px solid var(--line-dark); text-decoration:none;}
+  .mobile-nav .btn{margin-top:28px; width:100%;}
+  .close-btn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line-dark); color:#fff; display:flex; align-items:center; justify-content:center; background:transparent;}
+
+  .breadcrumb{padding:16px 0; font-family:var(--mono); font-size:12px; color:var(--slate); text-transform:uppercase; letter-spacing:.04em;}
+  .breadcrumb a{color:var(--slate); text-decoration:none;}
+  .breadcrumb a:hover{color:var(--red-600);}
+  .breadcrumb span{margin:0 8px; color:var(--slate-light);}
+
+  .page-head{padding:8px 0 24px; text-align:center;}
+  .page-head h1{font-size:clamp(28px,4.4vw,42px); max-width:760px; margin:0 auto 12px;}
+  .page-head p{color:var(--slate); font-size:16px; max-width:620px; margin:0 auto;}
+
+  .checker-wrap{max-width:640px; margin:0 auto; background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:36px 40px; box-shadow:var(--shadow-card);}
+  .checker-field label{display:block; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--slate); margin-bottom:10px;}
+  .checker-select{width:100%; padding:14px 16px; border:1px solid var(--line); border-radius:var(--radius-sm); font-family:var(--sans); font-size:15.5px; color:var(--ink); background:var(--paper);}
+
+  .result-box{margin-top:26px; padding:26px 26px; border-radius:var(--radius-md); display:none;}
+  .result-box.show{display:block;}
+  .result-box.none{background:var(--green-bg); border:1px solid #B9E0C7;}
+  .result-box.eta{background:var(--amber-bg); border:1px solid #EFD9A0;}
+  .result-box.visa{background:var(--paper-dim); border:1px solid var(--line);}
+  .result-title{font-family:var(--serif); font-size:20px; margin-bottom:8px;}
+  .result-box.none .result-title{color:var(--green-700);}
+  .result-box.eta .result-title{color:var(--amber-700);}
+  .result-box.visa .result-title{color:var(--navy-900);}
+  .result-box p{font-size:14.5px; color:#2B3542; line-height:1.65; margin-bottom:10px;}
+  .result-box a.official-link{display:inline-block; margin-top:6px; font-weight:600;}
+
+  .disclaimer{max-width:640px; margin:24px auto 0; background:var(--paper-dim); border-left:3px solid var(--red-600); border-radius:0 var(--radius-sm) var(--radius-sm) 0; padding:16px 20px; font-size:13px; color:var(--navy-800); line-height:1.6;}
+
+  .faq-item{border-bottom:1px solid var(--line); max-width:640px; margin:0 auto;}
+  .faq-item:first-child{border-top:1px solid var(--line);}
+  .faq-q{width:100%; text-align:left; background:none; border:none; padding:18px 4px; display:flex; justify-content:space-between; align-items:center; gap:16px; font-family:var(--serif); font-size:16.5px; font-weight:600; color:var(--navy-900);}
+  .faq-q svg{flex:none; transition:transform .2s ease; color:var(--red-600);}
+  .faq-item.open .faq-q svg{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{padding:0 4px 18px; color:var(--slate); font-size:14.5px; line-height:1.65; margin-bottom:0;}
+  .faq-item.open .faq-a{max-height:220px;}
+  .faq-section-title{max-width:640px; margin:56px auto 16px; font-size:22px; text-align:center;}
+
+  .related{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:56px 0; margin-top:56px;}
+  .related-head{max-width:640px; margin:0 auto 32px; text-align:center;}
+  .related-head h2{font-size:26px; margin-bottom:8px;}
+  .related-head p{color:var(--slate); font-size:15.5px;}
+  .related-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:960px; margin:0 auto;}
+  .related-card{background:#fff; border-radius:var(--radius-md); padding:20px; box-shadow:var(--shadow-card); text-decoration:none;}
+  .related-card h3{font-size:16px; color:var(--navy-900); margin-bottom:6px; font-family:var(--sans); font-weight:600;}
+  .related-card p{font-size:13px; color:var(--slate);}
+
+  footer{background:var(--navy-900); color:#C7D0DE; padding:64px 0 28px;}
+  .footer-top{display:grid; grid-template-columns:1.5fr repeat(4,1fr); gap:32px; padding-bottom:48px; border-bottom:1px solid var(--line-dark);}
+  .footer-brand .logo{color:#fff; text-decoration:none;}
+  .footer-brand .logo .mark{background:#fff;}
+  .footer-brand .logo .mark span{color:var(--navy-900);}
+  .footer-brand p{margin-top:14px; font-size:13.8px; color:#93A1B7; max-width:230px; line-height:1.6;}
+  .footer-col h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:#93A1B7; font-weight:500; margin-bottom:16px;}
+  .footer-col ul li{margin-bottom:11px;}
+  .footer-col a{font-size:14px; color:#DCE3EE; text-decoration:none;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12.8px; color:#7F8CA1;}
+
+  @media (max-width:1080px){ .footer-top{grid-template-columns:1fr 1fr;} .related-grid{grid-template-columns:1fr;} }
+  @media (max-width:760px){
+    .main-nav, .header-actions{display:none;}
+    .hamburger{display:flex;}
+    .checker-wrap{padding:26px 22px;}
+    .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
+    .footer-brand{grid-column:1 / -1;}
+  }
+</style>
+<script src="/cookie-consent.js" defer></script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-row">
+    <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK<small>United Kingdom Travel Guide</small></span></a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/#regions">Places to Visit</a>
+      <a href="/#looking-for">Things to Do</a>
+      <a href="/#destinations">UK Cities</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" type="button">Tools <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="/#plan">Travel Tips</a>
+          <a href="/#cost-calculator">Trip Cost Calculator</a>
+          <a href="/#bucket-list">UK Bucket List</a>
+          <a href="/travel/route-planner.html">Route Planner</a>
+          <a href="/travel/packing-list-generator.html">Packing List Generator</a>
+          <a href="/travel/bank-holidays.html">Bank Holidays</a>
+          <a href="/travel/free-museums-map.html">Free Museums Map</a>
+          <a href="/travel/uk-time-now.html">UK Time &amp; Weather</a>
+          <a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a>
+        </div>
+      </div>
+      <a href="/blog/index.html">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/#destinations" class="btn btn-primary">Explore UK</a>
+    </div>
+    <button class="hamburger" id="menuOpenBtn" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top">
+    <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+    <button class="close-btn" id="menuCloseBtn" aria-label="Close menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="/" class="mnav-link">Home</a>
+    <a href="/#regions" class="mnav-link">Places to Visit</a>
+    <a href="/#looking-for" class="mnav-link">Things to Do</a>
+    <a href="/#destinations" class="mnav-link">UK Cities</a>
+    <a href="/blog/index.html" class="mnav-link">Blog</a>
+    <p style="font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#8FA0BD; margin:20px 0 4px;">Tools</p>
+    <a href="/#plan" class="mnav-link" style="font-size:17px; padding:9px 0;">Travel Tips</a>
+    <a href="/#cost-calculator" class="mnav-link" style="font-size:17px; padding:9px 0;">Trip Cost Calculator</a>
+    <a href="/#bucket-list" class="mnav-link" style="font-size:17px; padding:9px 0;">UK Bucket List</a>
+    <a href="/travel/route-planner.html" class="mnav-link" style="font-size:17px; padding:9px 0;">Route Planner</a>
+    <a href="/travel/packing-list-generator.html" class="mnav-link" style="font-size:17px; padding:9px 0;">Packing List Generator</a>
+    <a href="/travel/bank-holidays.html" class="mnav-link" style="font-size:17px; padding:9px 0;">Bank Holidays</a>
+    <a href="/travel/free-museums-map.html" class="mnav-link" style="font-size:17px; padding:9px 0;">Free Museums Map</a>
+    <a href="/travel/uk-time-now.html" class="mnav-link" style="font-size:17px; padding:9px 0;">UK Time &amp; Weather</a>
+    <a href="/travel/visa-eta-checker.html" class="mnav-link" style="font-size:17px; padding:9px 0;">Visa &amp; ETA Checker</a>
+  </nav>
+  <a href="/#destinations" class="btn btn-primary mnav-link">Explore UK</a>
+</div>
+
+<main>
+
+<div class="container breadcrumb"><a href="/">Home</a><span>/</span>Visa &amp; ETA Checker</div>
+
+<section class="page-head container">
+  <p class="eyebrow" style="justify-content:center;">Interactive</p>
+  <h1>UK Visa &amp; ETA Eligibility Checker</h1>
+  <p>Select your nationality to find out whether you need a UK ETA, a visa, or nothing at all.</p>
+</section>
+
+<div class="container">
+  <div class="checker-wrap">
+    <div class="checker-field">
+      <label for="natSelect">Your Nationality</label>
+      <select class="checker-select" id="natSelect">
+        <option value="">Select your nationality…</option>
+        <option value="none_uk">British citizen</option>
+        <option value="none_ie">Irish citizen</option>
+        <optgroup label="Europe">
+          <option value="eta">Austria</option><option value="eta">Belgium</option><option value="eta">Bulgaria</option>
+          <option value="eta">Croatia</option><option value="eta">Cyprus</option><option value="eta">Czech Republic</option>
+          <option value="eta">Denmark</option><option value="eta">Estonia</option><option value="eta">Finland</option>
+          <option value="eta">France</option><option value="eta">Germany</option><option value="eta">Greece</option>
+          <option value="eta">Hungary</option><option value="eta">Iceland</option><option value="eta">Italy</option>
+          <option value="eta">Latvia</option><option value="eta">Liechtenstein</option><option value="eta">Lithuania</option>
+          <option value="eta">Luxembourg</option><option value="eta">Malta</option><option value="eta">Monaco</option>
+          <option value="eta">Netherlands</option><option value="eta">Norway</option><option value="eta">Poland</option>
+          <option value="eta">Portugal</option><option value="eta">Romania</option><option value="eta">San Marino</option>
+          <option value="eta">Slovakia</option><option value="eta">Slovenia</option><option value="eta">Spain</option>
+          <option value="eta">Sweden</option><option value="eta">Switzerland</option><option value="eta">Vatican City</option>
+        </optgroup>
+        <optgroup label="Americas">
+          <option value="eta">United States</option><option value="eta">Canada</option><option value="eta">Mexico</option>
+          <option value="eta">Brazil</option><option value="eta">Argentina</option><option value="eta">Chile</option>
+          <option value="eta">Uruguay</option><option value="eta">Costa Rica</option><option value="eta">Panama</option>
+          <option value="eta">Colombia</option><option value="eta">Peru</option><option value="eta">Bolivia</option>
+          <option value="eta">Paraguay</option><option value="eta">Guatemala</option><option value="eta">El Salvador</option>
+          <option value="eta">Honduras</option><option value="eta">Nicaragua</option><option value="eta">Belize</option>
+          <option value="eta">Bahamas</option><option value="eta">Barbados</option><option value="eta">Jamaica</option>
+          <option value="eta">Trinidad and Tobago</option><option value="eta">Antigua and Barbuda</option>
+          <option value="eta">Dominica</option><option value="eta">Grenada</option><option value="eta">Saint Lucia</option>
+          <option value="eta">Saint Kitts and Nevis</option><option value="eta">Saint Vincent and the Grenadines</option>
+          <option value="eta">Guyana</option>
+        </optgroup>
+        <optgroup label="Asia-Pacific">
+          <option value="eta">Australia</option><option value="eta">New Zealand</option><option value="eta">Japan</option>
+          <option value="eta">South Korea</option><option value="eta">Singapore</option><option value="eta">Malaysia</option>
+          <option value="eta">Brunei</option><option value="eta">Hong Kong SAR</option><option value="eta">Taiwan</option>
+          <option value="eta">Maldives</option><option value="eta">Timor-Leste</option><option value="eta">Papua New Guinea</option>
+          <option value="eta">Fiji</option><option value="eta">Samoa</option><option value="eta">Tonga</option>
+          <option value="eta">Vanuatu</option><option value="eta">Kiribati</option><option value="eta">Tuvalu</option>
+          <option value="eta">Marshall Islands</option><option value="eta">Micronesia</option><option value="eta">Nauru</option>
+          <option value="eta">Palau</option><option value="eta">Israel</option>
+        </optgroup>
+        <optgroup label="Middle East &amp; Gulf">
+          <option value="eta">United Arab Emirates</option><option value="eta">Saudi Arabia</option><option value="eta">Qatar</option>
+          <option value="eta">Kuwait</option><option value="eta">Bahrain</option><option value="eta">Oman</option>
+        </optgroup>
+        <optgroup label="Africa">
+          <option value="eta">Botswana</option><option value="eta">Namibia</option><option value="eta">Mauritius</option>
+          <option value="eta">Seychelles</option>
+        </optgroup>
+        <optgroup label="I already hold a UK visa or status">
+          <option value="existing">I have a valid UK visa, eVisa, ILR or settled status</option>
+        </optgroup>
+        <optgroup label="Other / Not Listed">
+          <option value="visa">My country isn't listed above</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="result-box" id="resultBox">
+      <div class="result-title" id="resultTitle"></div>
+      <div id="resultBody"></div>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <strong>This is general guidance, not immigration advice.</strong> Rules change and individual circumstances (purpose of visit, length of stay, criminal record, etc.) can affect requirements. Always confirm your exact requirement on the official <a href="https://www.gov.uk/check-uk-visa" target="_blank" rel="noopener">gov.uk visa and ETA checker</a> before booking travel.
+  </div>
+
+  <h2 class="faq-section-title">Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <button class="faq-q">What is the difference between an ETA and a visa?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+    <div class="faq-a"><p>An ETA (Electronic Travel Authorisation) is a lightweight, low-cost digital permission for short visits, similar to the US ESTA. A visa is a more involved, more expensive application required for nationalities not on the ETA-eligible list, or for longer stays and purposes like work or study.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q">How much does a UK ETA cost?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+    <div class="faq-a"><p>As of 2026, a UK ETA costs £16 and is valid for two years (or until your passport expires, whichever comes first), allowing multiple short visits during that time.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q">Do British or Irish citizens need an ETA?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+    <div class="faq-a"><p>No. British citizens do not need any travel authorisation to enter the UK, and Irish citizens travel freely under the Common Travel Area arrangement between the UK and Ireland.</p></div>
+  </div>
+</div>
+
+<section class="related">
+  <div class="container">
+    <div class="related-head"><p class="eyebrow" style="justify-content:center;">Keep Planning</p><h2>Related Guides</h2><p>Once your entry requirements are sorted, plan the rest of your trip.</p></div>
+    <div class="related-grid">
+      <a class="related-card" href="/blog/uk-eta-guide.html"><h3>UK ETA Guide</h3><p>Full application walkthrough and costs.</p></a>
+      <a class="related-card" href="/blog/uk-packing-list.html"><h3>UK Packing List</h3><p>What to bring for every season.</p></a>
+      <a class="related-card" href="/travel/uk-time-now.html"><h3>UK Time &amp; Weather</h3><p>Check the current time and conditions.</p></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+        <p>Your practical guide to exploring the United Kingdom.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><ul>
+        <li><a href="/regions/england.html">England</a></li>
+        <li><a href="/regions/scotland.html">Scotland</a></li>
+        <li><a href="/regions/wales.html">Wales</a></li>
+        <li><a href="/regions/northern-ireland.html">Northern Ireland</a></li>
+        <li><a href="/#destinations">UK Cities</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Things to Do</h4><ul>
+        <li><a href="/categories/attractions.html">Attractions</a></li>
+        <li><a href="/categories/free-things-to-do.html">Free Things to Do</a></li>
+        <li><a href="/categories/family-days-out.html">Family Days Out</a></li>
+        <li><a href="/categories/day-trips.html">Day Trips</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Travel</h4><ul>
+        <li><a href="/travel/travel-tips.html">Travel Tips</a></li>
+        <li><a href="/travel/route-planner.html">Route Planner</a></li>
+        <li><a href="/travel/bank-holidays.html">Bank Holidays</a></li>
+        <li><a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="/legal/about.html">About Us</a></li>
+        <li><a href="/legal/contact.html">Contact</a></li>
+        <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/legal/terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="/legal/cookie-policy.html">Cookie Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Visitor Guide UK. All rights reserved.</span>
+      <span>Not immigration advice — always confirm on gov.uk</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var natSelect = document.getElementById("natSelect");
+  var resultBox = document.getElementById("resultBox");
+  var resultTitle = document.getElementById("resultTitle");
+  var resultBody = document.getElementById("resultBody");
+
+  function showResult(kind, country){
+    resultBox.classList.remove("none","eta","visa");
+    resultBox.classList.add("show", kind);
+
+    if (kind === "none"){
+      resultTitle.textContent = "No ETA or visa needed";
+      resultBody.innerHTML = "<p>" + (country === "British citizen" ? "As a British citizen, you" : "As an Irish citizen, you") + " can enter the UK freely with no ETA or visa required — just a valid passport (or, for Irish citizens, any acceptable form of ID under the Common Travel Area).</p>";
+    } else if (kind === "existing"){
+      resultTitle.textContent = "No separate ETA needed";
+      resultBody.innerHTML = "<p>If you already hold a valid UK visa, eVisa, Indefinite Leave to Remain (ILR), or settled/pre-settled status under the EU Settlement Scheme, this serves as your travel authorisation — you do not need a separate ETA.</p><a class='official-link' href='https://www.gov.uk/check-uk-visa' target='_blank' rel='noopener'>Confirm on gov.uk →</a>";
+    } else if (kind === "eta"){
+      resultTitle.textContent = "You need a UK ETA";
+      resultBody.innerHTML = "<p>As a <strong>" + country + "</strong> passport holder, you'll need to apply for a UK Electronic Travel Authorisation (ETA) before you travel.</p>" +
+        "<p><strong>Cost:</strong> £16 &nbsp; <strong>Valid for:</strong> 2 years (or until your passport expires) &nbsp; <strong>Apply:</strong> at least 3 days before travel</p>" +
+        "<a class='official-link' href='https://www.gov.uk/eta' target='_blank' rel='noopener'>Apply for your ETA on gov.uk →</a>";
+    } else {
+      resultTitle.textContent = "You likely need a visa";
+      resultBody.innerHTML = "<p>Your nationality doesn't appear on the current ETA-eligible list, which usually means a Standard Visitor Visa is required before you travel, rather than the lighter-weight ETA.</p><a class='official-link' href='https://www.gov.uk/check-uk-visa' target='_blank' rel='noopener'>Check your exact requirement on gov.uk →</a>";
+    }
+  }
+
+  natSelect.addEventListener("change", function(){
+    var val = this.value;
+    if (!val) { resultBox.classList.remove("show"); return; }
+    var countryName = this.options[this.selectedIndex].text;
+    if (val === "none_uk") showResult("none", "British citizen");
+    else if (val === "none_ie") showResult("none", "Irish citizen");
+    else if (val === "existing") showResult("existing", countryName);
+    else if (val === "visa") showResult("visa", countryName);
+    else showResult("eta", countryName);
+  });
+
+  document.querySelectorAll(".faq-item").forEach(function(item){
+    item.querySelector(".faq-q").addEventListener("click", function(){
+      var wasOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(function(o){ o.classList.remove("open"); });
+      if (!wasOpen) item.classList.add("open");
+    });
+  });
+
+  var header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", function(){ header.classList.toggle("scrolled", window.scrollY > 8); }, {passive:true});
+  var mobileNav = document.getElementById("mobileNav");
+  document.getElementById("menuOpenBtn").addEventListener("click", function(){ mobileNav.classList.add("open"); document.body.style.overflow = "hidden"; });
+  document.getElementById("menuCloseBtn").addEventListener("click", closeMenu);
+  mobileNav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMenu); });
+  function closeMenu(){ mobileNav.classList.remove("open"); document.body.style.overflow = ""; }
+})();
+</script>
+</body>
+</html>
