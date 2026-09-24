@@ -108,6 +108,13 @@
   .main-nav{display:flex; align-items:center; gap:32px;}
   .main-nav a{font-size:14.5px; font-weight:500; color:var(--navy-800); text-decoration:none; position:relative; padding:6px 0;}
   .main-nav a.active::after, .main-nav a:hover::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--red-600);}
+  .nav-dropdown{position:relative;}
+  .nav-dropdown-btn{display:flex; align-items:center; gap:5px; background:none; border:none; font-family:var(--sans); font-size:14.5px; font-weight:500; color:var(--navy-800); padding:6px 0; cursor:pointer;}
+  .nav-dropdown-menu{position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(-6px); margin-top:14px; background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); box-shadow:var(--shadow-card); padding:8px; min-width:220px; opacity:0; visibility:hidden; transition:opacity .15s ease, transform .15s ease; z-index:150;}
+  .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu{opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);}
+  .nav-dropdown-menu a{display:block; padding:9px 12px; font-size:13.5px; font-weight:500; color:var(--navy-800); text-decoration:none; border-radius:8px;}
+  .nav-dropdown-menu a::after{display:none;}
+  .nav-dropdown-menu a:hover{background:var(--paper-dim);}
   .header-actions{display:flex; align-items:center; gap:14px;}
   .hamburger{display:none; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; align-items:center; justify-content:center;}
   .mobile-nav{position:fixed; inset:0; background:var(--navy-900); z-index:200; transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column; padding:24px 24px 40px;}
@@ -202,7 +209,20 @@
       <a href="/#regions">Places to Visit</a>
       <a href="/#looking-for">Things to Do</a>
       <a href="/#destinations">UK Cities</a>
-      <a href="/travel/route-planner.html">Routes</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" type="button">Tools <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="/#plan">Travel Tips</a>
+          <a href="/#cost-calculator">Trip Cost Calculator</a>
+          <a href="/#bucket-list">UK Bucket List</a>
+          <a href="/travel/route-planner.html">Route Planner</a>
+          <a href="/travel/packing-list-generator.html">Packing List Generator</a>
+          <a href="/travel/bank-holidays.html">Bank Holidays</a>
+          <a href="/travel/free-museums-map.html">Free Museums Map</a>
+          <a href="/travel/uk-time-now.html">UK Time &amp; Weather</a>
+          <a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a>
+        </div>
+      </div>
       <a href="/blog/index.html">Blog</a>
     </nav>
     <div class="header-actions">
@@ -222,8 +242,17 @@
     <a href="/#regions" class="mnav-link">Places to Visit</a>
     <a href="/#looking-for" class="mnav-link">Things to Do</a>
     <a href="/#destinations" class="mnav-link">UK Cities</a>
-    <a href="/travel/route-planner.html" class="mnav-link">Routes</a>
     <a href="/blog/index.html" class="mnav-link">Blog</a>
+    <p style="font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#8FA0BD; margin:20px 0 4px;">Tools</p>
+    <a href="/#plan" class="mnav-link" style="font-size:17px; padding:9px 0;">Travel Tips</a>
+    <a href="/#cost-calculator" class="mnav-link" style="font-size:17px; padding:9px 0;">Trip Cost Calculator</a>
+    <a href="/#bucket-list" class="mnav-link" style="font-size:17px; padding:9px 0;">UK Bucket List</a>
+    <a href="/travel/route-planner.html" class="mnav-link" style="font-size:17px; padding:9px 0;">Route Planner</a>
+    <a href="/travel/packing-list-generator.html" class="mnav-link" style="font-size:17px; padding:9px 0;">Packing List Generator</a>
+    <a href="/travel/bank-holidays.html" class="mnav-link" style="font-size:17px; padding:9px 0;">Bank Holidays</a>
+    <a href="/travel/free-museums-map.html" class="mnav-link" style="font-size:17px; padding:9px 0;">Free Museums Map</a>
+    <a href="/travel/uk-time-now.html" class="mnav-link" style="font-size:17px; padding:9px 0;">UK Time &amp; Weather</a>
+    <a href="/travel/visa-eta-checker.html" class="mnav-link" style="font-size:17px; padding:9px 0;">Visa &amp; ETA Checker</a>
   </nav>
   <a href="/#destinations" class="btn btn-primary mnav-link">Explore UK</a>
 </div>
