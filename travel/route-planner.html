@@ -123,6 +123,26 @@
 
   .note{max-width:960px; margin:28px auto 0; background:var(--paper-dim); border-left:3px solid var(--red-600); border-radius:0 var(--radius-sm) var(--radius-sm) 0; padding:16px 20px; font-size:13.5px; color:var(--navy-800); line-height:1.6;}
 
+  .extras-grid{max-width:960px; margin:20px auto 0; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .extras-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:18px 20px;}
+  .extras-label{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--red-600); margin-bottom:10px;}
+  .extras-weather{display:flex; align-items:baseline; gap:10px;}
+  .extras-weather span:first-child{font-family:var(--serif); font-size:28px; color:var(--navy-900);}
+  .extras-weather span:last-child{font-size:13px; color:var(--slate);}
+  .extras-stop{font-family:var(--serif); font-size:16px; color:var(--navy-900);}
+  .extras-stop small{display:block; font-family:var(--sans); font-size:12.5px; color:var(--slate); font-weight:400; margin-top:3px;}
+
+  .facts-list{max-width:960px; margin:28px auto 0; display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .fact-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:14px 16px;}
+  .fact-card.recommended{border-color:var(--red-600); background:var(--paper-dim);}
+  .fact-card h4{font-family:var(--sans); font-size:13.5px; font-weight:600; color:var(--navy-900); margin-bottom:4px; display:flex; align-items:center; gap:6px;}
+  .fact-card .star{color:var(--red-600); font-size:11px;}
+  .fact-card p{font-size:12.5px; color:var(--slate); line-height:1.55;}
+
+  @media (max-width:760px){
+    .extras-grid, .facts-list{grid-template-columns:1fr;}
+  }
+
   .related{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:56px 0; margin-top:56px;}
   .related-head{max-width:640px; margin:0 auto 32px; text-align:center;}
   .related-head h2{font-size:26px; margin-bottom:8px;}
@@ -248,10 +268,26 @@
     </div>
   </div>
 
+  <div class="extras-grid">
+    <div class="extras-card">
+      <p class="extras-label">Weather at Your Destination</p>
+      <div class="extras-weather">
+        <span id="destWeatherTemp">--°C</span>
+        <span id="destWeatherDesc">Loading…</span>
+      </div>
+    </div>
+    <div class="extras-card">
+      <p class="extras-label">Best Stop for a Break</p>
+      <div class="extras-stop" id="recommendedStop">—</div>
+    </div>
+  </div>
+
   <div class="towns-list">
     <h3>Towns Along the Way</h3>
     <div class="town-chips" id="townChips"></div>
   </div>
+
+  <div class="facts-list" id="factsList"></div>
 
   <div class="note">
     <strong>Note:</strong> These maps show a common road route with approximate positions, for orientation only — they are not live, traffic-aware GPS routes. For turn-by-turn navigation, use "Get Live Directions", which opens the same route in Google Maps.
@@ -320,105 +356,121 @@
 
   var ROUTES = {
     london_edinburgh: {
-      title: "London ↔ Edinburgh", meta: "Via the A1 — approx. 405 miles / 650 km",
+      title: "London ↔ Edinburgh", meta: "Via the A1 — approx. 405 miles / 650 km", driveTime: "About 7h 30m driving",
+      recommendedStop: "Durham",
+      destWeather: {lat:55.9533, lng:-3.1883, name:"Edinburgh"},
       points: [
         {name:"London", lat:51.5074, lng:-0.1278, endpoint:true},
-        {name:"Peterborough", lat:52.5695, lng:-0.2405},
-        {name:"Grantham", lat:52.9147, lng:-0.6383},
-        {name:"Newark-on-Trent", lat:53.0770, lng:-0.8090},
-        {name:"Doncaster", lat:53.5228, lng:-1.1288},
-        {name:"Wetherby", lat:53.9276, lng:-1.3859},
-        {name:"Scotch Corner", lat:54.4381, lng:-1.6647},
-        {name:"Darlington", lat:54.5253, lng:-1.5849},
-        {name:"Durham", lat:54.7761, lng:-1.5733},
-        {name:"Newcastle upon Tyne", lat:54.9783, lng:-1.6178},
-        {name:"Morpeth", lat:55.1667, lng:-1.6900},
-        {name:"Alnwick", lat:55.4147, lng:-1.7059},
-        {name:"Berwick-upon-Tweed", lat:55.7711, lng:-2.0059},
+        {name:"Peterborough", lat:52.5695, lng:-0.2405, fact:"Home to a stunning Norman cathedral where Catherine of Aragon, Henry VIII's first wife, is buried."},
+        {name:"Grantham", lat:52.9147, lng:-0.6383, fact:"Birthplace of Margaret Thatcher, and close to where Isaac Newton grew up."},
+        {name:"Newark-on-Trent", lat:53.0770, lng:-0.8090, fact:"Its castle was besieged three times during the English Civil War — more than any other in England."},
+        {name:"Doncaster", lat:53.5228, lng:-1.1288, fact:"Home to the St Leger Stakes, the oldest of Britain's five Classic horse races, run since 1776."},
+        {name:"Wetherby", lat:53.9276, lng:-1.3859, fact:"A traditional coaching town, historically a stopping point for stagecoaches on the Great North Road."},
+        {name:"Scotch Corner", lat:54.4381, lng:-1.6647, fact:"Not a town but a famous junction — its name reflects its historic role as the turn-off for routes into Scotland."},
+        {name:"Darlington", lat:54.5253, lng:-1.5849, fact:"Birthplace of the modern railway — the world's first public steam railway opened here in 1825."},
+        {name:"Durham", lat:54.7761, lng:-1.5733, fact:"Its cathedral and castle form a UNESCO World Heritage Site, and the cathedral holds the tomb of the Venerable Bede."},
+        {name:"Newcastle upon Tyne", lat:54.9783, lng:-1.6178, fact:"Famous for its iconic Tyne Bridge and a lively nightlife scene along the Quayside."},
+        {name:"Morpeth", lat:55.1667, lng:-1.6900, fact:"Home to Chantry, a museum dedicated entirely to bagpipes from around the world."},
+        {name:"Alnwick", lat:55.4147, lng:-1.7059, fact:"Alnwick Castle doubled as Hogwarts in the early Harry Potter films."},
+        {name:"Berwick-upon-Tweed", lat:55.7711, lng:-2.0059, fact:"Changed hands between England and Scotland more than a dozen times throughout history."},
         {name:"Edinburgh", lat:55.9533, lng:-3.1883, endpoint:true}
       ]
     },
     london_manchester: {
-      title: "London ↔ Manchester", meta: "Via the M1 and M6 — approx. 200 miles / 320 km",
+      title: "London ↔ Manchester", meta: "Via the M1 and M6 — approx. 200 miles / 320 km", driveTime: "About 3h 45m driving",
+      recommendedStop: "Birmingham",
+      destWeather: {lat:53.4808, lng:-2.2426, name:"Manchester"},
       points: [
         {name:"London", lat:51.5074, lng:-0.1278, endpoint:true},
-        {name:"Luton", lat:51.8787, lng:-0.4200},
-        {name:"Milton Keynes", lat:52.0406, lng:-0.7594},
-        {name:"Northampton", lat:52.2405, lng:-0.9027},
-        {name:"Rugby", lat:52.3706, lng:-1.2650},
-        {name:"Coventry", lat:52.4068, lng:-1.5197},
-        {name:"Birmingham", lat:52.4862, lng:-1.8904},
-        {name:"Stafford", lat:52.8067, lng:-2.1174},
-        {name:"Stoke-on-Trent", lat:53.0027, lng:-2.1794},
+        {name:"Luton", lat:51.8787, lng:-0.4200, fact:"Home to one of London's main airports, despite being over 30 miles from the capital."},
+        {name:"Milton Keynes", lat:52.0406, lng:-0.7594, fact:"Famous for its concrete cows — a public art installation that became an unofficial town mascot."},
+        {name:"Northampton", lat:52.2405, lng:-0.9027, fact:"Historically the centre of England's shoemaking industry."},
+        {name:"Rugby", lat:52.3706, lng:-1.2650, fact:"The birthplace of rugby football, supposedly invented at Rugby School in 1823."},
+        {name:"Coventry", lat:52.4068, lng:-1.5197, fact:"Its medieval cathedral was destroyed in WWII bombing; a striking modern cathedral now stands beside the ruins."},
+        {name:"Birmingham", lat:52.4862, lng:-1.8904, fact:"Has more miles of canals than Venice."},
+        {name:"Stafford", lat:52.8067, lng:-2.1174, fact:"Home to Stafford Castle, a Norman motte-and-bailey fortress with sweeping views."},
+        {name:"Stoke-on-Trent", lat:53.0027, lng:-2.1794, fact:"Known as \"The Potteries\" — the historic home of English ceramics, including Wedgwood."},
         {name:"Manchester", lat:53.4808, lng:-2.2426, endpoint:true}
       ]
     },
     london_bath: {
-      title: "London ↔ Bath", meta: "Via the M4 — approx. 115 miles / 185 km",
+      title: "London ↔ Bath", meta: "Via the M4 — approx. 115 miles / 185 km", driveTime: "About 2h 15m driving",
+      recommendedStop: "Reading",
+      destWeather: {lat:51.3811, lng:-2.3590, name:"Bath"},
       points: [
         {name:"London", lat:51.5074, lng:-0.1278, endpoint:true},
-        {name:"Reading", lat:51.4543, lng:-0.9781},
-        {name:"Swindon", lat:51.5558, lng:-1.7797},
-        {name:"Chippenham", lat:51.4590, lng:-2.1181},
+        {name:"Reading", lat:51.4543, lng:-0.9781, fact:"Hosts one of the UK's biggest annual music festivals, Reading Festival."},
+        {name:"Swindon", lat:51.5558, lng:-1.7797, fact:"Home to the Magic Roundabout — a notoriously complex junction made of five mini-roundabouts."},
+        {name:"Chippenham", lat:51.4590, lng:-2.1181, fact:"One of England's oldest market towns, with roots dating to the Anglo-Saxon era."},
         {name:"Bath", lat:51.3811, lng:-2.3590, endpoint:true}
       ]
     },
     london_york: {
-      title: "London ↔ York", meta: "Via the A1(M) — approx. 210 miles / 340 km",
+      title: "London ↔ York", meta: "Via the A1(M) — approx. 210 miles / 340 km", driveTime: "About 3h 45m driving",
+      recommendedStop: "Newark-on-Trent",
+      destWeather: {lat:53.9600, lng:-1.0873, name:"York"},
       points: [
         {name:"London", lat:51.5074, lng:-0.1278, endpoint:true},
-        {name:"Peterborough", lat:52.5695, lng:-0.2405},
-        {name:"Grantham", lat:52.9147, lng:-0.6383},
-        {name:"Newark-on-Trent", lat:53.0770, lng:-0.8090},
-        {name:"Doncaster", lat:53.5228, lng:-1.1288},
-        {name:"Selby", lat:53.7832, lng:-1.0664},
+        {name:"Peterborough", lat:52.5695, lng:-0.2405, fact:"Home to a stunning Norman cathedral where Catherine of Aragon, Henry VIII's first wife, is buried."},
+        {name:"Grantham", lat:52.9147, lng:-0.6383, fact:"Birthplace of Margaret Thatcher, and close to where Isaac Newton grew up."},
+        {name:"Newark-on-Trent", lat:53.0770, lng:-0.8090, fact:"Its castle was besieged three times during the English Civil War — more than any other in England."},
+        {name:"Doncaster", lat:53.5228, lng:-1.1288, fact:"Home to the St Leger Stakes, the oldest of Britain's five Classic horse races, run since 1776."},
+        {name:"Selby", lat:53.7832, lng:-1.0664, fact:"Its abbey, founded in 1069, is one of the few English abbeys to survive Henry VIII's dissolution largely intact."},
         {name:"York", lat:53.9600, lng:-1.0873, endpoint:true}
       ]
     },
     london_liverpool: {
-      title: "London ↔ Liverpool", meta: "Via the M1 and M6 — approx. 210 miles / 340 km",
+      title: "London ↔ Liverpool", meta: "Via the M1 and M6 — approx. 210 miles / 340 km", driveTime: "About 3h 45m driving",
+      recommendedStop: "Birmingham",
+      destWeather: {lat:53.4084, lng:-2.9916, name:"Liverpool"},
       points: [
         {name:"London", lat:51.5074, lng:-0.1278, endpoint:true},
-        {name:"Luton", lat:51.8787, lng:-0.4200},
-        {name:"Milton Keynes", lat:52.0406, lng:-0.7594},
-        {name:"Northampton", lat:52.2405, lng:-0.9027},
-        {name:"Rugby", lat:52.3706, lng:-1.2650},
-        {name:"Coventry", lat:52.4068, lng:-1.5197},
-        {name:"Birmingham", lat:52.4862, lng:-1.8904},
-        {name:"Stafford", lat:52.8067, lng:-2.1174},
-        {name:"Warrington", lat:53.3900, lng:-2.5970},
+        {name:"Luton", lat:51.8787, lng:-0.4200, fact:"Home to one of London's main airports, despite being over 30 miles from the capital."},
+        {name:"Milton Keynes", lat:52.0406, lng:-0.7594, fact:"Famous for its concrete cows — a public art installation that became an unofficial town mascot."},
+        {name:"Northampton", lat:52.2405, lng:-0.9027, fact:"Historically the centre of England's shoemaking industry."},
+        {name:"Rugby", lat:52.3706, lng:-1.2650, fact:"The birthplace of rugby football, supposedly invented at Rugby School in 1823."},
+        {name:"Coventry", lat:52.4068, lng:-1.5197, fact:"Its medieval cathedral was destroyed in WWII bombing; a striking modern cathedral now stands beside the ruins."},
+        {name:"Birmingham", lat:52.4862, lng:-1.8904, fact:"Has more miles of canals than Venice."},
+        {name:"Stafford", lat:52.8067, lng:-2.1174, fact:"Home to Stafford Castle, a Norman motte-and-bailey fortress with sweeping views."},
+        {name:"Warrington", lat:53.3900, lng:-2.5970, fact:"Sits almost exactly halfway between Liverpool and Manchester, historically a key transport hub."},
         {name:"Liverpool", lat:53.4084, lng:-2.9916, endpoint:true}
       ]
     },
     london_birmingham: {
-      title: "London ↔ Birmingham", meta: "Via the M40 — approx. 120 miles / 195 km",
+      title: "London ↔ Birmingham", meta: "Via the M40 — approx. 120 miles / 195 km", driveTime: "About 2h 10m driving",
+      recommendedStop: "Oxford",
+      destWeather: {lat:52.4862, lng:-1.8904, name:"Birmingham"},
       points: [
         {name:"London", lat:51.5074, lng:-0.1278, endpoint:true},
-        {name:"Beaconsfield", lat:51.6120, lng:-0.6430},
-        {name:"Oxford", lat:51.7520, lng:-1.2577},
-        {name:"Banbury", lat:52.0629, lng:-1.3400},
-        {name:"Warwick", lat:52.2823, lng:-1.5849},
+        {name:"Beaconsfield", lat:51.6120, lng:-0.6430, fact:"Home to Bekonscot, the world's oldest model village, open since 1929."},
+        {name:"Oxford", lat:51.7520, lng:-1.2577, fact:"Home to the oldest university in the English-speaking world, teaching since 1096."},
+        {name:"Banbury", lat:52.0629, lng:-1.3400, fact:"Famous the world over from the nursery rhyme \"Ride a Cock Horse to Banbury Cross.\""},
+        {name:"Warwick", lat:52.2823, lng:-1.5849, fact:"Warwick Castle is one of England's best-preserved medieval castles, dating back over 1,000 years."},
         {name:"Birmingham", lat:52.4862, lng:-1.8904, endpoint:true}
       ]
     },
     manchester_edinburgh: {
-      title: "Manchester ↔ Edinburgh", meta: "Via the M6 and A74(M) — approx. 220 miles / 355 km",
+      title: "Manchester ↔ Edinburgh", meta: "Via the M6 and A74(M) — approx. 220 miles / 355 km", driveTime: "About 4h 15m driving",
+      recommendedStop: "Carlisle",
+      destWeather: {lat:55.9533, lng:-3.1883, name:"Edinburgh"},
       points: [
         {name:"Manchester", lat:53.4808, lng:-2.2426, endpoint:true},
-        {name:"Preston", lat:53.7632, lng:-2.7031},
-        {name:"Lancaster", lat:54.0466, lng:-2.8007},
-        {name:"Penrith", lat:54.6639, lng:-2.7530},
-        {name:"Carlisle", lat:54.8951, lng:-2.9382},
-        {name:"Gretna Green", lat:55.0021, lng:-3.0672},
-        {name:"Moffat", lat:55.3298, lng:-3.4477},
+        {name:"Preston", lat:53.7632, lng:-2.7031, fact:"One of England's newest cities, only gaining official city status in 2002."},
+        {name:"Lancaster", lat:54.0466, lng:-2.8007, fact:"Home to Lancaster Castle, which held prisoners as recently as 2011 before becoming a museum."},
+        {name:"Penrith", lat:54.6639, lng:-2.7530, fact:"A gateway to the Lake District, with a distinctive red sandstone castle ruin at its centre."},
+        {name:"Carlisle", lat:54.8951, lng:-2.9382, fact:"Its castle has been besieged more times than any other in British history, reflecting centuries on the Scottish border."},
+        {name:"Gretna Green", lat:55.0021, lng:-3.0672, fact:"Famous since 1754 as a destination for elopers to marry without parental consent — a tradition that continues today."},
+        {name:"Moffat", lat:55.3298, lng:-3.4477, fact:"A former spa town, once popular with Victorian visitors for its sulphur springs."},
         {name:"Edinburgh", lat:55.9533, lng:-3.1883, endpoint:true}
       ]
     },
     edinburgh_glasgow: {
-      title: "Edinburgh ↔ Glasgow", meta: "Via the M8 — approx. 47 miles / 75 km",
+      title: "Edinburgh ↔ Glasgow", meta: "Via the M8 — approx. 47 miles / 75 km", driveTime: "About 1h 5m driving",
+      recommendedStop: "Livingston",
+      destWeather: {lat:55.8642, lng:-4.2518, name:"Glasgow"},
       points: [
         {name:"Edinburgh", lat:55.9533, lng:-3.1883, endpoint:true},
-        {name:"Livingston", lat:55.8825, lng:-3.5227},
+        {name:"Livingston", lat:55.8825, lng:-3.5227, fact:"One of Scotland's post-war \"New Towns,\" purpose-built in the 1960s."},
         {name:"Glasgow", lat:55.8642, lng:-4.2518, endpoint:true}
       ]
     }
@@ -432,6 +484,33 @@
 
   var layerGroup = L.layerGroup().addTo(map);
 
+  var WMO_CODES = {
+    0:"Clear sky", 1:"Mainly clear", 2:"Partly cloudy", 3:"Overcast",
+    45:"Foggy", 48:"Foggy", 51:"Light drizzle", 53:"Drizzle", 55:"Dense drizzle",
+    61:"Light rain", 63:"Rain", 65:"Heavy rain", 71:"Light snow", 73:"Snow", 75:"Heavy snow",
+    80:"Light showers", 81:"Showers", 82:"Heavy showers", 95:"Thunderstorm"
+  };
+  var weatherCache = {};
+  function loadDestWeather(lat, lng, name){
+    document.getElementById("destWeatherDesc").textContent = "Loading " + name + "…";
+    document.getElementById("destWeatherTemp").textContent = "--°C";
+    var key = lat + "," + lng;
+    if (weatherCache[key]){ renderDestWeather(weatherCache[key], name); return; }
+    var url = "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + lng +
+      "&current=temperature_2m,weather_code&timezone=Europe%2FLondon";
+    fetch(url).then(function(r){ return r.json(); }).then(function(data){
+      if (!data || !data.current) throw new Error("no data");
+      weatherCache[key] = data.current;
+      renderDestWeather(data.current, name);
+    }).catch(function(){
+      document.getElementById("destWeatherDesc").textContent = "Weather unavailable right now";
+    });
+  }
+  function renderDestWeather(current, name){
+    document.getElementById("destWeatherTemp").textContent = Math.round(current.temperature_2m) + "°C";
+    document.getElementById("destWeatherDesc").textContent = (WMO_CODES[current.weather_code] || "—") + " in " + name;
+  }
+
   function drawRoute(key){
     var route = ROUTES[key];
     layerGroup.clearLayers();
@@ -441,22 +520,36 @@
 
     route.points.forEach(function(p){
       var isEndpoint = !!p.endpoint;
+      var isRecommended = p.name === route.recommendedStop;
       var marker = L.circleMarker([p.lat, p.lng], {
-        radius: isEndpoint ? 8 : 5,
-        fillColor: isEndpoint ? "#0B1B33" : "#B23A32",
+        radius: isEndpoint ? 8 : (isRecommended ? 7 : 5),
+        fillColor: isEndpoint ? "#0B1B33" : (isRecommended ? "#1F7A4D" : "#B23A32"),
         color: "#fff", weight: 2, fillOpacity: 1
       }).addTo(layerGroup);
+      var popupHtml = "<strong>" + p.name + "</strong>" + (isRecommended ? " ★ Recommended stop" : "") + (p.fact ? "<br>" + p.fact : "");
       marker.bindTooltip(p.name, { permanent:false, direction:"top" });
-      if (isEndpoint) marker.bindPopup("<strong>" + p.name + "</strong>");
+      marker.bindPopup(popupHtml);
     });
 
     map.fitBounds(L.polyline(latlngs).getBounds(), { padding:[30,30] });
 
     document.getElementById("routeTitle").textContent = route.title;
-    document.getElementById("routeMeta").textContent = route.meta;
+    document.getElementById("routeMeta").textContent = route.meta + " · " + route.driveTime;
     document.getElementById("townChips").innerHTML = route.points.map(function(p){
-      return '<span class="town-chip">' + p.name + '</span>';
+      var star = p.name === route.recommendedStop ? ' ★' : '';
+      return '<span class="town-chip">' + p.name + star + '</span>';
     }).join("");
+
+    var stopFact = route.points.find(function(p){ return p.name === route.recommendedStop; });
+    document.getElementById("recommendedStop").innerHTML = route.recommendedStop +
+      (stopFact && stopFact.fact ? "<small>" + stopFact.fact + "</small>" : "");
+
+    document.getElementById("factsList").innerHTML = route.points.filter(function(p){ return p.fact; }).map(function(p){
+      var isRecommended = p.name === route.recommendedStop;
+      return '<div class="fact-card' + (isRecommended ? ' recommended' : '') + '"><h4>' + (isRecommended ? '<span class="star">★</span> ' : '') + p.name + '</h4><p>' + p.fact + '</p></div>';
+    }).join("");
+
+    loadDestWeather(route.destWeather.lat, route.destWeather.lng, route.destWeather.name);
 
     var start = route.points[0];
     var end = route.points[route.points.length - 1];
