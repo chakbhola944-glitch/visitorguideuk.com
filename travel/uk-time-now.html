@@ -37,10 +37,16 @@
 <meta property="og:title" content="What Time Is It in the UK? Live UK Clock, Date & Weather">
 <meta property="og:description" content="Live UK time, GMT/BST status, world time comparison and weather for London, Edinburgh, Cardiff and Belfast.">
 <meta property="og:url" content="https://www.visitorguideuk.com/travel/uk-time-now.html">
+<meta property="og:image" content="https://www.visitorguideuk.com/images/uk-time-now-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Live UK clock with GMT/BST status">
 <meta property="og:locale" content="en_GB">
+
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="What Time Is It in the UK? Live Clock">
 <meta name="twitter:description" content="Live UK time, GMT/BST status and weather.">
+<meta name="twitter:image" content="https://www.visitorguideuk.com/images/uk-time-now-og.jpg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,7 +184,6 @@
   .hero-badge{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; padding:6px 12px; border-radius:100px; background:#fff; border:1px solid var(--line); color:var(--navy-800); text-transform:uppercase; letter-spacing:.06em;}
   .hero-badge .dot{width:6px; height:6px; border-radius:50%; background:var(--green-600);}
 
-  /* Clock hero */
   .clock-card{max-width:760px; margin:28px auto 0; background:var(--navy-900); border-radius:var(--radius-lg); padding:44px 40px; text-align:center; color:#fff; position:relative; overflow:hidden; box-shadow:var(--shadow-hover);}
   .clock-card::before{content:""; position:absolute; top:-80px; right:-80px; width:240px; height:240px; border-radius:50%; background:radial-gradient(circle, rgba(178,58,50,.35), transparent 70%); pointer-events:none;}
   .clock-card::after{content:""; position:absolute; bottom:-80px; left:-80px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle, rgba(178,58,50,.2), transparent 70%); pointer-events:none;}
@@ -189,11 +194,15 @@
   .clock-tz-badge{display:inline-flex; align-items:center; gap:8px; margin-top:16px; padding:7px 16px; border-radius:100px; background:rgba(31,122,77,.18); border:1px solid rgba(31,122,77,.4); color:#8FD4A8; font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.08em; position:relative;}
   .clock-tz-badge.gmt{background:rgba(176,138,40,.18); border-color:rgba(176,138,40,.4); color:#E0C073;}
 
-  /* Local compare */
   .local-compare{max-width:760px; margin:16px auto 0; background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:16px 22px; text-align:center; font-size:14px; color:var(--slate);}
   .local-compare strong{color:var(--navy-900);}
 
-  /* World time grid */
+  /* Cross-link */
+  .cross-link{max-width:760px; margin:16px auto 0; background:#fff; border:1px solid var(--line); border-left:3px solid var(--red-600); border-radius:0 var(--radius-md) var(--radius-md) 0; padding:18px 22px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .cross-link p{margin:0; font-size:14px; color:var(--navy-800); flex:1; min-width:220px; line-height:1.5;}
+  .cross-link p strong{color:var(--navy-900);}
+  .cross-link .btn{padding:10px 20px; font-size:13px; white-space:nowrap;}
+
   .world-card{max-width:960px; margin:40px auto 0; background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:32px 32px; box-shadow:var(--shadow-card);}
   .world-card h2{font-size:22px; margin-bottom:6px; text-align:center;}
   .world-card > p{text-align:center; color:var(--slate); font-size:14px; margin-bottom:26px;}
@@ -205,7 +214,6 @@
   .world-diff{font-size:12px; color:var(--red-600); margin-top:6px; font-weight:500;}
   .world-date{font-size:11px; color:var(--slate-light); font-family:var(--mono); margin-top:2px;}
 
-  /* City tabs + weather */
   .city-tabs{display:flex; gap:8px; margin:36px 0 18px; flex-wrap:wrap; justify-content:center;}
   .city-tab{padding:10px 20px; border-radius:100px; border:1px solid var(--line); background:#fff; font-family:var(--sans); font-size:13.5px; font-weight:500; color:var(--navy-800); transition:all .18s;}
   .city-tab:hover{border-color:var(--navy-700);}
@@ -221,7 +229,6 @@
   .skeleton{background:linear-gradient(90deg,#ECEBE6 25%,#F5F5F2 50%,#ECEBE6 75%); background-size:200% 100%; animation:shimmer 1.4s infinite; border-radius:6px; display:inline-block;}
   @keyframes shimmer{0%{background-position:200% 0} 100%{background-position:-200% 0}}
 
-  /* Call time advice */
   .call-card{max-width:760px; margin:0 auto 40px; background:linear-gradient(135deg, #0B1B33, #1B3A61); color:#fff; border-radius:var(--radius-lg); padding:32px 36px; box-shadow:var(--shadow-card);}
   .call-card h2{color:#fff; font-size:22px; margin-bottom:8px;}
   .call-card > p{color:#C7D0DE; font-size:14.5px; margin-bottom:22px;}
@@ -231,17 +238,14 @@
   .call-item .window{font-family:var(--serif); font-size:20px; color:#fff; font-weight:600; line-height:1.2;}
   .call-item .note{font-size:12px; color:#93A1B7; margin-top:6px; line-height:1.4;}
 
-  /* FAQ */
   .faq-section{max-width:820px; margin:0 auto;}
   .faq-section h2{font-size:26px; text-align:center; margin-bottom:28px;}
   .faq-item{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:18px 22px; margin-bottom:12px;}
   .faq-item h3{font-family:var(--sans); font-size:15px; font-weight:600; margin-bottom:8px; color:var(--navy-900);}
   .faq-item p{font-size:14px; color:var(--slate); line-height:1.6;}
 
-  /* Note */
   .note{max-width:760px; margin:24px auto 0; background:var(--paper-dim); border-left:3px solid var(--red-600); border-radius:0 var(--radius-sm) var(--radius-sm) 0; padding:16px 20px; font-size:13.5px; color:var(--navy-800); line-height:1.6;}
 
-  /* Sticky CTA */
   .sticky-cta{position:fixed; bottom:16px; left:50%; transform:translateX(-50%); z-index:90; background:#fff; border:1px solid var(--line); box-shadow:var(--shadow-hover); border-radius:100px; padding:8px 8px 8px 22px; display:flex; align-items:center; gap:16px; max-width:calc(100% - 32px); transition:transform .25s ease, opacity .25s ease;}
   .sticky-cta .sticky-info{font-size:13.5px; color:var(--navy-800); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
   .sticky-cta .sticky-info strong{font-weight:600;}
@@ -254,7 +258,6 @@
     .sticky-cta .gmaps-btn{padding:9px 14px; font-size:12.5px;}
   }
 
-  /* Related */
   .related{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:56px 0; margin-top:56px;}
   .related-head{max-width:640px; margin:0 auto 32px; text-align:center;}
   .related-head h2{font-size:26px; margin-bottom:8px;}
@@ -292,6 +295,7 @@
     .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
     .footer-brand{grid-column:1 / -1;}
     .world-card, .call-card{padding:22px 20px;}
+    .cross-link{flex-direction:column; align-items:flex-start;}
   }
 </style>
 <script src="/cookie-consent.js" defer></script>
@@ -315,6 +319,7 @@
           <a href="/travel/bank-holidays.html">Bank Holidays</a>
           <a href="/travel/free-museums-map.html">Free Museums Map</a>
           <a href="/travel/uk-time-now.html">UK Time &amp; Weather</a>
+          <a href="/travel/uk-weather.html">UK Weather Guide</a>
           <a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a>
         </div>
       </div>
@@ -343,6 +348,7 @@
     <a href="/travel/bank-holidays.html">Bank Holidays</a>
     <a href="/travel/free-museums-map.html">Free Museums Map</a>
     <a href="/travel/uk-time-now.html">UK Time &amp; Weather</a>
+    <a href="/travel/uk-weather.html">UK Weather Guide</a>
     <a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a>
     <a href="/blog/index.html">Blog</a>
   </nav>
@@ -366,7 +372,6 @@
 
 <div class="container">
 
-  <!-- Clock -->
   <div class="clock-card">
     <p class="eyebrow">United Kingdom · Europe/London</p>
     <div class="clock-time" id="ukTime">--:--<span class="clock-seconds" id="ukSecs">--</span></div>
@@ -376,14 +381,18 @@
 
   <div class="local-compare" id="localCompare">Detecting your local time for comparison…</div>
 
-  <!-- World time -->
+  <!-- Cross-link to weather guide -->
+  <div class="cross-link">
+    <p><strong>Planning a trip?</strong> Read our UK weather guide to understand what to expect by season, region and month.</p>
+    <a href="/travel/uk-weather.html" class="btn btn-primary">UK Weather Guide →</a>
+  </div>
+
   <div class="world-card">
     <h2>UK Time Compared With the World</h2>
     <p>Right now, compared with the UK — updated live.</p>
     <div class="world-grid" id="worldGrid"></div>
   </div>
 
-  <!-- City weather tabs -->
   <div class="city-tabs" id="cityTabs">
     <button class="city-tab active" data-city="London" data-lat="51.5074" data-lng="-0.1278">London</button>
     <button class="city-tab" data-city="Edinburgh" data-lat="55.9533" data-lng="-3.1883">Edinburgh</button>
@@ -392,7 +401,6 @@
     <button class="city-tab" data-city="Manchester" data-lat="53.4808" data-lng="-2.2426">Manchester</button>
   </div>
 
-  <!-- Weather -->
   <div class="weather-card">
     <div>
       <div class="weather-city" id="weatherCity">London</div>
@@ -405,7 +413,6 @@
     </div>
   </div>
 
-  <!-- Best time to call -->
   <div class="call-card">
     <h2>Best Time to Call the UK From Abroad</h2>
     <p>When it's a normal UK working day (9am – 6pm UK time), here's what the clock says where you are:</p>
@@ -460,16 +467,15 @@
   <div class="container">
     <div class="related-head"><p class="eyebrow" style="justify-content:center;">Keep Planning</p><h2>Related Tools &amp; Guides</h2><p>Everything you need to plan your UK trip.</p></div>
     <div class="related-grid">
+      <a class="related-card" href="/travel/uk-weather.html"><h3>UK Weather Guide</h3><p>What to expect by season, and how to pack for the British climate.</p></a>
       <a class="related-card" href="/travel/route-planner.html"><h3>UK Route Planner</h3><p>Distances, drive times and best stops between major UK cities.</p></a>
-      <a class="related-card" href="/travel/itinerary-generator.html"><h3>UK Itinerary Generator</h3><p>Build a custom day-by-day UK itinerary in 60 seconds.</p></a>
-      <a class="related-card" href="/travel/visa-eta-checker.html"><h3>UK Visa &amp; ETA Checker</h3><p>Do you need a visa or ETA? Check instantly by nationality.</p></a>
+      <a class="related-card" href="/travel/packing-list-generator.html"><h3>UK Packing List Generator</h3><p>Build a personalised packing list for your travel month.</p></a>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- Sticky CTA -->
 <div class="sticky-cta" id="stickyCta">
   <span class="sticky-info">🕐 UK time: <strong id="stickyTime">--:--</strong> · <span id="stickyTz">GMT/BST</span></span>
   <button class="gmaps-btn" id="stickyScroll" type="button">Top ↑</button>
@@ -496,12 +502,17 @@
         <li><a href="/categories/day-trips.html">Day Trips</a></li>
         <li><a href="/blog/index.html">Blog</a></li>
       </ul></div>
-      <div class="footer-col"><h4>Travel</h4><ul>
+      <div class="footer-col"><h4>Travel Tools</h4><ul>
         <li><a href="/travel/route-planner.html">Route Planner</a></li>
         <li><a href="/travel/itinerary-generator.html">Itinerary Generator</a></li>
-        <li><a href="/travel/free-museums-map.html">Free Museums Map</a></li>
+        <li><a href="/travel/packing-list-generator.html">Packing List Generator</a></li>
         <li><a href="/travel/bank-holidays.html">Bank Holidays</a></li>
-        <li><a href="/travel/uk-time-now.html">UK Time Now</a></li>
+        <li><a href="/travel/free-museums-map.html">Free Museums Map</a></li>
+        <li><a href="/travel/uk-time-now.html">UK Time &amp; Weather</a></li>
+        <li><a href="/travel/uk-weather.html">UK Weather Guide</a></li>
+        <li><a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a></li>
+        <li><a href="/travel/money-and-payments.html">Money &amp; Payments</a></li>
+        <li><a href="/travel/best-time-to-visit.html">Best Time to Visit</a></li>
       </ul></div>
       <div class="footer-col"><h4>Company</h4><ul>
         <li><a href="/legal/about.html">About Us</a></li>
@@ -535,7 +546,6 @@
     95:"Thunderstorm", 96:"Thunderstorm with hail", 99:"Severe thunderstorm"
   };
 
-  /* ---------------- WORLD CITIES ---------------- */
   var WORLD_CITIES = [
     {name:"New York", tz:"America/New_York", short:"NYC"},
     {name:"Los Angeles", tz:"America/Los_Angeles", short:"LA"},
@@ -557,22 +567,18 @@
     {name:"India", tz:"Asia/Kolkata", note:"Delhi, Mumbai, Bengaluru"}
   ];
 
-  /* ---------------- LIVE CLOCK ---------------- */
   function updateClock(){
     var now = new Date();
     var tz = "Europe/London";
 
-    // Time in HH:MM
     var timeStr = new Intl.DateTimeFormat("en-GB", {
       timeZone: tz, hour:"2-digit", minute:"2-digit", hour12:false
     }).format(now);
 
-    // Seconds separately
     var secStr = new Intl.DateTimeFormat("en-GB", {
       timeZone: tz, second:"2-digit"
     }).format(now);
 
-    // Full date
     var dateStr = new Intl.DateTimeFormat("en-GB", {
       timeZone: tz, weekday:"long", day:"numeric", month:"long", year:"numeric"
     }).format(now);
@@ -580,7 +586,6 @@
     document.getElementById("ukTime").innerHTML = timeStr + '<span class="clock-seconds" id="ukSecs">' + secStr + '</span>';
     document.getElementById("ukDate").textContent = dateStr;
 
-    // Time zone name (GMT or BST)
     var tzPart = new Intl.DateTimeFormat("en-GB", {
       timeZone: tz, timeZoneName:"short"
     }).formatToParts(now).find(function(p){ return p.type === "timeZoneName"; });
@@ -594,7 +599,6 @@
     document.getElementById("stickyTime").textContent = timeStr;
     document.getElementById("stickyTz").textContent = tzName;
 
-    // Local comparison
     try {
       var localStr = new Intl.DateTimeFormat("en-GB", { hour:"2-digit", minute:"2-digit", hour12:false }).format(now);
       var localTz = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -611,7 +615,6 @@
       document.getElementById("localCompare").textContent = "";
     }
 
-    // World times
     renderWorldTimes(now);
     renderCallTimes(now);
   }
@@ -651,15 +654,8 @@
   function renderCallTimes(now){
     var grid = document.getElementById("callGrid");
     if (!grid) return;
-    // We want to show: when it's 9am-6pm UK, what time is it at their end
-    // Take the midpoint 13:30 UK as a reference and show local times
     grid.innerHTML = CALL_CITIES.map(function(c){
       try {
-        var ukRef = new Date();
-        // UK time now; calculate their time at UK 13:00 (mid-working-day)
-        var ukHour = parseInt(new Intl.DateTimeFormat("en-GB", { timeZone:"Europe/London", hour:"2-digit", hour12:false }).format(now), 10);
-        var ukMin = parseInt(new Intl.DateTimeFormat("en-GB", { timeZone:"Europe/London", minute:"2-digit" }).format(now), 10);
-        // Time now at their location
         var theirNow = new Intl.DateTimeFormat("en-GB", { timeZone: c.tz, hour:"2-digit", minute:"2-digit", hour12:false }).format(now);
         return '<div class="call-item">' +
           '<div class="region">' + c.name + '</div>' +
@@ -691,7 +687,6 @@
   updateClock();
   setInterval(updateClock, 1000);
 
-  /* ---------------- WEATHER (Open-Meteo) ---------------- */
   var weatherCache = {};
 
   function loadWeather(city, lat, lng){
@@ -758,7 +753,6 @@
 
   loadWeather("London", "51.5074", "-0.1278");
 
-  /* ---------------- Sticky + Header + Mobile nav ---------------- */
   document.getElementById("stickyScroll").addEventListener("click", function(){
     window.scrollTo({top:0, behavior:"smooth"});
   });
