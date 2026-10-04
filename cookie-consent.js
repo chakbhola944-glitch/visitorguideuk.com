@@ -1,116 +1,120 @@
 /* =========================================================
-   Visitor Guide UK — Cookie Consent Banner
-   Include on every page with:
-   <script src="/cookie-consent.js" defer></script>
+   Visitor Guide UK — Cookie Consent + Auto Attribution + AdSense
    ========================================================= */
-(function () {
+(function(){
   "use strict";
 
-  var STORAGE_KEY = "vguk_cookie_consent"; // "accepted" | "rejected"
+  var STORAGE_KEY = "vguk_cookie_consent";
+  var ADSENSE_CLIENT = "ca-pub-4810324099223465";
 
-  function getConsent() {
-    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  /* =========================================================
+     1) COOKIE CONSENT BANNER
+     ========================================================= */
+  function getConsent(){
+    try { return localStorage.getItem(STORAGE_KEY); } catch(e){ return null; }
   }
-  function setConsent(value) {
-    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
-  }
-
-  // Already decided — nothing to show
-  if (getConsent()) return;
-
-  function injectStyles() {
-    var css = [
-      "#vguk-cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;",
-      "background:#0B1B33;color:#DCE3EE;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,sans-serif;",
-      "padding:18px 20px;box-shadow:0 -8px 30px rgba(0,0,0,.25);",
-      "display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;",
-      "border-top:1px solid rgba(255,255,255,.12);transform:translateY(110%);transition:transform .35s ease;}",
-
-      "#vguk-cookie-banner.vguk-show{transform:translateY(0);}",
-
-      "#vguk-cookie-banner .vguk-text{flex:1 1 380px;max-width:720px;font-size:13.5px;line-height:1.55;color:#DCE3EE;}",
-      "#vguk-cookie-banner .vguk-text a{color:#fff;text-decoration:underline;}",
-
-      "#vguk-cookie-banner .vguk-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;flex:0 0 auto;}",
-
-      "#vguk-cookie-banner button{font-family:inherit;font-size:13.5px;font-weight:600;padding:10px 20px;",
-      "border-radius:100px;border:1px solid transparent;cursor:pointer;transition:background .15s ease,border-color .15s ease;white-space:nowrap;}",
-
-      "#vguk-cookie-banner .vguk-accept{background:#B23A32;color:#fff;}",
-      "#vguk-cookie-banner .vguk-accept:hover{background:#96302A;}",
-
-      "#vguk-cookie-banner .vguk-reject{background:transparent;color:#DCE3EE;border-color:rgba(255,255,255,.35);}",
-      "#vguk-cookie-banner .vguk-reject:hover{border-color:#fff;color:#fff;}",
-
-      "@media (max-width:600px){",
-      "#vguk-cookie-banner{padding:16px;flex-direction:column;align-items:stretch;text-align:center;}",
-      "#vguk-cookie-banner .vguk-actions{justify-content:center;}",
-      "#vguk-cookie-banner button{flex:1;}",
-      "}"
-    ].join("");
-
-    var style = document.createElement("style");
-    style.id = "vguk-cookie-style";
-    style.textContent = css;
-    document.head.appendChild(style);
+  function setConsent(value){
+    try { localStorage.setItem(STORAGE_KEY, value); } catch(e){}
   }
 
-  function injectBanner() {
+  function showBanner(){
+    if (getConsent()) return;
+
     var banner = document.createElement("div");
     banner.id = "vguk-cookie-banner";
-    banner.setAttribute("role", "dialog");
-    banner.setAttribute("aria-label", "Cookie consent");
-
     banner.innerHTML =
-      '<p class="vguk-text">We use cookies to run this site and, with your consent, for analytics and advertising. ' +
-      'See our <a href="/legal/cookie-policy.html">Cookie Policy</a> for details.</p>' +
-      '<div class="vguk-actions">' +
-        '<button type="button" class="vguk-reject">Reject Non-Essential</button>' +
-        '<button type="button" class="vguk-accept">Accept All</button>' +
-      "</div>";
+      '<div style="max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">' +
+        '<div style="flex:1; min-width:240px;">' +
+          '<strong style="display:block; font-family:Georgia,serif; font-size:15px; color:#fff; margin-bottom:4px;">We use cookies</strong>' +
+          '<span style="font-size:13px; color:#C7D0DE; line-height:1.5;">We use cookies to analyse site traffic and to show relevant ads. See our <a href="/legal/cookie-policy.html" style="color:#E7C7C4; text-decoration:underline;">Cookie Policy</a>.</span>' +
+        '</div>' +
+        '<div style="display:flex; gap:8px; flex-wrap:wrap;">' +
+          '<button id="vguk-cookie-accept" style="padding:10px 22px; border-radius:100px; border:none; background:#B23A32; color:#fff; font-weight:600; font-size:13.5px; cursor:pointer;">Accept</button>' +
+          '<button id="vguk-cookie-decline" style="padding:10px 22px; border-radius:100px; border:1px solid rgba(255,255,255,.4); background:transparent; color:#fff; font-weight:600; font-size:13.5px; cursor:pointer;">Decline</button>' +
+        '</div>' +
+      '</div>';
+
+    banner.style.cssText =
+      "position:fixed; bottom:0; left:0; right:0; background:#0B1B33; padding:18px 20px; " +
+      "z-index:9999; box-shadow:0 -4px 20px rgba(0,0,0,.3); " +
+      "font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;";
 
     document.body.appendChild(banner);
 
-    // Trigger slide-up animation
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () { banner.classList.add("vguk-show"); });
-    });
-
-    banner.querySelector(".vguk-accept").addEventListener("click", function () {
+    document.getElementById("vguk-cookie-accept").addEventListener("click", function(){
       setConsent("accepted");
-      updateGoogleConsent("granted");
-      hideBanner(banner);
+      banner.remove();
+      if (window.gtag){
+        window.gtag("consent", "update", {
+          "ad_storage": "granted",
+          "ad_user_data": "granted",
+          "ad_personalization": "granted",
+          "analytics_storage": "granted"
+        });
+      }
+      loadAdSense();
     });
-    banner.querySelector(".vguk-reject").addEventListener("click", function () {
-      setConsent("rejected");
-      updateGoogleConsent("denied");
-      hideBanner(banner);
-    });
-  }
 
-  function updateGoogleConsent(state) {
-    if (typeof window.gtag !== "function") return;
-    window.gtag("consent", "update", {
-      ad_storage: state,
-      ad_user_data: state,
-      ad_personalization: state,
-      analytics_storage: state
+    document.getElementById("vguk-cookie-decline").addEventListener("click", function(){
+      setConsent("denied");
+      banner.remove();
     });
   }
 
-  function hideBanner(banner) {
-    banner.classList.remove("vguk-show");
-    setTimeout(function () {
-      if (banner.parentNode) banner.parentNode.removeChild(banner);
-    }, 400);
+  /* =========================================================
+     2) ADSENSE LOADER (صرف اجازت کے بعد)
+     ========================================================= */
+  var adsenseLoaded = false;
+  function loadAdSense(){
+    if (adsenseLoaded) return;
+    if (getConsent() !== "accepted") return;
+    adsenseLoaded = true;
+
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + ADSENSE_CLIENT;
+    script.crossOrigin = "anonymous";
+    document.head.appendChild(script);
   }
 
-  function init() {
-    injectStyles();
-    injectBanner();
+  /* =========================================================
+     3) AUTO ATTRIBUTION (Wikimedia Commons)
+     ========================================================= */
+  function addAttribution(){
+    var footers = document.querySelectorAll(".footer-bottom");
+    footers.forEach(function(footer){
+      if (footer.querySelector(".vguk-attribution")) return;
+      var span = document.createElement("span");
+      span.className = "vguk-attribution";
+      span.innerHTML = 'Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" style="color:#93A1B7; text-decoration:underline;">Wikimedia Commons</a> (CC BY-SA)';
+      footer.appendChild(span);
+    });
   }
 
-  if (document.readyState === "loading") {
+  /* =========================================================
+     4) INIT
+     ========================================================= */
+  function init(){
+    showBanner();
+    addAttribution();
+
+    // اگر صارف نے پہلے اجازت دی ہے تو AdSense لوڈ کریں
+    if (getConsent() === "accepted"){
+      loadAdSense();
+    }
+
+    // Dynamic pages کے لیے
+    var observer = new MutationObserver(function(){
+      addAttribution();
+    });
+    if (document.body){
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    setTimeout(addAttribution, 3000);
+  }
+
+  if (document.readyState === "loading"){
     document.addEventListener("DOMContentLoaded", init);
   } else {
     init();
