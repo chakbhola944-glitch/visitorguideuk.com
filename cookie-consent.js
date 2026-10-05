@@ -7,6 +7,22 @@
   var STORAGE_KEY = "vguk_cookie_consent";
   var ADSENSE_CLIENT = "ca-pub-4810324099223465";
 
+  /* تمام ٹولز کی مکمل لسٹ */
+  var ALL_TOOLS = [
+    { href:"/travel/trip-cost-calculator.html", label:"Trip Cost Calculator" },
+    { href:"/travel/bucket-list.html", label:"UK Bucket List" },
+    { href:"/travel/route-planner.html", label:"Route Planner" },
+    { href:"/travel/journey-time-calculator.html", label:"Journey Time Calculator" },
+    { href:"/travel/journey-cost-estimator.html", label:"Journey Cost Estimator" },
+    { href:"/travel/train-ticket-price-calculator.html", label:"Train Ticket Prices" },
+    { href:"/travel/itinerary-generator.html", label:"Itinerary Generator" },
+    { href:"/travel/packing-list-generator.html", label:"Packing List Generator" },
+    { href:"/travel/bank-holidays.html", label:"Bank Holidays" },
+    { href:"/travel/free-museums-map.html", label:"Free Museums Map" },
+    { href:"/travel/uk-time-now.html", label:"UK Time & Weather" },
+    { href:"/travel/visa-eta-checker.html", label:"Visa & ETA Checker" }
+  ];
+
   /* =========================================================
      1) COOKIE CONSENT BANNER
      ========================================================= */
@@ -81,75 +97,89 @@
   }
 
   /* =========================================================
-     4) AUTO-INJECT TOOL LINKS
+     4) MOBILE MENU SCROLL FIX
      ========================================================= */
-  var TOOL_LINKS = [
-    { href:"/travel/train-ticket-price-calculator.html", label:"Train Ticket Prices", after:"/travel/journey-cost-estimator.html" }
-  ];
+  function fixMobileNav(){
+    var mobileNav = document.getElementById("mobileNav");
+    if (!mobileNav) return;
+    mobileNav.style.overflowY = "auto";
+    mobileNav.style.maxHeight = "100vh";
+    mobileNav.style.webkitOverflowScrolling = "touch";
+  }
 
+  /* =========================================================
+     5) AUTO-INJECT ALL TOOL LINKS
+     ========================================================= */
   function injectToolLinks(){
-    TOOL_LINKS.forEach(function(tool){
-      // Desktop dropdown
-      document.querySelectorAll(".nav-dropdown-menu").forEach(function(menu){
+    // ڈیسک ٹاپ Tools مینو
+    document.querySelectorAll(".nav-dropdown-menu").forEach(function(menu){
+      ALL_TOOLS.forEach(function(tool){
         if (menu.querySelector('a[href="' + tool.href + '"]')) return;
-        var afterLink = tool.after ? menu.querySelector('a[href="' + tool.after + '"]') : null;
         var newLink = document.createElement("a");
         newLink.href = tool.href;
         newLink.textContent = tool.label;
-        if (afterLink && afterLink.nextSibling){
-          menu.insertBefore(newLink, afterLink.nextSibling);
-        } else {
-          menu.appendChild(newLink);
-        }
+        menu.appendChild(newLink);
       });
-      // Mobile nav
-      document.querySelectorAll(".mobile-nav nav").forEach(function(nav){
-        if (nav.querySelector('a[href="' + tool.href + '"]')) return;
-        var afterLink = tool.after ? nav.querySelector('a[href="' + tool.after + '"]') : null;
+    });
+
+    // موبائل مینو — تمام Tools
+    document.querySelectorAll(".mobile-nav nav").forEach(function(nav){
+      // پہلے سے موجود تمام Tools چیک کریں
+      var existingHrefs = [];
+      nav.querySelectorAll("a").forEach(function(a){
+        var h = a.getAttribute("href");
+        if (h) existingHrefs.push(h);
+      });
+
+      // اگر "Tools" ہیڈر نہیں ہے تو شامل کریں
+      var hasToolsHeader = false;
+      nav.querySelectorAll("p").forEach(function(p){
+        if (p.textContent.trim() === "Tools") hasToolsHeader = true;
+      });
+      if (!hasToolsHeader){
+        var toolsHeader = document.createElement("p");
+        toolsHeader.style.cssText = "font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#8FA0BD; margin:20px 0 4px;";
+        toolsHeader.textContent = "Tools";
+        nav.appendChild(toolsHeader);
+      }
+
+      // تمام Tools شامل کریں جو نہیں ہیں
+      ALL_TOOLS.forEach(function(tool){
+        if (existingHrefs.indexOf(tool.href) !== -1) return;
         var newLink = document.createElement("a");
         newLink.href = tool.href;
         newLink.textContent = tool.label;
         newLink.className = "mnav-link";
         newLink.style.cssText = "font-size:17px; padding:9px 0;";
-        if (afterLink && afterLink.nextSibling){
-          nav.insertBefore(newLink, afterLink.nextSibling);
-        } else {
-          nav.appendChild(newLink);
-        }
+        nav.appendChild(newLink);
       });
-      // Footer Travel Tools
-      document.querySelectorAll(".footer-col").forEach(function(col){
-        var heading = col.querySelector("h4");
-        if (!heading || heading.textContent.trim() !== "Travel Tools") return;
-        var ul = col.querySelector("ul");
-        if (!ul) return;
+    });
+
+    // Footer Travel Tools
+    document.querySelectorAll(".footer-col").forEach(function(col){
+      var heading = col.querySelector("h4");
+      if (!heading || heading.textContent.trim() !== "Travel Tools") return;
+      var ul = col.querySelector("ul");
+      if (!ul) return;
+      ALL_TOOLS.forEach(function(tool){
         if (ul.querySelector('a[href="' + tool.href + '"]')) return;
-        var afterLink = tool.after ? ul.querySelector('a[href="' + tool.after + '"]') : null;
         var newLi = document.createElement("li");
         var newA = document.createElement("a");
         newA.href = tool.href;
         newA.textContent = tool.label;
         newLi.appendChild(newA);
-        if (afterLink){
-          var parentLi = afterLink.closest("li");
-          if (parentLi && parentLi.nextSibling){
-            ul.insertBefore(newLi, parentLi.nextSibling);
-          } else {
-            ul.appendChild(newLi);
-          }
-        } else {
-          ul.appendChild(newLi);
-        }
+        ul.appendChild(newLi);
       });
     });
   }
 
   /* =========================================================
-     5) INIT
+     6) INIT
      ========================================================= */
   function init(){
     showBanner();
     addAttribution();
+    fixMobileNav();
     injectToolLinks();
 
     if (getConsent() === "accepted"){
@@ -158,12 +188,13 @@
 
     var observer = new MutationObserver(function(){
       addAttribution();
+      fixMobileNav();
       injectToolLinks();
     });
     if (document.body){
       observer.observe(document.body, { childList: true, subtree: true });
     }
-    setTimeout(function(){ addAttribution(); injectToolLinks(); }, 3000);
+    setTimeout(function(){ addAttribution(); fixMobileNav(); injectToolLinks(); }, 3000);
   }
 
   if (document.readyState === "loading"){
