@@ -25,7 +25,6 @@
 <link rel="canonical" href="https://www.visitorguideuk.com/blog/uk-visitor-visa-erasmus-changes-october-2026.html">
 
 <link rel="alternate" hreflang="en" href="https://www.visitorguideuk.com/blog/uk-visitor-visa-erasmus-changes-october-2026.html">
-<link rel="alternate" hreflang="ur" href="https://www.visitorguideuk.com/ur/blog/uk-visitor-visa-erasmus-changes-october-2026.html">
 <link rel="alternate" hreflang="x-default" href="https://www.visitorguideuk.com/blog/uk-visitor-visa-erasmus-changes-october-2026.html">
 
 <meta property="og:type" content="article">
@@ -133,18 +132,25 @@
   .logo .mark span{color:#fff; font-family:var(--serif); font-size:17px; font-style:italic;}
   .logo .mark::after{content:""; position:absolute; width:5px; height:5px; border-radius:50%; background:var(--red-600); top:-2px; right:-2px;}
   .logo small{display:block; font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--slate); font-weight:500; text-transform:uppercase; margin-top:1px;}
-  .main-nav{display:flex; align-items:center; gap:32px;}
+  .main-nav{display:flex; align-items:center; gap:28px;}
   .main-nav a{font-size:14.5px; font-weight:500; color:var(--navy-800); text-decoration:none; position:relative; padding:6px 0;}
   .main-nav a.active::after, .main-nav a:hover::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--red-600);}
+  .nav-dropdown{position:relative;}
+  .nav-dropdown-btn{display:flex; align-items:center; gap:5px; background:none; border:none; font-family:var(--sans); font-size:14.5px; font-weight:500; color:var(--navy-800); padding:6px 0; cursor:pointer;}
+  .nav-dropdown-menu{position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(-6px); margin-top:14px; background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); box-shadow:var(--shadow-card); padding:8px; min-width:230px; opacity:0; visibility:hidden; transition:opacity .15s ease, transform .15s ease; z-index:150;}
+  .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu{opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);}
+  .nav-dropdown-menu a{display:block; padding:9px 12px; font-size:13.5px; font-weight:500; color:var(--navy-800); text-decoration:none; border-radius:8px;}
+  .nav-dropdown-menu a::after{display:none;}
+  .nav-dropdown-menu a:hover{background:var(--paper-dim);}
   .header-actions{display:flex; align-items:center; gap:14px;}
   .hamburger{display:none; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; align-items:center; justify-content:center;}
-  .mobile-nav{position:fixed; inset:0; background:var(--navy-900); z-index:200; transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column; padding:24px 24px 40px;}
+  .mobile-nav{position:fixed; inset:0; background:var(--navy-900); z-index:200; transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column; padding:24px 24px 40px; overflow-y:auto;}
   .mobile-nav.open{transform:translateX(0);}
-  .mobile-nav-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:40px;}
+  .mobile-nav-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:32px;}
   .mobile-nav-top .logo{color:#fff;}
   .mobile-nav-top .logo .mark{background:#fff;}
   .mobile-nav-top .logo .mark span{color:var(--navy-900);}
-  .mobile-nav a{display:block; color:#fff; font-family:var(--serif); font-size:26px; padding:14px 0; border-bottom:1px solid var(--line-dark); text-decoration:none;}
+  .mobile-nav a{display:block; color:#fff; font-family:var(--serif); font-size:22px; padding:11px 0; border-bottom:1px solid var(--line-dark); text-decoration:none;}
   .mobile-nav .btn{margin-top:28px; width:100%;}
   .close-btn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line-dark); color:#fff; display:flex; align-items:center; justify-content:center; background:transparent;}
 
@@ -158,12 +164,6 @@
   .post-hero h1{font-size:clamp(30px,4.6vw,48px); max-width:760px; margin-bottom:16px;}
   .post-meta{display:flex; align-items:center; gap:10px; font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--slate-light);}
   .post-meta .dot{width:3px; height:3px; border-radius:50%; background:var(--slate-light);}
-
-  .hero-photo{position:relative; overflow:hidden; border-radius:var(--radius-lg); aspect-ratio:16/8; margin:28px 0 8px; background:linear-gradient(135deg,#DADCE2,#EDEEF1);}
-  .hero-photo::before{content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(15,23,42,.035) 0 1px, transparent 1px 14px); z-index:0;}
-  .hero-photo img{width:100%; height:100%; object-fit:cover; position:relative; z-index:1; opacity:0; transition:opacity .6s ease;}
-  .hero-photo img.loaded{opacity:1;}
-  .hero-photo .credit{position:absolute; bottom:10px; right:12px; z-index:2; font-family:var(--mono); font-size:10px; color:rgba(255,255,255,.85); background:rgba(11,27,51,.55); padding:3px 8px; border-radius:100px;}
 
   .prose{max-width:720px; margin:0 auto; padding:48px 0 20px;}
   .prose > p.lede{font-size:18px; color:var(--slate); line-height:1.7; margin-bottom:28px;}
@@ -235,6 +235,21 @@
       <a href="/#regions">Places to Visit</a>
       <a href="/#looking-for">Things to Do</a>
       <a href="/#destinations">UK Cities</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-btn" type="button">Tools <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="/travel/trip-cost-calculator.html">Trip Cost Calculator</a>
+          <a href="/travel/bucket-list.html">UK Bucket List</a>
+          <a href="/travel/route-planner.html">Route Planner</a>
+          <a href="/travel/itinerary-generator.html">Itinerary Generator</a>
+          <a href="/travel/packing-list-generator.html">Packing List Generator</a>
+          <a href="/travel/bank-holidays.html">Bank Holidays</a>
+          <a href="/travel/free-museums-map.html">Free Museums Map</a>
+          <a href="/travel/uk-time-now.html">UK Time &amp; Weather</a>
+          <a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a>
+          <a href="/travel/journey-time-calculator.html">Journey Time Calculator</a>
+        </div>
+      </div>
       <a href="/blog/index.html" class="active">Blog</a>
     </nav>
     <div class="header-actions">
@@ -254,6 +269,16 @@
     <a href="/#regions">Places to Visit</a>
     <a href="/#looking-for">Things to Do</a>
     <a href="/#destinations">UK Cities</a>
+    <a href="/travel/trip-cost-calculator.html">Trip Cost Calculator</a>
+    <a href="/travel/bucket-list.html">UK Bucket List</a>
+    <a href="/travel/route-planner.html">Route Planner</a>
+    <a href="/travel/itinerary-generator.html">Itinerary Generator</a>
+    <a href="/travel/packing-list-generator.html">Packing List Generator</a>
+    <a href="/travel/bank-holidays.html">Bank Holidays</a>
+    <a href="/travel/free-museums-map.html">Free Museums Map</a>
+    <a href="/travel/uk-time-now.html">UK Time &amp; Weather</a>
+    <a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a>
+    <a href="/travel/journey-time-calculator.html">Journey Time Calculator</a>
     <a href="/blog/index.html">Blog</a>
   </nav>
   <a href="/#destinations" class="btn btn-primary">Explore UK</a>
@@ -265,7 +290,7 @@
 
 <section class="post-hero">
   <div class="container">
-    <p class="eyebrow">Travel Tips · 5 October 2026</p>
+    <p class="eyebrow">Entry Requirements · 5 October 2026</p>
     <h1>UK Visitor Visa Changes 2026: What Really Changed on 8 October?</h1>
     <div class="post-meta"><span>5 October 2026</span><span class="dot"></span><span>7 min read</span></div>
   </div>
@@ -280,7 +305,7 @@
   </div>
 
   <h2>What Actually Changed on 8 October 2026?</h2>
-  <p>The UK Home Office published Statement of Changes HC 584 on 3 September 2026, with most changes taking effect on 8 October 2026 [citation:5][citation:11]. These changes are primarily designed to accommodate the UK's re-association with the <strong>Erasmus+ programme</strong> — the EU's education, training, youth, and sport programme — which the UK is re-joining from 2027 [citation:9].</p>
+  <p>The UK Home Office published Statement of Changes HC 584 on 3 September 2026, with most changes taking effect on 8 October 2026. These changes are primarily designed to accommodate the UK's re-association with the <strong>Erasmus+ programme</strong> — the EU's education, training, youth, and sport programme — which the UK is re-joining from 2027.</p>
 
   <p>The changes expand what certain visitors are <em>permitted</em> to do while in the UK. They do <strong>not</strong> create a general right to work.</p>
 
@@ -293,14 +318,14 @@
     <li>Carry out job shadowing — participative observation only, not filling a permanent role</li>
     <li>Participate in coaching or training assignments at UK-based sports organisations</li>
   </ul>
-  <p>You must be able to prove you are a genuine Erasmus+ participant. Organisations hosting you may need to provide evidence that the mobility is part of a genuine Erasmus+ project [citation:9][citation:18].</p>
+  <p>You must be able to prove you are a genuine Erasmus+ participant. Organisations hosting you may need to provide evidence that the mobility is part of a genuine Erasmus+ project.</p>
 
   <h3>2. Work-Related Training: One Restriction Removed</h3>
-  <p>Previously, if you wanted to come to the UK for intra-corporate training, you had to prove that the same training was not available in your home country. <strong>This requirement has been removed</strong> [citation:5][citation:6].</p>
+  <p>Previously, if you wanted to come to the UK for intra-corporate training, you had to prove that the same training was not available in your home country. <strong>This requirement has been removed</strong>.</p>
   <p>However, this only applies to training that is genuinely required for your employment overseas — it does not mean you can come to the UK to train for a new job, or to look for work.</p>
 
   <h3>3. Artists, Entertainers, and Musicians</h3>
-  <p>Artists, entertainers, and musicians can now attend rehearsals on a Visitor Visa. Defined "entertainment staff" (such as technicians, personal assistants, or production team members) can also support permitted activities, provided they are employed by the artist outside the UK and attend the same event [citation:5][citation:18].</p>
+  <p>Artists, entertainers, and musicians can now attend rehearsals on a Visitor Visa. Defined "entertainment staff" (such as technicians, personal assistants, or production team members) can also support permitted activities, provided they are employed by the artist outside the UK and attend the same event.</p>
 
   <h3>4. New Permitted Activities for All Visitors</h3>
   <p>All visitors can now also take part in:</p>
@@ -308,10 +333,10 @@
     <li><strong>Workshops</strong> and <strong>debates</strong></li>
     <li><strong>Skills competitions</strong> — where participants compete by demonstrating skills required for a specific profession or discipline</li>
   </ul>
-  <p>These are additions to the list of permitted activities, not a relaxation of the core visitor rules [citation:6][citation:18].</p>
+  <p>These are additions to the list of permitted activities, not a relaxation of the core visitor rules.</p>
 
   <h2>What Did NOT Change</h2>
-  <p>For the vast majority of visitors — tourists, people visiting family or friends, and general business travellers — <strong>nothing has changed</strong> [citation:6].</p>
+  <p>For the vast majority of visitors — tourists, people visiting family or friends, and general business travellers — <strong>nothing has changed</strong>.</p>
 
   <div class="callout">
     <strong>The following remain strictly prohibited on a UK Standard Visitor Visa:</strong>
@@ -324,7 +349,7 @@
     </ul>
   </div>
 
-  <p>The UK Home Office's own impact assessment states that these changes are expected to support only a "small increase in usage of the Visitor route" relative to the 2.2 million visitor visas and 25.1 million ETAs granted in the year ending March 2026 [citation:9].</p>
+  <p>The UK Home Office's own impact assessment states that these changes are expected to support only a "small increase in usage of the Visitor route" relative to the 2.2 million visitor visas and 25.1 million ETAs granted in the year ending March 2026.</p>
 
   <h2>Why the Viral Message is Dangerous</h2>
   <p>The WhatsApp message circulating in Pakistan and other countries claims that "all visit visa holders" can now search for jobs and attend interviews. This is <strong>false</strong>.</p>
@@ -392,7 +417,7 @@
 
 <section class="related">
   <div class="container">
-    <div class="related-head"><p class="eyebrow" style="justify-content:center;">Keep Reading</p><h2>Related Guides</h2><p>More practical UK travel information.</p></div>
+    <div class="related-head"><p class="eyebrow" style="justify-content:center;">Keep Reading</p><h2>Related Guides & Tools</h2><p>More practical UK travel information.</p></div>
     <div class="related-grid">
       <a class="related-card" href="/travel/visa-eta-checker.html"><h3>UK Visa &amp; ETA Checker</h3><p>Do you need a visa or ETA? Check instantly by nationality.</p></a>
       <a class="related-card" href="/blog/uk-eta-guide.html"><h3>UK ETA Guide 2026</h3><p>Everything about the UK Electronic Travel Authorisation.</p></a>
@@ -446,7 +471,6 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Visitor Guide UK. All rights reserved.</span>
-      <span>Images via <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener" style="color:#93A1B7; text-decoration:underline;">Wikimedia Commons</a> (CC BY-SA)</span>
       <span class="flag-note">An independent UK visitor information guide</span>
     </div>
   </div>
