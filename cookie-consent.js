@@ -9,6 +9,7 @@
 
   /* تمام ٹولز کی مکمل لسٹ */
   var ALL_TOOLS = [
+     { href:"/travel/hotel-cost-estimator.html", label:"Hotel Cost Estimator" },
     { href:"/travel/trip-cost-calculator.html", label:"Trip Cost Calculator" },
     { href:"/travel/bucket-list.html", label:"UK Bucket List" },
     { href:"/travel/route-planner.html", label:"Route Planner" },
