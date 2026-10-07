@@ -9,6 +9,7 @@
 
   /* تمام ٹولز کی مکمل لسٹ */
   var ALL_TOOLS = [
+     { href:"/travel/uk-weather-by-month.html", label:"Weather by Month" },
      { href:"/travel/sim-esim-finder.html", label:"SIM & eSIM Finder" },
      { href:"/travel/tipping-calculator.html", label:"Tipping Calculator" },
      { href:"/travel/hotel-cost-estimator.html", label:"Hotel Cost Estimator" },
