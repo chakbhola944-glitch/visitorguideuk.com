@@ -1,5 +1,5 @@
 /* =========================================================
-   Visitor Guide UK — Cookie Consent + Attribution + AdSense + Auto Menu
+   Visitor Guide UK — Cookie Consent + Attribution + AdSense + Auto Menu + Editorial Policy
    ========================================================= */
 (function(){
   "use strict";
@@ -9,16 +9,17 @@
 
   /* تمام ٹولز کی مکمل لسٹ */
   var ALL_TOOLS = [
-     { href:"/travel/uk-weather-by-month.html", label:"Weather by Month" },
-     { href:"/travel/sim-esim-finder.html", label:"SIM & eSIM Finder" },
-     { href:"/travel/tipping-calculator.html", label:"Tipping Calculator" },
-     { href:"/travel/hotel-cost-estimator.html", label:"Hotel Cost Estimator" },
     { href:"/travel/trip-cost-calculator.html", label:"Trip Cost Calculator" },
+    { href:"/travel/hotel-cost-estimator.html", label:"Hotel Cost Estimator" },
     { href:"/travel/bucket-list.html", label:"UK Bucket List" },
     { href:"/travel/route-planner.html", label:"Route Planner" },
     { href:"/travel/journey-time-calculator.html", label:"Journey Time Calculator" },
     { href:"/travel/journey-cost-estimator.html", label:"Journey Cost Estimator" },
     { href:"/travel/train-ticket-price-calculator.html", label:"Train Ticket Prices" },
+    { href:"/travel/tipping-calculator.html", label:"Tipping Calculator" },
+    { href:"/travel/sim-esim-finder.html", label:"SIM & eSIM Finder" },
+    { href:"/travel/uk-weather-by-month.html", label:"Weather by Month" },
+    { href:"/travel/uk-weather.html", label:"UK Weather Guide" },
     { href:"/travel/itinerary-generator.html", label:"Itinerary Generator" },
     { href:"/travel/packing-list-generator.html", label:"Packing List Generator" },
     { href:"/travel/bank-holidays.html", label:"Bank Holidays" },
@@ -128,14 +129,12 @@
 
     // موبائل مینو — تمام Tools
     document.querySelectorAll(".mobile-nav nav").forEach(function(nav){
-      // پہلے سے موجود تمام Tools چیک کریں
       var existingHrefs = [];
       nav.querySelectorAll("a").forEach(function(a){
         var h = a.getAttribute("href");
         if (h) existingHrefs.push(h);
       });
 
-      // اگر "Tools" ہیڈر نہیں ہے تو شامل کریں
       var hasToolsHeader = false;
       nav.querySelectorAll("p").forEach(function(p){
         if (p.textContent.trim() === "Tools") hasToolsHeader = true;
@@ -147,7 +146,6 @@
         nav.appendChild(toolsHeader);
       }
 
-      // تمام Tools شامل کریں جو نہیں ہیں
       ALL_TOOLS.forEach(function(tool){
         if (existingHrefs.indexOf(tool.href) !== -1) return;
         var newLink = document.createElement("a");
@@ -178,13 +176,45 @@
   }
 
   /* =========================================================
-     6) INIT
+     6) AUTO-INJECT EDITORIAL POLICY LINK
+     ========================================================= */
+  function injectEditorialPolicy(){
+    document.querySelectorAll(".footer-col").forEach(function(col){
+      var heading = col.querySelector("h4");
+      if (!heading || heading.textContent.trim() !== "Company") return;
+      var ul = col.querySelector("ul");
+      if (!ul) return;
+      if (ul.querySelector('a[href="/legal/editorial-policy.html"]')) return;
+      
+      var newLi = document.createElement("li");
+      var newA = document.createElement("a");
+      newA.href = "/legal/editorial-policy.html";
+      newA.textContent = "Editorial Policy";
+      newLi.appendChild(newA);
+      
+      var contactLink = ul.querySelector('a[href="/legal/contact.html"]');
+      if (contactLink){
+        var parentLi = contactLink.closest("li");
+        if (parentLi && parentLi.nextSibling){
+          ul.insertBefore(newLi, parentLi.nextSibling);
+        } else {
+          ul.appendChild(newLi);
+        }
+      } else {
+        ul.appendChild(newLi);
+      }
+    });
+  }
+
+  /* =========================================================
+     7) INIT
      ========================================================= */
   function init(){
     showBanner();
     addAttribution();
     fixMobileNav();
     injectToolLinks();
+    injectEditorialPolicy();
 
     if (getConsent() === "accepted"){
       loadAdSense();
@@ -194,11 +224,17 @@
       addAttribution();
       fixMobileNav();
       injectToolLinks();
+      injectEditorialPolicy();
     });
     if (document.body){
       observer.observe(document.body, { childList: true, subtree: true });
     }
-    setTimeout(function(){ addAttribution(); fixMobileNav(); injectToolLinks(); }, 3000);
+    setTimeout(function(){ 
+      addAttribution(); 
+      fixMobileNav(); 
+      injectToolLinks(); 
+      injectEditorialPolicy(); 
+    }, 3000);
   }
 
   if (document.readyState === "loading"){
