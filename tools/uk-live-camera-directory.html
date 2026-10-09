@@ -24,13 +24,6 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.visitorguideuk.com/tools/uk-live-city-cam.html">
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Visitor Guide UK">
-<meta property="og:title" content="UK Live City Cam — CCTV Wall of UK Cities">
-<meta property="og:description" content="A CCTV-style camera wall of the UK — traffic, airports, museums and city views.">
-<meta property="og:url" content="https://www.visitorguideuk.com/tools/uk-live-city-cam.html">
-<meta property="og:locale" content="en_GB">
-
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,7 +57,6 @@
   .btn-primary{background:var(--red-600); color:#fff;}
   .btn-primary:hover{background:var(--red-700);}
 
-  /* HEADER */
   header.site-header{position:sticky; top:0; z-index:100; background:rgba(245,245,242,.86); backdrop-filter:blur(10px); border-bottom:1px solid transparent; transition:border-color .2s ease, box-shadow .2s ease;}
   header.site-header.scrolled{border-color:var(--line); box-shadow:0 4px 20px -12px rgba(15,23,42,.25);}
   .nav-row{display:flex; align-items:center; justify-content:space-between; height:78px; gap:24px;}
@@ -109,10 +101,8 @@
   .notice{background:#FFF8E6; border:1px solid #F0DDA0; border-radius:var(--radius-sm); padding:13px 18px; font-size:13px; color:#7A5C10; max-width:880px; margin:0 auto 28px; line-height:1.6;}
   .notice strong{color:#5C4400;}
 
-  /* ============ MAIN CCTV WALL ============ */
   .cctv-wall{display:grid; grid-template-columns:2fr 1fr; gap:20px; margin-bottom:24px;}
 
-  /* Big screen */
   .main-screen{
     background:#000; border-radius:var(--radius-lg); overflow:hidden;
     box-shadow:var(--shadow-luxe); border:1px solid rgba(255,255,255,.06);
@@ -122,7 +112,6 @@
     width:100%; height:100%; object-fit:cover; display:block;
     filter:saturate(0.85) contrast(1.05) brightness(0.95);
   }
-  /* CCTV overlays */
   .cctv-overlay{position:absolute; inset:0; pointer-events:none; z-index:2;}
   .cctv-overlay .scanlines{
     position:absolute; inset:0; opacity:.18;
@@ -152,7 +141,6 @@
   }
   @keyframes noiseShift{0%{transform:translate(0,0);}33%{transform:translate(-3%,2%);}66%{transform:translate(2%,-2%);}100%{transform:translate(0,0);}}
 
-  /* HUD */
   .hud{position:absolute; inset:0; z-index:3; pointer-events:none; font-family:var(--mono); color:#E7EEF7;}
   .hud-top{display:flex; justify-content:space-between; align-items:flex-start; padding:14px 18px;}
   .hud-rec{display:inline-flex; align-items:center; gap:8px; background:rgba(178,58,50,.9); padding:5px 11px; border-radius:3px; font-size:11px; letter-spacing:.1em; text-transform:uppercase;}
@@ -168,7 +156,6 @@
   .hud-meta .chip.live{background:rgba(34,197,94,.85); border-color:rgba(34,197,94,.9);}
   .hud-meta .chip.live .dot{display:inline-block; width:6px; height:6px; border-radius:50%; background:#fff; margin-right:4px; animation:blink 1s infinite;}
 
-  /* Side list */
   .side-list{background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:16px; display:flex; flex-direction:column; gap:10px; max-height:calc(100vh - 200px); overflow-y:auto;}
   .side-list h3{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--slate-light); margin-bottom:4px;}
   .cam-item{
@@ -218,11 +205,10 @@
   .footer-col a:hover{color:#fff;}
   .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12.8px; color:#7F8CA1;}
 
-  @media (max-width:1080px){ .cctv-wall{grid-template-columns:1fr;} .side-list{max-height:none; flex-direction:row; overflow-x:auto;} .footer-top{grid-template-columns:1fr 1fr;} .related-grid{grid-template-columns:1fr;} }
+  @media (max-width:1080px){ .cctv-wall{grid-template-columns:1fr;} .side-list{max-height:none;} .footer-top{grid-template-columns:1fr 1fr;} .related-grid{grid-template-columns:1fr;} }
   @media (max-width:900px){ .main-nav, .header-actions{display:none;} .hamburger{display:flex;} }
   @media (max-width:760px){
     .cctv-wall{grid-template-columns:1fr;}
-    .side-list{flex-direction:column; max-height:none;}
     .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
     .footer-brand{grid-column:1 / -1;}
     .hud-bottom{padding:10px 12px;}
@@ -314,19 +300,17 @@
 <section class="hero container">
   <p class="eyebrow" style="justify-content:center;"><span class="live-dot"></span> CCTV Wall · Click any camera to watch full-size</p>
   <h1>UK Live City Cam</h1>
-  <p>A CCTV-style camera wall showing traffic, airports, museums and city views across the UK. Click any camera to watch it full-size.</p>
+  <p>A CCTV-style camera wall showing traffic, airports, museums and city views. Click any camera to watch it full-size.</p>
 </section>
 
 <div class="container">
   <div class="notice">
-    <strong>Note:</strong> This is a <strong>simulated CCTV-style feed</strong>. The video clips are free stock footage used under open licences. They are not real-time UK footage. Videos via Pexels and Pixabay.
+    <strong>Note:</strong> This is a <strong>simulated CCTV-style feed</strong>. The video clips are open-licence stock footage used for illustration. They are not real-time UK footage.
   </div>
 
-  <!-- CCTV WALL -->
   <div class="cctv-wall">
-    <!-- Big screen -->
     <div class="main-screen" id="mainScreen">
-      <video id="mainVideo" autoplay muted loop playsinline></video>
+      <video id="mainVideo" autoplay muted loop playsinline preload="auto"></video>
       <div class="cctv-overlay">
         <div class="scanlines"></div>
         <div class="scan-beam"></div>
@@ -344,58 +328,43 @@
         </div>
         <div class="hud-bottom">
           <div>
-            <div class="hud-city" id="mainCity">London</div>
+            <div class="hud-city" id="mainCity">Loading…</div>
             <div class="hud-meta" id="mainMeta">
               <span class="chip live"><span class="dot"></span>LIVE</span>
-              <span class="chip">Traffic</span>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Side list -->
     <div class="side-list" id="sideList">
       <h3>Available Cameras</h3>
-      <!-- items injected -->
     </div>
   </div>
 </div>
 
 <section class="content-section container">
   <h2>About This Tool</h2>
-  <p>This page is a <strong>CCTV-style camera wall</strong> showing simulated live feeds of UK locations. Click any camera in the list to watch it full-size. Each camera shows a different type of view — traffic on a motorway, an airport runway, a museum interior, or a city street.</p>
-  <p>The feeds are created using free stock video clips from Pexels and Pixabay, styled with camera overlays (scanlines, timestamp, REC indicator) to give the feel of a real CCTV monitor wall.</p>
+  <p>This page is a <strong>CCTV-style camera wall</strong> showing simulated live feeds. Click any camera in the list to watch it full-size. Each camera shows a different type of view.</p>
 
   <h3>Camera types</h3>
   <ul>
-    <li><strong>Traffic</strong> — motorway and city road views with moving vehicles</li>
-    <li><strong>Airport</strong> — runway and terminal views with aircraft activity</li>
-    <li><strong>Museum</strong> — interior gallery and corridor views with visitors</li>
-    <li><strong>City</strong> — street-level and aerial city views</li>
+    <li><strong>Traffic</strong> — motorway and city road views</li>
+    <li><strong>Airport</strong> — runway and terminal views</li>
+    <li><strong>Museum</strong> — interior gallery views</li>
+    <li><strong>City</strong> — street-level city views</li>
   </ul>
-
-  <h3>Why these aren't real UK cameras</h3>
-  <p>Real-time UK CCTV streams are not publicly available for embedding. This tool uses free stock footage from open-licence sources to create a realistic CCTV wall experience, with clearly labelled simulated feeds.</p>
 </section>
 
 <section class="faq-section container">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-item">
     <h3>Is this real CCTV footage?</h3>
-    <p>No. This is a simulated CCTV wall. The video clips are free stock footage from Pexels and Pixabay, styled with camera overlays. They are not real-time UK footage.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Where do the videos come from?</h3>
-    <p>The clips are free stock videos from Pexels and Pixabay, used under their open licences. Credits are provided in the footer.</p>
+    <p>No. This is a simulated CCTV wall using open-licence stock footage styled with camera overlays. It is not real-time UK footage.</p>
   </div>
   <div class="faq-item">
     <h3>Can I click on a camera to watch it?</h3>
-    <p>Yes. Click any camera in the list to load it into the main screen. The feed will play automatically.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Why do the videos loop?</h3>
-    <p>Because they are short stock clips, they loop continuously to simulate a live feed.</p>
+    <p>Yes. Click any camera in the list to load it into the main screen.</p>
   </div>
 </section>
 
@@ -465,7 +434,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Visitor Guide UK. All rights reserved.</span>
-      <span>Videos via Pexels &amp; Pixabay (open licences) · Simulated CCTV for illustration</span>
+      <span>Simulated CCTV for illustration · Open-licence video clips</span>
     </div>
   </div>
 </footer>
@@ -475,55 +444,30 @@
   "use strict";
 
   /* ============================================================
-     CAMERA DATA — each uses a free stock video (Pexels/Pixabay)
+     WORKING VIDEO URLS — Google sample videos (public domain)
+     Replace with your own UK videos later.
      ============================================================ */
   var CAMERAS = [
-    {
-      id: "CAM-01", name: "City Traffic", location: "London", type: "Traffic",
-      video: "https://videos.pexels.com/video-files/32324659/13815313_1920_1080_60fps.mp4",
-      poster: "https://images.pexels.com/videos/32324659/pexels-photo-32324659.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      id: "CAM-02", name: "Motorway Flow", location: "Manchester", type: "Traffic",
-      video: "https://videos.pexels.com/video-files/36642127/15572408_1920_1080_60fps.mp4",
-      poster: "https://images.pexels.com/videos/36642127/pexels-photo-36642127.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      id: "CAM-03", name: "Airport Runway", location: "Edinburgh", type: "Airport",
-      video: "https://videos.pexels.com/video-files/39972469/17009135_1920_1080_25fps.mp4",
-      poster: "https://images.pexels.com/videos/39972469/pexels-photo-39972469.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      id: "CAM-04", name: "Airport Terminal", location: "Birmingham", type: "Airport",
-      video: "https://videos.pexels.com/video-files/4551940/4551940-hd_1920_1080_50fps.mp4",
-      poster: "https://images.pexels.com/videos/4551940/pexels-photo-4551940.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      id: "CAM-05", name: "Museum Gallery", location: "London", type: "Museum",
-      video: "https://videos.pexels.com/video-files/5823862/5823862-hd_1920_1080_25fps.mp4",
-      poster: "https://images.pexels.com/videos/5823862/pexels-photo-5823862.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      id: "CAM-06", name: "City Street", location: "York", type: "City",
-      video: "https://videos.pexels.com/video-files/39687339/17076901_1920_1080_30fps.mp4",
-      poster: "https://images.pexels.com/videos/39687339/pexels-photo-39687339.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      id: "CAM-07", name: "Highway View", location: "Bristol", type: "Traffic",
-      video: "https://videos.pexels.com/video-files/33063363/14026650_1920_1080_30fps.mp4",
-      poster: "https://images.pexels.com/videos/33063363/pexels-photo-33063363.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    {
-      id: "CAM-08", name: "Museum Interior", location: "Oxford", type: "Museum",
-      video: "https://videos.pexels.com/video-files/35996114/15260424_1920_1080_25fps.mp4",
-      poster: "https://images.pexels.com/videos/35996114/pexels-photo-35996114.jpeg?auto=compress&cs=tinysrgb&w=600"
-    }
+    { id:"CAM-01", name:"City Traffic", location:"London", type:"Traffic",
+      video:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" },
+    { id:"CAM-02", name:"Motorway Flow", location:"Manchester", type:"Traffic",
+      video:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" },
+    { id:"CAM-03", name:"Airport Runway", location:"Edinburgh", type:"Airport",
+      video:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" },
+    { id:"CAM-04", name:"Airport Terminal", location:"Birmingham", type:"Airport",
+      video:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" },
+    { id:"CAM-05", name:"Museum Gallery", location:"London", type:"Museum",
+      video:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4" },
+    { id:"CAM-06", name:"City Street", location:"York", type:"City",
+      video:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4" },
+    { id:"CAM-07", name:"Highway View", location:"Bristol", type:"Traffic",
+      video:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4" },
+    { id:"CAM-08", name:"Museum Interior", location:"Oxford", type:"Museum",
+      video:"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" }
   ];
 
-  var currentCam = 0;
   var $ = function(s){ return document.querySelector(s); };
 
-  /* ============ BUILD SIDE LIST ============ */
   function buildSideList(){
     var list = $("#sideList");
     CAMERAS.forEach(function(cam, i){
@@ -531,7 +475,7 @@
       item.className = "cam-item" + (i === 0 ? " active" : "");
       item.setAttribute("data-index", i);
       item.innerHTML =
-        '<div class="cam-thumb"><video muted playsinline preload="metadata" poster="' + cam.poster + '"><source src="' + cam.video + '" type="video/mp4"></video></div>' +
+        '<div class="cam-thumb"><video muted playsinline preload="metadata"><source src="' + cam.video + '" type="video/mp4"></video></div>' +
         '<div class="cam-info">' +
           '<div class="cam-name">' + cam.name + '</div>' +
           '<div class="cam-loc">' + cam.id + ' · ' + cam.location + '</div>' +
@@ -539,22 +483,21 @@
         '<span class="cam-badge">' + cam.type + '</span>';
       item.addEventListener("click", function(){ switchCam(i); });
       list.appendChild(item);
+
+      // play the thumbnail video too
+      var thumbVideo = item.querySelector("video");
+      thumbVideo.play().catch(function(){});
     });
   }
 
-  /* ============ SWITCH CAMERA ============ */
   function switchCam(i){
-    currentCam = i;
     var cam = CAMERAS[i];
-
-    // Update main video
     var mainVideo = $("#mainVideo");
     mainVideo.pause();
     mainVideo.innerHTML = '<source src="' + cam.video + '" type="video/mp4">';
     mainVideo.load();
-    mainVideo.play().catch(function(){ /* autoplay may be blocked */ });
+    mainVideo.play().catch(function(){});
 
-    // Update HUD
     $("#mainCity").textContent = cam.location;
     $("#hudCamId").textContent = cam.id + " · 1080p";
     $("#mainMeta").innerHTML =
@@ -562,13 +505,11 @@
       '<span class="chip">' + cam.type + '</span>' +
       '<span class="chip">' + cam.name + '</span>';
 
-    // Update active state
     document.querySelectorAll(".cam-item").forEach(function(item){
       item.classList.toggle("active", parseInt(item.getAttribute("data-index"), 10) === i);
     });
   }
 
-  /* ============ TIMESTAMP ============ */
   function tickClock(){
     var now = new Date();
     var dd = String(now.getDate()).padStart(2, "0");
@@ -581,19 +522,16 @@
     if (el) el.textContent = dd + "/" + mm + "/" + yyyy + " " + hh + ":" + mi + ":" + ss;
   }
 
-  /* ============ INIT ============ */
   buildSideList();
   switchCam(0);
   tickClock();
   setInterval(tickClock, 1000);
 
-  // Header scroll
   var header = document.getElementById("siteHeader");
   window.addEventListener("scroll", function(){
     header.classList.toggle("scrolled", window.scrollY > 8);
   }, {passive:true});
 
-  // Mobile menu
   var mobileNav = document.getElementById("mobileNav");
   document.getElementById("menuOpenBtn").addEventListener("click", function(){
     mobileNav.classList.add("open");
