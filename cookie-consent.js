@@ -9,6 +9,7 @@
 
   /* تمام ٹولز کی مکمل لسٹ */
   var ALL_TOOLS = [
+     { href:"/tools/uk-live-visitor-counter.html", label:"Live UK Visitor Counter" },
      { href:"/travel/uk-weekend-break-planner.html", label:"Weekend Break Planner" },
     { href:"/travel/trip-cost-calculator.html", label:"Trip Cost Calculator" },
     { href:"/travel/hotel-cost-estimator.html", label:"Hotel Cost Estimator" },
