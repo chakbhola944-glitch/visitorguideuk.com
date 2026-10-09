@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  var vgukConsent = null;
+  try { vgukConsent = localStorage.getItem('vguk_cookie_consent'); } catch(e) {}
+  var vgukGranted = (vgukConsent === 'accepted') ? 'granted' : 'denied';
+  gtag('consent', 'default', {
+    'ad_storage': vgukGranted, 'ad_user_data': vgukGranted,
+    'ad_personalization': vgukGranted, 'analytics_storage': vgukGranted
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-NZRW83LDG7');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRW83LDG7"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UK Weekend Break Planner — Find Your Perfect 2-3 Day Trip | Visitor Guide UK</title>
+<meta name="description" content="Plan your perfect UK weekend break in 60 seconds. Pick your interests, budget and travel time — get a personalised 2 or 3-day itinerary with things to do, places to stay and travel tips.">
+<link rel="canonical" href="https://www.visitorguideuk.com/travel/uk-weekend-break-planner.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Visitor Guide UK">
+<meta property="og:title" content="UK Weekend Break Planner — Find Your Perfect 2-3 Day Trip">
+<meta property="og:description" content="Plan your perfect UK weekend break in 60 seconds. Personalised 2 or 3-day itineraries.">
+<meta property="og:url" content="https://www.visitorguideuk.com/travel/uk-weekend-break-planner.html">
+<meta property="og:locale" content="en_GB">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "UK Weekend Break Planner",
+  "url": "https://www.visitorguideuk.com/travel/uk-weekend-break-planner.html",
+  "applicationCategory": "TravelApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+  "description": "Plan a personalised UK weekend break in 60 seconds — 2 or 3-day itineraries based on your interests, budget and travel time."
+}
+</script>
+
+<style>
+  :root{
+    --navy-900:#0B1B33; --navy-800:#122A4A; --red-600:#B23A32; --red-700:#96302A;
+    --paper:#F5F5F2; --paper-dim:#ECEBE6; --white:#FFFFFF; --ink:#16212E;
+    --slate:#5B6472; --slate-light:#8892A0; --line:#DFDFD9;
+    --radius-lg:22px; --radius-md:14px; --radius-sm:9px;
+    --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 12px 28px -14px rgba(15,23,42,.18);
+    --serif:'Newsreader', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.5; -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  h1,h2,h3,h4{font-family:var(--serif); font-weight:600; color:var(--navy-900); line-height:1.15; letter-spacing:-.01em;}
+  .container{max-width:900px; margin:0 auto; padding:0 24px;}
+
+  /* header */
+  header.site-header{position:sticky; top:0; z-index:100; background:rgba(245,245,242,.9); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; height:70px; max-width:1240px; margin:0 auto; padding:0 24px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:600; font-size:18px; color:var(--navy-900);}
+  .logo .mark{width:32px; height:32px; border-radius:8px; background:var(--navy-900); display:flex; align-items:center; justify-content:center;}
+  .logo .mark span{color:#fff; font-family:var(--serif); font-size:16px; font-style:italic;}
+  .back-link{font-size:14px; color:var(--slate); display:flex; align-items:center; gap:6px;}
+  .back-link:hover{color:var(--navy-900);}
+
+  /* hero */
+  .tool-hero{padding:56px 0 24px; text-align:center;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--red-600); font-weight:500; margin-bottom:14px;}
+  .eyebrow::before{content:""; width:16px; height:1px; background:var(--red-600);}
+  .tool-hero h1{font-size:clamp(30px,4.5vw,44px); margin-bottom:14px;}
+  .tool-hero p{color:var(--slate); font-size:17px; max-width:600px; margin:0 auto;}
+
+  /* form card */
+  .tool-card{background:#fff; border-radius:var(--radius-lg); box-shadow:var(--shadow-card); padding:36px; margin:32px 0;}
+  .form-step{margin-bottom:28px;}
+  .form-step:last-of-type{margin-bottom:0;}
+  .form-step label{display:block; font-size:14px; font-weight:600; color:var(--navy-900); margin-bottom:10px;}
+  .form-step .hint{font-size:12.5px; color:var(--slate-light); font-weight:400; margin-left:6px;}
+
+  .chip-group{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip-option{
+    padding:9px 18px; border-radius:100px; border:1.5px solid var(--line); background:#fff;
+    font-size:13.5px; font-weight:500; color:var(--navy-800); transition:all .15s ease; cursor:pointer;
+  }
+  .chip-option:hover{border-color:var(--navy-900);}
+  .chip-option.selected{background:var(--navy-900); color:#fff; border-color:var(--navy-900);}
+
+  select, input[type="number"]{
+    width:100%; padding:12px 16px; border:1.5px solid var(--line); border-radius:var(--radius-sm);
+    font-size:15px; font-family:var(--sans); color:var(--ink); background:#fff; outline:none;
+  }
+  select:focus, input[type="number"]:focus{border-color:var(--navy-900);}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px 32px; border-radius:100px; font-weight:600; font-size:15px;
+    border:1px solid transparent; transition:all .15s ease; white-space:nowrap;
+  }
+  .btn-primary{background:var(--red-600); color:#fff; width:100%;}
+  .btn-primary:hover{background:var(--red-700);}
+  .btn-outline{background:transparent; color:var(--navy-900); border-color:var(--line);}
+  .btn-outline:hover{border-color:var(--navy-900);}
+
+  /* results */
+  #results{display:none; margin-top:32px;}
+  #results.show{display:block;}
+  .results-header{text-align:center; margin-bottom:28px; padding-bottom:24px; border-bottom:1px solid var(--line);}
+  .results-header h2{font-size:26px; margin-bottom:8px;}
+  .results-header p{color:var(--slate); font-size:15px;}
+  .results-summary{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:16px;}
+  .summary-tag{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.06em; background:var(--paper-dim); color:var(--slate); padding:5px 12px; border-radius:100px;}
+
+  .day-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:24px; margin-bottom:16px;}
+  .day-card h3{font-size:20px; margin-bottom:4px; display:flex; align-items:center; gap:10px;}
+  .day-card h3 .day-num{font-family:var(--mono); font-size:12px; background:var(--navy-900); color:#fff; padding:3px 10px; border-radius:100px; letter-spacing:.05em;}
+  .day-card .day-theme{font-size:13.5px; color:var(--red-600); font-family:var(--mono); text-transform:uppercase; letter-spacing:.06em; margin-bottom:16px;}
+  .day-card ul{list-style:none;}
+  .day-card li{padding:10px 0; border-bottom:1px solid var(--paper-dim); font-size:14.5px; display:flex; gap:12px;}
+  .day-card li:last-child{border-bottom:none;}
+  .day-card li .time{font-family:var(--mono); font-size:12px; color:var(--slate-light); min-width:60px; padding-top:2px;}
+  .day-card li .activity strong{display:block; color:var(--navy-900); margin-bottom:2px;}
+  .day-card li .activity span{color:var(--slate); font-size:13.5px;}
+
+  .tips-box{background:var(--paper-dim); border-radius:var(--radius-md); padding:22px 26px; margin-top:20px;}
+  .tips-box h4{font-size:15px; font-family:var(--sans); font-weight:600; margin-bottom:12px;}
+  .tips-box ul{list-style:none;}
+  .tips-box li{font-size:14px; color:var(--slate); padding:6px 0 6px 20px; position:relative;}
+  .tips-box li::before{content:"→"; position:absolute; left:0; color:var(--red-600); font-weight:600;}
+
+  .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px;}
+  .actions .btn{flex:1; min-width:180px;}
+
+  .disclaimer{font-size:12.5px; color:var(--slate-light); margin-top:20px; text-align:center; line-height:1.6;}
+
+  /* content section */
+  .content-section{padding:56px 0;}
+  .content-section h2{font-size:26px; margin-bottom:16px;}
+  .content-section h3{font-size:19px; margin:24px 0 10px;}
+  .content-section p{color:var(--slate); font-size:15.5px; margin-bottom:14px;}
+  .content-section ul{margin:0 0 14px 20px; color:var(--slate); font-size:15px;}
+  .content-section li{margin-bottom:8px;}
+
+  footer{background:var(--navy-900); color:#C7D0DE; padding:40px 0; text-align:center; font-size:13px; margin-top:40px;}
+  footer a{color:#93A1B7; text-decoration:underline;}
+
+  @media (max-width:600px){
+    .tool-card{padding:24px 20px;}
+    .actions .btn{min-width:100%;}
+  }
+</style>
+<script src="/cookie-consent.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+    <a href="/" class="back-link">← Back to Home</a>
+  </div>
+</header>
+
+<main>
+<section class="tool-hero">
+  <div class="container">
+    <p class="eyebrow">Free Interactive Tool</p>
+    <h1>UK Weekend Break Planner</h1>
+    <p>Answer a few quick questions and get a personalised 2 or 3-day UK weekend itinerary in 60 seconds — including things to do, where to stay and travel tips.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="tool-card" id="toolCard">
+
+    <div class="form-step">
+      <label>1. How many days? <span class="hint">(Friday–Sunday is most common)</span></label>
+      <div class="chip-group" id="daysGroup">
+        <button type="button" class="chip-option" data-value="2">2 days (1 night)</button>
+        <button type="button" class="chip-option selected" data-value="3">3 days (2 nights)</button>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <label>2. Who's going? <span class="hint">(we'll adjust the pace and activities)</span></label>
+      <div class="chip-group" id="whoGroup">
+        <button type="button" class="chip-option selected" data-value="couple">Couple</button>
+        <button type="button" class="chip-option" data-value="family">Family with kids</button>
+        <button type="button" class="chip-option" data-value="solo">Solo traveller</button>
+        <button type="button" class="chip-option" data-value="friends">Friends group</button>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <label>3. What are you into? <span class="hint">(pick up to 3)</span></label>
+      <div class="chip-group" id="interestsGroup">
+        <button type="button" class="chip-option" data-value="history">History &amp; castles</button>
+        <button type="button" class="chip-option" data-value="food">Food &amp; drink</button>
+        <button type="button" class="chip-option" data-value="nature">Nature &amp; countryside</button>
+        <button type="button" class="chip-option" data-value="museums">Museums &amp; art</button>
+        <button type="button" class="chip-option" data-value="shopping">Shopping</button>
+        <button type="button" class="chip-option" data-value="nightlife">Nightlife &amp; music</button>
+        <button type="button" class="chip-option" data-value="coast">Coast &amp; beaches</button>
+        <button type="button" class="chip-option" data-value="literary">Literary &amp; literary towns</button>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <label>4. Budget per person <span class="hint">(excluding travel to the destination)</span></label>
+      <select id="budgetSelect">
+        <option value="budget">Budget — under £150</option>
+        <option value="mid" selected>Mid-range — £150–£350</option>
+        <option value="comfortable">Comfortable — £350–£600</option>
+        <option value="luxury">Luxury — £600+</option>
+      </select>
+    </div>
+
+    <div class="form-step">
+      <label>5. Where are you starting from? <span class="hint">(to suggest realistic destinations)</span></label>
+      <select id="originSelect">
+        <option value="london" selected>London &amp; South East</option>
+        <option value="midlands">Midlands</option>
+        <option value="north">North of England</option>
+        <option value="scotland">Scotland</option>
+        <option value="wales">Wales</option>
+        <option value="europe">Coming from Europe</option>
+        <option value="usa">Coming from USA / overseas</option>
+      </select>
+    </div>
+
+    <div class="form-step">
+      <label>6. Travel time you're happy with <span class="hint">(each way)</span></label>
+      <div class="chip-group" id="travelGroup">
+        <button type="button" class="chip-option selected" data-value="short">Under 2 hours</button>
+        <button type="button" class="chip-option" data-value="medium">2–4 hours</button>
+        <button type="button" class="chip-option" data-value="long">4+ hours (happy to go far)</button>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" id="generateBtn" style="margin-top:8px;">
+      ✨ Generate My Weekend Break
+    </button>
+
+  </div>
+
+  <div id="results"></div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <h2>How to Plan a UK Weekend Break</h2>
+    <p>A weekend break in the UK is one of the easiest and most rewarding trips you can take. With so much packed into a small area, you can be in a historic city, on a dramatic coastline or in the middle of a national park within a couple of hours of leaving home.</p>
+
+    <h3>Best UK cities for a 2-day weekend</h3>
+    <ul>
+      <li><strong>Bath</strong> — Roman baths, Georgian architecture and excellent food, all walkable in a day.</li>
+      <li><strong>York</strong> — Medieval streets, the Minster and the Railway Museum, compact and beautiful.</li>
+      <li><strong>Edinburgh</strong> — Castle, Old Town, Arthur's Seat and a world-class food scene.</li>
+      <li><strong>Oxford</strong> — Colleges, pubs and the Bodleian Library, ideal for a literary weekend.</li>
+      <li><strong>Bristol</strong> — Street art, harbourside and a strong independent food and music scene.</li>
+    </ul>
+
+    <h3>Best UK destinations for a 3-day weekend</h3>
+    <ul>
+      <li><strong>The Lake District</strong> — Walking, lakes and villages; best with a car.</li>
+      <li><strong>The Cotswolds</strong> — Honey-stone villages, country pubs and gentle walks.</li>
+      <li><strong>Snowdonia (Eryri)</strong> — Mountains, castles and the Welsh coast.</li>
+      <li><strong>The Scottish Highlands</strong> — Lochs, glens and dramatic scenery; best with more travel time.</li>
+      <li><strong>Cornwall</strong> — Beaches, coastal paths and fishing villages.</li>
+    </ul>
+
+    <h3>When to book</h3>
+    <p>For UK weekend breaks, booking 4–8 weeks ahead usually gets the best balance of price and choice. Bank holiday weekends and school holidays sell out quickly and cost significantly more — check our <a href="/travel/bank-holidays.html" style="color:var(--red-600); text-decoration:underline;">UK Bank Holidays calendar</a> before you book.</p>
+
+    <h3>Getting around</h3>
+    <p>Trains are the easiest way to reach most UK cities for a weekend. For countryside destinations, a car is usually much more practical. See our <a href="/travel/getting-around.html" style="color:var(--red-600); text-decoration:underline;">Getting Around the UK</a> guide for details.</p>
+
+    <h3>Related tools</h3>
+    <ul>
+      <li><a href="/travel/trip-cost-calculator.html" style="color:var(--red-600); text-decoration:underline;">Trip Cost Calculator</a> — estimate your total spend.</li>
+      <li><a href="/travel/packing-list-generator.html" style="color:var(--red-600); text-decoration:underline;">Packing List Generator</a> — build a checklist for your trip.</li>
+      <li><a href="/travel/hotel-cost-estimator.html" style="color:var(--red-600); text-decoration:underline;">Hotel Cost Estimator</a> — check accommodation prices.</li>
+      <li><a href="/travel/uk-time-now.html" style="color:var(--red-600); text-decoration:underline;">UK Time &amp; Weather</a> — check conditions before you go.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Visitor Guide UK. All rights reserved. · <a href="/legal/privacy-policy.html">Privacy Policy</a> · <a href="/legal/cookie-policy.html">Cookie Policy</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ============ STATE ============ */
+  var state = {
+    days: 3,
+    who: "couple",
+    interests: [],
+    budget: "mid",
+    origin: "london",
+    travel: "short"
+  };
+
+  /* ============ DESTINATION DATABASE ============ */
+  var DESTINATIONS = [
+    { name:"Bath", region:"South West", wiki:"Roman Baths (Bath)",
+      interests:["history","food","museums","shopping"],
+      origin:["london","europe","usa"], travel:"short", minDays:2,
+      theme:"Georgian elegance & Roman history",
+      activities:[
+        ["09:00","Roman Baths","The best-preserved Roman religious spa in northern Europe — book ahead."],
+        ["11:30","Bath Abbey & Pump Room","Free entry to the abbey; afternoon tea at the Pump Room is a classic."],
+        ["13:00","Lunch at Sally Lunn's","The oldest house in Bath, famous for its Bath buns."],
+        ["15:00","Royal Crescent & The Circus","Walk the most famous Georgian streets in England."],
+        ["17:00","Thermae Bath Spa","Rooftop thermal pool with views over the city."],
+        ["19:30","Dinner at The Scallop Shell","Excellent fish and chips, popular with locals."]
+      ],
+      stay:"City centre (BA1) — everything is walkable.",
+      tip:"Bath is only 90 minutes from London by train. Book the Roman Baths before you travel — they sell out."
+    },
+    { name:"York", region:"Yorkshire", wiki:"York Minster",
+      interests:["history","food","museums","literary"],
+      origin:["london","midlands","north","scotland"], travel:"short", minDays:2,
+      theme:"Medieval streets & Gothic grandeur",
+      activities:[
+        ["09:00","York Minster","One of the largest Gothic cathedrals in Europe — climb the tower for views."],
+        ["11:00","The Shambles","The most famous medieval street in England; go early to avoid crowds."],
+        ["12:30","Lunch at Bettys Tea Room","A Yorkshire institution — expect a queue, it's worth it."],
+        ["14:30","National Railway Museum","Free entry, huge collection, great for families."],
+        ["16:30","Walk the City Walls","2.5 miles of medieval walls circling the old city."],
+        ["19:00","Dinner at The Star Inn the City","Modern Yorkshire cooking on the river."]
+      ],
+      stay:"Inside the city walls for a car-free weekend.",
+      tip:"York is compact and best explored on foot. The Minster and Railway Museum are both unmissable."
+    },
+    { name:"Edinburgh", region:"Scotland", wiki:"Edinburgh Castle",
+      interests:["history","food","nature","nightlife","literary"],
+      origin:["london","north","scotland","europe","usa"], travel:"medium", minDays:3,
+      theme:"Castles, cliffs & a world-class festival city",
+      activities:[
+        ["09:00","Edinburgh Castle","Dominates the skyline — book tickets in advance."],
+        ["11:30","Royal Mile & St Giles' Cathedral","Walk the historic spine of the Old Town."],
+        ["13:00","Lunch at The Outsider","Great views of the castle from the dining room."],
+        ["15:00","Arthur's Seat","A 2-hour hike to the top for the best views in the city."],
+        ["18:00","Dinner in Leith","The Shore has excellent seafood restaurants."],
+        ["20:30","Ceilidh or pub music","Live traditional music in the Grassmarket."]
+      ],
+      stay:"Old Town or New Town — both are central and walkable.",
+      tip:"Edinburgh is busy in August (Festival). Book accommodation months ahead for that period."
+    },
+    { name:"Oxford", region:"South East", wiki:"Radcliffe Camera",
+      interests:["history","literary","museums","shopping"],
+      origin:["london","europe","usa"], travel:"short", minDays:2,
+      theme:"Dreaming spires & literary history",
+      activities:[
+        ["09:30","Christ Church College","The most famous Oxford college — book ahead."],
+        ["11:30","Bodleian Library & Radcliffe Camera","The heart of the university — tours available."],
+        ["13:00","Lunch at The Covered Market","Independent food stalls since 1774."],
+        ["15:00","Ashmolean Museum","World-class art and archaeology — free entry."],
+        ["17:00","Punting on the Cherwell","A classic Oxford experience."],
+        ["19:30","Dinner at Gee's","A beautiful conservatory restaurant."]
+      ],
+      stay:"City centre — Oxford is small and walkable.",
+      tip:"Oxford is 1 hour from London by train. Weekdays are quieter than weekends."
+    },
+    { name:"Bristol", region:"South West", wiki:"Clifton Suspension Bridge",
+      interests:["food","nightlife","museums","shopping"],
+      origin:["london","wales","europe"], travel:"short", minDays:2,
+      theme:"Street art, harbourside & independent culture",
+      activities:[
+        ["09:30","SS Great Britain","Brunel's historic ship — a brilliant museum."],
+        ["12:00","Lunch at St Nicholas Market","Bristol's best street food under one roof."],
+        ["14:00","Banksy & street art walk","Bristol is Banksy's home city — self-guided walks available."],
+        ["16:00","Clifton Suspension Bridge","Walk across Brunel's masterpiece."],
+        ["18:30","Dinner on Wapping Wharf","Converted shipping containers full of independent restaurants."],
+        ["21:00","Live music at Thekla","A club on a boat — a Bristol institution."]
+      ],
+      stay:"Harbourside or Clifton.",
+      tip:"Bristol is 90 minutes from London by train and easy to combine with Bath."
+    },
+    { name:"Lake District", region:"Cumbria", wiki:"Lake Windermere",
+      interests:["nature","food","history"],
+      origin:["north","midlands","scotland"], travel:"medium", minDays:3,
+      theme:"Lakes, fells & literary landscapes",
+      activities:[
+        ["09:00","Windermere lake cruise","The classic introduction to the Lakes."],
+        ["11:30","Bowness-on-Windermere","Village with shops, cafés and the World of Beatrix Potter."],
+        ["13:00","Lunch at a country pub","Try the Lamb Inn at Grasmere or the Drunken Duck."],
+        ["15:00","Grasmere & Dove Cottage","Wordsworth's home — a literary pilgrimage."],
+        ["17:30","Walk to a viewpoint","Orrest Head is an easy 30-minute climb with huge views."],
+        ["19:30","Dinner in Ambleside","Plenty of good pubs and restaurants."]
+      ],
+      stay:"Windermere, Bowness or Ambleside — all central.",
+      tip:"A car is very useful in the Lakes. Book accommodation months ahead for summer."
+    },
+    { name:"Cotswolds", region:"South West", wiki:"Bibury",
+      interests:["nature","food","history"],
+      origin:["london","midlands","europe"], travel:"medium", minDays:3,
+      theme:"Honey-stone villages & country pubs",
+      activities:[
+        ["09:30","Bibury & Arlington Row","The most photographed cottages in England."],
+        ["11:30","Bourton-on-the-Water","'Venice of the Cotswolds' — pretty but busy."],
+        ["13:00","Lunch at a village pub","The Fox at Oddington or The Kingham Plough."],
+        ["15:00","Walk the Cotswold Way","Short sections are perfect for a weekend."],
+        ["17:00","Stow-on-the-Wold","Antiques, tea rooms and a beautiful square."],
+        ["19:30","Dinner at a gastropub","The Wild Rabbit at Kingham is excellent."]
+      ],
+      stay:"A village pub with rooms is the classic choice.",
+      tip:"You really need a car in the Cotswolds — public transport is limited."
+    },
+    { name:"Snowdonia (Eryri)", region:"Wales", wiki:"Snowdonia",
+      interests:["nature","history","coast"],
+      origin:["wales","midlands","north"], travel:"medium", minDays:3,
+      theme:"Mountains, castles & Welsh coast",
+      activities:[
+        ["09:00","Snowdon Mountain Railway","Or hike one of the many paths to the summit."],
+        ["12:00","Lunch in Betws-y-Coed","The gateway village to the national park."],
+        ["14:00","Conwy Castle","One of the finest castles in Wales — a UNESCO site."],
+        ["16:00","Llandudno promenade","Classic Victorian seaside town."],
+        ["18:30","Dinner in Caernarfon","Great seafood near the castle."],
+        ["20:30","Sunset over the Menai Strait","One of the best views in Wales."]
+      ],
+      stay:"Betws-y-Coed or Llanberis for the mountains.",
+      tip:"Weather changes fast in the mountains — bring waterproofs and check conditions."
+    },
+    { name:"Scottish Highlands", region:"Scotland", wiki:"Scottish Highlands",
+      interests:["nature","history","coast"],
+      origin:["scotland","north"], travel:"long", minDays:3,
+      theme:"Lochs, glens & dramatic landscapes",
+      activities:[
+        ["09:00","Loch Ness & Urquhart Castle","The classic Highland experience."],
+        ["12:00","Lunch in Inverness","The capital of the Highlands."],
+        ["14:00","Glen Affric","Often called the most beautiful glen in Scotland."],
+        ["16:30","Eilean Donan Castle","The most photographed castle in Scotland."],
+        ["18:30","Dinner in Portree (Skye)","If you have time, extend to the Isle of Skye."],
+        ["20:30","Sunset over the lochs","Long summer evenings are spectacular."]
+      ],
+      stay:"Inverness is the best base for a short trip.",
+      tip:"The Highlands need more travel time — a 3-day trip from the Central Belt is tight but doable."
+    },
+    { name:"Cornwall", region:"South West", wiki:"St Ives, Cornwall",
+      interests:["coast","nature","food","museums"],
+      origin:["london","europe"], travel:"long", minDays:3,
+      theme:"Beaches, coastal paths & fishing villages",
+      activities:[
+        ["09:30","St Ives","Artists' colony, beaches and the Tate St Ives."],
+        ["12:00","Lunch in Padstow","Rick Stein's seafood empire — book ahead."],
+        ["14:00","South West Coast Path","Walk a section for dramatic cliff views."],
+        ["16:30","Tintagel Castle","Arthurian legend and a spectacular clifftop location."],
+        ["18:30","Dinner in Newquay","Great seafood and surf culture."],
+        ["20:30","Sunset at Land's End","The westernmost point of England."]
+      ],
+      stay:"St Ives or Padstow — both are beautiful but book early.",
+      tip:"Cornwall is far from London (5+ hours by car). A 3-day trip is best if you're already in the South West."
+    }
+  ];
+
+  /* ============ HELPERS ============ */
+  function $(sel){ return document.querySelector(sel); }
+  function $all(sel){ return Array.prototype.slice.call(document.querySelectorAll(sel)); }
+
+  function setupChipGroup(id, multi, onChange){
+    var group = document.getElementById(id);
+    group.addEventListener("click", function(e){
+      var btn = e.target.closest(".chip-option");
+      if (!btn) return;
+      if (multi){
+        btn.classList.toggle("selected");
+        var selected = $all("#" + id + " .chip-option.selected").map(function(b){ return b.getAttribute("data-value"); });
+        if (selected.length > 3){
+          btn.classList.remove("selected");
+          return;
+        }
+        onChange(selected);
+      } else {
+        $all("#" + id + " .chip-option").forEach(function(b){ b.classList.remove("selected"); });
+        btn.classList.add("selected");
+        onChange(btn.getAttribute("data-value"));
+      }
+    });
+  }
+
+  /* ============ INIT FORM ============ */
+  setupChipGroup("daysGroup", false, function(v){ state.days = parseInt(v, 10); });
+  setupChipGroup("whoGroup", false, function(v){ state.who = v; });
+  setupChipGroup("interestsGroup", true, function(arr){ state.interests = arr; });
+  setupChipGroup("travelGroup", false, function(v){ state.travel = v; });
+
+  $("#budgetSelect").addEventListener("change", function(e){ state.budget = e.target.value; });
+  $("#originSelect").addEventListener("change", function(e){ state.origin = e.target.value; });
+
+  /* ============ SCORING ============ */
+  function scoreDestination(dest){
+    var score = 0;
+    // interests match
+    if (state.interests.length){
+      var matches = dest.interests.filter(function(i){ return state.interests.indexOf(i) !== -1; });
+      score += matches.length * 3;
+    }
+    // origin match
+    if (dest.origin.indexOf(state.origin) !== -1) score += 2;
+    // travel time match
+    if (dest.travel === state.travel) score += 2;
+    else if (state.travel === "long") score += 1;
+    // days match
+    if (dest.minDays <= state.days) score += 1;
+    return score;
+  }
+
+  function pickDestinations(){
+    var scored = DESTINATIONS.map(function(d){ return { dest:d, score:scoreDestination(d) }; });
+    scored.sort(function(a,b){ return b.score - a.score; });
+    return scored.slice(0, 3).map(function(s){ return s.dest; });
+  }
+
+  /* ============ RENDER RESULTS ============ */
+  function renderResults(){
+    var dests = pickDestinations();
+    var primary = dests[0];
+    var alternatives = dests.slice(1);
+
+    var whoLabels = { couple:"Couple", family:"Family with kids", solo:"Solo traveller", friends:"Friends group" };
+    var budgetLabels = { budget:"Budget", mid:"Mid-range", comfortable:"Comfortable", luxury:"Luxury" };
+    var interestLabels = { history:"History & castles", food:"Food & drink", nature:"Nature & countryside",
+      museums:"Museums & art", shopping:"Shopping", nightlife:"Nightlife & music",
+      coast:"Coast & beaches", literary:"Literary" };
+
+    var html = '';
+    html += '<div class="results-header">';
+    html += '<h2>Your Perfect Weekend: ' + primary.name + '</h2>';
+    html += '<p>' + primary.theme + ' · ' + primary.region + '</p>';
+    html += '<div class="results-summary">';
+    html += '<span class="summary-tag">' + state.days + ' days</span>';
+    html += '<span class="summary-tag">' + whoLabels[state.who] + '</span>';
+    html += '<span class="summary-tag">' + budgetLabels[state.budget] + '</span>';
+    if (state.interests.length){
+      state.interests.forEach(function(i){
+        html += '<span class="summary-tag">' + interestLabels[i] + '</span>';
+      });
+    }
+    html += '</div></div>';
+
+    // Day cards
+    var perDay = Math.ceil(primary.activities.length / state.days);
+    for (var d = 0; d < state.days; d++){
+      var dayActivities = primary.activities.slice(d * perDay, (d + 1) * perDay);
+      if (!dayActivities.length) continue;
+      html += '<div class="day-card">';
+      html += '<h3><span class="day-num">Day ' + (d + 1) + '</span> ' + primary.name + '</h3>';
+      html += '<div class="day-theme">' + (d === 0 ? "Arrival & highlights" : d === state.days - 1 ? "Final morning & departure" : "Full day exploring") + '</div>';
+      html += '<ul>';
+      dayActivities.forEach(function(a){
+        html += '<li><span class="time">' + a[0] + '</span><span class="activity"><strong>' + a[1] + '</strong><span>' + a[2] + '</span></span></li>';
+      });
+      html += '</ul></div>';
+    }
+
+    // Where to stay + tip
+    html += '<div class="tips-box">';
+    html += '<h4>Where to stay</h4>';
+    html += '<p style="font-size:14px; color:var(--slate); margin-bottom:10px;">' + primary.stay + '</p>';
+    html += '<h4 style="margin-top:16px;">Local tip</h4>';
+    html += '<p style="font-size:14px; color:var(--slate);">' + primary.tip + '</p>';
+    html += '</div>';
+
+    // Alternatives
+    if (alternatives.length){
+      html += '<div class="tips-box" style="background:#fff; border:1px solid var(--line);">';
+      html += '<h4>Also worth considering</h4>';
+      html += '<ul>';
+      alternatives.forEach(function(a){
+        html += '<li><strong>' + a.name + '</strong> — ' + a.theme + ' (' + a.region + ')</li>';
+      });
+      html += '</ul></div>';
+    }
+
+    html += '<div class="actions">';
+    html += '<a href="/travel/trip-cost-calculator.html" class="btn btn-outline">Estimate Trip Cost</a>';
+    html += '<a href="/travel/hotel-cost-estimator.html" class="btn btn-outline">Check Hotel Prices</a>';
+    html += '<a href="/travel/packing-list-generator.html" class="btn btn-outline">Build Packing List</a>';
+    html += '</div>';
+
+    html += '<p class="disclaimer">This tool generates suggestions based on your inputs. Always check opening times, prices and availability before you travel. Visitor Guide UK is an independent guide and is not affiliated with any of the destinations listed.</p>';
+
+    var results = $("#results");
+    results.innerHTML = html;
+    results.classList.add("show");
+    results.scrollIntoView({ behavior:"smooth", block:"start" });
+  }
+
+  $("#generateBtn").addEventListener("click", function(){
+    if (!state.interests.length){
+      alert("Please pick at least one interest so we can tailor your weekend.");
+      return;
+    }
+    renderResults();
+  });
+
+})();
+</script>
+</body>
+</html>
