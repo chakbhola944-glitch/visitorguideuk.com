@@ -19,15 +19,15 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRW83LDG7"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UK Live City Cam — Watch UK Cities in Real Time | Visitor Guide UK</title>
-<meta name="description" content="A simulated live camera feed of UK cities — London, Edinburgh, Manchester and more. Watch the feed rotate, with live UK time, weather and city information.">
+<title>UK Live City Cam — CCTV Style Views of UK Cities | Visitor Guide UK</title>
+<meta name="description" content="A CCTV-style live camera view of UK cities — London, Edinburgh, Manchester and more. Watch the feed rotate with live time, weather and city information.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.visitorguideuk.com/tools/uk-live-city-cam.html">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Visitor Guide UK">
-<meta property="og:title" content="UK Live City Cam — Watch UK Cities in Real Time">
-<meta property="og:description" content="A simulated live camera feed of UK cities, with live time, weather and city info.">
+<meta property="og:title" content="UK Live City Cam — CCTV Style Views of UK Cities">
+<meta property="og:description" content="A CCTV-style live camera view of UK cities, with live time, weather and city info.">
 <meta property="og:url" content="https://www.visitorguideuk.com/tools/uk-live-city-cam.html">
 <meta property="og:locale" content="en_GB">
 
@@ -36,28 +36,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "UK Live City Cam",
-  "url": "https://www.visitorguideuk.com/tools/uk-live-city-cam.html",
-  "applicationCategory": "TravelApplication",
-  "operatingSystem": "Any (Web)",
-  "browserRequirements": "Requires JavaScript",
-  "datePublished": "2026-10-10",
-  "dateModified": "2026-10-10",
-  "description": "A simulated live camera feed rotating through UK cities, with live UK time, weather and city information.",
-  "offers": {"@type":"Offer","price":"0","priceCurrency":"GBP"}
-}
-</script>
-
 <style>
   :root{
     --navy-950:#060F1F; --navy-900:#0B1B33; --navy-800:#122A4A; --navy-700:#1B3A61;
     --red-600:#B23A32; --red-700:#96302A;
     --green-500:#22C55E;
-    --sky-400:#5AA9E6; --sky-300:#8FC1EE; --gold-400:#D4B468;
     --paper:#F5F5F2; --paper-dim:#ECEBE6; --white:#FFFFFF; --ink:#16212E;
     --slate:#5B6472; --slate-light:#8892A0; --line:#DFDFD9; --line-dark:rgba(255,255,255,.14);
     --radius-lg:22px; --radius-md:14px; --radius-sm:9px;
@@ -125,44 +108,179 @@
   .notice{background:#FFF8E6; border:1px solid #F0DDA0; border-radius:var(--radius-sm); padding:13px 18px; font-size:13px; color:#7A5C10; max-width:880px; margin:0 auto 28px; line-height:1.6;}
   .notice strong{color:#5C4400;}
 
-  /* ============ CAMERA STAGE ============ */
-  .cam-stage{position:relative; border-radius:var(--radius-lg); overflow:hidden; background:var(--navy-950); box-shadow:var(--shadow-luxe);}
-  .cam-viewport{position:relative; aspect-ratio:16/9; background:#0A1424; overflow:hidden;}
-  .cam-frame{
-    position:absolute; inset:0; opacity:0; transition:opacity 1.2s ease;
-    background-size:cover; background-position:center;
-    will-change:transform;
+  /* ============================================================
+     CCTV STAGE
+     ============================================================ */
+  .cam-stage{
+    position:relative; border-radius:var(--radius-lg); overflow:hidden;
+    background:#000; box-shadow:var(--shadow-luxe);
+    border:1px solid rgba(255,255,255,.06);
   }
-  .cam-frame.active{opacity:1; animation:kenburns 8s ease-out forwards;}
-  @keyframes kenburns{ from{transform:scale(1.06);} to{transform:scale(1.14);} }
+  .cam-viewport{
+    position:relative; aspect-ratio:16/9; background:#05080F; overflow:hidden;
+    /* subtle overall camera shake */
+    animation:cameraShake 7s ease-in-out infinite;
+  }
+  @keyframes cameraShake{
+    0%,100%{ transform:translate(0,0) rotate(0deg); }
+    12%{ transform:translate(-1px,0.5px) rotate(-0.04deg); }
+    27%{ transform:translate(0.5px,-1px) rotate(0.03deg); }
+    45%{ transform:translate(-0.5px,0.5px) rotate(0.02deg); }
+    63%{ transform:translate(1px,-0.5px) rotate(-0.03deg); }
+    82%{ transform:translate(-0.5px,0.5px) rotate(0.02deg); }
+  }
+
+  /* each frame holds the photo */
+  .cam-frame{
+    position:absolute; inset:-3%; /* oversize so Ken Burns doesn't show edges */
+    opacity:0; transition:opacity 1.4s ease;
+    background-size:cover; background-position:center;
+    will-change:transform,filter;
+  }
+  .cam-frame.active{ opacity:1; animation:cctvMove 14s ease-in-out infinite alternate; }
+  @keyframes cctvMove{
+    0%   { transform:scale(1.02) translate(0, 0); filter:saturate(0.85) contrast(1.05) brightness(0.95); }
+    25%  { transform:scale(1.06) translate(-1.2%, 0.4%); filter:saturate(0.9) contrast(1.08) brightness(1.0); }
+    50%  { transform:scale(1.09) translate(1.0%, -0.6%); filter:saturate(0.85) contrast(1.06) brightness(0.97); }
+    75%  { transform:scale(1.05) translate(-0.6%, 0.8%); filter:saturate(0.92) contrast(1.05) brightness(1.02); }
+    100% { transform:scale(1.08) translate(0.4%, -0.4%); filter:saturate(0.88) contrast(1.07) brightness(0.98); }
+  }
+
+  /* dark vignette + bottom gradient */
   .cam-frame::after{
     content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(6,15,31,.20) 0%, rgba(6,15,31,.05) 40%, rgba(6,15,31,.80) 100%);
+    background:linear-gradient(180deg, rgba(6,15,31,.22) 0%, rgba(6,15,31,.05) 40%, rgba(6,15,31,.82) 100%);
   }
-  .scanlines{position:absolute; inset:0; pointer-events:none; z-index:3; opacity:.28;
-    background:repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 3px);
-    mix-blend-mode:overlay;
-  }
-  .vignette{position:absolute; inset:0; pointer-events:none; z-index:3;
-    background:radial-gradient(ellipse at center, transparent 45%, rgba(0,0,0,.55) 100%);
-  }
-  .hud{position:absolute; inset:0; z-index:4; pointer-events:none;}
-  .hud-top{display:flex; justify-content:space-between; align-items:flex-start; padding:18px 20px; font-family:var(--mono); font-size:11px; color:#E7EEF7; letter-spacing:.08em; text-transform:uppercase;}
-  .hud-rec{display:inline-flex; align-items:center; gap:8px; background:rgba(178,58,50,.85); padding:6px 12px; border-radius:100px; backdrop-filter:blur(6px);}
-  .hud-rec .dot{width:7px; height:7px; border-radius:50%; background:#fff; animation:blink 1s infinite;}
-  @keyframes blink{0%,100%{opacity:1;} 50%{opacity:.25;}}
-  .hud-clock{background:rgba(6,15,31,.7); padding:6px 12px; border-radius:100px; backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,.12);}
-  .hud-bottom{position:absolute; left:0; right:0; bottom:0; padding:20px 22px 22px;}
-  .cam-city{font-family:var(--serif); font-size:clamp(24px,3.4vw,38px); color:#fff; font-weight:600; margin-bottom:4px; text-shadow:0 2px 12px rgba(0,0,0,.6);}
-  .cam-meta{display:flex; flex-wrap:wrap; gap:10px; align-items:center; font-family:var(--mono); font-size:11px; color:#C7D0DE; letter-spacing:.06em; text-transform:uppercase;}
-  .cam-meta .chip{background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2); padding:5px 11px; border-radius:100px; backdrop-filter:blur(6px); color:#fff;}
-  .weather-badge{position:absolute; top:18px; right:20px; z-index:5; display:flex; align-items:center; gap:10px; background:rgba(6,15,31,.7); border:1px solid rgba(255,255,255,.14); border-radius:100px; padding:8px 14px 8px 10px; backdrop-filter:blur(8px); font-family:var(--mono); font-size:12px; color:#fff; letter-spacing:.04em;}
-  .weather-badge .icon{font-size:18px; line-height:1;}
-  .weather-badge .temp{font-weight:600;}
-  .weather-badge .desc{color:#93A1B7; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; margin-left:2px;}
-  .cam-progress{position:absolute; bottom:0; left:0; right:0; height:3px; background:rgba(255,255,255,.08); z-index:5;}
-  .cam-progress .bar{height:100%; width:0%; background:linear-gradient(90deg, var(--sky-400), var(--gold-400)); transition:width .1s linear;}
 
+  /* ---- CCTV overlays ---- */
+  .cctv-noise{
+    position:absolute; inset:0; z-index:3; pointer-events:none; opacity:.16;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+    mix-blend-mode:overlay;
+    animation:noiseShift .6s steps(3) infinite;
+  }
+  @keyframes noiseShift{
+    0%{ transform:translate(0,0); }
+    33%{ transform:translate(-3%,2%); }
+    66%{ transform:translate(2%,-2%); }
+    100%{ transform:translate(0,0); }
+  }
+
+  .cctv-scan{
+    position:absolute; left:0; right:0; height:14%;
+    background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.06) 50%, rgba(255,255,255,0) 100%);
+    z-index:4; pointer-events:none;
+    animation:scanMove 4.5s linear infinite;
+  }
+  @keyframes scanMove{
+    0%{ top:-15%; }
+    100%{ top:115%; }
+  }
+
+  .cctv-lines{
+    position:absolute; inset:0; pointer-events:none; z-index:4;
+    background:repeating-linear-gradient(0deg, rgba(255,255,255,.045) 0 1px, transparent 1px 3px);
+    mix-blend-mode:overlay; opacity:.55;
+  }
+
+  .cctv-vignette{
+    position:absolute; inset:0; pointer-events:none; z-index:4;
+    background:radial-gradient(ellipse at center, transparent 42%, rgba(0,0,0,.62) 100%);
+  }
+
+  .cctv-flicker{
+    position:absolute; inset:0; z-index:4; pointer-events:none;
+    background:rgba(255,255,255,.02);
+    animation:flicker 2.4s infinite;
+  }
+  @keyframes flicker{
+    0%,100%{ opacity:.9; }
+    47%{ opacity:.94; }
+    48%{ opacity:.72; }
+    49%{ opacity:.92; }
+    62%{ opacity:.78; }
+    63%{ opacity:.95; }
+  }
+
+  /* HUD */
+  .hud{position:absolute; inset:0; z-index:5; pointer-events:none; font-family:var(--mono); color:#E7EEF7;}
+  .hud-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    padding:16px 20px; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
+  }
+  .hud-rec{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(178,58,50,.9); padding:6px 12px; border-radius:3px;
+    backdrop-filter:blur(6px); box-shadow:0 2px 10px rgba(0,0,0,.35);
+  }
+  .hud-rec .dot{
+    width:8px; height:8px; border-radius:50%; background:#fff;
+    animation:blink 1s infinite; box-shadow:0 0 6px #fff;
+  }
+  @keyframes blink{0%,100%{opacity:1;} 50%{opacity:.2;}}
+
+  .hud-right{display:flex; flex-direction:column; align-items:flex-end; gap:6px;}
+  .hud-timestamp{
+    background:rgba(6,15,31,.75); padding:6px 12px; border-radius:3px;
+    border:1px solid rgba(255,255,255,.12); letter-spacing:.1em;
+  }
+  .hud-camid{
+    background:rgba(6,15,31,.6); padding:4px 10px; border-radius:3px;
+    border:1px solid rgba(255,255,255,.08); font-size:10.5px; color:#8FC1EE;
+  }
+
+  .hud-corner{
+    position:absolute; width:26px; height:26px; z-index:5;
+    border:2px solid rgba(255,255,255,.55);
+  }
+  .hud-corner.tl{ top:52px; left:20px; border-right:none; border-bottom:none; }
+  .hud-corner.tr{ top:52px; right:20px; border-left:none; border-bottom:none; }
+  .hud-corner.bl{ bottom:52px; left:20px; border-right:none; border-top:none; }
+  .hud-corner.br{ bottom:52px; right:20px; border-left:none; border-top:none; }
+
+  .hud-bottom{
+    position:absolute; left:0; right:0; bottom:0; padding:18px 22px 22px;
+    display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .cam-city{
+    font-family:var(--serif); font-size:clamp(22px,3.2vw,34px);
+    color:#fff; font-weight:600; line-height:1.05;
+    text-shadow:0 2px 14px rgba(0,0,0,.7); margin-bottom:6px;
+  }
+  .cam-meta{
+    display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+    font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+  }
+  .cam-meta .chip{
+    background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2);
+    padding:5px 10px; border-radius:3px; backdrop-filter:blur(6px); color:#fff;
+  }
+  .cam-meta .chip.live{ background:rgba(34,197,94,.85); border-color:rgba(34,197,94,.9); }
+
+  /* weather */
+  .weather-badge{
+    position:absolute; top:16px; left:50%; transform:translateX(-50%);
+    z-index:6; display:flex; align-items:center; gap:10px;
+    background:rgba(6,15,31,.72); border:1px solid rgba(255,255,255,.14);
+    border-radius:3px; padding:7px 14px; backdrop-filter:blur(8px);
+    font-family:var(--mono); font-size:12px; color:#fff; letter-spacing:.04em;
+  }
+  .weather-badge .icon{ font-size:17px; line-height:1; }
+  .weather-badge .temp{ font-weight:600; }
+  .weather-badge .desc{ color:#93A1B7; font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
+
+  /* progress bar */
+  .cam-progress{
+    position:absolute; bottom:0; left:0; right:0; height:3px;
+    background:rgba(255,255,255,.08); z-index:6;
+  }
+  .cam-progress .bar{
+    height:100%; width:0%;
+    background:linear-gradient(90deg, #5AA9E6, #D4B468);
+    transition:width .1s linear;
+  }
+
+  /* city strip */
   .city-strip{display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:10px; margin-top:24px;}
   .city-btn{background:#fff; border:1.5px solid var(--line); border-radius:var(--radius-md); padding:14px 16px; text-align:left; transition:all .18s ease; cursor:pointer; font-family:inherit; color:var(--navy-800); position:relative; overflow:hidden;}
   .city-btn:hover{border-color:var(--navy-900); transform:translateY(-2px); box-shadow:var(--shadow-card);}
@@ -221,8 +339,12 @@
     .city-strip{grid-template-columns:1fr 1fr;}
     .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
     .footer-brand{grid-column:1 / -1;}
-    .hud-bottom{padding:14px 16px 18px;}
+    .hud-bottom{padding:12px 14px 16px;}
     .facts{grid-template-columns:1fr;}
+    .hud-corner{ display:none; }
+    .hud-top{ padding:12px 12px; font-size:10.5px; }
+    .hud-camid{ display:none; }
+    .weather-badge{ top:12px; padding:6px 10px; font-size:11px; }
   }
 </style>
 <script src="/cookie-consent.js" defer></script>
@@ -309,26 +431,37 @@
 <div class="container breadcrumb"><a href="/">Home</a><span>/</span><a href="/tools/uk-live-city-cam.html">Tools</a><span>/</span>UK Live City Cam</div>
 
 <section class="hero container">
-  <p class="eyebrow" style="justify-content:center;"><span class="live-dot"></span> Simulated live feed · Rotating every 8s</p>
+  <p class="eyebrow" style="justify-content:center;"><span class="live-dot"></span> CCTV-style · Rotating every 8s</p>
   <h1>UK Live City Cam</h1>
-  <p>Watch a simulated live camera feed rotate through the UK's best-known cities — with live time, weather and city information.</p>
+  <p>A CCTV-style rotating camera view of the UK's best-known cities — with live time, weather and city information.</p>
 </section>
 
 <div class="container">
   <div class="notice">
-    <strong>Note:</strong> This is a <strong>simulated</strong> live camera feed, created for illustration. The images are photographs of the cities (credited below), shown in a rotating "camera" view. The weather and timestamps are generated in your browser. They are not real-time footage.
+    <strong>Note:</strong> This is a <strong>simulated</strong> CCTV-style feed, created for illustration. The city images are credited photographs shown with a camera-style overlay. The timestamps and weather are generated in your browser. They are not real-time footage.
   </div>
 
   <div class="cam-stage">
     <div class="cam-viewport" id="camViewport">
-      <!-- frames injected here -->
-      <div class="scanlines"></div>
-      <div class="vignette"></div>
+      <!-- frames injected -->
+      <div class="cctv-lines"></div>
+      <div class="cctv-noise"></div>
+      <div class="cctv-scan"></div>
+      <div class="cctv-flicker"></div>
+      <div class="cctv-vignette"></div>
+
+      <span class="hud-corner tl"></span>
+      <span class="hud-corner tr"></span>
+      <span class="hud-corner bl"></span>
+      <span class="hud-corner br"></span>
 
       <div class="hud">
         <div class="hud-top">
-          <span class="hud-rec"><span class="dot"></span> REC · Simulated</span>
-          <span class="hud-clock" id="hudClock">--:--:--</span>
+          <span class="hud-rec"><span class="dot"></span> REC</span>
+          <div class="hud-right">
+            <span class="hud-timestamp" id="hudTimestamp">--/--/---- --:--:--</span>
+            <span class="hud-camid" id="hudCamId">CAM-01 · 1080p</span>
+          </div>
         </div>
       </div>
 
@@ -339,8 +472,10 @@
       </div>
 
       <div class="hud-bottom">
-        <div class="cam-city" id="camCity">Loading…</div>
-        <div class="cam-meta" id="camMeta"></div>
+        <div>
+          <div class="cam-city" id="camCity">Loading…</div>
+          <div class="cam-meta" id="camMeta"></div>
+        </div>
       </div>
 
       <div class="cam-progress"><div class="bar" id="camBar"></div></div>
@@ -364,29 +499,29 @@
 
 <section class="content-section container">
   <h2>About This Tool</h2>
-  <p>This page demonstrates a <strong>rotating simulated city camera</strong>. Every 8 seconds, the view changes to a different UK city, with the city name, region and a short description shown on screen. The weather badge and the on-screen clock update live, so the page always feels active.</p>
-  <p>It's designed to give a sense of what a real multi-city camera view would feel like — useful for anyone planning a UK trip and wondering what a city looks like right now, at this time of day.</p>
+  <p>This page demonstrates a <strong>CCTV-style rotating camera view</strong> of UK cities. Every 8 seconds, the view changes to a different city, with the city name, region and a short description shown on screen. The timestamp updates in real time, and a weather badge gives a sense of current conditions.</p>
+  <p>It's designed to give a sense of what a real multi-camera UK feed would feel like — useful for anyone planning a UK trip and wondering what a city looks like right now, at this time of day.</p>
 
   <h3>How the rotation works</h3>
-  <p>The camera cycles through eight UK cities: London, Edinburgh, Manchester, York, Bath, Oxford, Liverpool and Glasgow. You can also click any city in the strip below the camera to jump straight to it. Once a city is selected, its information panel updates too.</p>
+  <p>The camera cycles through eight UK cities: London, Edinburgh, Manchester, York, Bath, Oxford, Liverpool and Glasgow. You can also click any city in the strip below the camera to jump straight to it.</p>
 
   <h3>Why not real footage?</h3>
-  <p>Publicly available real-time cameras in the UK are operated by third parties, and most do not allow their streams to be embedded in another site. Rather than link you away, this tool shows a rotating view of each city using credited photographs — and if you do want real cameras, our <a href="/tools/uk-live-camera-directory.html">UK Live Camera Directory</a> links to the official sources.</p>
+  <p>Publicly available real-time cameras in the UK are operated by third parties, and most do not allow their streams to be embedded in another site. Rather than link you away, this tool shows a rotating camera view of each city using credited photographs.</p>
 </section>
 
 <section class="faq-section container">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-item">
     <h3>Is the UK Live City Cam real?</h3>
-    <p>No. This is a simulated live camera feed designed to demonstrate how a rotating city camera view would look. The images are credited photographs of each city, and the weather is illustrative. For real live cameras, see our UK Live Camera Directory, which links to official sources.</p>
+    <p>No. This is a simulated CCTV-style feed designed to demonstrate how a rotating city camera view would look. The images are credited photographs of each city, shown with a camera-style overlay. The timestamps and weather are illustrative.</p>
   </div>
   <div class="faq-item">
     <h3>Which UK cities are shown?</h3>
-    <p>The camera rotates through London, Edinburgh, Manchester, York, Bath, Oxford, Liverpool and Glasgow, showing a city view and information for each.</p>
+    <p>The camera rotates through London, Edinburgh, Manchester, York, Bath, Oxford, Liverpool and Glasgow.</p>
   </div>
   <div class="faq-item">
     <h3>How often does the camera change?</h3>
-    <p>The view rotates every 8 seconds, cycling through the cities in a loop. You can also pause on a city by clicking it in the list below.</p>
+    <p>Every 8 seconds, cycling through the cities in a loop. You can also pause on a city by clicking it in the list below.</p>
   </div>
   <div class="faq-item">
     <h3>Where do the photographs come from?</h3>
@@ -460,7 +595,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Visitor Guide UK. All rights reserved.</span>
-      <span>Images via Wikimedia Commons (CC BY-SA) · Simulated feed for illustration</span>
+      <span>Images via Wikimedia Commons (CC BY-SA) · Simulated CCTV for illustration</span>
     </div>
   </div>
 </footer>
@@ -469,57 +604,46 @@
 (function(){
   "use strict";
 
-  /* ============ CITY DATA ============ */
-  /* Each city uses a Wikimedia Commons image (via the Wikipedia page-image API).
-     The API returns a thumbnail for the given page title. */
   var CITIES = [
-    { name:"London", region:"England", wiki:"Tower Bridge",
+    { name:"London", region:"England", wiki:"Tower Bridge", camId:"CAM-01",
       desc:"The UK capital — royal landmarks, world-class museums and the River Thames.",
       highlights:["Big Ben & the Houses of Parliament","Tower Bridge and the Tower of London","The British Museum (free)","Buckingham Palace and St James's Park"],
-      facts:{population:"9.0 million", area:"1,572 km²", founded:"AD 43", river:"Thames"}
-    },
-    { name:"Edinburgh", region:"Scotland", wiki:"Edinburgh Castle",
+      facts:{population:"9.0 million", area:"1,572 km²", founded:"AD 43", river:"Thames"} },
+    { name:"Edinburgh", region:"Scotland", wiki:"Edinburgh Castle", camId:"CAM-02",
       desc:"Scotland's historic capital, dominated by its hilltop castle and the Royal Mile.",
       highlights:["Edinburgh Castle","Arthur's Seat","The Royal Mile & Holyrood","The Scottish Parliament"],
-      facts:{population:"540,000", area:"264 km²", founded:"7th century", landmark:"Castle Rock"}
-    },
-    { name:"Manchester", region:"England", wiki:"Manchester",
+      facts:{population:"540,000", area:"264 km²", founded:"7th century", landmark:"Castle Rock"} },
+    { name:"Manchester", region:"England", wiki:"Manchester", camId:"CAM-03",
       desc:"A confident northern city built on music, football and industrial heritage.",
       highlights:["Old Trafford & the National Football Museum","Northern Quarter street art","Science and Industry Museum","The John Rylands Library"],
-      facts:{population:"550,000", area:"116 km²", founded:"AD 79", nickname:"Cottonopolis"}
-    },
-    { name:"York", region:"England", wiki:"York Minster",
+      facts:{population:"550,000", area:"116 km²", founded:"AD 79", nickname:"Cottonopolis"} },
+    { name:"York", region:"England", wiki:"York Minster", camId:"CAM-04",
       desc:"Medieval streets, Roman walls and a magnificent Gothic minster.",
       highlights:["York Minster","The Shambles","City walls (2.5 miles)","National Railway Museum (free)"],
-      facts:{population:"210,000", area:"272 km²", founded:"AD 71", river:"Ouse"}
-    },
-    { name:"Bath", region:"England", wiki:"Roman Baths (Bath)",
+      facts:{population:"210,000", area:"272 km²", founded:"AD 71", river:"Ouse"} },
+    { name:"Bath", region:"England", wiki:"Roman Baths (Bath)", camId:"CAM-05",
       desc:"Georgian architecture and ancient Roman baths in a graceful, honey-stone city.",
       highlights:["The Roman Baths","Bath Abbey","Royal Crescent & The Circus","Thermae Bath Spa"],
-      facts:{population:"90,000", area:"29 km²", founded:"AD 60s", springs:"Hot springs"}
-    },
-    { name:"Oxford", region:"England", wiki:"Radcliffe Camera",
+      facts:{population:"90,000", area:"29 km²", founded:"AD 60s", springs:"Hot springs"} },
+    { name:"Oxford", region:"England", wiki:"Radcliffe Camera", camId:"CAM-06",
       desc:"Centuries-old university colleges and cobbled lanes in the city of dreaming spires.",
       highlights:["Bodleian Library","Radcliffe Camera","Christ Church College","Ashmolean Museum (free)"],
-      facts:{population:"160,000", area:"46 km²", founded:"AD 912", university:"c. 1096"}
-    },
-    { name:"Liverpool", region:"England", wiki:"Royal Albert Dock, Liverpool",
+      facts:{population:"160,000", area:"46 km²", founded:"AD 912", university:"c. 1096"} },
+    { name:"Liverpool", region:"England", wiki:"Royal Albert Dock, Liverpool", camId:"CAM-07",
       desc:"Home of The Beatles and a UNESCO-listed waterfront on the River Mersey.",
       highlights:["Royal Albert Dock","The Beatles Story","Liverpool Cathedral","Anfield & Goodison Park"],
-      facts:{population:"500,000", area:"112 km²", founded:"1207", river:"Mersey"}
-    },
-    { name:"Glasgow", region:"Scotland", wiki:"Glasgow",
+      facts:{population:"500,000", area:"112 km²", founded:"1207", river:"Mersey"} },
+    { name:"Glasgow", region:"Scotland", wiki:"Glasgow", camId:"CAM-08",
       desc:"Scotland's largest city — Victorian architecture, live music and a warm welcome.",
       highlights:["Kelvingrove Art Gallery (free)","Glasgow Cathedral","The Riverside Museum","Buchanan Street shopping"],
-      facts:{population:"630,000", area:"175 km²", founded:"6th century", river:"Clyde"}
-    }
+      facts:{population:"630,000", area:"175 km²", founded:"6th century", river:"Clyde"} }
   ];
 
   var WEATHERS = [
     { icon:"☀️", desc:"Clear", tempRange:[14, 24] },
-    { icon:"⛅", desc:"Partly cloudy", tempRange:[10, 20] },
+    { icon:"⛅", desc:"Partly Cloudy", tempRange:[10, 20] },
     { icon:"☁️", desc:"Cloudy", tempRange:[8, 16] },
-    { icon:"🌦️", desc:"Light rain", tempRange:[7, 14] },
+    { icon:"🌦️", desc:"Light Rain", tempRange:[7, 14] },
     { icon:"🌧️", desc:"Rain", tempRange:[6, 13] },
     { icon:"🌫️", desc:"Misty", tempRange:[6, 12] }
   ];
@@ -533,7 +657,6 @@
 
   function $(s){ return document.querySelector(s); }
 
-  /* ============ WIKIPEDIA IMAGE FETCH ============ */
   function fetchWikiImage(title, px){
     if (wikiCache[title]) return wikiCache[title];
     var p = fetch("https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(title) +
@@ -550,29 +673,23 @@
     return p;
   }
 
-  /* ============ BUILD FRAMES ============ */
   function buildFrames(){
     var vp = $("#camViewport");
     CITIES.forEach(function(c, i){
       var frame = document.createElement("div");
       frame.className = "cam-frame";
       frame.setAttribute("data-index", i);
-      // fallback gradient while image loads
       frame.style.background = "linear-gradient(160deg, #0B1B33 0%, #1B3A61 60%, #274a72 100%)";
       vp.insertBefore(frame, vp.firstChild);
 
-      // load the Wikipedia image for this city
       fetchWikiImage(c.wiki, 1600).then(function(url){
         if (!url) return;
         frame.style.backgroundImage = "url('" + url + "')";
-        frame.style.backgroundSize = "cover";
-        frame.style.backgroundPosition = "center";
       });
     });
     document.querySelectorAll(".cam-frame")[0].classList.add("active");
   }
 
-  /* ============ BUILD CITY STRIP ============ */
   function buildCityStrip(){
     var strip = $("#cityStrip");
     CITIES.forEach(function(c, i){
@@ -585,7 +702,6 @@
     });
   }
 
-  /* ============ SHOW CITY ============ */
   function showCity(i){
     currentIndex = i;
     var c = CITIES[i];
@@ -594,7 +710,6 @@
       var isActive = parseInt(f.getAttribute("data-index"), 10) === i;
       f.classList.toggle("active", isActive);
       if (isActive){
-        // restart Ken Burns animation
         f.style.animation = "none";
         void f.offsetWidth;
         f.style.animation = "";
@@ -602,10 +717,12 @@
     });
 
     $("#camCity").textContent = c.name;
+    $("#hudCamId").textContent = c.camId + " · " + c.name.toUpperCase();
     $("#camMeta").innerHTML =
+      '<span class="chip live"><span class="live-dot" style="width:6px;height:6px;margin-right:4px;"></span>LIVE</span>' +
       '<span class="chip">' + c.region + '</span>' +
-      '<span class="chip">Camera ' + String(i + 1).padStart(2, "0") + ' / ' + String(CITIES.length).padStart(2, "0") + '</span>' +
-      '<span class="chip">Simulated feed</span>';
+      '<span class="chip">' + c.camId + '</span>' +
+      '<span class="chip">1080p · 25fps</span>';
 
     document.querySelectorAll(".city-btn").forEach(function(b){
       b.classList.toggle("active", parseInt(b.getAttribute("data-index"), 10) === i);
@@ -634,10 +751,16 @@
     $("#weatherDesc").textContent = w.desc;
   }
 
+  /* real CCTV-style timestamp: DD/MM/YYYY HH:MM:SS */
   function tickClock(){
     var now = new Date();
-    var t = now.toLocaleTimeString("en-GB", { hour:"2-digit", minute:"2-digit", second:"2-digit" });
-    $("#hudClock").textContent = t;
+    var dd = String(now.getDate()).padStart(2, "0");
+    var mm = String(now.getMonth() + 1).padStart(2, "0");
+    var yyyy = now.getFullYear();
+    var hh = String(now.getHours()).padStart(2, "0");
+    var mi = String(now.getMinutes()).padStart(2, "0");
+    var ss = String(now.getSeconds()).padStart(2, "0");
+    $("#hudTimestamp").textContent = dd + "/" + mm + "/" + yyyy + " " + hh + ":" + mi + ":" + ss;
   }
 
   function startProgress(){
