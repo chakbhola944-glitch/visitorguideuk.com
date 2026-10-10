@@ -416,25 +416,20 @@
   "use strict";
 
   /* ============================================================
-     CAMERAS — 3 videos, spread across 12 cameras
+     CAMERAS — 11 unique videos (no repetition)
      ============================================================ */
-  var V1 = "uXT2H2i1FmY";  // پہلی video
-  var V2 = "ZRkh5g-WG4U";  // دوسری video
-  var V3 = "UhIlxYvVXMk";  // تیسری video
-
   var CAMERAS = [
-    { id:"CAM-01", name:"UK City CCTV",    location:"London",     type:"CCTV",    youtubeId:V1 },
-    { id:"CAM-02", name:"Traffic Flow",    location:"Manchester", type:"Traffic", youtubeId:V2 },
-    { id:"CAM-03", name:"Motorway Live",   location:"Birmingham", type:"Traffic", youtubeId:V3 },
-    { id:"CAM-04", name:"City Centre",     location:"Edinburgh",  type:"City",    youtubeId:V1 },
-    { id:"CAM-05", name:"Street View",     location:"York",       type:"City",    youtubeId:V2 },
-    { id:"CAM-06", name:"City Streets",    location:"Liverpool",  type:"City",    youtubeId:V3 },
-    { id:"CAM-07", name:"Highway View",    location:"Bristol",    type:"Traffic", youtubeId:V1 },
-    { id:"CAM-08", name:"Motorway Cam",    location:"Leeds",      type:"Traffic", youtubeId:V2 },
-    { id:"CAM-09", name:"City Camera",     location:"Glasgow",    type:"City",    youtubeId:V3 },
-    { id:"CAM-10", name:"Traffic Cam",     location:"Cardiff",    type:"Traffic", youtubeId:V1 },
-    { id:"CAM-11", name:"Street Camera",   location:"Oxford",     type:"City",    youtubeId:V2 },
-    { id:"CAM-12", name:"City Live",       location:"Newcastle",  type:"City",    youtubeId:V3 }
+    { id:"CAM-01", name:"UK City CCTV",      location:"London",     type:"CCTV",    youtubeId:"uXT2H2i1FmY" },
+    { id:"CAM-02", name:"City Street",       location:"London",     type:"City",    youtubeId:"gvEuUyeVdAs" },
+    { id:"CAM-03", name:"Traffic Flow",      location:"Manchester", type:"Traffic", youtubeId:"KuzzQ-8WiGU" },
+    { id:"CAM-04", name:"Motorway Live",     location:"Birmingham", type:"Traffic", youtubeId:"97pllZxGT_o" },
+    { id:"CAM-05", name:"City Centre",       location:"Edinburgh",  type:"City",    youtubeId:"eKaWk4_M8Hs" },
+    { id:"CAM-06", name:"Street View",       location:"York",       type:"City",    youtubeId:"3xucftmUloA" },
+    { id:"CAM-07", name:"City Streets",      location:"Liverpool",  type:"City",    youtubeId:"3O-zMgRlqyw" },
+    { id:"CAM-08", name:"Highway View",      location:"Bristol",    type:"Traffic", youtubeId:"ALQedXB7omc" },
+    { id:"CAM-09", name:"Motorway Cam",      location:"Leeds",      type:"Traffic", youtubeId:"rnI0pCLrzm8" },
+    { id:"CAM-10", name:"City Camera",       location:"Glasgow",    type:"City",    youtubeId:"ZRkh5g-WG4U" },
+    { id:"CAM-11", name:"Traffic Cam",       location:"Cardiff",    type:"Traffic", youtubeId:"UhIlxYvVXMk" }
   ];
 
   var $ = function(s){ return document.querySelector(s); };
