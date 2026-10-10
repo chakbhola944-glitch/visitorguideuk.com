@@ -111,13 +111,11 @@
   .cam-card .cam-frame{
     position:relative; aspect-ratio:16/9; overflow:hidden; background:#000;
   }
-  /* YouTube iframe wrapper */
   .cam-card .yt-wrap{
     position:absolute; inset:0; overflow:hidden;
   }
   .cam-card .yt-wrap iframe{
     position:absolute;
-    /* Shorts are 9:16 — oversize and center to cover the 16:9 frame */
     top:50%; left:50%;
     width:auto;
     height:100%;
@@ -128,7 +126,6 @@
     pointer-events:none;
   }
 
-  /* CCTV overlays */
   .cam-overlay{position:absolute; inset:0; pointer-events:none; z-index:2;}
   .cam-overlay .scanlines{
     position:absolute; inset:0; opacity:.18;
@@ -158,7 +155,6 @@
   }
   @keyframes noiseShift{0%{transform:translate(0,0);}33%{transform:translate(-3%,2%);}66%{transform:translate(2%,-2%);}100%{transform:translate(0,0);}}
 
-  /* HUD */
   .cam-hud{position:absolute; inset:0; z-index:3; pointer-events:none; font-family:var(--mono); color:#E7EEF7;}
   .cam-hud-top{display:flex; justify-content:space-between; align-items:flex-start; padding:10px 12px;}
   .cam-hud-rec{display:inline-flex; align-items:center; gap:6px; background:rgba(178,58,50,.9); padding:3px 8px; border-radius:3px; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase;}
@@ -420,37 +416,25 @@
   "use strict";
 
   /* ============================================================
-     CAMERAS — YouTube video IDs
-     آپ کی دی گئی پہلی video یہاں شامل ہے: uXT2H2i1FmY
-     باقی 11 جگہوں پر اپنی videos کے IDs ڈالیں۔
+     CAMERAS — 3 videos, spread across 12 cameras
      ============================================================ */
-  var CAMERAS = [
-    { id:"CAM-01", name:"UK City CCTV",    location:"London",     type:"CCTV",
-      youtubeId:"uXT2H2i1FmY" },   // ← یہ آپ کی دی گئی video ہے ✅
+  var V1 = "uXT2H2i1FmY";  // پہلی video
+  var V2 = "ZRkh5g-WG4U";  // دوسری video
+  var V3 = "UhIlxYvVXMk";  // تیسری video
 
-    // نیچے والی سب جگہوں پر اپنی باقی videos کے IDs ڈالیں:
-    { id:"CAM-02", name:"Traffic Flow",    location:"Manchester", type:"Traffic",
-      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
-    { id:"CAM-03", name:"Motorway Live",   location:"Birmingham", type:"Traffic",
-      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
-    { id:"CAM-04", name:"Airport Runway",  location:"London",     type:"Airport",
-      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
-    { id:"CAM-05", name:"Airport Terminal",location:"Manchester", type:"Airport",
-      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
-    { id:"CAM-06", name:"Museum Gallery",  location:"London",     type:"Museum",
-      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
-    { id:"CAM-07", name:"City Street",     location:"York",       type:"City",
-      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
-    { id:"CAM-08", name:"City Centre",     location:"Edinburgh",  type:"City",
-      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
-    { id:"CAM-09", name:"Highway View",    location:"Bristol",    type:"Traffic",
-      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
-    { id:"CAM-10", name:"Railway Station", location:"Leeds",      type:"Railway",
-      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
-    { id:"CAM-11", name:"Museum Interior", location:"Oxford",     type:"Museum",
-      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
-    { id:"CAM-12", name:"Street View",     location:"Liverpool",  type:"City",
-      youtubeId:"uXT2H2i1FmY" }    // ← تبدیل کریں
+  var CAMERAS = [
+    { id:"CAM-01", name:"UK City CCTV",    location:"London",     type:"CCTV",    youtubeId:V1 },
+    { id:"CAM-02", name:"Traffic Flow",    location:"Manchester", type:"Traffic", youtubeId:V2 },
+    { id:"CAM-03", name:"Motorway Live",   location:"Birmingham", type:"Traffic", youtubeId:V3 },
+    { id:"CAM-04", name:"City Centre",     location:"Edinburgh",  type:"City",    youtubeId:V1 },
+    { id:"CAM-05", name:"Street View",     location:"York",       type:"City",    youtubeId:V2 },
+    { id:"CAM-06", name:"City Streets",    location:"Liverpool",  type:"City",    youtubeId:V3 },
+    { id:"CAM-07", name:"Highway View",    location:"Bristol",    type:"Traffic", youtubeId:V1 },
+    { id:"CAM-08", name:"Motorway Cam",    location:"Leeds",      type:"Traffic", youtubeId:V2 },
+    { id:"CAM-09", name:"City Camera",     location:"Glasgow",    type:"City",    youtubeId:V3 },
+    { id:"CAM-10", name:"Traffic Cam",     location:"Cardiff",    type:"Traffic", youtubeId:V1 },
+    { id:"CAM-11", name:"Street Camera",   location:"Oxford",     type:"City",    youtubeId:V2 },
+    { id:"CAM-12", name:"City Live",       location:"Newcastle",  type:"City",    youtubeId:V3 }
   ];
 
   var $ = function(s){ return document.querySelector(s); };
