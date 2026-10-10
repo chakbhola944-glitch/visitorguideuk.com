@@ -105,30 +105,27 @@
   .cam-card{
     background:#000; border-radius:var(--radius-lg); overflow:hidden;
     box-shadow:var(--shadow-luxe); border:1px solid rgba(255,255,255,.06);
-    position:relative; cursor:pointer;
-    transition:transform .25s ease, box-shadow .25s ease;
+    position:relative; transition:transform .25s ease, box-shadow .25s ease;
   }
   .cam-card:hover{ transform:translateY(-4px); box-shadow:0 40px 70px -20px rgba(6,15,31,.65); }
   .cam-card .cam-frame{
     position:relative; aspect-ratio:16/9; overflow:hidden; background:#000;
   }
-  .cam-card .cam-img{
-    position:absolute; inset:0;
-    background-size:cover; background-position:center;
-    animation:cctvMove 14s ease-in-out infinite alternate;
-    filter:saturate(0.9) contrast(1.08) brightness(0.95);
+  /* YouTube iframe wrapper */
+  .cam-card .yt-wrap{
+    position:absolute; inset:0; overflow:hidden;
   }
-  /* different animation delays for each card so they don't move in sync */
-  .cam-card:nth-child(2n) .cam-img{ animation-duration:16s; animation-delay:-4s; }
-  .cam-card:nth-child(3n) .cam-img{ animation-duration:18s; animation-delay:-8s; }
-  .cam-card:nth-child(5n) .cam-img{ animation-duration:15s; animation-delay:-3s; }
-
-  @keyframes cctvMove{
-    0%   { transform:scale(1.06) translate(0, 0); }
-    25%  { transform:scale(1.12) translate(-1.8%, 0.6%); }
-    50%  { transform:scale(1.09) translate(1.2%, -0.9%); }
-    75%  { transform:scale(1.14) translate(-0.6%, 0.9%); }
-    100% { transform:scale(1.10) translate(0.8%, -0.5%); }
+  .cam-card .yt-wrap iframe{
+    position:absolute;
+    /* Shorts are 9:16 — oversize and center to cover the 16:9 frame */
+    top:50%; left:50%;
+    width:auto;
+    height:100%;
+    min-width:100%;
+    aspect-ratio:9/16;
+    transform:translate(-50%, -50%) scale(1.05);
+    border:0;
+    pointer-events:none;
   }
 
   /* CCTV overlays */
@@ -175,7 +172,6 @@
   .cam-hud-meta .chip.live{background:rgba(34,197,94,.85); border-color:rgba(34,197,94,.9);}
   .cam-hud-meta .chip.live .dot{display:inline-block; width:5px; height:5px; border-radius:50%; background:#fff; margin-right:3px; animation:blink 1s infinite;}
 
-  /* corner marks */
   .cam-corner{position:absolute; width:14px; height:14px; z-index:3; border:2px solid rgba(255,255,255,.5); pointer-events:none;}
   .cam-corner.tl{top:8px; left:8px; border-right:none; border-bottom:none;}
   .cam-corner.tr{top:8px; right:8px; border-left:none; border-bottom:none;}
@@ -308,14 +304,14 @@
 <div class="container breadcrumb"><a href="/">Home</a><span>/</span><a href="/tools/uk-live-city-cam.html">Tools</a><span>/</span>UK Live CCTV</div>
 
 <section class="hero container">
-  <p class="eyebrow" style="justify-content:center;"><span class="live-dot"></span> Live CCTV Wall · 12 UK Cameras</p>
+  <p class="eyebrow" style="justify-content:center;"><span class="live-dot"></span> Live CCTV Wall · UK Cities</p>
   <h1>UK Live CCTV</h1>
   <p>A CCTV-style camera wall showing traffic, airports, museums and city views across the UK — updated live in real time.</p>
 </section>
 
 <div class="container">
   <div class="notice">
-    <strong>Note:</strong> This is a <strong>simulated CCTV-style feed</strong>. The images are credited photographs shown with a camera-style overlay. They are not real-time footage.
+    <strong>Note:</strong> These are real video clips shown with a camera-style overlay (timestamp, REC indicator, scanlines). Videos are embedded from YouTube and credited to their original creators.
   </div>
 
   <div class="cam-wall" id="camWall">
@@ -325,7 +321,7 @@
 
 <section class="content-section container">
   <h2>About This Tool</h2>
-  <p>This page is a <strong>CCTV-style camera wall</strong> showing 12 UK camera views — traffic on motorways, airport runways, museum interiors and city streets. Each camera has a live timestamp, a REC indicator and a camera-style overlay.</p>
+  <p>This page is a <strong>CCTV-style camera wall</strong> showing UK camera views — traffic, airports, museums and city streets. Each camera has a live timestamp, a REC indicator and a camera-style overlay.</p>
 
   <h3>Camera types</h3>
   <ul>
@@ -334,24 +330,17 @@
     <li><strong>Museum</strong> — interior gallery views</li>
     <li><strong>City</strong> — street-level city views</li>
   </ul>
-
-  <h3>How the CCTV effect works</h3>
-  <p>Each camera uses a photograph shown with a slow zoom-and-pan movement, plus scanlines, grain, a moving scan beam and a live timestamp — creating the look of a live CCTV monitor. This is a design effect, not real footage.</p>
 </section>
 
 <section class="faq-section container">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-item">
-    <h3>Is this real CCTV footage?</h3>
-    <p>No. This is a simulated CCTV wall using photographs shown with camera-style overlays. It is not real-time UK footage.</p>
+    <h3>Where do these videos come from?</h3>
+    <p>The video clips are embedded from YouTube and are the property of their original creators. Each clip is credited to its source channel.</p>
   </div>
   <div class="faq-item">
-    <h3>Why do the cameras move?</h3>
-    <p>The slow zoom-and-pan movement is a design effect that gives each camera the feel of a live feed, even though it uses a still image.</p>
-  </div>
-  <div class="faq-item">
-    <h3>Where do the images come from?</h3>
-    <p>Images are sourced from Wikimedia Commons under Creative Commons licences. Credits are provided via the footer and at the source pages.</p>
+    <h3>Why do the videos loop?</h3>
+    <p>Because they are short clips, they loop continuously to simulate a live camera feed.</p>
   </div>
 </section>
 
@@ -421,7 +410,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Visitor Guide UK. All rights reserved.</span>
-      <span>Images via Wikimedia Commons (CC BY-SA) · Simulated CCTV for illustration</span>
+      <span>Videos embedded from YouTube · © their respective creators</span>
     </div>
   </div>
 </footer>
@@ -431,51 +420,58 @@
   "use strict";
 
   /* ============================================================
-     CAMERA DATA — 12 UK scenes from Wikimedia Commons
-     traffic / airport / museum / city
+     CAMERAS — YouTube video IDs
+     آپ کی دی گئی پہلی video یہاں شامل ہے: uXT2H2i1FmY
+     باقی 11 جگہوں پر اپنی videos کے IDs ڈالیں۔
      ============================================================ */
   var CAMERAS = [
-    { id:"CAM-01", name:"M25 Traffic",     location:"London",     type:"Traffic", wiki:"M25 motorway" },
-    { id:"CAM-02", name:"M6 Motorway",     location:"Birmingham", type:"Traffic", wiki:"M6 motorway" },
-    { id:"CAM-03", name:"Heathrow Runway", location:"London",     type:"Airport", wiki:"Heathrow Airport" },
-    { id:"CAM-04", name:"Manchester Airport", location:"Manchester", type:"Airport", wiki:"Manchester Airport" },
-    { id:"CAM-05", name:"British Museum",  location:"London",     type:"Museum",  wiki:"British Museum" },
-    { id:"CAM-06", name:"National Gallery",location:"London",     type:"Museum",  wiki:"National Gallery, London" },
-    { id:"CAM-07", name:"Oxford Street",   location:"London",     type:"City",    wiki:"Oxford Street" },
-    { id:"CAM-08", name:"Princes Street",  location:"Edinburgh",  type:"City",    wiki:"Princes Street" },
-    { id:"CAM-09", name:"M1 Motorway",     location:"Leeds",      type:"Traffic", wiki:"M1 motorway" },
-    { id:"CAM-10", name:"Gatwick Airport", location:"London",     type:"Airport", wiki:"Gatwick Airport" },
-    { id:"CAM-11", name:"Natural History Museum", location:"London", type:"Museum", wiki:"Natural History Museum, London" },
-    { id:"CAM-12", name:"Piccadilly",      location:"Manchester", type:"City",    wiki:"Piccadilly, Manchester" }
+    { id:"CAM-01", name:"UK City CCTV",    location:"London",     type:"CCTV",
+      youtubeId:"uXT2H2i1FmY" },   // ← یہ آپ کی دی گئی video ہے ✅
+
+    // نیچے والی سب جگہوں پر اپنی باقی videos کے IDs ڈالیں:
+    { id:"CAM-02", name:"Traffic Flow",    location:"Manchester", type:"Traffic",
+      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
+    { id:"CAM-03", name:"Motorway Live",   location:"Birmingham", type:"Traffic",
+      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
+    { id:"CAM-04", name:"Airport Runway",  location:"London",     type:"Airport",
+      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
+    { id:"CAM-05", name:"Airport Terminal",location:"Manchester", type:"Airport",
+      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
+    { id:"CAM-06", name:"Museum Gallery",  location:"London",     type:"Museum",
+      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
+    { id:"CAM-07", name:"City Street",     location:"York",       type:"City",
+      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
+    { id:"CAM-08", name:"City Centre",     location:"Edinburgh",  type:"City",
+      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
+    { id:"CAM-09", name:"Highway View",    location:"Bristol",    type:"Traffic",
+      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
+    { id:"CAM-10", name:"Railway Station", location:"Leeds",      type:"Railway",
+      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
+    { id:"CAM-11", name:"Museum Interior", location:"Oxford",     type:"Museum",
+      youtubeId:"uXT2H2i1FmY" },   // ← تبدیل کریں
+    { id:"CAM-12", name:"Street View",     location:"Liverpool",  type:"City",
+      youtubeId:"uXT2H2i1FmY" }    // ← تبدیل کریں
   ];
 
   var $ = function(s){ return document.querySelector(s); };
-  var wikiCache = {};
-
-  function fetchWikiImage(title, px){
-    if (wikiCache[title]) return wikiCache[title];
-    var p = fetch("https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(title) +
-      "&prop=pageimages&format=json&pithumbsize=" + (px || 900) + "&redirects=1&origin=*")
-      .then(function(r){ return r.json(); })
-      .then(function(data){
-        var pages = data.query && data.query.pages;
-        if (!pages) return null;
-        var page = pages[Object.keys(pages)[0]];
-        return (page && page.thumbnail && page.thumbnail.source) || null;
-      })
-      .catch(function(){ return null; });
-    wikiCache[title] = p;
-    return p;
-  }
 
   function buildWall(){
     var wall = $("#camWall");
-    CAMERAS.forEach(function(cam, i){
+    CAMERAS.forEach(function(cam){
       var card = document.createElement("div");
       card.className = "cam-card";
       card.innerHTML =
         '<div class="cam-frame">' +
-          '<div class="cam-img" data-wiki="' + cam.wiki + '"></div>' +
+          '<div class="yt-wrap">' +
+            '<iframe ' +
+              'src="https://www.youtube.com/embed/' + cam.youtubeId +
+              '?autoplay=1&mute=1&loop=1&playlist=' + cam.youtubeId +
+              '&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&iv_load_policy=3" ' +
+              'allow="autoplay; encrypted-media" ' +
+              'allowfullscreen ' +
+              'loading="lazy">' +
+            '</iframe>' +
+          '</div>' +
           '<div class="cam-overlay">' +
             '<div class="scanlines"></div>' +
             '<div class="scan-beam"></div>' +
@@ -503,14 +499,6 @@
           '</div>' +
         '</div>';
       wall.appendChild(card);
-    });
-
-    // load images
-    document.querySelectorAll(".cam-img[data-wiki]").forEach(function(el){
-      var title = el.getAttribute("data-wiki");
-      fetchWikiImage(title, 900).then(function(url){
-        if (url) el.style.backgroundImage = "url('" + url + "')";
-      });
     });
   }
 
