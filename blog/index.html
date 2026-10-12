@@ -2,23 +2,19 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<!-- Google tag (gtag.js) with Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   window.gtag = gtag;
-
   var vgukConsent = null;
   try { vgukConsent = localStorage.getItem('vguk_cookie_consent'); } catch(e) {}
   var vgukGranted = (vgukConsent === 'accepted') ? 'granted' : 'denied';
-
   gtag('consent', 'default', {
     'ad_storage': vgukGranted,
     'ad_user_data': vgukGranted,
     'ad_personalization': vgukGranted,
     'analytics_storage': vgukGranted
   });
-
   gtag('js', new Date());
   gtag('config', 'G-NZRW83LDG7');
 </script>
@@ -295,32 +291,33 @@
   /* Add a new object to this array every time a new blog post is published.
      Each post needs its own HTML file at /blog/<slug>.html */
   var POSTS = [
-    <a href="/blog/cheapest-day-to-travel-by-train-uk.html" class="blog-card">
-  <div class="blog-card-body">
-    <span class="blog-tag">UK Train Travel</span>
-    <h3>Cheapest Day to Travel by Train in the UK (2026 Guide)</h3>
-    <p>Discover the cheapest days to travel by train in the UK in 2026 — Tuesday, Wednesday and Saturday. Save up to 60% on UK train fares.</p>
-    <span class="blog-read">9 min read →</span>
-  </div>
-</a>
     {
-  title:"UK Budget Travel 2026: 20 Money-Saving Tips for Your Trip",
-  excerpt:"How to visit the UK on £50-£80 per day — free museums, budget food, cheap transport and 20 money-saving tips.",
-  date:"8 Oct 2026",
-  readTime:"11 min read",
-  tag:"Travel Tips",
-  wiki:"Borough Market",
-  href:"/blog/uk-budget-travel-tips.html"
-},
+      title:"Cheapest Day to Travel by Train in the UK (2026 Guide)",
+      excerpt:"Discover the cheapest days to travel by train in the UK in 2026 — Tuesday, Wednesday and Saturday. Save up to 60% on UK train fares.",
+      date:"12 Oct 2026",
+      readTime:"9 min read",
+      tag:"UK Train Travel",
+      wiki:"British Rail Class 800",
+      href:"/blog/cheapest-day-to-travel-by-train-uk.html"
+    },
     {
-  title:"UK Passport Validity Rules 2026: The 10-Year Rule Explained",
-  excerpt:"Thousands of UK travellers are being turned away at airports because of a passport rule most have never heard of. Here's exactly what it is — and how to check yours.",
-  date:"7 Oct 2026",
-  readTime:"8 min read",
-  tag:"Entry Requirements",
-  wiki:"British passport",
-  href:"/blog/uk-passport-validity-rules-2026.html"
-},
+      title:"UK Budget Travel 2026: 20 Money-Saving Tips for Your Trip",
+      excerpt:"How to visit the UK on £50-£80 per day — free museums, budget food, cheap transport and 20 money-saving tips.",
+      date:"8 Oct 2026",
+      readTime:"11 min read",
+      tag:"Travel Tips",
+      wiki:"Borough Market",
+      href:"/blog/uk-budget-travel-tips.html"
+    },
+    {
+      title:"UK Passport Validity Rules 2026: The 10-Year Rule Explained",
+      excerpt:"Thousands of UK travellers are being turned away at airports because of a passport rule most have never heard of. Here's exactly what it is — and how to check yours.",
+      date:"7 Oct 2026",
+      readTime:"8 min read",
+      tag:"Entry Requirements",
+      wiki:"British passport",
+      href:"/blog/uk-passport-validity-rules-2026.html"
+    },
     {
       title:"UK Visitor Visa Changes 2026: What Really Changed on 8 October?",
       excerpt:"A viral WhatsApp message claims job search is now allowed. Here's the truth — and what actually changed for Erasmus+ participants.",
