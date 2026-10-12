@@ -9,6 +9,7 @@
 
   /* تمام ٹولز کی مکمل لسٹ */
   var ALL_TOOLS = [
+     { href:"/blog/cheapest-day-to-travel-by-train-uk.html", label:"Cheapest Day to Travel by Train" },
      { href:"/tools/passport-validity-checker.html", label:"Passport Validity Checker" },
      { href:"/tools/uk-live-news.html", label:"UK Live News" },
      { href:"/tools/uk-live-camera-directory.html", label:"UK Live Camera Directory" },
