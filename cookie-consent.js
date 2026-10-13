@@ -9,6 +9,7 @@
 
   /* تمام ٹولز کی مکمل لسٹ */
   var ALL_TOOLS = [
+     { href:"/travel/car-parking-cost-calculator.html", label:"Car Parking Costs" },
      { href:"/travel/uk-train-journeys.html", label:"UK Train Journeys" }, 
      { href:"/tools/passport-validity-checker.html", label:"Passport Validity Checker" },
      { href:"/tools/uk-live-news.html", label:"UK Live News" },
