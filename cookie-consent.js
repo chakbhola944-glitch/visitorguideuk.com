@@ -9,6 +9,7 @@
 
   /* تمام ٹولز کی مکمل لسٹ */
   var ALL_TOOLS = [
+     { href:"/blog/quiet-beauty-of-english-villages.html", label:"English Villages Guide" },
      { href:"/travel/uk-currency-converter.html", label:"Currency Converter" },
      { href:"/travel/car-parking-cost-calculator.html", label:"Car Parking Costs" },
      { href:"/travel/uk-train-journeys.html", label:"UK Train Journeys" }, 
