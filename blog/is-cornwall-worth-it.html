@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) with Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  var vgukConsent = null;
+  try { vgukConsent = localStorage.getItem('vguk_cookie_consent'); } catch(e) {}
+  var vgukGranted = (vgukConsent === 'accepted') ? 'granted' : 'denied';
+  gtag('consent', 'default', {
+    'ad_storage': vgukGranted, 'ad_user_data': vgukGranted,
+    'ad_personalization': vgukGranted, 'analytics_storage': vgukGranted
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-NZRW83LDG7');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRW83LDG7"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is Cornwall Worth It? An Honest 9-Day Campervan Review | Visitor Guide UK</title>
+<meta name="description" content="A real, honest review of a 9-day Cornwall campervan trip. From the disappointment of Widemouth Bay to the magic of Tintagel Castle and the tourist trap of Land's End — is Cornwall worth the long drive?">
+<link rel="canonical" href="https://www.visitorguideuk.com/blog/is-cornwall-worth-it.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy-900:#0B1B33; --navy-800:#122A4A; --red-600:#B23A32; --red-700:#96302A;
+    --paper:#F5F5F2; --paper-dim:#ECEBE6; --white:#FFFFFF; --ink:#16212E;
+    --slate:#5B6472; --slate-light:#8892A0; --line:#DFDFD9; --line-dark:rgba(255,255,255,.14);
+    --radius-lg:22px; --radius-md:14px; --radius-sm:9px;
+    --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 12px 28px -14px rgba(15,23,42,.18);
+    --container:1240px;
+    --serif:'Newsreader', Georgia, serif; --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  img{display:block; max-width:100%;}
+  a{color:var(--red-600); text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  h1,h2,h3,h4{font-family:var(--serif); font-weight:600; color:var(--navy-900); line-height:1.15;}
+  .container{max-width:var(--container); margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:2px solid var(--red-600); outline-offset:3px;}
+
+  /* HEADER */
+  header.site-header{position:sticky; top:0; z-index:100; background:rgba(245,245,242,.86); backdrop-filter:blur(10px); border-bottom:1px solid transparent; transition:border-color .2s ease, box-shadow .2s ease;}
+  header.site-header.scrolled{border-color:var(--line); box-shadow:0 4px 20px -12px rgba(15,23,42,.25);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; height:78px; gap:24px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:600; font-size:19px; color:var(--navy-900); text-decoration:none;}
+  .logo .mark{width:34px; height:34px; border-radius:8px; background:var(--navy-900); display:flex; align-items:center; justify-content:center; position:relative; flex:none;}
+  .logo .mark span{color:#fff; font-family:var(--serif); font-size:17px; font-style:italic;}
+  .logo .mark::after{content:""; position:absolute; width:5px; height:5px; border-radius:50%; background:var(--red-600); top:-2px; right:-2px;}
+  .logo small{display:block; font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--slate); font-weight:500; text-transform:uppercase; margin-top:1px;}
+  .main-nav{display:flex; align-items:center; gap:32px;}
+  .main-nav a{font-size:14.5px; font-weight:500; color:var(--navy-800); position:relative; padding:6px 0;}
+  .main-nav a::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--red-600); transform:scaleX(0); transform-origin:left; transition:transform .18s ease;}
+  .main-nav a:hover::after{transform:scaleX(1);}
+  .header-actions{display:flex; align-items:center; gap:14px;}
+  .hamburger{display:none; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; align-items:center; justify-content:center;}
+  .mobile-nav{position:fixed; inset:0; background:var(--navy-900); z-index:200; transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column; padding:24px 24px 40px;}
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:40px;}
+  .mobile-nav-top .logo{color:#fff;}
+  .mobile-nav-top .logo .mark{background:#fff;}
+  .mobile-nav-top .logo .mark span{color:var(--navy-900);}
+  .mobile-nav a{display:block; color:#fff; font-family:var(--serif); font-size:26px; padding:14px 0; border-bottom:1px solid var(--line-dark);}
+  .mobile-nav .btn{margin-top:28px; width:100%;}
+  .close-btn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line-dark); color:#fff; display:flex; align-items:center; justify-content:center; background:transparent;}
+
+  /* ARTICLE LAYOUT */
+  .article-header{padding:64px 0 32px; max-width:800px; margin:0 auto;}
+  .article-header .eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--red-600); font-weight:500; margin-bottom:16px; display:block;}
+  .article-header h1{font-size:clamp(32px,5vw,48px); margin-bottom:20px;}
+  .article-header .lede{font-size:19px; color:var(--slate); line-height:1.6; margin-bottom:24px;}
+  .article-meta{font-family:var(--mono); font-size:12px; color:var(--slate-light); display:flex; gap:16px; border-top:1px solid var(--line); padding-top:16px;}
+
+  .article-body{max-width:800px; margin:0 auto; padding-bottom:64px;}
+  .article-body p{font-size:17px; line-height:1.8; margin-bottom:24px; color:var(--ink);}
+  .article-body h2{font-size:28px; margin:48px 0 20px; padding-bottom:8px; border-bottom:2px solid var(--paper-dim);}
+  .article-body h3{font-size:22px; margin:32px 0 12px;}
+  .article-body ul{margin-bottom:24px; padding-left:24px;}
+  .article-body ul li{font-size:17px; line-height:1.7; margin-bottom:10px;}
+  
+  .pull-quote{border-left:4px solid var(--red-600); padding:20px 24px; margin:32px 0; background:#fff; border-radius:0 var(--radius-md) var(--radius-md) 0; font-family:var(--serif); font-size:20px; color:var(--navy-900); font-style:italic; line-height:1.5;}
+
+  /* IMAGE PLACEHOLDER */
+  .article-image{margin:32px 0; border-radius:var(--radius-md); overflow:hidden; background:linear-gradient(135deg,#DADCE2,#EDEEF1); aspect-ratio:16/9; position:relative; display:flex; align-items:center; justify-content:center; color:var(--slate-light); font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.1em;}
+  .article-image::before{content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(15,23,42,.035) 0 1px, transparent 1px 14px);}
+  .article-image span{position:relative; z-index:1; background:rgba(255,255,255,.8); padding:6px 14px; border-radius:100px;}
+
+  /* TOOLS BOX */
+  .tools-box{background:var(--navy-900); color:#fff; border-radius:var(--radius-md); padding:32px; margin:48px 0;}
+  .tools-box h3{color:#fff; font-family:var(--sans); font-size:20px; margin-bottom:8px;}
+  .tools-box p{color:#C7D0DE; font-size:15px; margin-bottom:20px; max-width:600px;}
+  .tools-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+  .tools-grid a{display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius-sm); padding:14px 18px; font-size:14px; color:#fff; transition:background .15s ease;}
+  .tools-grid a:hover{background:rgba(255,255,255,.16);}
+
+  /* RELATED */
+  .related-section{background:var(--paper-dim); border-top:1px solid var(--line); padding:48px 0; margin-top:32px;}
+  .related-section .container{max-width:800px;}
+  .related-section h2{font-size:24px; margin-bottom:20px;}
+  .related-links{display:flex; flex-wrap:wrap; gap:10px;}
+  .related-links a{background:#fff; border:1px solid var(--line); padding:10px 18px; border-radius:100px; font-size:14px; color:var(--navy-800);}
+  .related-links a:hover{border-color:var(--navy-900);}
+
+  /* FOOTER */
+  footer{background:var(--navy-900); color:#C7D0DE; padding:64px 0 28px;}
+  .footer-top{display:grid; grid-template-columns:1.5fr repeat(4,1fr); gap:32px; padding-bottom:48px; border-bottom:1px solid var(--line-dark);}
+  .footer-brand .logo{color:#fff;}
+  .footer-brand .logo .mark{background:#fff;}
+  .footer-brand .logo .mark span{color:var(--navy-900);}
+  .footer-brand p{margin-top:14px; font-size:13.8px; color:#93A1B7; max-width:230px; line-height:1.6;}
+  .footer-col h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:#93A1B7; font-weight:500; margin-bottom:16px;}
+  .footer-col ul li{margin-bottom:11px;}
+  .footer-col a{font-size:14px; color:#DCE3EE;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12.8px; color:#7F8CA1;}
+
+  @media (max-width:1000px){
+    .main-nav, .header-actions .btn{display:none;}
+    .hamburger{display:flex;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .tools-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:760px){
+    .article-header{padding:40px 0 24px;}
+    .article-body p, .article-body ul li{font-size:16px;}
+    .footer-top{grid-template-columns:1fr; gap:28px;}
+  }
+</style>
+<script src="/cookie-consent.js" defer></script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-row">
+    <a href="/" class="logo">
+      <span class="mark"><span>V</span></span>
+      <span>Visitor Guide UK<small>United Kingdom Travel Guide</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/#regions">Places to Visit</a>
+      <a href="/#looking-for">Things to Do</a>
+      <a href="/#destinations">UK Cities</a>
+      <a href="/blog/index.html">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/#destinations" class="btn btn-primary" style="padding:10px 20px; font-size:13.5px; background:var(--red-600); color:#fff; border-radius:100px; text-decoration:none;">Explore UK</a>
+    </div>
+    <button class="hamburger" id="menuOpenBtn" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top">
+    <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+    <button class="close-btn" id="menuCloseBtn" aria-label="Close menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/#regions">Places to Visit</a>
+    <a href="/#looking-for">Things to Do</a>
+    <a href="/#destinations">UK Cities</a>
+    <a href="/blog/index.html">Blog</a>
+  </nav>
+</div>
+
+<main>
+  <article>
+    <div class="container article-header">
+      <span class="eyebrow">Honest Review · Cornwall</span>
+      <h1>Is Cornwall Worth It? An Honest 9-Day Campervan Review</h1>
+      <p class="lede">Before I set off on a nine-day campervan road trip from Minehead to Land's End, I asked myself the same question: Is Cornwall actually worth the long, stressful drive? Here's the unvarnished truth.</p>
+      <div class="article-meta">
+        <span>By Visitor Guide UK</span>
+        <span>Based on a real trip by The Quiet Way Around</span>
+      </div>
+    </div>
+
+    <div class="container article-body">
+      <p>The drive to Cornwall in a VW campervan took nearly two days. It was stressful — narrow roads, steep hills, and unpredictable weather. By the time I finally arrived at Widemouth Bay, my first stop in Cornwall, I was exhausted and hopeful. But my heart sank. The beach wasn't spectacular. It felt a bit unkempt. My worst fear had come true: I had travelled far to see things I could see "around the corner" from my own home by the sea.</p>
+
+      <p>But Cornwall isn't just one beach. Over the next nine days, walking the South West Coast Path and exploring the coast, I found moments of genuine magic — mixed with a few frustrating tourist traps. So, is it worth it? Let's break it down.</p>
+
+      <div class="article-image"><span>Cornwall Coastline</span></div>
+
+      <h2>The Highs: Where Cornwall Delivers</h2>
+      
+      <h3>Tintagel Castle: Stepping Into Myth</h3>
+      <p>If you do one thing in Cornwall, make it Tintagel. I cannot recommend it enough. But here's the key: don't just look at it from the free viewpoints. Pay the entry fee and walk around the actual site. It is worth every penny. Exploring the ruined castle on the cliffside feels like stepping back into a mythical age. It's wondrous in a way that few historic sites manage to be [citation:1].</p>
+
+      <h3>Summerleaze Beach, Bude: A Turning Point</h3>
+      <p>After the disappointment of Widemouth Bay, Summerleaze in Bude restored my faith. The weather wasn't perfect, but the beach itself was fantastic. The cliff views and the incredible rock formations made it a great experience. It really gave the day a boost after that long, exhausting drive down [citation:1].</p>
+
+      <h3>The Coastal Walk: St Agnes to Perranporth</h3>
+      <p>This was a brilliant hike along the South West Coast Path. It's a lovely walk, and Perranporth beach at the end is fantastic. If you're a walker, this stretch is a must-do. It gave me a real sense of why people rave about Cornwall's coastline [citation:1].</p>
+
+      <h3>Watergate Bay: Surf and Sunset</h3>
+      <p>Watergate Bay is brilliant. It's a short walk from the campsite, there's plenty of parking, and the weather on my visit was glorious. Surfers were in the water, people were taking classes, and the sunset was absolutely stunning — the sun reflecting off the ocean. It felt like being in California for a moment [citation:1].</p>
+
+      <h3>Gwynver Beach: The Hidden Gem</h3>
+      <p>Gwynver Beach is absolutely gorgeous. Based on how few people were there, it's a genuine hidden gem. If you're staying near Sennen Cove, it's well worth the walk down. It's one of those places that reminds you why Cornwall has such a reputation [citation:1].</p>
+
+      <div class="pull-quote">
+        "Exploring Tintagel Castle is like stepping back into a more mythical age. It's wondrous." — The Quiet Way Around
+      </div>
+
+      <h2>The Lows: Where Cornwall Disappoints</h2>
+
+      <h3>Land's End: A Scar on the Landscape</h3>
+      <p>I had to go. I'd come this far. But Land's End the attraction is an awful scar on the landscape. It's a horrible, commercialised tourist trap. Thankfully, the actual scenery of Land's End saves it — the coastal walk around that section is worth doing. But the "attraction" itself? Skip it. Just enjoy the cliffs and the sea [citation:1].</p>
+
+      <h3>Widemouth Bay: A Rough Start</h3>
+      <p>As I mentioned, Widemouth Bay was very disappointing as a first impression. It just wasn't that spectacular or well-maintained. If you're arriving from the north, don't judge Cornwall by this stop. Keep driving to Bude or further south [citation:1].</p>
+
+      <h3>The Drive Itself</h3>
+      <p>The long drive is a real factor. Nearly two days in a campervan, dealing with hills, small roads, and weather, is genuinely stressful. If you're coming from the north or the Midlands, you need to factor in the exhaustion. It's not a relaxing journey [citation:1].</p>
+
+      <div class="article-image"><span>Land's End Cliffs</span></div>
+
+      <h2>So, Is Cornwall Worth It?</h2>
+      
+      <p><strong>Yes, but with conditions.</strong></p>
+      
+      <p>If you live near a coastline already, Cornwall's beaches might not blow you away immediately. You might have that "I travelled far for this" feeling. But Cornwall isn't just beaches. It's Tintagel. It's the coastal path. It's Watergate Bay sunsets and hidden gems like Gwynver. It's the history, the myth, and the sheer scale of the coastline.</p>
+
+      <p>The key is to <strong>avoid the tourist traps</strong> (Land's End), <strong>manage your expectations</strong> for the drive, and <strong>focus on the walking and the history</strong>. If you do that, Cornwall absolutely delivers.</p>
+
+      <!-- TOOLS BOX -->
+      <div class="tools-box">
+        <h3>Plan Your Own Cornwall Trip</h3>
+        <p>Use our free tools to estimate costs, plan your route, and pack for the British weather.</p>
+        <div class="tools-grid">
+          <a href="/travel/trip-cost-calculator.html">💰 Trip Cost Calculator</a>
+          <a href="/travel/route-planner.html">🗺️ Route Planner</a>
+          <a href="/travel/packing-list-generator.html">🎒 Packing List Generator</a>
+          <a href="/travel/uk-weather-by-month.html">🌤️ UK Weather by Month</a>
+          <a href="/travel/itinerary-generator.html">📅 Itinerary Generator</a>
+          <a href="/travel/uk-time-now.html">⏰ UK Time Now</a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="related-section">
+    <div class="container">
+      <h2>Related Guides & Tools</h2>
+      <div class="related-links">
+        <a href="/blog/index.html">All Blog Posts</a>
+        <a href="/destinations/york.html">York Travel Guide</a>
+        <a href="/travel/uk-weather.html">UK Weather Guide</a>
+        <a href="/travel/best-time-to-visit.html">Best Time to Visit UK</a>
+        <a href="/travel/bank-holidays.html">UK Bank Holidays</a>
+        <a href="/travel/free-museums-map.html">Free Museums Map</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+        <p>Your practical guide to exploring the United Kingdom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/regions/england.html">England</a></li>
+          <li><a href="/regions/scotland.html">Scotland</a></li>
+          <li><a href="/regions/wales.html">Wales</a></li>
+          <li><a href="/regions/northern-ireland.html">Northern Ireland</a></li>
+          <li><a href="/#destinations">UK Cities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Things to Do</h4>
+        <ul>
+          <li><a href="/categories/attractions.html">Attractions</a></li>
+          <li><a href="/categories/free-things-to-do.html">Free Things to Do</a></li>
+          <li><a href="/categories/family-days-out.html">Family Days Out</a></li>
+          <li><a href="/categories/day-trips.html">Day Trips</a></li>
+          <li><a href="/blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Travel Tools</h4>
+        <ul>
+          <li><a href="/travel/trip-cost-calculator.html">Trip Cost Calculator</a></li>
+          <li><a href="/travel/hotel-cost-estimator.html">Hotel Cost Estimator</a></li>
+          <li><a href="/travel/bucket-list.html">UK Bucket List</a></li>
+          <li><a href="/travel/route-planner.html">Route Planner</a></li>
+          <li><a href="/travel/journey-time-calculator.html">Journey Time Calculator</a></li>
+          <li><a href="/travel/train-ticket-price-calculator.html">Train Ticket Prices</a></li>
+          <li><a href="/travel/tipping-calculator.html">Tipping Calculator</a></li>
+          <li><a href="/travel/sim-esim-finder.html">SIM &amp; eSIM Finder</a></li>
+          <li><a href="/travel/uk-weather-by-month.html">Weather by Month</a></li>
+          <li><a href="/travel/uk-weather.html">UK Weather Guide</a></li>
+          <li><a href="/travel/itinerary-generator.html">Itinerary Generator</a></li>
+          <li><a href="/travel/packing-list-generator.html">Packing List Generator</a></li>
+          <li><a href="/travel/bank-holidays.html">Bank Holidays</a></li>
+          <li><a href="/travel/free-museums-map.html">Free Museums Map</a></li>
+          <li><a href="/travel/uk-time-now.html">UK Time &amp; Weather</a></li>
+          <li><a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/legal/about.html">About Us</a></li>
+          <li><a href="/legal/contact.html">Contact</a></li>
+          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/legal/terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="/legal/cookie-policy.html">Cookie Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Visitor Guide UK. All rights reserved.</span>
+      <span>An independent UK visitor information guide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", function(){ header.classList.toggle("scrolled", window.scrollY > 8); }, {passive:true});
+  
+  var mobileNav = document.getElementById("mobileNav");
+  document.getElementById("menuOpenBtn").addEventListener("click", function(){ mobileNav.classList.add("open"); document.body.style.overflow = "hidden"; });
+  document.getElementById("menuCloseBtn").addEventListener("click", closeMenu);
+  mobileNav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMenu); });
+  function closeMenu(){ mobileNav.classList.remove("open"); document.body.style.overflow = ""; }
+})();
+</script>
+</body>
+</html>
