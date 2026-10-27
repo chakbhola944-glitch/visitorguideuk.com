@@ -225,6 +225,14 @@
   .local-tip .tip-label{font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--red-600); font-weight:500; display:block; margin-bottom:6px;}
   .local-tip p{font-size:15px; line-height:1.65; color:var(--ink); margin:0;}
 
+  /* TOOLS BOX */
+  .tools-box{background:var(--navy-900); color:#fff; border-radius:var(--radius-md); padding:28px 26px; margin:32px 0 24px;}
+  .tools-box h3{color:#fff; font-family:var(--sans); font-size:18px; font-weight:600; margin:0 0 8px;}
+  .tools-box p{color:#C7D0DE; font-size:14.5px; line-height:1.6; margin:0 0 18px; max-width:600px;}
+  .tools-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px;}
+  .tools-grid a{display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius-sm); padding:12px 16px; font-size:14px; color:#fff; transition:background .15s ease, border-color .15s ease;}
+  .tools-grid a:hover{background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.3);}
+
   /* GATES / BARS grid */
   .gate-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:20px 0 8px;}
   .gate-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:20px 22px;}
@@ -294,7 +302,7 @@
     .page-hero{min-height:340px;}
     .page-hero-inner{padding:44px 22px 32px;}
     .quick-facts{grid-template-columns:1fr 1fr; margin-top:-24px;}
-    .gate-grid, .todo-grid{grid-template-columns:1fr;}
+    .gate-grid, .todo-grid, .tools-grid{grid-template-columns:1fr;}
     .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
     .footer-brand{grid-column:1 / -1;}
   }
@@ -508,6 +516,7 @@
           <li><strong>Taxis</strong> are available for longer distances or for visitors with limited mobility.</li>
           <li><strong>Driving and parking</strong> in the centre is generally discouraged for visitors; the historic street layout was not designed for cars, and several park-and-ride services operate on the outskirts of the city.</li>
         </ul>
+        <p>Want a ready-made plan that fits your interests and trip length? Try our <a href="/itinerary-generator.html" style="color:var(--red-600); text-decoration:underline;">UK Itinerary Generator</a> to build a custom day-by-day plan in seconds.</p>
       </div>
 
       <div class="article-block" id="things-to-do">
@@ -524,6 +533,21 @@
           <div class="todo-card"><span class="todo-num">07</span><div><h3>River Ouse Walks</h3><p>Follow the riverside paths for a quieter, scenic view of the city away from the busiest streets.</p></div></div>
           <div class="todo-card"><span class="todo-num">08</span><div><h3>Yorkshire Museum &amp; Museum Gardens</h3><p>See Roman, Viking and medieval artefacts alongside the ruins of St Mary's Abbey in landscaped gardens.</p></div></div>
         </div>
+
+        <!-- ===== TOOLS BOX ===== -->
+        <div class="tools-box">
+          <h3>Plan Your Trip with Our Free Tools</h3>
+          <p>Use these interactive tools to plan your York visit and the rest of your UK trip:</p>
+          <div class="tools-grid">
+            <a href="/itinerary-generator.html">🗺️ UK Itinerary Generator</a>
+            <a href="/packing-list-generator.html">🎒 UK Packing List Generator</a>
+            <a href="/free-museums-map.html">🏛️ Free UK Museums &amp; Attractions Map</a>
+            <a href="/uk-bank-holidays.html">📅 UK Bank Holidays 2026 &amp; 2027</a>
+            <a href="/uk-time-weather.html">⏰ UK Time Now — Live Clock &amp; Weather</a>
+            <a href="/uk-visa-eta-checker.html">🛂 Do You Need a UK Visa or ETA?</a>
+          </div>
+        </div>
+        <!-- ===== /TOOLS BOX ===== -->
       </div>
 
       <div class="article-block" id="cliffords-tower">
@@ -571,6 +595,7 @@
         <p>York is particularly well suited to visitors with an interest in history and architecture, from Roman foundations and Viking-age streets to one of England's great Gothic cathedrals. Its compact, walkable centre means that even a short visit can take in a genuine cross-section of English history, without requiring a car or long journeys between sights.</p>
         <p>It also works well for a broader range of visitors than history specialists alone: families tend to enjoy the hands-on Viking and railway museums, photographers are drawn to the medieval streets and City Walls, and anyone looking for a manageable UK city break will appreciate how much can be seen on foot in a day or two.</p>
         <p><strong>Budget snapshot:</strong> A typical day in York (excluding accommodation) costs around £40–60 per person, covering Minster entry, a museum, and lunch. This makes York a relatively affordable city break compared with London, though costs rise if you add a tower climb, a river cruise, or a sit-down dinner.</p>
+        <p>Not sure what to pack for a British city break? Our <a href="/packing-list-generator.html" style="color:var(--red-600); text-decoration:underline;">UK Packing List Generator</a> gives you a personalised checklist based on your travel month and activities. And if your visit coincides with a public holiday, check the dates with our <a href="/uk-bank-holidays.html" style="color:var(--red-600); text-decoration:underline;">UK Bank Holidays 2026 &amp; 2027</a> tool before you book.</p>
       </div>
 
       <div class="article-block" id="faq">
@@ -606,7 +631,7 @@
 
       <div class="article-block">
         <p class="eyebrow">Continue Exploring</p>
-        <h2>Related Guides</h2>
+        <h2>Related Guides &amp; Tools</h2>
         <div class="related-strip">
           <a href="/destinations/london.html">London</a>
           <a href="/index.html#destinations">UK Cities</a>
@@ -618,6 +643,16 @@
           <a href="/travel/travel-tips.html">Travel Tips</a>
           <a href="/travel/getting-around.html">Getting Around</a>
           <a href="/categories/where-to-stay.html">Where to Stay</a>
+        </div>
+
+        <h3 style="margin-top:26px;">Free Planning Tools</h3>
+        <div class="related-strip">
+          <a href="/itinerary-generator.html">Itinerary Generator</a>
+          <a href="/packing-list-generator.html">Packing List Generator</a>
+          <a href="/free-museums-map.html">Free Museums Map</a>
+          <a href="/uk-bank-holidays.html">Bank Holidays</a>
+          <a href="/uk-time-weather.html">UK Time &amp; Weather</a>
+          <a href="/uk-visa-eta-checker.html">Visa/ETA Checker</a>
         </div>
       </div>
 
