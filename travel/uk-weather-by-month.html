@@ -56,9 +56,7 @@
   .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:13px 26px; border-radius:100px; font-weight:600; font-size:14.5px; border:1px solid transparent; text-decoration:none; transition:all .15s ease; cursor:pointer;}
   .btn-primary{background:var(--red-600); color:#fff;}
   .btn-primary:hover{background:var(--red-700); transform:translateY(-1px);}
-  .btn-ghost{background:#fff; border-color:var(--line); color:var(--navy-800);}
-  .btn-ghost:hover{border-color:var(--red-600); color:var(--red-600);}
-
+  
   header.site-header{position:sticky; top:0; z-index:100; background:rgba(245,245,242,.86); backdrop-filter:blur(10px) saturate(1.1); border-bottom:1px solid transparent; transition:border-color .2s ease, box-shadow .2s ease;}
   header.site-header.scrolled{border-color:var(--line); box-shadow:0 4px 20px -12px rgba(15,23,42,.25);}
   .nav-row{display:flex; align-items:center; justify-content:space-between; height:78px; gap:24px;}
@@ -101,13 +99,11 @@
   .hero-badge{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:11px; padding:6px 12px; border-radius:100px; background:#fff; border:1px solid var(--line); color:var(--navy-800); text-transform:uppercase; letter-spacing:.06em;}
   .hero-badge .dot{width:6px; height:6px; border-radius:50%; background:var(--green-600);}
 
-  /* City Tabs */
   .city-tabs{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:24px 0 20px;}
   .city-tab{padding:10px 20px; border-radius:100px; border:1px solid var(--line); background:#fff; font-size:13.5px; font-weight:500; color:var(--navy-800); transition:all .18s;}
   .city-tab:hover{border-color:var(--navy-700);}
   .city-tab.active{background:var(--navy-900); border-color:var(--navy-900); color:#fff;}
 
-  /* Chart Card */
   .chart-card{max-width:960px; margin:0 auto; background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:32px 32px 24px; box-shadow:var(--shadow-card);}
   .chart-title{font-family:var(--serif); font-size:20px; color:var(--navy-900); margin-bottom:6px; text-align:center;}
   .chart-sub{text-align:center; font-size:13.5px; color:var(--slate); margin-bottom:28px;}
@@ -115,33 +111,105 @@
   .legend-item{display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--slate);}
   .legend-swatch{width:14px; height:14px; border-radius:4px;}
 
-  /* Bar Chart */
-  .bar-chart-container{width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:10px;}
-  .bar-chart{display:flex; align-items:flex-end; justify-content:space-between; gap:6px; height:320px; padding:0 4px 0 40px; position:relative; border-bottom:1px solid var(--line); border-left:1px solid var(--line); min-width: 500px;}
-  .y-axis{position:absolute; left:0; top:0; bottom:0; width:38px; font-family:var(--mono); font-size:10px; color:var(--slate-light);}
-  .y-axis span{position:absolute; right:6px; transform:translateY(50%);}
-  .bar-wrap{flex:1; display:flex; flex-direction:column; align-items:center; gap:4px; height:100%; justify-content:flex-end; position:relative;}
-  .bar-pair{display:flex; gap:2px; align-items:flex-end; height:100%; width:100%; justify-content:center; position:relative; z-index:2;}
-  .bar{width:42%; border-radius:6px 6px 0 0; transition:all .3s ease; position:relative; cursor:pointer;}
-  .bar:hover{opacity:.85; transform:scaleY(1.03); transform-origin:bottom;}
-  .bar-temp{background:linear-gradient(180deg, #E8A23A, #C9702B);}
-  .bar-rain{background:linear-gradient(180deg, #6FA8D6, #3E7BAE);}
-  .bar-label{font-family:var(--mono); font-size:10px; color:var(--slate); letter-spacing:.04em; margin-top:8px;}
-  .bar-value{font-family:var(--mono); font-size:9.5px; color:var(--slate-light); font-weight:500; margin-bottom:2px;}
+  /* ============================= */
+  /* NEW FIXED CHART CSS           */
+  /* ============================= */
+  .bar-chart-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-top: 45px; /* Space for weather icons */
+    padding-bottom: 10px;
+  }
 
-  /* Weather Icons on top of bars */
-  .weather-icons{position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1;}
-  .weather-icon-wrap{display:flex; gap:4px; font-size:18px; line-height:1;}
-  .icon-heat, .icon-cold { transition:opacity 0.3s ease, transform 0.3s ease; }
-  .icon-dim { opacity: 0.25; transform: scale(0.8); filter: grayscale(100%); }
+  .bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+    height: 280px;
+    padding-left: 45px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    min-width: 650px; /* Forces scrolling on mobile */
+  }
 
-  /* Month selector */
+  .y-axis {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--slate-light);
+  }
+  .y-axis span {
+    position: absolute;
+    right: 8px;
+    transform: translateY(50%);
+  }
+
+  .bar-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+
+  .bar-pair {
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bar {
+    width: 35%;
+    max-width: 16px;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .bar:hover { opacity: 0.8; }
+  .bar-temp { background: #E8A23A; }
+  .bar-rain { background: #6FA8D6; }
+
+  .bar-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--slate);
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  /* WEATHER ICONS */
+  .weather-icon-wrap {
+    position: absolute;
+    top: -35px; /* Position above the bars */
+    display: flex;
+    gap: 6px;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .icon-dim {
+    opacity: 0.2;
+    filter: grayscale(1);
+  }
+
+  /* ============================= */
+
   .month-chips{display:grid; grid-template-columns:repeat(12,1fr); gap:6px; margin-top:24px;}
   .month-chip{padding:10px 4px; border-radius:10px; background:var(--paper); border:1px solid var(--line); font-family:var(--mono); font-size:11px; font-weight:500; color:var(--slate); text-align:center; transition:all .15s; cursor:pointer;}
   .month-chip:hover{border-color:var(--navy-700); color:var(--navy-800);}
   .month-chip.active{background:var(--navy-900); border-color:var(--navy-900); color:#fff;}
 
-  /* Selected month card */
   .selected-card{max-width:960px; margin:24px auto 0; background:linear-gradient(135deg, #0B1B33, #1B3A61); color:#fff; border-radius:var(--radius-lg); padding:32px 36px; box-shadow:var(--shadow-card); position:relative; overflow:hidden;}
   .selected-card::before{content:""; position:absolute; top:-80px; right:-80px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle, rgba(178,58,50,.35), transparent 70%); pointer-events:none;}
   .selected-head{display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-wrap:wrap; position:relative; margin-bottom:22px;}
@@ -155,7 +223,6 @@
   .selected-stat .value{font-family:var(--serif); font-size:22px; color:#fff; font-weight:600; line-height:1;}
   .selected-stat .note{font-size:12px; color:#C7D0DE; margin-top:6px;}
 
-  /* Recommendations */
   .rec-section{max-width:960px; margin:56px auto 0;}
   .rec-section h2{font-size:26px; text-align:center; margin-bottom:28px;}
   .rec-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
@@ -168,7 +235,6 @@
   .rec-card .rec-months{font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--red-600); margin-bottom:10px;}
   .rec-card p{font-size:13px; color:var(--slate); line-height:1.55; margin:0;}
 
-  /* Data table */
   .data-section{max-width:960px; margin:56px auto 0;}
   .data-section h2{font-size:26px; text-align:center; margin-bottom:12px;}
   .data-section > p{text-align:center; color:var(--slate); font-size:15px; margin-bottom:24px;}
@@ -180,20 +246,17 @@
   .data-table td:first-child{font-weight:600; color:var(--navy-900); font-family:var(--sans);}
   .data-table tr:nth-child(even) td{background:var(--paper);}
 
-  /* FAQ */
   .faq-section{padding:56px 0 0; max-width:820px; margin:0 auto;}
   .faq-section h2{font-size:26px; text-align:center; margin-bottom:28px;}
   .faq-item{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:18px 22px; margin-bottom:12px;}
   .faq-item h3{font-family:var(--sans); font-size:15px; font-weight:600; margin-bottom:8px; color:var(--navy-900);}
   .faq-item p{font-size:14px; color:var(--slate); line-height:1.6;}
 
-  /* Cross-link */
   .cross-link{background:var(--paper-dim); border-left:3px solid var(--red-600); border-radius:0 var(--radius-md) var(--radius-md) 0; padding:20px 24px; margin:32px auto 0; max-width:960px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
   .cross-link p{margin:0; font-size:14.5px; color:var(--navy-800); flex:1; min-width:220px; line-height:1.6;}
   .cross-link p strong{color:var(--navy-900);}
   .cross-link .btn{padding:10px 20px; font-size:13.5px; white-space:nowrap;}
 
-  /* Sticky */
   .sticky-cta{position:fixed; bottom:16px; left:50%; transform:translateX(-50%); z-index:90; background:#fff; border:1px solid var(--line); box-shadow:var(--shadow-hover); border-radius:100px; padding:8px 8px 8px 22px; display:flex; align-items:center; gap:16px; max-width:calc(100% - 32px); transition:transform .25s ease, opacity .25s ease;}
   .sticky-cta .sticky-info{font-size:13.5px; color:var(--navy-800); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
   .sticky-cta .sticky-info strong{font-weight:600;}
@@ -201,7 +264,6 @@
   .sticky-cta .gmaps-btn:hover{background:var(--red-700);}
   .sticky-cta.hidden{transform:translateX(-50%) translateY(120%); opacity:0; pointer-events:none;}
 
-  /* Related */
   .related{background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:56px 0; margin-top:56px;}
   .related-head{max-width:640px; margin:0 auto 32px; text-align:center;}
   .related-head h2{font-size:26px; margin-bottom:8px;}
@@ -235,21 +297,11 @@
   @media (max-width:760px){
     body{padding-bottom:90px;}
     .chart-card{padding:22px 16px 16px;}
-    /* Mobile Chart Fixes */
-    .bar-chart{height:260px; padding-left:30px; min-width: 600px; /* Force wider to scroll */ gap: 12px; }
-    .y-axis {width: 28px;}
-    .bar-pair {gap: 4px;}
-    .bar {width: 45%; max-width: 20px;}
-    .weather-icon-wrap {font-size: 14px; gap: 2px;}
-    .bar-value{display:none;}
-    
     .selected-card{padding:24px 22px;}
     .selected-head .month-name{font-size:26px;}
     .selected-head .temp-big{font-size:42px;}
     .selected-grid{grid-template-columns:1fr;}
     .month-chips{grid-template-columns:repeat(4,1fr);}
-    .data-table{font-size:11.5px;}
-    .data-table td, .data-table th{padding:9px 8px;}
     .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
     .footer-brand{grid-column:1 / -1;}
   }
@@ -258,6 +310,7 @@
 </head>
 <body>
 
+<!-- Yahan se aap ka header shuru hota hai (Isko change nahi kiya) -->
 <header class="site-header" id="siteHeader">
   <div class="container nav-row">
     <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK<small>United Kingdom Travel Guide</small></span></a>
@@ -339,12 +392,12 @@
     <p class="chart-sub" id="chartSub">Average high temperature and monthly rainfall</p>
 
     <div class="chart-legend">
-      <div class="legend-item"><span class="legend-swatch" style="background:linear-gradient(180deg,#E8A23A,#C9702B);"></span> Average high (°C)</div>
-      <div class="legend-item"><span class="legend-swatch" style="background:linear-gradient(180deg,#6FA8D6,#3E7BAE);"></span> Rainfall (mm)</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#E8A23A;"></span> Average high (°C)</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#6FA8D6;"></span> Rainfall (mm)</div>
     </div>
 
-    <!-- Added Container for horizontal scrolling on mobile -->
-    <div class="bar-chart-container">
+    <!-- Naya Fix: Wrapper add kiya hai taake mobile pe scroll ho sake -->
+    <div class="bar-chart-wrapper">
       <div class="bar-chart" id="barChart">
         <div class="y-axis" id="yAxis">
           <span style="bottom:0%;">0</span>
@@ -353,7 +406,7 @@
           <span style="bottom:75%;">45</span>
           <span style="bottom:100%;">60</span>
         </div>
-        <!-- Bars and Weather Icons injected by JS -->
+        <!-- Bars generated by JS -->
       </div>
     </div>
 
@@ -490,6 +543,7 @@
   <button class="gmaps-btn" id="stickyScroll" type="button">Explore →</button>
 </div>
 
+<!-- Yahan se footer shuru hota hai (Isko change nahi kiya) -->
 <footer>
   <div class="container">
     <div class="footer-top">
@@ -587,54 +641,43 @@
     var d = DATA[state.city];
     var chart = document.getElementById("barChart");
     
-    // Clear old bars but keep y-axis
-    var bars = chart.querySelectorAll(".bar-wrap");
-    bars.forEach(function(b){ b.remove(); });
+    // Clear old columns but keep y-axis
+    var cols = chart.querySelectorAll(".bar-col");
+    cols.forEach(function(b){ b.remove(); });
 
     var maxTemp = 30;
     var maxRain = 150;
 
     d.months.forEach(function(m, i){
-      var wrap = document.createElement("div");
-      wrap.className = "bar-wrap";
+      var col = document.createElement("div");
+      col.className = "bar-col";
 
-      // Weather Icons (Heat / Cold)
+      // Weather Icons container
       var iconWrap = document.createElement("div");
-      iconWrap.className = "weather-icons";
-      iconWrap.style.position = "relative"; // override absolute for flex layout inside wrap
-
-      var iconContainer = document.createElement("div");
-      iconContainer.className = "weather-icon-wrap";
+      iconWrap.className = "weather-icon-wrap";
       
       var iconHeat = document.createElement("span");
       iconHeat.className = "icon-heat";
-      iconHeat.textContent = "🔥"; // Heating icon
+      iconHeat.textContent = "🔥";
       iconHeat.title = "Warmth";
 
       var iconCold = document.createElement("span");
       iconCold.className = "icon-cold";
-      iconCold.textContent = "❄️"; // Cooling icon
+      iconCold.textContent = "❄️";
       iconCold.title = "Coldness";
 
-      // Logic to dim/brighten based on temp (m[0])
-      // If temp >= 15 (warm), heat is bright, cold is dim
+      // Dim logic based on Temp
       if (m[0] >= 15) {
-        iconCold.classList.add("icon-dim");
+        iconCold.classList.add("icon-dim"); // It's warm, dim the cold icon
       } else {
-        // If temp < 15 (cold), cold is bright, heat is dim
-        iconHeat.classList.add("icon-dim");
+        iconHeat.classList.add("icon-dim"); // It's cold, dim the heat icon
       }
 
-      iconContainer.appendChild(iconHeat);
-      iconContainer.appendChild(iconCold);
-      iconWrap.appendChild(iconContainer);
-      
-      // Place icons at top of the bar area
-      iconWrap.style.position = "absolute";
-      iconWrap.style.top = "-28px"; // above bars
-      
-      wrap.appendChild(iconWrap);
+      iconWrap.appendChild(iconHeat);
+      iconWrap.appendChild(iconCold);
+      col.appendChild(iconWrap);
 
+      // Bars
       var pair = document.createElement("div");
       pair.className = "bar-pair";
 
@@ -650,15 +693,16 @@
 
       pair.appendChild(tempBar);
       pair.appendChild(rainBar);
-      wrap.appendChild(pair);
+      col.appendChild(pair);
 
+      // Label
       var label = document.createElement("div");
       label.className = "bar-label";
       label.textContent = MONTHS[i];
-      wrap.appendChild(label);
+      col.appendChild(label);
 
-      wrap.addEventListener("click", function(){ selectMonth(i); });
-      chart.appendChild(wrap);
+      col.addEventListener("click", function(){ selectMonth(i); });
+      chart.appendChild(col);
     });
   }
 
