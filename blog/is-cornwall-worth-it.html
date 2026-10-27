@@ -20,8 +20,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRW83LDG7"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Is Cornwall Worth It? An Honest 9-Day Campervan Review | Visitor Guide UK</title>
-<meta name="description" content="A real, honest review of a 9-day Cornwall campervan trip. From the disappointment of Widemouth Bay to the magic of Tintagel Castle and the tourist trap of Land's End — is Cornwall worth the long drive?">
+<title>Is Cornwall Worth It? An Honest 9-Day Campervan Review (UK 2026)</title>
+<meta name="description" content="A real, honest review of a 9-day Cornwall campervan trip in the UK. From the disappointment of Widemouth Bay to the magic of Tintagel Castle and the tourist trap of Land's End.">
 <link rel="canonical" href="https://www.visitorguideuk.com/blog/is-cornwall-worth-it.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
 
@@ -89,10 +89,11 @@
   
   .pull-quote{border-left:4px solid var(--red-600); padding:20px 24px; margin:32px 0; background:#fff; border-radius:0 var(--radius-md) var(--radius-md) 0; font-family:var(--serif); font-size:20px; color:var(--navy-900); font-style:italic; line-height:1.5;}
 
-  /* IMAGE PLACEHOLDER */
-  .article-image{margin:32px 0; border-radius:var(--radius-md); overflow:hidden; background:linear-gradient(135deg,#DADCE2,#EDEEF1); aspect-ratio:16/9; position:relative; display:flex; align-items:center; justify-content:center; color:var(--slate-light); font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.1em;}
-  .article-image::before{content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(15,23,42,.035) 0 1px, transparent 1px 14px);}
-  .article-image span{position:relative; z-index:1; background:rgba(255,255,255,.8); padding:6px 14px; border-radius:100px;}
+  /* PHOTO SUPPORT (Wikipedia Fetch) */
+  .photo{position:relative; overflow:hidden; background:linear-gradient(135deg,#DADCE2,#EDEEF1); isolation:isolate; aspect-ratio:16/9; margin:32px 0; border-radius:var(--radius-md); box-shadow:var(--shadow-card);}
+  .photo::before{content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(15,23,42,.035) 0 1px, transparent 1px 14px); z-index:0;}
+  .photo img{width:100%; height:100%; object-fit:cover; position:relative; z-index:1; opacity:0; transition:opacity .6s ease, transform .5s ease;}
+  .photo img.loaded{opacity:1;}
 
   /* TOOLS BOX */
   .tools-box{background:var(--navy-900); color:#fff; border-radius:var(--radius-md); padding:32px; margin:48px 0;}
@@ -101,6 +102,11 @@
   .tools-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
   .tools-grid a{display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius-sm); padding:14px 18px; font-size:14px; color:#fff; transition:background .15s ease;}
   .tools-grid a:hover{background:rgba(255,255,255,.16);}
+
+  /* POST FOOTER NAVIGATION */
+  .post-footer-nav{display:flex; justify-content:space-between; align-items:center; margin-top:40px; padding-top:24px; border-top:1px solid var(--line); flex-wrap:wrap; gap:16px;}
+  .post-footer-nav a{font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:6px; color:var(--navy-900); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:4px;}
+  .post-footer-nav a:hover{color:var(--red-600); text-decoration-color:var(--red-600);}
 
   /* RELATED */
   .related-section{background:var(--paper-dim); border-top:1px solid var(--line); padding:48px 0; margin-top:32px;}
@@ -119,7 +125,7 @@
   .footer-brand p{margin-top:14px; font-size:13.8px; color:#93A1B7; max-width:230px; line-height:1.6;}
   .footer-col h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:#93A1B7; font-weight:500; margin-bottom:16px;}
   .footer-col ul li{margin-bottom:11px;}
-  .footer-col a{font-size:14px; color:#DCE3EE;}
+  .footer-col a{font-size:14px; color:#DCE3EE; text-decoration:none;}
   .footer-col a:hover{color:#fff;}
   .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12.8px; color:#7F8CA1;}
 
@@ -176,9 +182,9 @@
 <main>
   <article>
     <div class="container article-header">
-      <span class="eyebrow">Honest Review · Cornwall</span>
-      <h1>Is Cornwall Worth It? An Honest 9-Day Campervan Review</h1>
-      <p class="lede">Before I set off on a nine-day campervan road trip from Minehead to Land's End, I asked myself the same question: Is Cornwall actually worth the long, stressful drive? Here's the unvarnished truth.</p>
+      <span class="eyebrow">Honest Review · Cornwall, UK</span>
+      <h1>Is Cornwall Worth It? An Honest 9-Day Campervan Review in the UK</h1>
+      <p class="lede">Before I set off on a nine-day campervan road trip from Minehead to Land's End, I asked myself the same question: Is Cornwall in the UK actually worth the long, stressful drive? Here's the unvarnished truth.</p>
       <div class="article-meta">
         <span>By Visitor Guide UK</span>
         <span>Based on a real trip by The Quiet Way Around</span>
@@ -186,28 +192,31 @@
     </div>
 
     <div class="container article-body">
-      <p>The drive to Cornwall in a VW campervan took nearly two days. It was stressful — narrow roads, steep hills, and unpredictable weather. By the time I finally arrived at Widemouth Bay, my first stop in Cornwall, I was exhausted and hopeful. But my heart sank. The beach wasn't spectacular. It felt a bit unkempt. My worst fear had come true: I had travelled far to see things I could see "around the corner" from my own home by the sea.</p>
+      <p>The drive to Cornwall in the UK in a VW campervan took nearly two days. It was stressful — narrow roads, steep hills, and unpredictable weather. By the time I finally arrived at Widemouth Bay, my first stop in Cornwall, I was exhausted and hopeful. But my heart sank. The beach wasn't spectacular. It felt a bit unkempt. My worst fear had come true: I had travelled far to see things I could see "around the corner" from my own home by the sea.</p>
 
-      <p>But Cornwall isn't just one beach. Over the next nine days, walking the South West Coast Path and exploring the coast, I found moments of genuine magic — mixed with a few frustrating tourist traps. So, is it worth it? Let's break it down.</p>
+      <p>But Cornwall isn't just one beach. Over the next nine days, walking the South West Coast Path and exploring the UK coast, I found moments of genuine magic — mixed with a few frustrating tourist traps. So, is it worth it? Let's break it down.</p>
 
-      <div class="article-image"><span>Cornwall Coastline</span></div>
+      <!-- IMAGE 1: TINTAGEL -->
+      <div class="photo" data-wiki="Tintagel Castle" data-eager="true">
+        <img alt="Tintagel Castle in Cornwall, UK">
+      </div>
 
       <h2>The Highs: Where Cornwall Delivers</h2>
       
       <h3>Tintagel Castle: Stepping Into Myth</h3>
-      <p>If you do one thing in Cornwall, make it Tintagel. I cannot recommend it enough. But here's the key: don't just look at it from the free viewpoints. Pay the entry fee and walk around the actual site. It is worth every penny. Exploring the ruined castle on the cliffside feels like stepping back into a mythical age. It's wondrous in a way that few historic sites manage to be [citation:1].</p>
+      <p>If you do one thing in Cornwall, make it Tintagel. I cannot recommend it enough. But here's the key: don't just look at it from the free viewpoints. Pay the entry fee and walk around the actual site. It is worth every penny. Exploring the ruined castle on the cliffside feels like stepping back into a mythical age. It's wondrous in a way that few historic sites manage to be .</p>
 
       <h3>Summerleaze Beach, Bude: A Turning Point</h3>
-      <p>After the disappointment of Widemouth Bay, Summerleaze in Bude restored my faith. The weather wasn't perfect, but the beach itself was fantastic. The cliff views and the incredible rock formations made it a great experience. It really gave the day a boost after that long, exhausting drive down [citation:1].</p>
+      <p>After the disappointment of Widemouth Bay, Summerleaze in Bude restored my faith. The weather wasn't perfect, but the beach itself was fantastic. The cliff views and the incredible rock formations made it a great experience. It really gave the day a boost after that long, exhausting drive down .</p>
 
       <h3>The Coastal Walk: St Agnes to Perranporth</h3>
-      <p>This was a brilliant hike along the South West Coast Path. It's a lovely walk, and Perranporth beach at the end is fantastic. If you're a walker, this stretch is a must-do. It gave me a real sense of why people rave about Cornwall's coastline [citation:1].</p>
+      <p>This was a brilliant hike along the South West Coast Path. It's a lovely walk, and Perranporth beach at the end is fantastic. If you're a walker, this stretch is a must-do. It gave me a real sense of why people rave about Cornwall's coastline .</p>
 
       <h3>Watergate Bay: Surf and Sunset</h3>
-      <p>Watergate Bay is brilliant. It's a short walk from the campsite, there's plenty of parking, and the weather on my visit was glorious. Surfers were in the water, people were taking classes, and the sunset was absolutely stunning — the sun reflecting off the ocean. It felt like being in California for a moment [citation:1].</p>
+      <p>Watergate Bay is brilliant. It's a short walk from the campsite, there's plenty of parking, and the weather on my visit was glorious. Surfers were in the water, people were taking classes, and the sunset was absolutely stunning — the sun reflecting off the ocean. It felt like being in California for a moment .</p>
 
       <h3>Gwynver Beach: The Hidden Gem</h3>
-      <p>Gwynver Beach is absolutely gorgeous. Based on how few people were there, it's a genuine hidden gem. If you're staying near Sennen Cove, it's well worth the walk down. It's one of those places that reminds you why Cornwall has such a reputation [citation:1].</p>
+      <p>Gwynver Beach is absolutely gorgeous. Based on how few people were there, it's a genuine hidden gem. If you're staying near Sennen Cove, it's well worth the walk down. It's one of those places that reminds you why Cornwall has such a reputation .</p>
 
       <div class="pull-quote">
         "Exploring Tintagel Castle is like stepping back into a more mythical age. It's wondrous." — The Quiet Way Around
@@ -216,27 +225,30 @@
       <h2>The Lows: Where Cornwall Disappoints</h2>
 
       <h3>Land's End: A Scar on the Landscape</h3>
-      <p>I had to go. I'd come this far. But Land's End the attraction is an awful scar on the landscape. It's a horrible, commercialised tourist trap. Thankfully, the actual scenery of Land's End saves it — the coastal walk around that section is worth doing. But the "attraction" itself? Skip it. Just enjoy the cliffs and the sea [citation:1].</p>
+      <p>I had to go. I'd come this far. But Land's End the attraction is an awful scar on the landscape. It's a horrible, commercialised tourist trap. Thankfully, the actual scenery of Land's End saves it — the coastal walk around that section is worth doing. But the "attraction" itself? Skip it. Just enjoy the cliffs and the sea .</p>
 
       <h3>Widemouth Bay: A Rough Start</h3>
-      <p>As I mentioned, Widemouth Bay was very disappointing as a first impression. It just wasn't that spectacular or well-maintained. If you're arriving from the north, don't judge Cornwall by this stop. Keep driving to Bude or further south [citation:1].</p>
+      <p>As I mentioned, Widemouth Bay was very disappointing as a first impression. It just wasn't that spectacular or well-maintained. If you're arriving from the north, don't judge Cornwall by this stop. Keep driving to Bude or further south .</p>
 
       <h3>The Drive Itself</h3>
-      <p>The long drive is a real factor. Nearly two days in a campervan, dealing with hills, small roads, and weather, is genuinely stressful. If you're coming from the north or the Midlands, you need to factor in the exhaustion. It's not a relaxing journey [citation:1].</p>
+      <p>The long drive is a real factor. Nearly two days in a campervan, dealing with hills, small roads, and weather, is genuinely stressful. If you're coming from the north or the Midlands, you need to factor in the exhaustion. It's not a relaxing journey .</p>
 
-      <div class="article-image"><span>Land's End Cliffs</span></div>
+      <!-- IMAGE 2: LAND'S END -->
+      <div class="photo" data-wiki="Land's End">
+        <img alt="Land's End in Cornwall, UK">
+      </div>
 
       <h2>So, Is Cornwall Worth It?</h2>
       
       <p><strong>Yes, but with conditions.</strong></p>
       
-      <p>If you live near a coastline already, Cornwall's beaches might not blow you away immediately. You might have that "I travelled far for this" feeling. But Cornwall isn't just beaches. It's Tintagel. It's the coastal path. It's Watergate Bay sunsets and hidden gems like Gwynver. It's the history, the myth, and the sheer scale of the coastline.</p>
+      <p>If you live near a coastline already, Cornwall's beaches might not blow you away immediately. You might have that "I travelled far for this" feeling. But Cornwall isn't just beaches. It's Tintagel. It's the coastal path. It's Watergate Bay sunsets and hidden gems like Gwynver. It's the history, the myth, and the sheer scale of the coastline in the UK.</p>
 
       <p>The key is to <strong>avoid the tourist traps</strong> (Land's End), <strong>manage your expectations</strong> for the drive, and <strong>focus on the walking and the history</strong>. If you do that, Cornwall absolutely delivers.</p>
 
       <!-- TOOLS BOX -->
       <div class="tools-box">
-        <h3>Plan Your Own Cornwall Trip</h3>
+        <h3>Plan Your Own UK Trip to Cornwall</h3>
         <p>Use our free tools to estimate costs, plan your route, and pack for the British weather.</p>
         <div class="tools-grid">
           <a href="/travel/trip-cost-calculator.html">💰 Trip Cost Calculator</a>
@@ -245,6 +257,15 @@
           <a href="/travel/uk-weather-by-month.html">🌤️ UK Weather by Month</a>
           <a href="/travel/itinerary-generator.html">📅 Itinerary Generator</a>
           <a href="/travel/uk-time-now.html">⏰ UK Time Now</a>
+        </div>
+      </div>
+
+      <!-- POST FOOTER NAVIGATION (Sitemap, Blog Home, Cookie Policy) -->
+      <div class="post-footer-nav">
+        <a href="/blog/index.html">← Back to All Blog Posts</a>
+        <div style="display:flex; gap:16px;">
+          <a href="/sitemap.html">Sitemap</a>
+          <a href="/legal/cookie-policy.html">Cookie Policy</a>
         </div>
       </div>
 
@@ -322,6 +343,7 @@
           <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
           <li><a href="/legal/terms.html">Terms &amp; Conditions</a></li>
           <li><a href="/legal/cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="/sitemap.html">Sitemap</a></li> 
         </ul>
       </div>
     </div>
@@ -335,6 +357,36 @@
 <script>
 (function(){
   "use strict";
+
+  // Wikipedia Image Fetch (Exactly like your York blog)
+  var wikiCache = {};
+  function fetchWikiImage(title, px){
+    if (wikiCache[title]) return wikiCache[title];
+    var p = fetch("https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(title) +
+      "&prop=pageimages&format=json&pithumbsize=" + (px || 1000) + "&origin=*")
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        var pages = data.query && data.query.pages;
+        if (!pages) return null;
+        var page = pages[Object.keys(pages)[0]];
+        return (page && page.thumbnail && page.thumbnail.source) || null;
+      })
+      .catch(function(){ return null; });
+    wikiCache[title] = p;
+    return p;
+  }
+
+  document.querySelectorAll("[data-wiki]").forEach(function(node){
+    var title = node.getAttribute("data-wiki");
+    var img = node.querySelector("img");
+    if (!img) return;
+    fetchWikiImage(title, node.hasAttribute("data-eager") ? 1600 : 900).then(function(url){
+      if (!url) return;
+      img.src = url;
+      img.onload = function(){ img.classList.add("loaded"); };
+    });
+  });
+
   var header = document.getElementById("siteHeader");
   window.addEventListener("scroll", function(){ header.classList.toggle("scrolled", window.scrollY > 8); }, {passive:true});
   
