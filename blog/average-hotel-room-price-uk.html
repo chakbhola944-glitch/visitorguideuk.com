@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  var vgukConsent = null;
+  try { vgukConsent = localStorage.getItem('vguk_cookie_consent'); } catch(e) {}
+  var vgukGranted = (vgukConsent === 'accepted') ? 'granted' : 'denied';
+  gtag('consent', 'default', {
+    'ad_storage': vgukGranted, 'ad_user_data': vgukGranted,
+    'ad_personalization': vgukGranted, 'analytics_storage': vgukGranted
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-NZRW83LDG7');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRW83LDG7"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Average Hotel Room Price in the UK (2026): What You'll Actually Pay</title>
+<meta name="description" content="What is the average hotel room price in the UK? We break down real 2026 data for London, Edinburgh, and regional cities — plus how to find cheap rooms with tools like Premier Inn's price finder.">
+<link rel="canonical" href="https://www.visitorguideuk.com/blog/average-hotel-room-price-uk.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230F2340'/%3E%3Ctext x='20' y='27' font-family='Georgia,serif' font-size='20' fill='%23fff' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Average Hotel Room Price in the UK (2026)",
+  "description": "Real 2026 data on UK hotel room prices — London vs regional cities, Premier Inn prices, and how to save.",
+  "author": {"@type":"Organization","name":"Visitor Guide UK"},
+  "publisher": {"@type":"Organization","name":"Visitor Guide UK"},
+  "mainEntityOfPage": "https://www.visitorguideuk.com/blog/average-hotel-room-price-uk.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is the average hotel room price in the UK?","acceptedAnswer":{"@type":"Answer","text":"According to RSM UK, the average daily rate (ADR) for occupied hotel rooms in the UK was £156.38 in August 2026. In London, the average was £214.90."}},
+    {"@type":"Question","name":"How expensive is a hotel in London?","acceptedAnswer":{"@type":"Answer","text":"London is significantly more expensive than the rest of the UK. The average daily rate in London was £214.90 in August 2026, compared to £156.38 across the UK as a whole. However, budget chains like Premier Inn can offer rooms from around £60-£100 outside central London."}},
+    {"@type":"Question","name":"What is the average hotel cost per night in Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"Edinburgh hotel prices vary by season. HotelsCombined data shows an average of around £196 per night, but prices rise sharply in July and August during the Edinburgh Festival. Budget rooms can be found from around £80 per night."}},
+    {"@type":"Question","name":"How can I find cheap hotel rooms in the UK?","acceptedAnswer":{"@type":"Answer","text":"Use our free Hotel Cost Estimator to compare prices across cities. Budget chains like Premier Inn and Travelodge often offer rooms from £60-£100 outside London. Booking in advance and avoiding peak season (July-August) can also help."}}
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --navy-900:#0B1B33; --navy-800:#122A4A; --red-600:#B23A32; --red-700:#96302A;
+    --paper:#F5F5F2; --paper-dim:#ECEBE6; --white:#FFFFFF; --ink:#16212E;
+    --slate:#5B6472; --slate-light:#8892A0; --line:#DFDFD9; --line-dark:rgba(255,255,255,.14);
+    --radius-lg:22px; --radius-md:14px; --radius-sm:9px;
+    --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 12px 28px -14px rgba(15,23,42,.18);
+    --container:1240px;
+    --serif:'Newsreader', Georgia, serif; --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; --mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:var(--sans); color:var(--ink); background:var(--paper); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  img{display:block; max-width:100%;}
+  a{color:var(--red-600); text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+  h1,h2,h3,h4{font-family:var(--serif); font-weight:600; color:var(--navy-900); line-height:1.15;}
+  .container{max-width:var(--container); margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:2px solid var(--red-600); outline-offset:3px;}
+
+  header.site-header{position:sticky; top:0; z-index:100; background:rgba(245,245,242,.86); backdrop-filter:blur(10px); border-bottom:1px solid transparent; transition:border-color .2s ease, box-shadow .2s ease;}
+  header.site-header.scrolled{border-color:var(--line); box-shadow:0 4px 20px -12px rgba(15,23,42,.25);}
+  .nav-row{display:flex; align-items:center; justify-content:space-between; height:78px; gap:24px;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:600; font-size:19px; color:var(--navy-900); text-decoration:none;}
+  .logo .mark{width:34px; height:34px; border-radius:8px; background:var(--navy-900); display:flex; align-items:center; justify-content:center; position:relative; flex:none;}
+  .logo .mark span{color:#fff; font-family:var(--serif); font-size:17px; font-style:italic;}
+  .logo .mark::after{content:""; position:absolute; width:5px; height:5px; border-radius:50%; background:var(--red-600); top:-2px; right:-2px;}
+  .logo small{display:block; font-family:var(--mono); font-size:9px; letter-spacing:.12em; color:var(--slate); font-weight:500; text-transform:uppercase; margin-top:1px;}
+  .main-nav{display:flex; align-items:center; gap:32px;}
+  .main-nav a{font-size:14.5px; font-weight:500; color:var(--navy-800); position:relative; padding:6px 0;}
+  .main-nav a::after{content:""; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--red-600); transform:scaleX(0); transform-origin:left; transition:transform .18s ease;}
+  .main-nav a:hover::after{transform:scaleX(1);}
+  .header-actions{display:flex; align-items:center; gap:14px;}
+  .hamburger{display:none; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; align-items:center; justify-content:center;}
+  .mobile-nav{position:fixed; inset:0; background:var(--navy-900); z-index:200; transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column; padding:24px 24px 40px;}
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav-top{display:flex; justify-content:space-between; align-items:center; margin-bottom:40px;}
+  .mobile-nav-top .logo{color:#fff;}
+  .mobile-nav-top .logo .mark{background:#fff;}
+  .mobile-nav-top .logo .mark span{color:var(--navy-900);}
+  .mobile-nav a{display:block; color:#fff; font-family:var(--serif); font-size:26px; padding:14px 0; border-bottom:1px solid var(--line-dark);}
+  .mobile-nav .btn{margin-top:28px; width:100%;}
+  .close-btn{width:38px; height:38px; border-radius:50%; border:1px solid var(--line-dark); color:#fff; display:flex; align-items:center; justify-content:center; background:transparent;}
+
+  .article-header{padding:64px 0 32px; max-width:800px; margin:0 auto;}
+  .article-header .eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--red-600); font-weight:500; margin-bottom:16px; display:block;}
+  .article-header h1{font-size:clamp(32px,5vw,48px); margin-bottom:20px;}
+  .article-header .lede{font-size:19px; color:var(--slate); line-height:1.6; margin-bottom:24px;}
+  .article-meta{font-family:var(--mono); font-size:12px; color:var(--slate-light); display:flex; gap:16px; border-top:1px solid var(--line); padding-top:16px;}
+
+  .article-body{max-width:800px; margin:0 auto; padding-bottom:64px;}
+  .article-body p{font-size:17px; line-height:1.8; margin-bottom:24px; color:var(--ink);}
+  .article-body h2{font-size:28px; margin:48px 0 20px; padding-bottom:8px; border-bottom:2px solid var(--paper-dim);}
+  .article-body h3{font-size:22px; margin:32px 0 12px;}
+  .article-body ul{margin-bottom:24px; padding-left:24px;}
+  .article-body ul li{font-size:17px; line-height:1.7; margin-bottom:10px;}
+  
+  .pull-quote{border-left:4px solid var(--red-600); padding:20px 24px; margin:32px 0; background:#fff; border-radius:0 var(--radius-md) var(--radius-md) 0; font-family:var(--serif); font-size:20px; color:var(--navy-900); font-style:italic; line-height:1.5;}
+
+  .photo{position:relative; overflow:hidden; background:linear-gradient(135deg,#DADCE2,#EDEEF1); isolation:isolate; aspect-ratio:16/9; margin:32px 0; border-radius:var(--radius-md); box-shadow:var(--shadow-card);}
+  .photo::before{content:""; position:absolute; inset:0; background-image:repeating-linear-gradient(45deg, rgba(15,23,42,.035) 0 1px, transparent 1px 14px); z-index:0;}
+  .photo img{width:100%; height:100%; object-fit:cover; position:relative; z-index:1; opacity:0; transition:opacity .6s ease, transform .5s ease;}
+  .photo img.loaded{opacity:1;}
+
+  .tools-box{background:var(--navy-900); color:#fff; border-radius:var(--radius-md); padding:32px; margin:48px 0;}
+  .tools-box h3{color:#fff; font-family:var(--sans); font-size:20px; margin-bottom:8px;}
+  .tools-box p{color:#C7D0DE; font-size:15px; margin-bottom:20px; max-width:600px;}
+  .tools-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px;}
+  .tools-grid a{display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); border-radius:var(--radius-sm); padding:14px 18px; font-size:14px; color:#fff; transition:background .15s ease;}
+  .tools-grid a:hover{background:rgba(255,255,255,.16);}
+
+  .post-footer-nav{display:flex; justify-content:space-between; align-items:center; margin-top:40px; padding-top:24px; border-top:1px solid var(--line); flex-wrap:wrap; gap:16px;}
+  .post-footer-nav a{font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:6px; color:var(--navy-900); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:4px;}
+  .post-footer-nav a:hover{color:var(--red-600); text-decoration-color:var(--red-600);}
+
+  .related-section{background:var(--paper-dim); border-top:1px solid var(--line); padding:48px 0; margin-top:32px;}
+  .related-section .container{max-width:800px;}
+  .related-section h2{font-size:24px; margin-bottom:20px;}
+  .related-links{display:flex; flex-wrap:wrap; gap:10px;}
+  .related-links a{background:#fff; border:1px solid var(--line); padding:10px 18px; border-radius:100px; font-size:14px; color:var(--navy-800);}
+  .related-links a:hover{border-color:var(--navy-900);}
+
+  footer{background:var(--navy-900); color:#C7D0DE; padding:64px 0 28px;}
+  .footer-top{display:grid; grid-template-columns:1.5fr repeat(4,1fr); gap:32px; padding-bottom:48px; border-bottom:1px solid var(--line-dark);}
+  .footer-brand .logo{color:#fff;}
+  .footer-brand .logo .mark{background:#fff;}
+  .footer-brand .logo .mark span{color:var(--navy-900);}
+  .footer-brand p{margin-top:14px; font-size:13.8px; color:#93A1B7; max-width:230px; line-height:1.6;}
+  .footer-col h4{font-family:var(--mono); font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:#93A1B7; font-weight:500; margin-bottom:16px;}
+  .footer-col ul li{margin-bottom:11px;}
+  .footer-col a{font-size:14px; color:#DCE3EE; text-decoration:none;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12.8px; color:#7F8CA1;}
+
+  @media (max-width:1000px){
+    .main-nav, .header-actions .btn{display:none;}
+    .hamburger{display:flex;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .tools-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:760px){
+    .article-header{padding:40px 0 24px;}
+    .article-body p, .article-body ul li{font-size:16px;}
+    .footer-top{grid-template-columns:1fr; gap:28px;}
+  }
+</style>
+<script src="/cookie-consent.js" defer></script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-row">
+    <a href="/" class="logo">
+      <span class="mark"><span>V</span></span>
+      <span>Visitor Guide UK<small>United Kingdom Travel Guide</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/#regions">Places to Visit</a>
+      <a href="/#looking-for">Things to Do</a>
+      <a href="/#destinations">UK Cities</a>
+      <a href="/blog/index.html">Blog</a>
+    </nav>
+    <div class="header-actions">
+      <a href="/#destinations" class="btn btn-primary" style="padding:10px 20px; font-size:13.5px; background:var(--red-600); color:#fff; border-radius:100px; text-decoration:none;">Explore UK</a>
+    </div>
+    <button class="hamburger" id="menuOpenBtn" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-top">
+    <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+    <button class="close-btn" id="menuCloseBtn" aria-label="Close menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="/">Home</a>
+    <a href="/#regions">Places to Visit</a>
+    <a href="/#looking-for">Things to Do</a>
+    <a href="/#destinations">UK Cities</a>
+    <a href="/blog/index.html">Blog</a>
+  </nav>
+</div>
+
+<main>
+  <article>
+    <div class="container article-header">
+      <span class="eyebrow">Money & Accommodation · UK</span>
+      <h1>Average Hotel Room Price in the UK (2026)</h1>
+      <p class="lede">What will you actually pay for a hotel room in the UK? We've broken down the latest 2026 data for London, Edinburgh, and regional cities — plus how to find cheaper rooms with tools like Premier Inn's price finder.</p>
+      <div class="article-meta">
+        <span>By Visitor Guide UK</span>
+        <span>Updated October 2026</span>
+      </div>
+    </div>
+
+    <div class="container article-body">
+      <p>Hotel prices in the UK vary wildly depending on where you go, when you travel, and how far in advance you book. A room in central London can cost three times as much as a similar room in Manchester or Cardiff.</p>
+
+      <p>To help you budget realistically, we've gathered the latest 2026 data from industry trackers like RSM UK and HotelsCombined, and broken it down by city and season.</p>
+
+      <h2>The National Average: What the Data Says</h2>
+      <p>According to RSM UK's hotel tracker, the <strong>average daily rate (ADR) for occupied hotel rooms across the UK was £156.38 in August 2026</strong>, up from £152.80 the previous year [citation:1][citation:10]. This figure represents what hotels actually charged per room, per night, on average.</p>
+
+      <p>However, other sources report different numbers depending on methodology. SiteMinder's mid-year report put the UK summer ADR at <strong>£254</strong>, though this likely reflects a different sample of hotels and booking patterns [citation:6]. The key takeaway: <strong>expect to pay somewhere between £150 and £250 per night</strong> for a standard UK hotel room, depending on location and season.</p>
+
+      <div class="pull-quote">
+        "The UK average daily rate was £156.38 in August 2026, but London was significantly higher at £214.90." — RSM UK
+      </div>
+
+      <!-- IMAGE: LONDON HOTEL -->
+      <div class="photo" data-wiki="London" data-eager="true">
+        <img alt="London, UK — where hotel prices are highest">
+      </div>
+
+      <h2>London vs the Rest of the UK</h2>
+      <p>London is in a league of its own. In August 2026, the capital's average daily rate was <strong>£214.90</strong>, compared to the UK-wide average of £156.38 [citation:1]. During peak summer months (July), London rates jumped to <strong>£274.40</strong> [citation:2].</p>
+
+      <p>Outside London, prices drop considerably. Regional cities like Manchester, Birmingham, and Cardiff typically see average rates in the <strong>£100–£150</strong> range, depending on events and seasonality.</p>
+
+      <h3>Edinburgh: The Festival Effect</h3>
+      <p>Edinburgh is a special case. HotelsCombined data shows an average of around <strong>£196 per night</strong>, but prices rise sharply in July and August during the Edinburgh Festival Fringe [citation:13]. Budget rooms can be found from around £80 outside peak periods, but during the festival, even basic rooms can exceed £200.</p>
+
+      <h2>Premier Inn Prices: What to Expect</h2>
+      <p>Premier Inn is the UK's largest budget hotel chain, and it's a useful benchmark for what "affordable" looks like. Prices vary by location and demand, but here are some real examples from 2026:</p>
+      
+      <ul>
+        <li><strong>Premier Inn Exeter City Centre:</strong> Rooms from <strong>£87</strong> per night (room only) [citation:11].</li>
+        <li><strong>Premier Inn London Ilford (Newbury Park):</strong> Prices ranged from <strong>$58 to $131</strong> (roughly £45–£100) depending on the night, based on Trivago's 30-day average .</li>
+        <li><strong>Premier Inn London Bromley:</strong> Prices ranged from <strong>€74 to €222</strong> (roughly £60–£190) depending on the date .</li>
+      </ul>
+
+      <p>The pattern is clear: <strong>Premier Inn outside London can be very affordable</strong> (£60–£100), while London locations are cheaper on weekdays and Sundays but spike on Friday and Saturday nights.</p>
+
+      <p>If you want to check prices for specific dates, Premier Inn's own website has a <strong>price finder tool</strong> that lets you search by city and date. We'd recommend using it alongside our <a href="/travel/hotel-cost-estimator.html">Hotel Cost Estimator</a> to compare chains and cities.</p>
+
+      <h2>How Expensive Is a Hotel in the UK? (By Season)</h2>
+      <p>Prices aren't flat across the year. Based on RSM UK's monthly data:</p>
+      
+      <ul>
+        <li><strong>January–February:</strong> Cheapest months. UK average around £130–£140. London around £180–£190.</li>
+        <li><strong>May–June:</strong> Prices rise. UK average around £156–£160.</li>
+        <li><strong>July–August:</strong> Peak season. UK average £180+; London £270+.</li>
+        <li><strong>September–October:</strong> Prices begin to fall. UK average around £150–£160.</li>
+        <li><strong>November–December:</strong> Christmas markets push prices up, especially in cities like Edinburgh, York, and Bath.</li>
+      </ul>
+
+      <h2>How to Find Cheaper Hotel Rooms</h2>
+      <p>If the average prices above feel high, here are practical ways to reduce your bill:</p>
+      
+      <ul>
+        <li><strong>Book in advance:</strong> Premier Inn and Travelodge often release rooms at lower "Saver" rates months ahead.</li>
+        <li><strong>Avoid Friday and Saturday nights:</strong> Weekend prices can be 50% higher than midweek in many UK cities.</li>
+        <li><strong>Stay outside the city centre:</strong> A 10-minute bus or train ride can save £30–£50 per night.</li>
+        <li><strong>Use our tools:</strong> Estimate your total accommodation cost with the <a href="/travel/hotel-cost-estimator.html">Hotel Cost Estimator</a> and see how it fits into your overall budget with the <a href="/travel/trip-cost-calculator.html">Trip Cost Calculator</a>.</li>
+      </ul>
+
+      <h2>The Bottom Line</h2>
+      <p>The average UK hotel room price in 2026 is roughly <strong>£150–£160 per night</strong>, but this figure hides enormous regional variation. London averages over £210, while regional cities and budget chains can be £60–£100. The key to getting a good deal is booking early, avoiding peak weekends, and knowing where to look.</p>
+
+      <!-- TOOLS BOX -->
+      <div class="tools-box">
+        <h3>Plan Your UK Accommodation Budget</h3>
+        <p>Use our free tools to estimate hotel costs and build your full trip budget.</p>
+        <div class="tools-grid">
+          <a href="/travel/hotel-cost-estimator.html">🏨 Hotel Cost Estimator</a>
+          <a href="/travel/trip-cost-calculator.html">💰 Trip Cost Calculator</a>
+          <a href="/travel/uk-weather-by-month.html">🌤️ UK Weather by Month</a>
+          <a href="/travel/bank-holidays.html">📅 Bank Holidays</a>
+          <a href="/travel/route-planner.html">🗺️ Route Planner</a>
+          <a href="/travel/packing-list-generator.html">🎒 Packing List Generator</a>
+        </div>
+      </div>
+
+      <!-- POST FOOTER NAVIGATION -->
+      <div class="post-footer-nav">
+        <a href="/blog/index.html">← Back to All Blog Posts</a>
+        <div style="display:flex; gap:16px;">
+          <a href="/sitemap.html">Sitemap</a>
+          <a href="/legal/cookie-policy.html">Cookie Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <section class="related-section">
+    <div class="container">
+      <h2>Related Guides & Tools</h2>
+      <div class="related-links">
+        <a href="/blog/index.html">All Blog Posts</a>
+        <a href="/blog/is-cornwall-worth-it.html">Is Cornwall Worth It?</a>
+        <a href="/blog/north-wales-coolcation-guide.html">North Wales Coolcation Guide</a>
+        <a href="/blog/carlisle-travel-guide.html">Carlisle Travel Guide</a>
+        <a href="/travel/uk-weather.html">UK Weather Guide</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo"><span class="mark"><span>V</span></span><span>Visitor Guide UK</span></a>
+        <p>Your practical guide to exploring the United Kingdom.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/regions/england.html">England</a></li>
+          <li><a href="/regions/scotland.html">Scotland</a></li>
+          <li><a href="/regions/wales.html">Wales</a></li>
+          <li><a href="/regions/northern-ireland.html">Northern Ireland</a></li>
+          <li><a href="/#destinations">UK Cities</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Things to Do</h4>
+        <ul>
+          <li><a href="/categories/attractions.html">Attractions</a></li>
+          <li><a href="/categories/free-things-to-do.html">Free Things to Do</a></li>
+          <li><a href="/categories/family-days-out.html">Family Days Out</a></li>
+          <li><a href="/categories/day-trips.html">Day Trips</a></li>
+          <li><a href="/blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Travel Tools</h4>
+        <ul>
+          <li><a href="/travel/trip-cost-calculator.html">Trip Cost Calculator</a></li>
+          <li><a href="/travel/hotel-cost-estimator.html">Hotel Cost Estimator</a></li>
+          <li><a href="/travel/route-planner.html">Route Planner</a></li>
+          <li><a href="/travel/itinerary-generator.html">Itinerary Generator</a></li>
+          <li><a href="/travel/packing-list-generator.html">Packing List Generator</a></li>
+          <li><a href="/travel/uk-weather-by-month.html">Weather by Month</a></li>
+          <li><a href="/travel/bank-holidays.html">Bank Holidays</a></li>
+          <li><a href="/travel/free-museums-map.html">Free Museums Map</a></li>
+          <li><a href="/travel/uk-time-now.html">UK Time &amp; Weather</a></li>
+          <li><a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/legal/about.html">About Us</a></li>
+          <li><a href="/legal/contact.html">Contact</a></li>
+          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/legal/terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="/legal/cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="/sitemap.html">Sitemap</a></li> 
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Visitor Guide UK. All rights reserved.</span>
+      <span>An independent UK visitor information guide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var wikiCache = {};
+  function fetchWikiImage(title, px){
+    if (wikiCache[title]) return wikiCache[title];
+    var p = fetch("https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(title) +
+      "&prop=pageimages&format=json&pithumbsize=" + (px || 1000) + "&origin=*")
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        var pages = data.query && data.query.pages;
+        if (!pages) return null;
+        var page = pages[Object.keys(pages)[0]];
+        return (page && page.thumbnail && page.thumbnail.source) || null;
+      })
+      .catch(function(){ return null; });
+    wikiCache[title] = p;
+    return p;
+  }
+
+  document.querySelectorAll("[data-wiki]").forEach(function(node){
+    var title = node.getAttribute("data-wiki");
+    var img = node.querySelector("img");
+    if (!img) return;
+    fetchWikiImage(title, node.hasAttribute("data-eager") ? 1600 : 900).then(function(url){
+      if (!url) return;
+      img.src = url;
+      img.onload = function(){ img.classList.add("loaded"); };
+    });
+  });
+
+  var header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", function(){ header.classList.toggle("scrolled", window.scrollY > 8); }, {passive:true});
+  
+  var mobileNav = document.getElementById("mobileNav");
+  document.getElementById("menuOpenBtn").addEventListener("click", function(){ mobileNav.classList.add("open"); document.body.style.overflow = "hidden"; });
+  document.getElementById("menuCloseBtn").addEventListener("click", closeMenu);
+  mobileNav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMenu); });
+  function closeMenu(){ mobileNav.classList.remove("open"); document.body.style.overflow = ""; }
+})();
+</script>
+</body>
+</html>
