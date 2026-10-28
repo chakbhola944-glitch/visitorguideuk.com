@@ -127,6 +127,12 @@
 
   <!-- ==================== BLOG ==================== -->
     <url>
+    <loc>https://www.visitorguideuk.com/blog/north-wales-coolcation-guide.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
     <loc>https://www.visitorguideuk.com/blog/carlisle-travel-guide.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
