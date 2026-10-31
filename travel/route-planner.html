@@ -20,9 +20,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZRW83LDG7"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- ✅ SEO FIX: Better Title & Description for CTR -->
-<title>Free UK Route Planner 2026 🗺️ Drive Times, Distances & Live Weather</title>
-<meta name="description" content="Plan your UK drive instantly. Get exact miles, drive times, towns on the way, and live weather. London to Edinburgh: 405mi (7h 30m). 100% Free map.">
+<title>UK Route Planner 2026 🗺️ Drive Times, Distances, Stops &amp; Route Guides</title>
+<meta name="description" content="Plan a UK drive with drive times, distances, towns on the way, live weather and written guides for 8 popular routes. London to Edinburgh: about 405 miles (around 7 hours).">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://www.visitorguideuk.com/travel/route-planner.html">
 
@@ -31,8 +30,8 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Visitor Guide UK">
-<meta property="og:title" content="Free UK Route Planner 2026: Drive Times & Distances">
-<meta property="og:description" content="Interactive map with 8 popular UK routes. Distance, drive time, live weather & best stops.">
+<meta property="og:title" content="UK Route Planner 2026: Drive Times, Distances &amp; Route Guides">
+<meta property="og:description" content="Interactive map plus written guides for 8 popular UK routes. Distance, drive time, live weather, charges and best stops.">
 <meta property="og:url" content="https://www.visitorguideuk.com/travel/route-planner.html">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
@@ -57,7 +56,7 @@
 }
 </script>
 
-<!-- Schema: WebApplication (Removed fake aggregateRating) -->
+<!-- Schema: WebApplication -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -67,20 +66,25 @@
   "applicationCategory": "TravelApplication",
   "operatingSystem": "Any (Web)",
   "browserRequirements": "Requires JavaScript",
-  "description": "Interactive map showing driving routes, distances, drive times, weather and best stops between major UK cities.",
+  "description": "Interactive map showing driving routes, distances, drive times, weather and best stops between major UK cities, with written guides for each route.",
   "offers": {"@type":"Offer","price":"0","priceCurrency":"GBP"}
 }
 </script>
 
-<!-- Schema: FAQ -->
+<!-- Schema: FAQ (matches the 8 questions visible on the page) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"How far is it from London to Edinburgh by road?","acceptedAnswer":{"@type":"Answer","text":"London to Edinburgh by road is approximately 405 miles (650 km) via the A1, taking around 7 hours 30 minutes to drive without stops."}},
-    {"@type":"Question","name":"How long does it take to drive from London to Manchester?","acceptedAnswer":{"@type":"Answer","text":"Driving from London to Manchester via the M1 and M6 covers about 200 miles (320 km) and takes approximately 3 hours 45 minutes without stops."}},
-    {"@type":"Question","name":"How far is Bath from London by car?","acceptedAnswer":{"@type":"Answer","text":"Bath is about 115 miles (185 km) from London via the M4, roughly a 2 hour 15 minute drive without stops."}}
+    {"@type":"Question","name":"How far is it from London to Edinburgh by road?","acceptedAnswer":{"@type":"Answer","text":"London to Edinburgh by road is approximately 405 miles (650 km) via the A1 and A1(M). It takes around 7 hours of driving without stops, and realistically 8 to 9 hours once you add breaks and traffic."}},
+    {"@type":"Question","name":"How long does it take to drive from London to Manchester?","acceptedAnswer":{"@type":"Answer","text":"London to Manchester via the M1 and M6 is about 200 miles (320 km) and usually takes between 3 hours 45 minutes and 4 hours without stops, longer at peak times."}},
+    {"@type":"Question","name":"How far is Bath from London by car?","acceptedAnswer":{"@type":"Answer","text":"Bath is about 115 miles (185 km) from London via the M4, roughly 2 to 2.5 hours of driving without stops."}},
+    {"@type":"Question","name":"How long is the drive from Manchester to Edinburgh?","acceptedAnswer":{"@type":"Answer","text":"Manchester to Edinburgh via the M6 and A74(M) is about 220 miles (355 km), taking roughly 4 hours 15 minutes without stops."}},
+    {"@type":"Question","name":"How long does it take to drive from London to York?","acceptedAnswer":{"@type":"Answer","text":"London to York via the A1(M) is about 210 miles (340 km) and takes roughly 3 hours 45 minutes to 4 hours without stops."}},
+    {"@type":"Question","name":"How far is Liverpool from London by car?","acceptedAnswer":{"@type":"Answer","text":"Liverpool is about 210 miles (340 km) from London via the M1 and M6, usually around 4 hours of driving without stops."}},
+    {"@type":"Question","name":"What is the quickest way to drive from London to Birmingham?","acceptedAnswer":{"@type":"Answer","text":"The M40 is the usual route. It is about 120 miles (195 km) and takes around 2 hours to 2 hours 15 minutes without stops."}},
+    {"@type":"Question","name":"Is the drive from Edinburgh to Glasgow easy?","acceptedAnswer":{"@type":"Answer","text":"Yes. The M8 links the two cities in about 47 miles (75 km), usually around an hour, though rush hours can add 20 to 30 minutes."}}
   ]
 }
 </script>
@@ -184,7 +188,7 @@
   .popular-head h2{font-size:22px;}
   .popular-head p{font-size:13.5px; color:var(--slate);}
   .popular-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px;}
-  .pop-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:16px; text-decoration:none; color:inherit; transition:all .2s ease; cursor:pointer; display:flex; flex-direction:column; gap:6px; position:relative; overflow:hidden;}
+  .pop-card{background:#fff; border:1px solid var(--line); border-radius:var(--radius-md); padding:16px; text-decoration:none; color:inherit; transition:all .2s ease; cursor:pointer; display:flex; flex-direction:column; gap:6px; position:relative; overflow:hidden; text-align:left;}
   .pop-card::before{content:""; position:absolute; top:0; left:0; right:0; height:3px; background:var(--red-600); transform:scaleX(0); transform-origin:left; transition:transform .25s;}
   .pop-card:hover{border-color:var(--red-600); box-shadow:var(--shadow-hover); transform:translateY(-2px);}
   .pop-card:hover::before{transform:scaleX(1);}
@@ -206,6 +210,8 @@
   .route-info-actions{display:flex; gap:8px; flex-wrap:wrap;}
   .gmaps-btn{display:inline-flex; align-items:center; gap:8px; padding:11px 20px; border-radius:100px; background:var(--red-600); color:#fff; font-weight:600; font-size:13.5px; text-decoration:none; white-space:nowrap; border:none; cursor:pointer; transition:all .18s;}
   .gmaps-btn:hover{background:var(--red-700); transform:translateY(-1px);}
+  .gmaps-btn.secondary{background:#fff; color:var(--navy-800); border:1px solid var(--line);}
+  .gmaps-btn.secondary:hover{border-color:var(--red-600); color:var(--red-600); background:#fff;}
 
   /* Extras */
   .extras-grid{margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:14px;}
@@ -238,6 +244,29 @@
 
   /* Note */
   .note{margin-top:24px; background:var(--paper-dim); border-left:3px solid var(--red-600); border-radius:0 var(--radius-sm) var(--radius-sm) 0; padding:16px 20px; font-size:13.5px; color:var(--navy-800); line-height:1.6;}
+
+  /* Route Guides (static text, visible without JavaScript) */
+  .guides{margin-top:56px;}
+  .guides-head{max-width:760px; margin:0 auto 32px; text-align:center;}
+  .guides-head h2{font-size:28px; margin-bottom:10px;}
+  .guides-head p{color:var(--slate); font-size:15.5px;}
+  .guide-nav{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:18px;}
+  .guide-nav a{font-family:var(--mono); font-size:11.5px; padding:7px 14px; border-radius:100px; background:#fff; border:1px solid var(--line); color:var(--navy-800); text-decoration:none; transition:all .15s;}
+  .guide-nav a:hover{border-color:var(--red-600); color:var(--red-600);}
+  .guide{background:#fff; border:1px solid var(--line); border-radius:var(--radius-lg); padding:30px 32px; margin-bottom:22px; box-shadow:var(--shadow-card); scroll-margin-top:96px;}
+  .guide h3{font-size:24px; margin-bottom:6px;}
+  .guide .guide-meta{font-family:var(--mono); font-size:11.5px; color:var(--red-600); letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;}
+  .guide p{font-size:14.5px; color:var(--slate); line-height:1.7; margin-bottom:12px;}
+  .guide h4{font-family:var(--sans); font-size:14px; font-weight:600; color:var(--navy-900); margin:16px 0 6px;}
+  .guide ul{margin:0 0 12px 0;}
+  .guide ul li{position:relative; padding-left:18px; font-size:14px; color:var(--slate); line-height:1.65; margin-bottom:5px;}
+  .guide ul li::before{content:""; position:absolute; left:0; top:10px; width:8px; height:1px; background:var(--red-600);}
+  .guide-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:16px 0;}
+  .guide-stat{background:var(--paper); border:1px solid var(--line); border-radius:var(--radius-sm); padding:12px 14px;}
+  .guide-stat b{display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--slate-light); font-weight:500; margin-bottom:3px;}
+  .guide-stat span{font-size:14px; font-weight:600; color:var(--navy-900);}
+  .guide-links{margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;}
+  .guide-links a{font-size:13px; font-weight:600;}
 
   /* Sticky CTA */
   .sticky-cta{position:fixed; bottom:16px; left:50%; transform:translateX(-50%); z-index:90; background:#fff; border:1px solid var(--line); box-shadow:var(--shadow-hover); border-radius:100px; padding:8px 8px 8px 22px; display:flex; align-items:center; gap:16px; max-width:calc(100% - 32px); transition:transform .25s ease, opacity .25s ease;}
@@ -289,6 +318,8 @@
     body{padding-bottom:90px;}
     #map{height:340px;}
     .extras-grid, .facts-list{grid-template-columns:1fr;}
+    .guide{padding:22px 18px;}
+    .guide-grid{grid-template-columns:1fr;}
     .footer-top{grid-template-columns:1fr 1fr; gap:28px;}
     .footer-brand{grid-column:1 / -1;}
     .route-info{flex-direction:column; align-items:flex-start;}
@@ -364,20 +395,20 @@
 <section class="hero container">
   <p class="eyebrow" style="justify-content:center;">Free Interactive Tool</p>
   <h1>UK Route Planner: Drive Times, Distances &amp; Best Stops 🗺️</h1>
-  <p>Pick a route, see the road, the towns you'll pass and the best place to stop for a break — plus live weather at your destination.</p>
+  <p>Pick a route, see the road, the towns you'll pass and the best place to stop for a break, plus live weather at your destination. Every route also has a written guide below the map.</p>
   <div class="hero-badges">
     <span class="hero-badge"><span class="dot"></span> 8 Popular Routes</span>
     <span class="hero-badge"><span class="dot"></span> Live Weather</span>
+    <span class="hero-badge"><span class="dot"></span> Written Route Guides</span>
     <span class="hero-badge"><span class="dot"></span> No Sign-up</span>
-    <span class="hero-badge"><span class="dot"></span> Updated 2026</span>
   </div>
 </section>
 
-<!-- ✅ NEW: Quick Answer Box for AI Overviews & SEO -->
+<!-- Quick Answer Box -->
 <div class="container">
   <div class="quick-answer">
     <p class="qa-label">⚡ Quick Answer</p>
-    <p><strong>Driving from London to Edinburgh?</strong> It takes roughly <strong>7 hours 30 minutes</strong> (405 miles) via the A1. The best place to stop for a break is <strong>Durham</strong> (about halfway). If you're heading to Manchester, it's 3h 45m (200 miles) via the M1.</p>
+    <p><strong>Driving from London to Edinburgh?</strong> It is about <strong>405 miles</strong> via the A1 and takes around <strong>7 hours</strong> without stops, so plan on 8 to 9 hours once you add breaks and traffic. <strong>Durham</strong>, about two-thirds of the way, is a good place to stop. London to Manchester is about 200 miles and 3h 45m to 4h via the M1 and M6.</p>
   </div>
 </div>
 
@@ -390,49 +421,49 @@
     <button class="pop-card active" data-route="london_edinburgh" type="button">
       <span class="pop-icon">🏰</span>
       <h3>London → Edinburgh</h3>
-      <span class="pop-meta">405 mi · 7h 30m</span>
+      <span class="pop-meta">405 mi · about 7h</span>
       <span class="pop-stop">★ Stop: Durham</span>
     </button>
     <button class="pop-card" data-route="london_manchester" type="button">
       <span class="pop-icon">🐝</span>
       <h3>London → Manchester</h3>
-      <span class="pop-meta">200 mi · 3h 45m</span>
+      <span class="pop-meta">200 mi · 3h 45m–4h</span>
       <span class="pop-stop">★ Stop: Birmingham</span>
     </button>
     <button class="pop-card" data-route="london_bath" type="button">
       <span class="pop-icon">♨️</span>
       <h3>London → Bath</h3>
-      <span class="pop-meta">115 mi · 2h 15m</span>
+      <span class="pop-meta">115 mi · 2h–2h 30m</span>
       <span class="pop-stop">★ Stop: Reading</span>
     </button>
     <button class="pop-card" data-route="london_york" type="button">
       <span class="pop-icon">⛪</span>
       <h3>London → York</h3>
-      <span class="pop-meta">210 mi · 3h 45m</span>
+      <span class="pop-meta">210 mi · 3h 45m–4h</span>
       <span class="pop-stop">★ Stop: Newark</span>
     </button>
     <button class="pop-card" data-route="london_liverpool" type="button">
       <span class="pop-icon">🎸</span>
       <h3>London → Liverpool</h3>
-      <span class="pop-meta">210 mi · 3h 45m</span>
+      <span class="pop-meta">210 mi · about 4h</span>
       <span class="pop-stop">★ Stop: Birmingham</span>
     </button>
     <button class="pop-card" data-route="london_birmingham" type="button">
       <span class="pop-icon">🚡</span>
       <h3>London → Birmingham</h3>
-      <span class="pop-meta">120 mi · 2h 10m</span>
+      <span class="pop-meta">120 mi · 2h–2h 15m</span>
       <span class="pop-stop">★ Stop: Oxford</span>
     </button>
     <button class="pop-card" data-route="manchester_edinburgh" type="button">
       <span class="pop-icon">🏴</span>
       <h3>Manchester → Edinburgh</h3>
-      <span class="pop-meta">220 mi · 4h 15m</span>
+      <span class="pop-meta">220 mi · about 4h 15m</span>
       <span class="pop-stop">★ Stop: Carlisle</span>
     </button>
     <button class="pop-card" data-route="edinburgh_glasgow" type="button">
       <span class="pop-icon">🌉</span>
       <h3>Edinburgh → Glasgow</h3>
-      <span class="pop-meta">47 mi · 1h 05m</span>
+      <span class="pop-meta">47 mi · about 1h</span>
       <span class="pop-stop">★ Stop: Livingston</span>
     </button>
   </div>
@@ -444,9 +475,10 @@
     <div class="route-info">
       <div>
         <h2 id="routeTitle">London ↔ Edinburgh</h2>
-        <p id="routeMeta">Via the A1 — approx. 405 miles / 650 km · About 7h 30m driving</p>
+        <p id="routeMeta">Via the A1 — approx. 405 miles / 650 km · About 7h driving</p>
       </div>
       <div class="route-info-actions">
+        <a class="gmaps-btn secondary" id="guideLink" href="#guide-london_edinburgh">Read the route guide ↓</a>
         <button class="gmaps-btn" id="shareBtn" type="button" title="Share this route">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
           Share
@@ -478,37 +510,310 @@
   <div class="facts-list" id="factsList"></div>
 
   <div class="note">
-    <strong>Note:</strong> These maps show a common road route with approximate positions, for orientation only — they are not live, traffic-aware GPS routes. For turn-by-turn navigation, use "Get Live Directions", which opens the same route in Google Maps.
+    <strong>Note:</strong> These maps show a common road route with approximate positions, for orientation only. They are not live, traffic-aware GPS routes. Drive times are typical figures without stops or heavy traffic. For turn-by-turn navigation, use "Get Live Directions", which opens the same route in Google Maps.
   </div>
 </div>
 
-<section class="faq-section container">
+<!-- ============ STATIC ROUTE GUIDES (plain HTML, no JavaScript needed) ============ -->
+<section class="guides container" id="route-guides">
+  <div class="guides-head">
+    <p class="eyebrow" style="justify-content:center;">Route Guides</p>
+    <h2>Written Guides for 8 Popular UK Drives</h2>
+    <p>Roads, timings, the best time to travel, charges to watch for and how driving compares with the train. Use them alongside the map above.</p>
+    <div class="guide-nav">
+      <a href="#guide-london_edinburgh">London → Edinburgh</a>
+      <a href="#guide-london_manchester">London → Manchester</a>
+      <a href="#guide-london_bath">London → Bath</a>
+      <a href="#guide-london_york">London → York</a>
+      <a href="#guide-london_liverpool">London → Liverpool</a>
+      <a href="#guide-london_birmingham">London → Birmingham</a>
+      <a href="#guide-manchester_edinburgh">Manchester → Edinburgh</a>
+      <a href="#guide-edinburgh_glasgow">Edinburgh → Glasgow</a>
+    </div>
+  </div>
+
+  <article class="guide" id="guide-london_edinburgh">
+    <h3>London to Edinburgh by Car</h3>
+    <p class="guide-meta">About 405 miles · around 7 hours without stops</p>
+    <div class="guide-grid">
+      <div class="guide-stat"><b>Main roads</b><span>A1(M), A1</span></div>
+      <div class="guide-stat"><b>Realistic trip</b><span>8–9 hours with breaks</span></div>
+      <div class="guide-stat"><b>Tolls</b><span>None on this route</span></div>
+    </div>
+    <p>The classic road trip up the length of Britain follows the old Great North Road. From north London you join the A1(M), pass Peterborough, Newark-on-Trent and Doncaster, continue to Scotch Corner and Newcastle, then run up the Northumberland coast past Alnwick and Berwick-upon-Tweed before the final stretch into Edinburgh.</p>
+    <h4>Best time to drive</h4>
+    <ul>
+      <li>Leave before 7am or travel mid-week to miss the worst of the London exit traffic.</li>
+      <li>Friday afternoons, Sundays in the evening and bank holiday weekends are the busiest. Allow extra time around Newcastle at rush hour.</li>
+    </ul>
+    <h4>Where to break the journey</h4>
+    <ul>
+      <li><strong>Peterborough or Grantham</strong> for a first stretch of the legs after about 90 minutes.</li>
+      <li><strong>Doncaster or Wetherby</strong> for a food stop around the halfway mark.</li>
+      <li><strong>Durham</strong> if you want a proper break: its cathedral and castle form a UNESCO World Heritage Site, a short drive off the A1(M).</li>
+    </ul>
+    <h4>Charges, fuel and electric cars</h4>
+    <ul>
+      <li>There are no road tolls, but Central London has the Congestion Charge and ULEZ, and Edinburgh operates a Low Emission Zone. Check current rules for your vehicle before you set off.</li>
+      <li>Motorway and A1 service areas have rapid chargers. If you drive electric, plan a charge roughly every 150 to 200 miles rather than waiting for a low battery.</li>
+    </ul>
+    <h4>Drive or take the train?</h4>
+    <p>The East Coast Main Line from London King's Cross to Edinburgh Waverley takes roughly 4.5 hours, so the train is faster. Driving makes sense if you want to stop at places like Durham, York or Alnwick on the way, or you are carrying luggage for a family.</p>
+    <div class="guide-links"><a href="/travel/uk-weekend-break-planner.html">Plan a weekend break →</a><a href="/travel/getting-around.html">Getting around the UK →</a></div>
+  </article>
+
+  <article class="guide" id="guide-london_manchester">
+    <h3>London to Manchester by Car</h3>
+    <p class="guide-meta">About 200 miles · 3h 45m to 4h without stops</p>
+    <div class="guide-grid">
+      <div class="guide-stat"><b>Main roads</b><span>M1, M6, M56 / M60</span></div>
+      <div class="guide-stat"><b>Realistic trip</b><span>4–5 hours with a break</span></div>
+      <div class="guide-stat"><b>Optional toll</b><span>M6 Toll bypass</span></div>
+    </div>
+    <p>This drive uses the M1 north past Luton, Milton Keynes and Northampton, then joins the M6 near Rugby and runs past Coventry, Birmingham, Stafford and Stoke-on-Trent before the final approach to Manchester on the M6 and M56 or M60.</p>
+    <h4>Best time to drive</h4>
+    <ul>
+      <li>The M6 around Birmingham is the usual bottleneck. Aim to pass it before 7am or after 9:30am on weekdays.</li>
+      <li>Summer Fridays and Sunday evenings are slow. Roadworks are common on the M1 and M6, so check live traffic before you go.</li>
+    </ul>
+    <h4>Where to break the journey</h4>
+    <ul>
+      <li><strong>Milton Keynes</strong> or <strong>Northampton</strong> for an early break.</li>
+      <li><strong>Birmingham</strong> is the best halfway stop: canals, the Bullring and a wide choice of food in the city centre.</li>
+      <li><strong>Stoke-on-Trent</strong> for pottery heritage if you want something different to a motorway service area.</li>
+    </ul>
+    <h4>Charges and parking</h4>
+    <ul>
+      <li>The M6 Toll is a paid alternative around Birmingham that can save time in heavy traffic. Check the current price on the official operator's site.</li>
+      <li>Manchester has a Clean Air Zone that does not charge private cars at present, but rules can change, so confirm before travelling. City-centre parking is expensive, so look at the car parks on the outskirts and use the tram.</li>
+    </ul>
+    <h4>Drive or take the train?</h4>
+    <p>Trains from London Euston to Manchester Piccadilly take around 2 hours 10 minutes to 2 hours 30 minutes and are usually the easier option for a city break. Drive if you are continuing to the Peak District or Lake District afterwards.</p>
+    <div class="guide-links"><a href="/travel/getting-around.html">Trains, coaches and driving compared →</a></div>
+  </article>
+
+  <article class="guide" id="guide-london_bath">
+    <h3>London to Bath by Car</h3>
+    <p class="guide-meta">About 115 miles · 2h to 2h 30m without stops</p>
+    <div class="guide-grid">
+      <div class="guide-stat"><b>Main roads</b><span>M4, A46 / A4</span></div>
+      <div class="guide-stat"><b>Realistic trip</b><span>2.5–3 hours</span></div>
+      <div class="guide-stat"><b>Tolls</b><span>None</span></div>
+    </div>
+    <p>From west London the M4 runs past Reading and Swindon, then you leave the motorway near Chippenham and follow the A4 or the A46 down into Bath. It is one of the easiest long drives from the capital, though the M4 is often busy leaving London.</p>
+    <h4>Best time to drive</h4>
+    <ul>
+      <li>Leave London before 8am or after 10am. Friday evenings and sunny summer weekends can add a lot of time on the M4.</li>
+      <li>Smart motorway sections and roadworks are common. Always check traffic before departure.</li>
+    </ul>
+    <h4>Where to break the journey</h4>
+    <ul>
+      <li><strong>Reading</strong> is the easiest stop, about 45 minutes in, with plenty of services and the Reading Festival site nearby.</li>
+      <li><strong>Swindon</strong> for a quick break, or <strong>Chippenham</strong>, a historic market town close to the end of the motorway.</li>
+    </ul>
+    <h4>Parking and charges</h4>
+    <ul>
+      <li>Bath has a Clean Air Zone aimed at older, higher-polluting vans, taxis, buses and lorries. Private cars are not charged, but confirm for your vehicle.</li>
+      <li>City-centre parking is limited and pricey. The park and ride sites on the edge of the city (Lansdown, Newbridge and Odd Down) are the easiest option.</li>
+    </ul>
+    <h4>Drive or take the train?</h4>
+    <p>Direct trains from London Paddington to Bath Spa take roughly 1 hour 20 to 1 hour 30 minutes and drop you in the centre, so the train is usually simpler for a day trip. Driving is better if you are combining Bath with Stonehenge, the Cotswolds or Somerset.</p>
+    <div class="guide-links"><a href="/categories/day-trips.html">UK day trip ideas →</a></div>
+  </article>
+
+  <article class="guide" id="guide-london_york">
+    <h3>London to York by Car</h3>
+    <p class="guide-meta">About 210 miles · 3h 45m to 4h without stops</p>
+    <div class="guide-grid">
+      <div class="guide-stat"><b>Main roads</b><span>A1(M), A64</span></div>
+      <div class="guide-stat"><b>Realistic trip</b><span>4.5–5 hours</span></div>
+      <div class="guide-stat"><b>Tolls</b><span>None</span></div>
+    </div>
+    <p>You follow the A1(M) north through Peterborough, Grantham and Newark-on-Trent, pass Doncaster, then leave the motorway near Wetherby or Selby for the final run into York. The route is mostly motorway-standard and straightforward.</p>
+    <h4>Best time to drive</h4>
+    <ul>
+      <li>Early morning departures work best. Roadworks on the A1(M) can slow things down, so check before you leave.</li>
+      <li>York is busiest at weekends and during the Christmas market period, so expect slow traffic on the approach roads.</li>
+    </ul>
+    <h4>Where to break the journey</h4>
+    <ul>
+      <li><strong>Newark-on-Trent</strong>: a historic market town whose castle was besieged three times in the Civil War.</li>
+      <li><strong>Grantham</strong> or <strong>Doncaster</strong> if you need a quick stop closer to the motorway.</li>
+    </ul>
+    <h4>Parking in York</h4>
+    <ul>
+      <li>The historic centre has narrow streets and pedestrian areas. Use one of the park and ride sites around the ring road and take the bus in.</li>
+      <li>If you are staying overnight, ask your hotel about parking before you arrive.</li>
+    </ul>
+    <h4>Drive or take the train?</h4>
+    <p>Trains from London King's Cross to York take roughly 1 hour 45 minutes to 2 hours and are the easiest way to visit. A car is useful if you plan to explore the Yorkshire Dales, the North York Moors or the coast.</p>
+    <div class="guide-links"><a href="/travel/uk-weekend-break-planner.html">Weekend break planner →</a></div>
+  </article>
+
+  <article class="guide" id="guide-london_liverpool">
+    <h3>London to Liverpool by Car</h3>
+    <p class="guide-meta">About 210 miles · around 4 hours without stops</p>
+    <div class="guide-grid">
+      <div class="guide-stat"><b>Main roads</b><span>M1, M6, M62 / M56</span></div>
+      <div class="guide-stat"><b>Realistic trip</b><span>4.5–5 hours</span></div>
+      <div class="guide-stat"><b>Tolls</b><span>Mersey tunnels</span></div>
+    </div>
+    <p>The first part is the same as the Manchester drive: M1 north, then M6 past Coventry, Birmingham and Stafford. Near Warrington you leave the M6 for the M62 or M56 and continue west to Liverpool.</p>
+    <h4>Best time to drive</h4>
+    <ul>
+      <li>Avoid the Birmingham section of the M6 at weekday rush hours.</li>
+      <li>Match days and big concerts in Liverpool can make the city roads busy, so check events before you book.</li>
+    </ul>
+    <h4>Where to break the journey</h4>
+    <ul>
+      <li><strong>Birmingham</strong> is the natural halfway point with lots of places to eat.</li>
+      <li><strong>Warrington</strong> sits roughly between Liverpool and Manchester and is a convenient last stop before the city.</li>
+    </ul>
+    <h4>Charges and parking</h4>
+    <ul>
+      <li>The Mersey tunnels (Queensway and Kingsway) charge a toll if you use them. Check the current price and payment method on the official site.</li>
+      <li>Parking near the waterfront and city centre can fill up on event days, so book ahead if you can.</li>
+    </ul>
+    <h4>Drive or take the train?</h4>
+    <p>Trains from London Euston to Liverpool Lime Street take roughly 2 hours 15 to 2 hours 30 minutes. The train is quicker and avoids city parking, so drive only if you are touring the north-west afterwards.</p>
+    <div class="guide-links"><a href="/travel/getting-around.html">Getting around the UK →</a></div>
+  </article>
+
+  <article class="guide" id="guide-london_birmingham">
+    <h3>London to Birmingham by Car</h3>
+    <p class="guide-meta">About 120 miles · 2h to 2h 15m without stops</p>
+    <div class="guide-grid">
+      <div class="guide-stat"><b>Main roads</b><span>M40, M42 / M6</span></div>
+      <div class="guide-stat"><b>Realistic trip</b><span>2.5–3 hours</span></div>
+      <div class="guide-stat"><b>Charges</b><span>Birmingham Clean Air Zone</span></div>
+    </div>
+    <p>The M40 is the usual route: leave London on the M25, join the M40 near Beaconsfield, pass Oxford and Banbury and continue towards Warwick and Birmingham. It is often quicker and calmer than the M1 and M6 alternative.</p>
+    <h4>Best time to drive</h4>
+    <ul>
+      <li>The M25 and M40 start of the journey is busy at weekday rush hours, so leave London outside 7–9:30am and 4–7pm.</li>
+      <li>Allow extra time when approaching central Birmingham, as the ring roads get congested.</li>
+    </ul>
+    <h4>Where to break the journey</h4>
+    <ul>
+      <li><strong>Oxford</strong> is the best stop: the world-famous university city, with park and ride sites on the edge so you avoid the centre.</li>
+      <li><strong>Warwick</strong> for its medieval castle, about 30 minutes from Birmingham.</li>
+    </ul>
+    <h4>Charges and parking</h4>
+    <ul>
+      <li>Birmingham has a Clean Air Zone that charges older, higher-emission vehicles (including some cars) inside the A4540 Middleway ring road. Check your registration on the official government checker before you drive in.</li>
+    </ul>
+    <h4>Drive or take the train?</h4>
+    <p>Trains to Birmingham take roughly 1 hour 30 minutes from London Euston or about 1 hour 40 minutes from London Marylebone. The train is easier for city visits, while driving suits trips that continue to the Cotswolds or Shakespeare country.</p>
+    <div class="guide-links"><a href="/travel/getting-around.html">Trains, coaches and driving compared →</a></div>
+  </article>
+
+  <article class="guide" id="guide-manchester_edinburgh">
+    <h3>Manchester to Edinburgh by Car</h3>
+    <p class="guide-meta">About 220 miles · around 4h 15m without stops</p>
+    <div class="guide-grid">
+      <div class="guide-stat"><b>Main roads</b><span>M6, A74(M), M74</span></div>
+      <div class="guide-stat"><b>Realistic trip</b><span>5 hours with a break</span></div>
+      <div class="guide-stat"><b>Tolls</b><span>None</span></div>
+    </div>
+    <p>From Manchester you head north on the M6 past Preston and Lancaster, cross the high ground near Shap on the edge of the Lake District, pass Penrith and Carlisle, then follow the A74(M) and M74 over the border into Scotland before turning east towards Edinburgh.</p>
+    <h4>Best time to drive</h4>
+    <ul>
+      <li>Winter is the main concern: the Shap stretch of the M6 and the Beattock summit in Scotland can be affected by snow, ice and high winds. Check weather and road conditions before you leave.</li>
+      <li>Summer weekends are busy as Lake District traffic joins the M6.</li>
+    </ul>
+    <h4>Where to break the journey</h4>
+    <ul>
+      <li><strong>Lancaster</strong> or <strong>Penrith</strong> for an early break with the Lake District scenery nearby.</li>
+      <li><strong>Carlisle</strong> is the best stop, close to the border and with a historic castle and cathedral.</li>
+      <li><strong>Gretna Green</strong>, just across the border, is a famous elopement stop and a convenient service area.</li>
+    </ul>
+    <h4>Charges and parking</h4>
+    <ul>
+      <li>There are no tolls, but Edinburgh operates a Low Emission Zone, so check whether your vehicle meets the standard before entering the city.</li>
+    </ul>
+    <h4>Drive or take the train?</h4>
+    <p>Direct trains take roughly 3.5 to 4 hours, so driving and rail are similar in time. A car is a better choice if you want to stop in the Lake District or the Scottish Borders.</p>
+    <div class="guide-links"><a href="/regions/scotland.html">Explore Scotland →</a></div>
+  </article>
+
+  <article class="guide" id="guide-edinburgh_glasgow">
+    <h3>Edinburgh to Glasgow by Car</h3>
+    <p class="guide-meta">About 47 miles · around 1 hour without stops</p>
+    <div class="guide-grid">
+      <div class="guide-stat"><b>Main road</b><span>M8</span></div>
+      <div class="guide-stat"><b>Realistic trip</b><span>1h–1h 30m</span></div>
+      <div class="guide-stat"><b>Tolls</b><span>None</span></div>
+    </div>
+    <p>Scotland's central belt is linked by the M8, which runs straight across from Edinburgh past Livingston and Harthill to Glasgow. It is a short and simple drive, but it is busy and prone to roadworks.</p>
+    <h4>Best time to drive</h4>
+    <ul>
+      <li>Weekday rush hours (roughly 7:30–9:30am and 4–6:30pm) can add 20 to 30 minutes, particularly around the Glasgow end.</li>
+      <li>Outside peak times it is usually around an hour door to door.</li>
+    </ul>
+    <h4>Where to break the journey</h4>
+    <ul>
+      <li><strong>Livingston</strong> is a Scottish "New Town" with shops, restaurants and easy parking, just off the M8.</li>
+      <li>If you have extra time, the Falkirk area is a short detour from the motorway.</li>
+    </ul>
+    <h4>Charges and parking</h4>
+    <ul>
+      <li>Glasgow has a Low Emission Zone covering the city centre, and Edinburgh has one too. Check whether your vehicle meets the standard before you drive into either centre.</li>
+      <li>City-centre parking is expensive in both cities. Consider a park and ride or leaving the car outside the zone.</li>
+    </ul>
+    <h4>Drive or take the train?</h4>
+    <p>Trains between Edinburgh Waverley and Glasgow Queen Street take around 50 minutes and run very frequently, so the train is almost always the better choice for a day trip between the two cities.</p>
+    <div class="guide-links"><a href="/regions/scotland.html">Explore Scotland →</a></div>
+  </article>
+</section>
+
+<div class="container">
+<section class="faq-section">
   <h2>Frequently Asked Questions</h2>
   <div class="faq-item">
     <h3>How far is it from London to Edinburgh by road?</h3>
-    <p>London to Edinburgh by road is approximately 405 miles (650 km) via the A1, taking around 7 hours 30 minutes to drive without stops.</p>
+    <p>London to Edinburgh by road is approximately 405 miles (650 km) via the A1 and A1(M). It takes around 7 hours of driving without stops, and realistically 8 to 9 hours once you add breaks and traffic.</p>
   </div>
   <div class="faq-item">
     <h3>How long does it take to drive from London to Manchester?</h3>
-    <p>Driving from London to Manchester via the M1 and M6 covers about 200 miles (320 km) and takes approximately 3 hours 45 minutes without stops.</p>
+    <p>London to Manchester via the M1 and M6 is about 200 miles (320 km) and usually takes between 3 hours 45 minutes and 4 hours without stops, longer at peak times.</p>
   </div>
   <div class="faq-item">
     <h3>How far is Bath from London by car?</h3>
-    <p>Bath is about 115 miles (185 km) from London via the M4, roughly a 2 hour 15 minute drive without stops.</p>
+    <p>Bath is about 115 miles (185 km) from London via the M4, roughly 2 to 2.5 hours of driving without stops.</p>
   </div>
   <div class="faq-item">
     <h3>How long is the drive from Manchester to Edinburgh?</h3>
-    <p>Manchester to Edinburgh via the M6 and A74(M) is about 220 miles (355 km), taking roughly 4 hours 15 minutes to drive without stops.</p>
+    <p>Manchester to Edinburgh via the M6 and A74(M) is about 220 miles (355 km), taking roughly 4 hours 15 minutes without stops.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How long does it take to drive from London to York?</h3>
+    <p>London to York via the A1(M) is about 210 miles (340 km) and takes roughly 3 hours 45 minutes to 4 hours without stops.</p>
+  </div>
+  <div class="faq-item">
+    <h3>How far is Liverpool from London by car?</h3>
+    <p>Liverpool is about 210 miles (340 km) from London via the M1 and M6, usually around 4 hours of driving without stops.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What is the quickest way to drive from London to Birmingham?</h3>
+    <p>The M40 is the usual route. It is about 120 miles (195 km) and takes around 2 hours to 2 hours 15 minutes without stops.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Is the drive from Edinburgh to Glasgow easy?</h3>
+    <p>Yes. The M8 links the two cities in about 47 miles (75 km), usually around an hour, though rush hours can add 20 to 30 minutes.</p>
   </div>
 </section>
+</div>
 
 <section class="related">
   <div class="container">
     <div class="related-head"><p class="eyebrow" style="justify-content:center;">Keep Planning</p><h2>Related Guides</h2><p>Now that you know the route, plan the rest of the journey.</p></div>
     <div class="related-grid">
-      <a class="related-card" href="/blog/uk-train-travel-guide.html"><h3>UK Train Travel Guide</h3><p>Railcards, split ticketing and booking tips if you'd rather go by rail.</p></a>
+      <a class="related-card" href="/travel/uk-weekend-break-planner.html"><h3>UK Weekend Break Planner</h3><p>Pick a destination and plan a short break around the drive.</p></a>
       <a class="related-card" href="/travel/getting-around.html"><h3>Getting Around the UK</h3><p>Trains, coaches, driving and domestic flights compared.</p></a>
+      <a class="related-card" href="/blog/uk-train-travel-guide.html"><h3>UK Train Travel Guide</h3><p>Railcards, split ticketing and booking tips if you'd rather go by rail.</p></a>
       <a class="related-card" href="/blog/uk-payments-guide.html"><h3>How to Pay in the UK</h3><p>Tolls, fuel, contactless cards and tipping explained.</p></a>
+      <a class="related-card" href="/travel/travel-tips.html"><h3>UK Travel Tips</h3><p>Practical advice for first-time visitors to the United Kingdom.</p></a>
+      <a class="related-card" href="/categories/day-trips.html"><h3>UK Day Trips</h3><p>Easy day out ideas you can reach by car or train.</p></a>
     </div>
   </div>
 </section>
@@ -517,7 +822,7 @@
 
 <!-- Sticky CTA -->
 <div class="sticky-cta" id="stickyCta">
-  <span class="sticky-info">📍 <strong id="stickyRoute">London → Edinburgh</strong> · 405 mi</span>
+  <span class="sticky-info">📍 <strong id="stickyRoute">London → Edinburgh</strong> · <span id="stickyDist">405 mi</span></span>
   <button class="gmaps-btn" id="stickyGmaps" type="button">Get Directions ↗</button>
 </div>
 
@@ -546,6 +851,7 @@
         <li><a href="/travel/travel-tips.html">Travel Tips</a></li>
         <li><a href="/travel/getting-around.html">Getting Around</a></li>
         <li><a href="/travel/route-planner.html">Route Planner</a></li>
+        <li><a href="/travel/uk-weekend-break-planner.html">Weekend Break Planner</a></li>
         <li><a href="/categories/food-restaurants.html">Food &amp; Restaurants</a></li>
       </ul></div>
       <div class="footer-col"><h4>Company</h4><ul>
@@ -570,7 +876,7 @@
 
   var ROUTES = {
     london_edinburgh: {
-      title: "London ↔ Edinburgh", meta: "Via the A1 — approx. 405 miles / 650 km", driveTime: "About 7h 30m driving",
+      title: "London ↔ Edinburgh", meta: "Via the A1 — approx. 405 miles / 650 km", driveTime: "About 7h driving", dist: "405 mi",
       recommendedStop: "Durham",
       destWeather: {lat:55.9533, lng:-3.1883, name:"Edinburgh"},
       points: [
@@ -591,7 +897,7 @@
       ]
     },
     london_manchester: {
-      title: "London ↔ Manchester", meta: "Via the M1 and M6 — approx. 200 miles / 320 km", driveTime: "About 3h 45m driving",
+      title: "London ↔ Manchester", meta: "Via the M1 and M6 — approx. 200 miles / 320 km", driveTime: "About 3h 45m–4h driving", dist: "200 mi",
       recommendedStop: "Birmingham",
       destWeather: {lat:53.4808, lng:-2.2426, name:"Manchester"},
       points: [
@@ -608,7 +914,7 @@
       ]
     },
     london_bath: {
-      title: "London ↔ Bath", meta: "Via the M4 — approx. 115 miles / 185 km", driveTime: "About 2h 15m driving",
+      title: "London ↔ Bath", meta: "Via the M4 — approx. 115 miles / 185 km", driveTime: "About 2h–2h 30m driving", dist: "115 mi",
       recommendedStop: "Reading",
       destWeather: {lat:51.3811, lng:-2.3590, name:"Bath"},
       points: [
@@ -620,7 +926,7 @@
       ]
     },
     london_york: {
-      title: "London ↔ York", meta: "Via the A1(M) — approx. 210 miles / 340 km", driveTime: "About 3h 45m driving",
+      title: "London ↔ York", meta: "Via the A1(M) — approx. 210 miles / 340 km", driveTime: "About 3h 45m–4h driving", dist: "210 mi",
       recommendedStop: "Newark-on-Trent",
       destWeather: {lat:53.9600, lng:-1.0873, name:"York"},
       points: [
@@ -634,7 +940,7 @@
       ]
     },
     london_liverpool: {
-      title: "London ↔ Liverpool", meta: "Via the M1 and M6 — approx. 210 miles / 340 km", driveTime: "About 3h 45m driving",
+      title: "London ↔ Liverpool", meta: "Via the M1 and M6 — approx. 210 miles / 340 km", driveTime: "About 4h driving", dist: "210 mi",
       recommendedStop: "Birmingham",
       destWeather: {lat:53.4084, lng:-2.9916, name:"Liverpool"},
       points: [
@@ -651,7 +957,7 @@
       ]
     },
     london_birmingham: {
-      title: "London ↔ Birmingham", meta: "Via the M40 — approx. 120 miles / 195 km", driveTime: "About 2h 10m driving",
+      title: "London ↔ Birmingham", meta: "Via the M40 — approx. 120 miles / 195 km", driveTime: "About 2h–2h 15m driving", dist: "120 mi",
       recommendedStop: "Oxford",
       destWeather: {lat:52.4862, lng:-1.8904, name:"Birmingham"},
       points: [
@@ -664,7 +970,7 @@
       ]
     },
     manchester_edinburgh: {
-      title: "Manchester ↔ Edinburgh", meta: "Via the M6 and A74(M) — approx. 220 miles / 355 km", driveTime: "About 4h 15m driving",
+      title: "Manchester ↔ Edinburgh", meta: "Via the M6 and A74(M) — approx. 220 miles / 355 km", driveTime: "About 4h 15m driving", dist: "220 mi",
       recommendedStop: "Carlisle",
       destWeather: {lat:55.9533, lng:-3.1883, name:"Edinburgh"},
       points: [
@@ -679,7 +985,7 @@
       ]
     },
     edinburgh_glasgow: {
-      title: "Edinburgh ↔ Glasgow", meta: "Via the M8 — approx. 47 miles / 75 km", driveTime: "About 1h 5m driving",
+      title: "Edinburgh ↔ Glasgow", meta: "Via the M8 — approx. 47 miles / 75 km", driveTime: "About 1h driving", dist: "47 mi",
       recommendedStop: "Livingston",
       destWeather: {lat:55.8642, lng:-4.2518, name:"Glasgow"},
       points: [
@@ -739,6 +1045,7 @@
     var start = route.points[0].name;
     var end = route.points[route.points.length - 1].name;
     document.getElementById("stickyRoute").textContent = start + " → " + end;
+    document.getElementById("stickyDist").textContent = route.dist;
   }
 
   function drawRoute(key){
@@ -768,6 +1075,7 @@
 
     document.getElementById("routeTitle").textContent = route.title;
     document.getElementById("routeMeta").textContent = route.meta + " · " + route.driveTime;
+    document.getElementById("guideLink").setAttribute("href", "#guide-" + key);
     document.getElementById("townChips").innerHTML = route.points.map(function(p){
       var isRec = p.name === route.recommendedStop;
       return '<span class="town-chip' + (isRec ? ' recommended' : '') + '">' + p.name + (isRec ? ' ★' : '') + '</span>';
@@ -820,7 +1128,7 @@
     };
     if (navigator.share){
       navigator.share(shareData).catch(function(){});
-    } else {
+    } else if (navigator.clipboard){
       var text = shareData.title + "\n" + shareData.text + "\n" + shareData.url;
       navigator.clipboard.writeText(text).then(function(){
         var btn = document.getElementById("shareBtn");
