@@ -4,7 +4,7 @@
   <!-- ==================== HOMEPAGE ==================== -->
   <url>
     <loc>https://www.visitorguideuk.com/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <url><loc>https://www.visitorguideuk.com/destinations/manchester.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visitorguideuk.com/destinations/liverpool.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visitorguideuk.com/destinations/birmingham.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.visitorguideuk.com/destinations/york.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.visitorguideuk.com/destinations/york.html</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visitorguideuk.com/destinations/bath.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visitorguideuk.com/destinations/oxford.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
@@ -27,86 +27,80 @@
 
   <!-- ==================== TRAVEL TOOLS (Interactive) ==================== -->
   <url>
-  <loc>https://www.visitorguideuk.com/travel/uk-currency-converter.html</loc>
-  <lastmod>2026-10-16</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/travel/uk-currency-converter.html</loc>
+    <lastmod>2026-10-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/travel/car-parking-cost-calculator.html</loc>
-  <lastmod>2026-10-13</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/travel/car-parking-cost-calculator.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/travel/uk-train-journeys.html</loc>
-  <lastmod>2026-10-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/travel/uk-train-journeys.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/tools/passport-validity-checker.html</loc>
-  <lastmod>2026-10-11</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/tools/passport-validity-checker.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/tools/uk-live-news.html</loc>
-  <lastmod>2026-10-11</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/tools/uk-live-news.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/tools/uk-live-camera-directory.html</loc>
-  <lastmod>2026-10-10</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/tools/uk-live-camera-directory.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/tools/uk-live-visitor-counter.html</loc>
-  <lastmod>2026-10-10</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/tools/uk-live-visitor-counter.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/travel/uk-weekend-break-planner.html</loc>
-  <lastmod>2026-10-10</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/travel/uk-weekend-break-planner.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/travel/uk-weather-by-month.html</loc>
-  <lastmod>2026-10-07</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/travel/uk-weather-by-month.html</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/travel/sim-esim-finder.html</loc>
-  <lastmod>2026-10-07</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/travel/sim-esim-finder.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/travel/tipping-calculator.html</loc>
-  <lastmod>2026-10-07</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/travel/tipping-calculator.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/travel/tipping-calculator.html</loc>
-  <lastmod>2026-10-07</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
-  <url>
-  <loc>https://www.visitorguideuk.com/travel/train-ticket-price-calculator.html</loc>
-  <lastmod>2026-10-06</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/travel/train-ticket-price-calculator.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url><loc>https://www.visitorguideuk.com/travel/trip-cost-calculator.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visitorguideuk.com/travel/bucket-list.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.visitorguideuk.com/travel/route-planner.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.visitorguideuk.com/travel/route-planner.html</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visitorguideuk.com/travel/itinerary-generator.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visitorguideuk.com/travel/packing-list-generator.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visitorguideuk.com/travel/bank-holidays.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -126,67 +120,67 @@
   <url><loc>https://www.visitorguideuk.com/travel/accessibility.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 
   <!-- ==================== BLOG ==================== -->
-    <url>
+  <url>
     <loc>https://www.visitorguideuk.com/blog/uk-train-tickets-on-the-day.html</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-    <url>
+  <url>
     <loc>https://www.visitorguideuk.com/blog/average-hotel-room-price-uk.html</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-    <url>
+  <url>
     <loc>https://www.visitorguideuk.com/blog/north-wales-coolcation-guide.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-    <url>
+  <url>
     <loc>https://www.visitorguideuk.com/blog/carlisle-travel-guide.html</loc>
     <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-    <url>
+  <url>
     <loc>https://www.visitorguideuk.com/blog/is-cornwall-worth-it.html</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-  <loc>https://www.visitorguideuk.com/blog/uk-hiking-wellness-breaks.html</loc>
-  <lastmod>2026-10-18</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/blog/uk-hiking-wellness-breaks.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/blog/quiet-beauty-of-english-villages.html</loc>
-  <lastmod>2026-10-18</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/blog/quiet-beauty-of-english-villages.html</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/blog/cheapest-day-to-travel-by-train-uk.html</loc>
-  <lastmod>2026-10-12</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/blog/cheapest-day-to-travel-by-train-uk.html</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/blog/uk-passport-validity-rules-2026.html</loc>
-  <lastmod>2026-10-07</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+    <loc>https://www.visitorguideuk.com/blog/uk-passport-validity-rules-2026.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
-  <loc>https://www.visitorguideuk.com/blog/uk-budget-travel-tips.html</loc>
-  <lastmod>2026-10-08</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-  <url><loc>https://www.visitorguideuk.com/blog/index.html</loc><lastmod>2026-10-05</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+    <loc>https://www.visitorguideuk.com/blog/uk-budget-travel-tips.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url><loc>https://www.visitorguideuk.com/blog/index.html</loc><lastmod>2026-11-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.visitorguideuk.com/blog/uk-visitor-visa-erasmus-changes-october-2026.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.visitorguideuk.com/blog/uk-eta-guide.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.visitorguideuk.com/blog/best-time-to-visit-uk.html</loc><lastmod>2026-10-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -222,11 +216,6 @@
   <url><loc>https://www.visitorguideuk.com/legal/privacy-policy.html</loc><lastmod>2026-10-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.visitorguideuk.com/legal/terms.html</loc><lastmod>2026-10-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.visitorguideuk.com/legal/cookie-policy.html</loc><lastmod>2026-10-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url>
-  <loc>https://www.visitorguideuk.com/legal/editorial-policy.html</loc>
-  <lastmod>2026-10-08</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.4</priority>
-</url>
+  <url><loc>https://www.visitorguideuk.com/legal/editorial-policy.html</loc><lastmod>2026-10-08</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
 
 </urlset>
