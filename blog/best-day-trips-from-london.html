@@ -368,4 +368,86 @@
         <ul>
           <li><a href="/categories/attractions.html">Attractions</a></li>
           <li><a href="/categories/free-things-to-do.html">Free Things to Do</a></li>
-          <li><a href="/categories/family-days-out.html">Family Days Out</
+          <li><a href="/categories/family-days-out.html">Family Days Out</a></li>
+          <li><a href="/categories/day-trips.html">Day Trips</a></li>
+          <li><a href="/blog/index.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Travel Tools</h4>
+        <ul>
+          <li><a href="/travel/trip-cost-calculator.html">Trip Cost Calculator</a></li>
+          <li><a href="/travel/hotel-cost-estimator.html">Hotel Cost Estimator</a></li>
+          <li><a href="/travel/route-planner.html">Route Planner</a></li>
+          <li><a href="/travel/itinerary-generator.html">Itinerary Generator</a></li>
+          <li><a href="/travel/packing-list-generator.html">Packing List Generator</a></li>
+          <li><a href="/travel/uk-weather-by-month.html">Weather by Month</a></li>
+          <li><a href="/travel/bank-holidays.html">Bank Holidays</a></li>
+          <li><a href="/travel/free-museums-map.html">Free Museums Map</a></li>
+          <li><a href="/travel/uk-time-now.html">UK Time &amp; Weather</a></li>
+          <li><a href="/travel/visa-eta-checker.html">Visa &amp; ETA Checker</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/legal/about.html">About Us</a></li>
+          <li><a href="/legal/contact.html">Contact</a></li>
+          <li><a href="/legal/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="/legal/terms.html">Terms &amp; Conditions</a></li>
+          <li><a href="/legal/cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="/sitemap.html">Sitemap</a></li> 
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Visitor Guide UK. All rights reserved.</span>
+      <span>An independent UK visitor information guide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var wikiCache = {};
+  function fetchWikiImage(title, px){
+    if (wikiCache[title]) return wikiCache[title];
+    var p = fetch("https://en.wikipedia.org/w/api.php?action=query&titles=" + encodeURIComponent(title) +
+      "&prop=pageimages&format=json&pithumbsize=" + (px || 1000) + "&origin=*")
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        var pages = data.query && data.query.pages;
+        if (!pages) return null;
+        var page = pages[Object.keys(pages)[0]];
+        return (page && page.thumbnail && page.thumbnail.source) || null;
+      })
+      .catch(function(){ return null; });
+    wikiCache[title] = p;
+    return p;
+  }
+
+  document.querySelectorAll("[data-wiki]").forEach(function(node){
+    var title = node.getAttribute("data-wiki");
+    var img = node.querySelector("img");
+    if (!img) return;
+    fetchWikiImage(title, node.hasAttribute("data-eager") ? 1600 : 900).then(function(url){
+      if (!url) return;
+      img.src = url;
+      img.onload = function(){ img.classList.add("loaded"); };
+    });
+  });
+
+  var header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", function(){ header.classList.toggle("scrolled", window.scrollY > 8); }, {passive:true});
+  
+  var mobileNav = document.getElementById("mobileNav");
+  document.getElementById("menuOpenBtn").addEventListener("click", function(){ mobileNav.classList.add("open"); document.body.style.overflow = "hidden"; });
+  document.getElementById("menuCloseBtn").addEventListener("click", closeMenu);
+  mobileNav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeMenu); });
+  function closeMenu(){ mobileNav.classList.remove("open"); document.body.style.overflow = ""; }
+})();
+</script>
+</body>
+</html>
